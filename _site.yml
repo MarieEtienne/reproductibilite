@@ -1,0 +1,26 @@
+name: "Reproducibility"
+title: "Introduction to reproducible science"
+description: |
+  Introduction to reproducibility for Datascience student at Agrocampus Ouest
+base_url: https://marietienne.github.io/c_premier_pas
+output_dir: "render"
+navbar:
+  logo: LogoAgrocampusOuest.jpg
+  title: 'R : des premiers pas au modèle linéaire'
+  left:
+  - text: "Supports"
+    icon: fa-user-graduate
+    href: _presentation/reproducibility.html
+  - text: "Tutorial"
+    icone: fa-laptop
+    href: _presentation/tutorial.html
+  right:
+  - text: "Github"
+    icon: fab fa-github
+    href: https://github.com/MarieEtienne/premierspas
+
+      
+output:
+  html_document:
+    theme: lumen
+    highlight: haddock

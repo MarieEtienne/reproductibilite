@@ -1,0 +1,59 @@
+---
+title: "Introduction to reproducible science"
+author: Marie-Pierre Etienne
+institute: "https://github.com/MarieEtienne/reproductibility"
+date: "Septembre 2022"
+csl: "../resources/apa-no-doi-no-issue.csl"
+output:
+   xaringan::moon_reader:
+    css: [  'metropolis',  '../courses_tools/resources/mpe_pres.css']
+    lib_dir: libs
+    nature:
+      ratio: 16:10
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: '../courses_tools/resources/collapseoutput.js'
+    includes:
+      after_body: '../courses_tools/resources/insert-logo.html'
+---
+
+
+
+```{r setup, include = FALSE,  eval = TRUE}
+main_dir <-  '..'
+common_img_dir <- file.path(main_dir,'courses_tools','resources', 'common_figs')
+course_img_dir <- file.path(main_dir,'resources', 'figs')
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "alphabetic",
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+myBib <- ReadBib('bibliography.bib', check = FALSE)
+with_sol <- TRUE ## in order to control the output
+with_course <- TRUE
+```
+
+
+
+
+
+---
+name: motiv
+# Motivations
+
+
+---
+template: motiv
+
+(https://youtu.be/s3JldKoA0zw)[ok]
+
+
+---
+
+# Références
+
+```{r refs, echo=FALSE, results="asis", eval = TRUE, cache = FALSE}
+PrintBibliography(myBib)
+```
