@@ -1,7 +1,7 @@
 ---
-title: "R : premier pas"
+title: "Science reproductible"
 description: |
-  Ce site contient les liens vers les données et les supports de cours pour la formation. 
+  Ce site contient les éléments clés du cours d'introduction aux sciences reproductibles (3H) dispensés dans le cadre de la spécialité ingénieur en science des données ainsi que quelques références pour aller plus loin.
 output: 
   html_document:
    toc: false
@@ -19,36 +19,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+Ce cours ets une introduction à la notion de reproductibilité et mettra en oeuvre largement l'utilisation du système de contrôle de version de code (verionning dans la suite)  git et de la plateforme Github.
 
-# Installation logiciels pour la formation
+# Pré  recquis
 
+Pour tirer profit de ce cours, vous aurez besoin 
+   - d'une installation fonctionnelle de git, vous pouvez vous rendre sur  (https://git-scm.com/downloads)[téléchargement git] et cliquer sur l'écran à droite de la page qui vous propose d'installer git selon votre système d'exploitation.
+   - d'un compte sur la plateforme Github. Une petite mise en garde, la plateforme Github vous servira de vitrine professionnelle et poura être visitée par des potentiels recuteurs  (Evitez donc les noms de login tels que  bogoss, turlututu, toto ou n'importe quoi de ce style).
 
-Il est préférable de commencer par installer R avant d’installer RStudio.
-Installation de R
-Windows : le premier lien sur la page  http://cran.r-project.org/bin/windows/base/  permet de télécharger programme d’installation. Une fois le programme d’installation lancé, il suffira d’installer R avec les options par défaut. 
-Mac OS X :les fichiers d’installation sont disponibles à http://cran.r-project.org/bin/macosx/.
-Linux :  R est disponible dans le  gestionnaire de paquets, cela pouvant dépendre d’une distribution de Linux à une autre.
-Installation de RStudio
-
-La page  http://www.rstudio.com/products/rstudio/download/ permet de télécharger  la dernière version stable de Rstudio. Il faut choisir l’installateur correspondant à votre système d’exploitation et suivre la procédure.
-
-
-# Les données 
-
-Toutes les données qui seront utilisées dans le cours sont diponibles sur [cette page](https://marieetienne.github.io/data.html)
-
-
-# Les supports de cours 
-
-Le cours aborde
-
-- [Une introduction](_presentation/introduction.html)
-- [La manipulation de données](_presentation/manip.html)
-- [la visualisation de données](_presentation/visu.html)
-- [Une introduction au modèle linéaire](_presentation/modelelineaire.html)
-
-
-
-# Fiches protocole
-
-- [Importation des données](http://marieetienne.github.io/h_import_data.html)
