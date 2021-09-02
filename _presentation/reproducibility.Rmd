@@ -141,9 +141,13 @@ Git n'est pas facile à apprendre et à maîtriser.
 
 Ce cours est géré avec git.
 
+```{r git_illustration, eval = FALSE}
+git log
+```
 
 
 
+---
 
 # Références
 
