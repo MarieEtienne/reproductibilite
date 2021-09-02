@@ -5,7 +5,7 @@ rmarkdown::render_site(encoding = 'UTF-8')
 system('mkdir render/courses_tools') 
 system('mkdir render/resources') 
 system( glue::glue( 'cp -rf courses_tools/resources render/courses_tools/.'))
-system( glue::glue( 'cp -rf resources/figs render/resources/.'))
+system( glue::glue( 'cp -rf resources/common_figs render/resources/.'))
 
 source(file.path('courses_tools','R', 'load_packages.R'))
 

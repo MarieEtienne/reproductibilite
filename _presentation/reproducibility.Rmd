@@ -1,7 +1,7 @@
 ---
-title: "Introduction to reproducible science"
+title: "Introduction à la science reproductible"
 author: Marie-Pierre Etienne
-institute: "https://github.com/MarieEtienne/reproductibility"
+institute: "https://github.com/MarieEtienne/reproductibilite"
 date: "Septembre 2022"
 csl: "../resources/apa-no-doi-no-issue.csl"
 output:
@@ -43,14 +43,107 @@ with_course <- TRUE
 name: motiv
 # Motivations
 
-
 ---
 template: motiv
 
-(https://youtu.be/s3JldKoA0zw)[ok]
+## La recherche reproductible
+
+
+ Dans leur [papier](../resources/bes2.1801.pdf) `r Citet(myBib,'alston2021beginner')` font le point sur la question de la recherche reproductible en écologie.
+ 
+ 
+ Ils identifient des  [Points clé](../resources/Bes2.1801_crop.pdf)
+
+
+Les journaux scientifiques exigent de plus en plus de reproductibilité.
+
+--
+
+## En pratique
+
+Une [vidéo](https://youtu.be/s3JldKoA0zw) de  [Ignasi Bartomeus](https://bartomeuslab.com/)  vaut mieux qu'un long discours 
+
+
+--
+
+## Objectif de ce cours 
+
+Initier aux outils pour faciliter l'étape 2.
 
 
 ---
+
+# Vue d'ensemble et panorama d'outils
+
+## Le code 
+
+.care[git] pour
+
+- garder des traces des différentes versions du code
+- pour travailler à plusieurs
+- pour relire/amender le code des autres
+
+--
+
+
+## Autour du code 
+
+- [Rmarkdown](https://rmarkdown.rstudio.com/) associe  du code R et du texte pour
+
+  * des exemples d'utilisations, 
+  * les fichiers d'aide de R, 
+  * des articles, 
+  * des dashboards ....
+  
+- Les [Jupyter notebooks](https://jupyter.org/)  permettent pour différents languages (Python, R, Julia, ...) 
+
+ [Computo](https://computo.sfds.asso.fr/) réclame des contributions sous forme de Jupyter notebook ou Rmarkdown
+
+
+--
+
+## Figer/Gerer les versions de logiciel utilisés 
+
+Pour assurer la reproductibilité, il ne suffit pas de s'assurer que le code a tourné une fois sur une machine avec succès.  
+
+
+Le systeme de container [Docker](https://www.docker.com/) permet de figer un environnement sur lequel le programme fonctionne.
+
+---
+
+# Le trio gagnant de la recherche reproduction avec R
+
+- .care[git]
+- .care[Rmarkdown]
+- Docker
+
+
+---
+name: gitintro
+# Introduction à git
+
+---
+template: gitintro
+
+## Qu'est ce que git ?
+
+Linus Torvalds: *I'm an egotistical bastard, and I name all my projects after myself. First Linux, now [git](https://www.wordreference.com/enfr/git).*
+
+--
+
+Git est un système de contrôle de version (le plus largement utilisé aujourd'hui). Il permet de suivre l'ensemble des modifications apportées à un code depuis sa création.
+
+Git est très performant.
+
+Git n'est pas facile à apprendre et à maîtriser.
+
+--
+
+Ce cours est géré avec git.
+
+
+
+
 
 # Références
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Introduction to reproducible science</title>
+    <title>Introduction à la science reproductible</title>
     <meta charset="utf-8" />
     <meta name="author" content="Marie-Pierre Etienne" />
     <script src="libs/header-attrs-2.7/header-attrs.js"></script>
@@ -12,9 +12,9 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Introduction to reproducible science
+# Introduction à la science reproductible
 ### Marie-Pierre Etienne
-### <a href="https://github.com/MarieEtienne/reproductibility" class="uri">https://github.com/MarieEtienne/reproductibility</a>
+### <a href="https://github.com/MarieEtienne/reproductibilite" class="uri">https://github.com/MarieEtienne/reproductibilite</a>
 ### Septembre 2022
 
 ---
@@ -32,23 +32,113 @@ class: center, middle, inverse, title-slide
 name: motiv
 # Motivations
 
-
 ---
 template: motiv
 
-(https://youtu.be/s3JldKoA0zw)[ok]
+## La recherche reproductible
+
+
+ Dans leur [papier](../resources/bes2.1801.pdf) Alston and Rick [AR21] font le point sur la question de la recherche reproductible en écologie.
+ 
+ 
+ Ils identifient des  [Points clé](../resources/Bes2.1801_crop.pdf)
+
+
+Les journaux scientifiques exigent de plus en plus de reproductibilité.
+
+--
+
+## En pratique
+
+Une [vidéo](https://youtu.be/s3JldKoA0zw) de  [Ignasi Bartomeus](https://bartomeuslab.com/)  vaut mieux qu'un long discours 
+
+
+--
+
+## Objectif de ce cours 
+
+Initier aux outils pour faciliter l'étape 2.
 
 
 ---
 
+# Vue d'ensemble et panorama d'outils
+
+## Le code 
+
+.care[git] pour
+
+- garder des traces des différentes versions du code
+- pour travailler à plusieurs
+- pour relire/amender le code des autres
+
+--
+
+
+## Autour du code 
+
+- [Rmarkdown](https://rmarkdown.rstudio.com/) associe  du code R et du texte pour
+
+  * des exemples d'utilisations, 
+  * les fichiers d'aide de R, 
+  * des articles, 
+  * des dashboards ....
+  
+- Les [Jupyter notebooks](https://jupyter.org/)  permettent pour différents languages (Python, R, Julia, ...) 
+
+ [Computo](https://computo.sfds.asso.fr/) réclame des contributions sous forme de Jupyter notebook ou Rmarkdown
+
+
+--
+
+## Figer/Gerer les versions de logiciel utilisés 
+
+Pour assurer la reproductibilité, il ne suffit pas de s'assurer que le code a tourné une fois sur une machine avec succès.  
+
+
+Le systeme de container [Docker](https://www.docker.com/) permet de figer un environnement sur lequel le programme fonctionne.
+
+---
+
+# Le trio gagnant de la recherche reproduction avec R
+
+- .care[git]
+- .care[Rmarkdown]
+- Docker
+
+
+---
+name: gitintro
+# Introduction à git
+
+---
+template: gitintro
+
+## Qu'est ce que git ?
+
+Linus Torvalds: *I'm an egotistical bastard, and I name all my projects after myself. First Linux, now [git](https://www.wordreference.com/enfr/git).*
+
+--
+
+Git est un système de contrôle de version (le plus largement utilisé aujourd'hui). Il permet de suivre l'ensemble des modifications apportées à un code depuis sa création.
+
+Git est très performant.
+
+Git n'est pas facile à apprendre et à maîtriser.
+
+--
+
+Ce cours est géré avec git.
+
+
+
+
+
 # Références
 
-
-```
-## You haven't cited any references in this bibliography yet.
-```
-
-NULL
+Alston, J. M. and J. A. Rick (2021). "A Beginner’s Guide to Conducting
+Reproducible Research". In: _Bulletin of the Ecological Society of
+America_ 102.2, pp. 1-14.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
