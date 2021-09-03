@@ -137,7 +137,19 @@ Git est très performant.
 
 Git n'est pas facile à apprendre et à maîtriser.
 
---
+---
+
+---
+template: gitintro
+
+## Graphiquement, sous forme d'arbre
+
+<img src= !https://illustrated-git.readthedocs.io/en/latest/_images/object-branch.svg width="100" alt = "simple branche"></img>
+
+
+
+
+
 
 Ce cours est géré avec git.
 
