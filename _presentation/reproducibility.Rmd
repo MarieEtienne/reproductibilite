@@ -144,7 +144,7 @@ template: gitintro
 
 ## Graphiquement, sous forme d'arbre
 
-<img src="https://illustrated-git.readthedocs.io/en/latest/_images/object-branch.svg" width="100" height = "900" alt = "simple branche"></img>
+<img src="https://illustrated-git.readthedocs.io/en/latest/_images/object-branch.svg" width="100" height = "400" alt = "simple branche"></img>
 
 
 Cf example git_example avec la commande
@@ -158,12 +158,23 @@ git log
 ---
 template: gitintro
 
-## Cloner un repo distant
+## Utiliser git : configuration
 
-On va jouer avec ces fonctionnalités.
+le but de git est de garder une trace des différentes versions d'un projet et de leur auteur, il faut donc s'identifier. Dans une console git taper la commande :
+
+```{r git_config, eval = FALSE}
+git config --global user.email "votre adresse mail"
+git config --global user.name "votre nom"`
+git config -l ## pour vérifier
+```
+
+---
+template: gitintro
+
+## Utiliser git : cloner un repo distant
 
 
-* Cloner le dépot qui va nous servir d'example, dans une console git taper la commande 
+* Cloner le dépot qui va nous servir d'example, dans une console git taper la commande :
 
 ```{r git_clone, eval = FALSE}
 ls   #commande qui liste le contenu d'un répertoire
@@ -174,7 +185,11 @@ ls # on regarde ce qui est maintenant dans le repo
 --
 
 * Taper la commande `git log`
---
+
+---
+template: gitintro
+
+## Utiliser git : contribuer au code
 
 * Ouvrir le fichier `manchots.Rmd` et ajouter votre nom et la liste des auteurs et sauvegarder votre fichier . 
 --
@@ -182,32 +197,35 @@ ls # on regarde ce qui est maintenant dans le repo
 * Taper la commande `git log`
 --
 
-* Taper la commande `git status` 
---
+* Taper la suite de commande :
 
-* Taper la commande `git add manchots.Rmd` 
---
-
-* Taper la commande `git status` 
---
-
-* `git commit -m "Ajout d'un auteur"`
-
---
-
-commit refusé car git n'est pas configuré : un commit c'est un photo de l'ensemble du projet ET un auteur
-
-*  
-```{r git_config, eval = FALSE}
-git config --global user.email "votre adresse mail"
-git config --global user.name "votre nom"`
-git commit -m "Ajout d'un auteur"
-git log 
+```{r status_diff, eval = FALSE}
+git status ## etat de notre projet
 git diff
-git diff  origin/master
-git push
-git diff manchots.Rmd origin/master
 ```
+
+--
+
+* Taper la commande `git add manchots.Rmd`  puis refaire les commandes précédentes
+
+--
+
+
+* Taper la commande `git commit -m "Ajout d'un auteur"` et à nouveau les commandes pour connaitre l'état du projet.
+
+--
+
+La version actuelle du projet est donc bien enregistrée dans le système de suivi, mais nous sommes les seuls à le savoir. On peut transmettre ces modifications au repo distant dont nous sommes partis.
+
+Pour voir les différences avec le repo distant `git diff origin/master`.
+
+Pour envoyer nos modifications `git push`.
+
+La copie locale et la version distante sont maintenant identidque comment le vérifier ?
+
+--
+
+`git diff origin/master..master`
  
 
 
