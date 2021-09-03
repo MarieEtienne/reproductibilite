@@ -137,25 +137,78 @@ Git est très performant.
 
 Git n'est pas facile à apprendre et à maîtriser.
 
----
+
 
 ---
 template: gitintro
 
 ## Graphiquement, sous forme d'arbre
 
-<img src= !https://illustrated-git.readthedocs.io/en/latest/_images/object-branch.svg width="100" alt = "simple branche"></img>
+<img src="https://illustrated-git.readthedocs.io/en/latest/_images/object-branch.svg" width="100" height = "900" alt = "simple branche"></img>
 
 
-
-
-
-
-Ce cours est géré avec git.
+Cf example git_example avec la commande
 
 ```{r git_illustration, eval = FALSE}
 git log
 ```
+
+
+
+---
+template: gitintro
+
+## Cloner un repo distant
+
+On va jouer avec ces fonctionnalités.
+
+
+* Cloner le dépot qui va nous servir d'example, dans une console git taper la commande 
+
+```{r git_clone, eval = FALSE}
+ls   #commande qui liste le contenu d'un répertoire
+git clone  nomdudepot # commande qui clone effectivement le repot distant
+ls # on regarde ce qui est maintenant dans le repo
+```
+
+--
+
+* Taper la commande `git log`
+--
+
+* Ouvrir le fichier `manchots.Rmd` et ajouter votre nom et la liste des auteurs et sauvegarder votre fichier . 
+--
+
+* Taper la commande `git log`
+--
+
+* Taper la commande `git status` 
+--
+
+* Taper la commande `git add manchots.Rmd` 
+--
+
+* Taper la commande `git status` 
+--
+
+* `git commit -m "Ajout d'un auteur"`
+
+--
+
+commit refusé car git n'est pas configuré : un commit c'est un photo de l'ensemble du projet ET un auteur
+
+*  
+```{r git_config, eval = FALSE}
+git config --global user.email "votre adresse mail"
+git config --global user.name "votre nom"`
+git commit -m "Ajout d'un auteur"
+git log 
+git diff
+git diff  origin/master
+git push
+git diff manchots.Rmd origin/master
+```
+ 
 
 
 
