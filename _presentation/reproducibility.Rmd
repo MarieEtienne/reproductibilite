@@ -1,5 +1,5 @@
 ---
-title: "Introduction à la science reproductible"
+title: "Introduction aux outils de la science reproductible"
 author: Marie-Pierre Etienne
 institute: "https://github.com/MarieEtienne/reproductibilite"
 date: "Septembre 2022"
@@ -37,9 +37,6 @@ with_course <- TRUE
 
 
 
-
-
----
 name: motiv
 # Motivations
 
