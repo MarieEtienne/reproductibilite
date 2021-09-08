@@ -2,7 +2,7 @@ name: "Reproducibility"
 title: "Introduction to reproducible science"
 description: |
   Introduction to reproducibility for Datascience student at Agrocampus Ouest
-base_url: https://marietienne.github.io/c_premier_pas
+base_url: https://marietienne.github.io/reproductibilite
 output_dir: "render"
 navbar:
   logo: LogoAgrocampusOuest.jpg
@@ -17,7 +17,7 @@ navbar:
   right:
   - text: "Github"
     icon: fab fa-github
-    href: https://github.com/MarieEtienne/premierspas
+    href: https://github.com/MarieEtienne/eproductibilite
 
       
 output:
