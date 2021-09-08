@@ -38,7 +38,7 @@ template: motiv
  Dans leur [papier](../resources/bes2.1801.pdf) Alston and Rick [AR21] font le point sur la question de la recherche reproductible en écologie.
  
  
- Ils identifient des  [Points clé](../resources/Bes2.1801_crop.pdf)
+ Ils identifient des  [Points clé](../resources/bes2.1801_crop.pdf)
 
 
 Les journaux scientifiques exigent de plus en plus de reproductibilité.
@@ -63,7 +63,7 @@ Initier aux outils pour faciliter l'étape 2.
 
 ## Le code 
 
-.care[git] pour
+- .care[git] pour
 
 - garder des traces des différentes versions du code
 - pour travailler à plusieurs
@@ -74,14 +74,14 @@ Initier aux outils pour faciliter l'étape 2.
 
 ## Autour du code 
 
-- [Rmarkdown](https://rmarkdown.rstudio.com/) associe  du code R et du texte pour
+- .care[[Rmarkdown](https://rmarkdown.rstudio.com/)] associe  du code R et du texte pour
 
   * des exemples d'utilisations, 
   * les fichiers d'aide de R, 
   * des articles, 
   * des dashboards ....
   
-- Les [Jupyter notebooks](https://jupyter.org/)  permettent pour différents languages (Python, R, Julia, ...) 
+- Les [Jupyter notebooks](https://jupyter.org/)  permettent la même chose pour différents languages (Python, R, Julia, ...) 
 
  [Computo](https://computo.sfds.asso.fr/) réclame des contributions sous forme de Jupyter notebook ou Rmarkdown
 
@@ -147,13 +147,13 @@ template: gitintro
 
 ## Utiliser git : configuration
 
-le but de git est de garder une trace des différentes versions d'un projet et de leur auteur, il faut donc s'identifier. Dans une console git taper la commande :
+Le but de git est de garder une trace des différentes versions d'un projet et de leur auteur, il faut donc s'identifier. Dans une console git taper la commande :
 
 
 ```r
 git config --global user.email "votre adresse mail"
 git config --global user.name "votre nom"`
-git config -l ## pour vérifier
+git config -l # pour vérifier
 ```
 
 ---
@@ -166,6 +166,7 @@ template: gitintro
 
 
 ```r
+cd # pour se placer dans son repertoire pricipal
 ls   #commande qui liste le contenu d'un répertoire
 git clone  nomdudepot # commande qui clone effectivement le repot distant
 ls # on regarde ce qui est maintenant dans le repo
@@ -190,7 +191,7 @@ template: gitintro
 
 
 ```r
-git status ## etat de notre projet
+git status # etat de notre projet
 git diff
 ```
 
