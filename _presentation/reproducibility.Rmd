@@ -331,6 +331,15 @@ On édite le fichier pour choisir la bonne version, puis `git add, commit push`.
 
 ** Prendre un moment pour développer à deux ou trois et gérer nos conflits **
 
+
+---
+template: gitintro
+
+## Utiliser git : vision du processus
+
+<img src="../resources/figs/Vision_globale_git_step3.png" width="800" height = "300" alt = "bilan1"></img>
+
+
 ---
 template: gitintro
 
