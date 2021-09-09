@@ -97,7 +97,7 @@ Le systeme de container [Docker](https://www.docker.com/) permet de figer un env
 
 ---
 
-# Le trio gagnant de la recherche reproduction avec R
+# Le trio gagnant de la recherche reproductible avec R
 
 - .care[git]
 - .care[Rmarkdown]
@@ -246,7 +246,7 @@ Pour voir les différences avec le repo distant `git diff origin/master`.
 
 Pour envoyer nos modifications `git push`.
 
-Le contenu du repo local est poussé sur le serveur. Le repo local et  la copie distante sont identiques  ?
+Le contenu du repo local est poussé sur le serveur. Le repo local et  la copie distante sont-ils identiques  ?
 
 --
 
@@ -255,7 +255,31 @@ Le contenu du repo local est poussé sur le serveur. Le repo local et  la copie 
 
 --
 
-* Modifier le fichier `manchots.Rmd`, que va donner la commande  `git diff master origin/master`, pourquoi ?
+* Modifier le fichier `manchots.Rmd`, que va donner la commande  `git diff master origin/master`, pourquoi ? 
+
+* Que va donner la commande `git diff origin/master` ?
+
+
+
+---
+template: gitintro
+
+## Utiliser git : résumé sous forme d'arbres
+
+* Avant de pousser nos modifications 
+
+&lt;img src="../resources/figs/git3.svg" width="600" height = "200" alt = "bilan1"&gt;&lt;/img&gt;
+
+---
+template: gitintro
+
+## Utiliser git : résumé sous forme d'arbres
+
+* Après avoir poussé  nos modifications 
+
+&lt;img src="../resources/figs/git3_bis.svg" width="600" height = "200x" alt = "bilan1"&gt;&lt;/img&gt;
+
+
 
 
 ---
@@ -294,7 +318,30 @@ git pull
 
 Si personne n'a modifié la même portion du fichier que vous, git va tranquillement intégrer les modifications des autres dans votres code.
 
---
+
+---
+template: gitintro
+
+## Utiliser git : Arbre des commits lors d'un pull
+
+&lt;img src="../resources/figs/git4.svg" width="800" height = "600" alt = "bilan1"&gt;&lt;/img&gt;
+
+
+
+
+---
+template: gitintro
+
+## Utiliser git : Arbre des commits 
+
+&lt;img src="../resources/figs/git6.svg" width="800" height = "600" alt = "bilan1"&gt;&lt;/img&gt;
+
+---
+
+template: gitintro
+
+## Utiliser git : Travailler à plusieurs en conflit
+
 
 Si la même portion du fichier a été modifiée sur le serveur, git panique,  c'est le 
 
@@ -324,7 +371,7 @@ L'objectif de cette classe est de proposer des représentations graphiques de ce
 On édite le fichier pour choisir la bonne version, puis `git add, commit push`.
 
 
-** Prendre un moment pour développer à deux ou trois et gérer nos conflits **
+** Prendre un moment pour déveloper à deux ou trois et gérer nos conflits **
 
 
 ---
@@ -335,28 +382,6 @@ template: gitintro
 &lt;img src="../resources/figs/Vision_globale_git_step3.png" width="800" height = "300" alt = "bilan1"&gt;&lt;/img&gt;
 
 
----
-template: gitintro
-
-## Utiliser git : Arbre des commits dans un cadre de conflit
-
-&lt;img src="../resources/figs/git4.svg" width="800" height = "600" alt = "bilan1"&gt;&lt;/img&gt;
-
-
----
-template: gitintro
-
-## Utiliser git : Arbre des commits dans un cadre de conflit
-
-&lt;img src="../resources/figs/git5.svg" width="800" height = "600" alt = "bilan1"&gt;&lt;/img&gt;
-
----
-template: gitintro
-
-## Utiliser git : Arbre des commits dans un cadre de conflit
-
-&lt;img src="../resources/figs/git6.svg" width="800" height = "600" alt = "bilan1"&gt;&lt;/img&gt;
-
 
 
 ---
@@ -365,6 +390,106 @@ template: gitintro
 ## Utiliser git : développer sans se géner pour limiter les conflits
 
 Pour limiter les conflits, pour faire des tests sans géner les autres, il existe la notion de branche.
+
+--
+
+&lt;img src="../resources/figs/git7.svg" width="800" height = "600" alt = "bilan1"&gt;&lt;/img&gt;
+
+
+---
+template: gitintro
+
+## les branches en pratique
+
+* Pour créer une branche
+
+
+```r
+git branch test
+```
+
+* Pour se placer sur cette branche
+
+
+```r
+git switch test
+```
+
+On peut faire les modifications que l'on veut, les ajouter, les commiter etc mais quand on retournera sur la branche master, on retrouvera notre projet comme on l'a laissé avant de faire ce branchement
+
+
+---
+template: gitintro
+
+## les branches  : illustration
+
+On vérifie qu'on est dans la branche test `git branch` (`git branch -a` pour voir aussi les branches distantes).
+
+La branche dans laquelle on se trouve est décorée d'une étoile.
+
+On switch vers cette branche si besoin.
+
+
+* Effacer le fichier `manchots.Rmd ` puis prendre en compte  cette modification dans le repo en faisant
+
+
+```r
+rm manchots.Rmd # ou l'effacer avec l'explorateur
+git status
+git add manchots.Rmd # on ajoute les modifications concernant le fichier manchots.Rmd, i.e sa suppression
+git commit -m "Suppression du fichier manchots.Rmd"
+ls #liste le contenu du répertoire de travail
+```
+
+* Retourner vers la branche master `git switch master` et regarder le contenu de votre répertoire de travail. 
+
+--
+
+On peut supprimer cette branche de test inutile avec la commande
+
+
+
+```r
+git branch  -d test 
+```
+
+--
+
+Les modifications de cette branche n'ont été prises en compte nulle part, on perdra le travail si on supprime la branche, git est inquiet pour nous. 
+
+on lui indique de ne pas s'inquiéter avec -D
+
+
+```r
+git branch  -D test 
+```
+
+---
+template: gitintro
+
+## les branches  : incorporer le travail d'une autre branche  : `git merge`
+
+
+* Créer une branche `dev` et mettez vous sur cette branche
+
+* Ajouter un joli graphique dans `Manchots.Rmd` puis integrer vos modifications dans le projet sur la branche `dev` 
+
+* Pousser votre travail sur le repo distant (regarder les indications de git sur les options de `git push`) (optionnel pour la suite mais utile en général)
+
+* Mettez vous sur la branche `master` et taper la commande `git merge dev` . Vous avez intégrer les modifications faites dans dev, dans la branche master.
+
+* Dessiner l'arbre des commits dans ce cas
+
+---
+template: gitintro
+
+## pour de vrai (ou presque)
+
+Au sein de votre équipe, essayer de produire des graphiques, des analyses sur le jeu de données manchots (peut etre une ACP, ou tout autre analyse qui vous semble pertinente). 
+
+Les bonnes pratiques, on travaille chacun sur une branche et quuand le résultat nous convient on le merge dans master.
+
+Le plus beau graphe de commits, gagne un chokobon !!!
 
 
 
