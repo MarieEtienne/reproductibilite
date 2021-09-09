@@ -11,9 +11,6 @@ navbar:
   - text: "Supports"
     icon: fa-user-graduate
     href: _presentation/reproducibility.html
-  - text: "Tutorial"
-    icone: fa-laptop
-    href: _presentation/tutorial.html
   right:
   - text: "Github"
     icon: fab fa-github
