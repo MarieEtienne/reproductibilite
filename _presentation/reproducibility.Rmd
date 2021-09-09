@@ -132,7 +132,7 @@ Git est un système de contrôle de version (le plus largement utilisé aujourd'
 
 Git est très performant.
 
-Git n'est pas facile à apprendre et à maîtriser.
+Git est un peu sauvage, pas simple  à maîtriser.
 
 
 
@@ -141,7 +141,7 @@ template: gitintro
 
 ## Graphiquement, sous forme d'arbre
 
-<img src="https://illustrated-git.readthedocs.io/en/latest/_images/object-branch.svg" width="100" height = "400" alt = "simple branche"></img>
+<img src="../resources/figs/git1.svg" width="900" height = "300" alt = "simple branche"></img>
 
 
 Cf example git_example avec la commande
@@ -184,6 +184,8 @@ ls # on regarde ce qui est maintenant dans le repo
 
 * Taper la commande `git log`
 
+* ou un peu plus visuel, `gitk`
+
 ---
 template: gitintro
 
@@ -192,10 +194,10 @@ template: gitintro
 * Ouvrir le fichier `manchots.Rmd` et ajouter votre nom et la liste des auteurs et sauvegarder votre fichier . 
 --
 
-* Taper la commande `git log`
+* Taper la commande `git log` dans la console
 --
 
-* Taper la suite de commande :
+* Taper la suite de commandes :
 
 ```{r status_diff, eval = FALSE}
 git status # etat de notre projet
@@ -213,25 +215,170 @@ git diff
 
 --
 
+* Dessiner l'arbre des commits
+
+--
+
+<img src="../resources/figs/git2.svg" width="800" height = "250" alt = "simple branche"></img>
+
+
+
+---
+template: gitintro
+
+## Utiliser git : vision du processus
+
+<img src="../resources/figs/Vision_globale_git_step1.png" width="800" height = "300" alt = "bilan1"></img>
+
+--
+
+### Analogie avec une photo (snapshot)
+
+- Dans le répertoire de travail, on essaie des poses (Working directory)
+
+- Quand est satisfait de la position d'un objet, on lui demande de rester ainsi (Staging area)
+
+- Quand on est satisfait de la position de tous les objets, on prend la photo (local repos)
+
+
+---
+template: gitintro
+
+## Utiliser git : Travailler à plusieurs
+
+
 La version actuelle du projet est donc bien enregistrée dans le système de suivi, mais nous sommes les seuls à le savoir. On peut transmettre ces modifications au repo distant dont nous sommes partis.
 
 Pour voir les différences avec le repo distant `git diff origin/master`.
 
 Pour envoyer nos modifications `git push`.
 
-La copie locale et la version distante sont maintenant identidque comment le vérifier ?
+Le contenu du repo local est poussé sur le serveur. Le repo local et  la copie distante sont identiques  ?
 
 --
 
-`git diff origin/master..master`
+`git diff master origin/master`
  
+
+--
+
+* Modifier le fichier `manchots.Rmd`, que va donner la commande  `git diff master origin/master`, pourquoi ?
+
+
+---
+template: gitintro
+
+## Utiliser git : vision du processus
+
+<img src="../resources/figs/Vision_globale_git_step2.png" width="800" height = "300" alt = "bilan1"></img>
+
+--
+
+### Analogie avec une photo (snapshot)
+
+- Dans le répertoire de travail, on essaie des poses (Working directory)
+
+- Quand est satisfait de la position d'un objet, on lui demande de rester ainsi (Staging area)
+
+- Quand on est satisfait de la position de tous les objets, on prend la photo (local repos)
+
+- On publie la photo pour que tout le monde en profite (remote repo)
+
+
+---
+template: gitintro
+
+## Utiliser git : Travailler à plusieurs
+
+Le repo distant a pu être mis à jour pendant qu'on travaillait sur la version locale. Dans ce cas il faut intégrer les modifications.
+
+```{r git_pull, eval = FALSE }
+git pull 
+```
+
+--
+
+Si personne n'a modifié la même portion du fichier que vous, git va tranquillement intégrer les modifications des autres dans votres code.
+
+--
+
+Si la même portion du fichier a été modifiée sur le serveur, git panique,  c'est le 
+
+--
+
+.care[CONFLIT]
+
+
+```{r git_conflit, eval = FALSE}
+CONFLICT (content): Merge conflict in manchots.Rmd
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+--
+Il faut résoudre le conflit 
+
+```{r git_conflit_resolve, eval = FALSE}
+
+<<<<<<< HEAD
+L'objectif de cette classe est de proposer des représentations graphiques de ces données en collaborant à l'aide de l'outil git. Il faut bien une raison d'utiliser git.
+=======
+L'objectif de cette classe est de proposer des représentations graphiques de ces données en collaborant à l'aide de l'outil git. C'est un prétexte pour utiliser git.
+>>>>>>> conflit
+```
+
+On édite le fichier pour choisir la bonne version, puis `git add, commit push`.
+
+
+** Prendre un moment pour développer à deux ou trois et gérer nos conflits **
+
+---
+template: gitintro
+
+## Utiliser git : Arbre des commits dans un cadre de conflit
+
+<img src="../resources/figs/git4.svg" width="800" height = "600" alt = "bilan1"></img>
+
+
+---
+template: gitintro
+
+## Utiliser git : Arbre des commits dans un cadre de conflit
+
+<img src="../resources/figs/git5.svg" width="800" height = "600" alt = "bilan1"></img>
+
+---
+template: gitintro
+
+## Utiliser git : Arbre des commits dans un cadre de conflit
+
+<img src="../resources/figs/git6.svg" width="800" height = "600" alt = "bilan1"></img>
+
+
+
+---
+template: gitintro
+
+## Utiliser git : développer sans se géner pour limiter les conflits
+
+Pour limiter les conflits, pour faire des tests sans géner les autres, il existe la notion de branche.
+
+
+
+
 
 
 
 ---
 
-# Références
+# Pour finir
+
+## Des aides mémoires
+
+[Git Cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+
+## Références
 
 ```{r refs, echo=FALSE, results="asis", eval = TRUE, cache = FALSE}
 PrintBibliography(myBib)
 ```
+
