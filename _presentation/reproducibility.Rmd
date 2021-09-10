@@ -540,7 +540,7 @@ template: gitintro
 
 On va supprimer ce commit en appliquant son contraire !
 
-```{r git_checkout_suppress, eval = FALSE}
+```{r git_checkout_suppress_2, eval = FALSE}
 git log --oneline
 git revert 9647037
 git log --oneline
