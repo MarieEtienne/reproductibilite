@@ -169,8 +169,7 @@ git config -l # pour vérifier
 
 ---
 
-
-## Cloner un repo distant
+# Partir de l'existant : cloner un repo distant
 
 
 * Cloner le dépot qui va nous servir d'example, dans une console git taper la commande :
@@ -189,9 +188,14 @@ ls # on regarde ce qui est maintenant dans le repo
 * ou un peu plus visuel, `gitk`
 
 ---
-template: gitintro
+name: contribute
 
-## Utiliser git : contribuer au code
+# Contribuer au code
+
+---
+template: contribute
+
+## Faire son premier commit 
 
 * Ouvrir le fichier `manchots.Rmd` et ajouter votre nom et la liste des auteurs et sauvegarder votre fichier . 
 --
@@ -226,9 +230,9 @@ git diff
 
 
 ---
-template: gitintro
+template: contirbute
 
-## Utiliser git : vision du processus
+## Vision global du processus
 
 <img src="../resources/figs/Vision_globale_git_step1.png" width="800" height = "300" alt = "bilan1"></img>
 
@@ -244,9 +248,9 @@ template: gitintro
 
 
 ---
-template: gitintro
+template: contribute
 
-## Utiliser git : Travailler à plusieurs
+## Travailler à plusieurs : lien avec le repo distant
 
 
 La version actuelle du projet est donc bien enregistrée dans le système de suivi, mais nous sommes les seuls à le savoir. On peut transmettre ces modifications au repo distant dont nous sommes partis.
@@ -271,18 +275,16 @@ Le contenu du repo local est poussé sur le serveur. Le repo local et  la copie 
 
 
 ---
-template: gitintro
+template: contribute
 
-## Utiliser git : résumé sous forme d'arbres
+## Travailler à plusieurs : résumé sous forme d'arbre
+
 
 * Avant de pousser nos modifications 
 
 <img src="../resources/figs/git3.svg" width="600" height = "200" alt = "bilan1"></img>
 
----
-template: gitintro
-
-## Utiliser git : résumé sous forme d'arbres
+--
 
 * Après avoir poussé  nos modifications 
 
@@ -292,9 +294,9 @@ template: gitintro
 
 
 ---
-template: gitintro
+template: contribute
 
-## Utiliser git : vision du processus
+## Travailler à plusieurs : vision globale
 
 <img src="../resources/figs/Vision_globale_git_step2.png" width="800" height = "300" alt = "bilan1"></img>
 
@@ -312,9 +314,10 @@ template: gitintro
 
 
 ---
-template: gitintro
+---
+template: contribute
 
-## Utiliser git : Travailler à plusieurs
+## Travailler à plusieurs : intégrer les modifications des autres
 
 Le repo distant a pu être mis à jour pendant qu'on travaillait sur la version locale. Dans ce cas il faut intégrer les modifications.
 
@@ -328,9 +331,9 @@ Si personne n'a modifié la même portion du fichier que vous, git va tranquille
 
 
 ---
-template: gitintro
+template: contribute
 
-## Utiliser git : Arbre des commits lors d'un pull
+## Travailler à plusieurs : merge sous forme d'arbre
 
 <img src="../resources/figs/git4.svg" width="800" height = "600" alt = "bilan1"></img>
 
@@ -338,17 +341,16 @@ template: gitintro
 
 
 ---
-template: gitintro
+template: contribute
 
-## Utiliser git : Arbre des commits 
+## Travailler à plusieurs : merge sous forme d'arbre
 
 <img src="../resources/figs/git6.svg" width="800" height = "600" alt = "bilan1"></img>
 
 ---
+template: contribute
 
-template: gitintro
-
-## Utiliser git : Travailler à plusieurs en conflit
+## Travailler à plusieurs : gérer les conflits
 
 
 Si la même portion du fichier a été modifiée sur le serveur, git panique,  c'est le 
@@ -382,9 +384,9 @@ On édite le fichier pour choisir la bonne version, puis `git add, commit push`.
 
 
 ---
-template: gitintro
+template: contribute
 
-## Utiliser git : vision du processus
+## Travailler à plusieurs : vision globale 
 
 <img src="../resources/figs/Vision_globale_git_step3.png" width="800" height = "300" alt = "bilan1"></img>
 
@@ -392,9 +394,9 @@ template: gitintro
 
 
 ---
-template: gitintro
+template: contribute
 
-## Utiliser git : développer sans se géner pour limiter les conflits
+## Travailler à plusieurs : sans se gener, les branches
 
 Pour limiter les conflits, pour faire des tests sans géner les autres, il existe la notion de branche.
 
@@ -404,9 +406,9 @@ Pour limiter les conflits, pour faire des tests sans géner les autres, il exist
 
 
 ---
-template: gitintro
+template: contribute
 
-## les branches en pratique
+## Travailler à plusieurs : les branches en pratique
 
 * Pour créer une branche
 
@@ -424,9 +426,9 @@ On peut faire les modifications que l'on veut, les ajouter, les commiter etc mai
 
 
 ---
-template: gitintro
+template: contribute
 
-## les branches  : illustration
+## Travailler à plusieurs : les branches, illustration
 
 On vérifie qu'on est dans la branche test `git branch` (`git branch -a` pour voir aussi les branches distantes).
 
@@ -467,9 +469,9 @@ git branch  -D test
 ```
 
 ---
-template: gitintro
+template: contribute
 
-## les branches  : incorporer le travail d'une autre branche  : `git merge`
+## Travailler à plusieurs : incorporer le travail d'une autre branche,  merge
 
 
 * Créer une branche `dev` et mettez vous sur cette branche
@@ -485,9 +487,14 @@ template: gitintro
 
 
 ---
-template: gitintro
+name: navigate
 
-## Revenir à une ancienne version 
+# Naviguer entre les versions
+
+---
+template: navigate
+
+## Revenir à une version précédente
 
 Si on veut revenir à un état précédent du projet, on utilise la commande checkout
 
@@ -513,7 +520,7 @@ Rien n'a changé
 
 
 ---
-template: gitintro
+template: navigate
 
 ## Supprimer un commit local (pas sur le repo distant)
 
@@ -531,7 +538,7 @@ Attention cette approche est destructrice, on a perdu la trace de notre commit. 
 
 
 ---
-template: gitintro
+template: navigate
 
 ## Supprimer un commit public
 
