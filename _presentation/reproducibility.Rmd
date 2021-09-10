@@ -153,11 +153,13 @@ git log
 
 
 ---
-template: gitintro
+# Configuration
 
-## Utiliser git : configuration
 
 Le but de git est de garder une trace des différentes versions d'un projet et de leur auteur, il faut donc s'identifier. Dans une console git taper la commande :
+
+
+## Lors de la premieère utilisation après l'installation
 
 ```{r git_config, eval = FALSE}
 git config --global user.email "votre adresse mail"
@@ -523,11 +525,9 @@ git reset --hard c7687bf
 git log --oneline
 ```
 
--- 
+--
 
 Attention cette approche est destructrice, on a perdu la trace de notre commit. Il est dangereux d'utiliser cette approche avec des commits publics, car supprimer un commit peut casser l'arbre des commits.
-
----
 
 
 ---
