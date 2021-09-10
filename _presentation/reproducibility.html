@@ -480,6 +480,76 @@ template: gitintro
 
 * Dessiner l'arbre des commits dans ce cas
 
+
+
+---
+template: gitintro
+
+## Revenir à une ancienne version 
+
+Si on veut revenir à un état précédent du projet, on utilise la commande checkout
+
+Ourvrir le fichier `manchots.Rmd` et executer
+
+
+```r
+git log --oneline
+git checkout a304493
+```
+
+La version de travail du fichier manchot est dans l'état du commit `a304493`
+
+On revient à la version actuelle avec 
+
+--
+
+
+```r
+git checkout master
+```
+
+Rien n'a changé
+
+
+
+---
+template: gitintro
+
+## Supprimer un commit local (pas sur le repo distant)
+
+* Effacer le contenu du fichier `manchots.Rmd`, puis commiter cette modificaion
+
+
+```r
+git log --oneline
+git reset --hard c7687bf
+git log --oneline
+```
+
+-- 
+
+Attention cette approche est destructrice, on a perdu la trace de notre commit. Il est dangereux d'utiliser cette approche avec des commits publics, car supprimer un commit peut casser l'arbre des commits.
+
+---
+
+
+---
+template: gitintro
+
+## Supprimer un commit public
+
+
+* Effacer le contenu du fichier `manchots.Rmd`, puis commiter cette modificaion.
+
+On va supprimer ce commit en appliquant son contraire !
+
+
+```r
+git log --oneline
+git revert 9647037
+git log --oneline
+```
+
 ---
 template: gitintro
 
@@ -493,6 +563,20 @@ Le plus beau graphe de commits, gagne un chokobon !!!
 
 
 
+---
+
+# Pour finir
+
+* git est le standard dans l'industrie et la recherche pour la gestion de versions
+
+* pour apprendre git, il faut l'utiliser le plus souvent possible,
+
+* revenir à la documentation régulièrement
+
+* git workflow est une surcouche de git qui impose des bonnes pratiques
+
+* git ne dispense pas d'avoir un code propre (package `formatR`, `styleR` ) et documenter (`roxygen`)
+
 
 
 
@@ -500,6 +584,11 @@ Le plus beau graphe de commits, gagne un chokobon !!!
 ---
 
 # Pour finir
+
+## Des ressources
+
+* [le livre de git](https://git-scm.com/book/en/v2)
+* [Atlassian tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control)
 
 ## Des aides mémoires
 
