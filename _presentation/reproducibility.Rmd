@@ -338,12 +338,22 @@ template: contribute
 <img src="../resources/figs/git4.svg" width="800" height = "600" alt = "bilan1"></img>
 
 
+---
+template: contribute
+
+## Travailler à plusieurs : merge sous forme d'arbre
+
+Après le merge 
+
+<img src="../resources/figs/git5.svg" width="800" height = "600" alt = "bilan1"></img>
 
 
 ---
 template: contribute
 
 ## Travailler à plusieurs : merge sous forme d'arbre
+
+Après le push 
 
 <img src="../resources/figs/git6.svg" width="800" height = "600" alt = "bilan1"></img>
 
