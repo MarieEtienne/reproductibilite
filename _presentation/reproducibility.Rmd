@@ -6,7 +6,7 @@ date: "Septembre 2022"
 csl: "../resources/apa-no-doi-no-issue.csl"
 output:
    xaringan::moon_reader:
-    css: ['metropolis',  'mpe_pres_HDR.css']
+    css: [  'metropolis',  '../courses_tools/resources/mpe_pres_HDR.css']
     lib_dir: libs
     nature:
       ratio: 16:10
@@ -14,6 +14,8 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       beforeInit: '../courses_tools/resources/collapseoutput.js'
+    includes:
+      after_body: '../courses_tools/resources/insert-logo.html'
 ---
 
 
@@ -58,8 +60,8 @@ Les journaux scientifiques exigent de plus en plus de reproductibilité.
 
 Quelle est la bonne version du rapport ?
 
-.centerimg[
-<img src="../resources/figs/rapports.png" width="450" height = "300" alt = "versionning"></img>
+.centering[
+<img src="../resources/figs/rapports.png" width="450" height = "300" alt = "versionning" class="center"></img>
 ]
 
 ---
