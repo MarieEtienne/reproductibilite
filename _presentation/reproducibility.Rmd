@@ -6,7 +6,7 @@ date: "Septembre 2022"
 csl: "../resources/apa-no-doi-no-issue.csl"
 output:
    xaringan::moon_reader:
-    css: [  'metropolis',  '../courses_tools/resources/mpe_pres.css']
+    css: ['metropolis',  'mpe_pres_HDR.css']
     lib_dir: libs
     nature:
       ratio: 16:10
@@ -14,8 +14,6 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       beforeInit: '../courses_tools/resources/collapseoutput.js'
-    includes:
-      after_body: '../courses_tools/resources/insert-logo.html'
 ---
 
 
@@ -55,6 +53,29 @@ template: motiv
 Les journaux scientifiques exigent de plus en plus de reproductibilité.
 
 --
+
+## En pratique
+
+Quelle est la bonne version du rapport ?
+
+.centerimg[
+<img src="../resources/figs/rapports.png" width="450" height = "300" alt = "versionning"></img>
+]
+
+---
+template: motiv
+
+## La recherche reproductible
+
+
+ Dans leur [papier](../resources/bes2.1801.pdf) `r Citet(myBib,'alston2021beginner')` font le point sur la question de la recherche reproductible en écologie.
+ 
+ 
+ Ils identifient des  [Points clé](../resources/bes2.1801_crop.pdf)
+
+
+Les journaux scientifiques exigent de plus en plus de reproductibilité.
+
 
 ## En pratique
 
@@ -113,6 +134,7 @@ Le systeme de container [Docker](https://www.docker.com/) permet de figer un env
 - .care[git]
 - .care[Rmarkdown]
 - Docker
+
 
 
 ---
