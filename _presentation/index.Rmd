@@ -129,8 +129,8 @@ Le systeme de container .care[ [Docker](https://www.docker.com/) ] permet de fig
 ---
 name: system
 # Installation
-
--- 
+--
+template: system
 
 - Installation de git sur son ordinateur perso : Aller sur le [site de git](https://git-scm.com/downloads]  et cliquer sur l'écran d'ordinateur à droite qui doit vous proposer la version qui convient à votre système d'exploitation,
 
@@ -186,20 +186,7 @@ git log
 
 
 
----
-# Configuration
 
-
-Le but de git est de garder une trace des différentes versions d'un projet et de leur auteur, il faut donc s'identifier. Dans une console git taper la commande :
-
-
-## Lors de la première utilisation après l'installation
-
-```{r git_config, eval = FALSE}
-git config --global user.email "votre adresse mail"
-git config --global user.name "votre nom"`
-git config -l # pour vérifier
-```
 
 ---
 
@@ -213,7 +200,7 @@ cd # pour se placer dans son repertoire pricipal
 ls   #commande qui liste le contenu d'un répertoire
 git clone  nomdudepot # commande qui clone effectivement le repot distant
 ## dans l'exemple 
-## git clone git@github.com:MarieEtienne/reproductibilite_example.git
+## git clone git@github.com:MarieEtienne/reproductibilite_example2023.git
 ls # on regarde ce qui est maintenant dans le repo
 ```
 
