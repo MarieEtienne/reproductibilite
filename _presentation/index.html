@@ -15,7 +15,7 @@ class: center, middle, inverse, title-slide
 # Introduction aux outils de la science reproductible
 ### Marie-Pierre Etienne
 ### <a href="https://github.com/MarieEtienne/reproductibilite" class="uri">https://github.com/MarieEtienne/reproductibilite</a>
-### Septembre 2022
+### Septembre 2022 (Update septembre 2023)
 
 ---
 
@@ -35,6 +35,10 @@ template: motiv
 ## La recherche reproductible
 
 
+Une [vidéo](https://youtu.be/s3JldKoA0zw) de  [Ignasi Bartomeus](https://bartomeuslab.com/)  vaut mieux qu'un long discours 
+
+--
+
  Dans leur [papier](../resources/bes2.1801.pdf) Alston and Rick [AR21] font le point sur la question de la recherche reproductible en écologie.
  
  
@@ -44,7 +48,7 @@ template: motiv
 Les journaux scientifiques exigent de plus en plus de reproductibilité.
 
 --
-
+.pull-left[
 ## En pratique
 
 Quelle est la bonne version du rapport ?
@@ -53,33 +57,17 @@ Quelle est la bonne version du rapport ?
 &lt;img src="../resources/figs/rapports.png" width="450" height = "300" alt = "versionning" class="center"&gt;&lt;/img&gt;
 ]
 
----
-template: motiv
-
-## La recherche reproductible
-
-
- Dans leur [papier](../resources/bes2.1801.pdf) Alston and Rick [AR21] font le point sur la question de la recherche reproductible en écologie.
- 
- 
- Ils identifient des  [Points clé](../resources/bes2.1801_crop.pdf)
-
-
-Les journaux scientifiques exigent de plus en plus de reproductibilité.
-
-
-## En pratique
-
-Une [vidéo](https://youtu.be/s3JldKoA0zw) de  [Ignasi Bartomeus](https://bartomeuslab.com/)  vaut mieux qu'un long discours 
-
+]
 
 --
+
+.pull-right[
 
 ## Objectif de ce cours 
 
 Initier aux outils pour faciliter l'étape 2.
 
-
+]
 ---
 
 # Vue d'ensemble et panorama d'outils
@@ -128,6 +116,30 @@ Le systeme de container .care[ [Docker](https://www.docker.com/) ] permet de fig
 
 
 ---
+name: system
+# Installation
+
+-- 
+
+- Installation de git sur son ordinateur perso : Aller sur le [site de git](https://git-scm.com/downloads]  et cliquer sur l'écran d'ordinateur à droite qui doit vous proposer la version qui convient à votre système d'exploitation,
+
+- Création d'un [compte Github](https://github.com/),  et configuration du lien entre votre oridnateur et le serveur Github [grâce à une clé SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh),
+
+--
+
+Le but de git est de garder une trace des différentes versions d'un projet et de leur auteur, il faut donc s'identifier. Dans une console git taper la commande :
+
+
+## Lors de la première utilisation après l'installation, dans la console on peut exécuter
+
+
+```r
+git config --global user.email "votre adresse mail"
+git config --global user.name "votre nom"`
+git config -l # pour vérifier
+```
+
+---
 name: gitintro
 # Introduction à git
 
@@ -165,34 +177,22 @@ git log
 
 
 
----
-# Configuration
 
-
-Le but de git est de garder une trace des différentes versions d'un projet et de leur auteur, il faut donc s'identifier. Dans une console git taper la commande :
-
-
-## Lors de la première utilisation après l'installation
-
-
-```r
-git config --global user.email "votre adresse mail"
-git config --global user.name "votre nom"`
-git config -l # pour vérifier
-```
 
 ---
 
 # Partir de l'existant : cloner un repo distant
 
 
-* Cloner le dépot qui va nous servir d'example, dans une console git taper la commande :
+* Cloner le dépot qui va nous servir d'exemple, dans une console git taper la commande :
 
 
 ```r
 cd # pour se placer dans son repertoire pricipal
 ls   #commande qui liste le contenu d'un répertoire
 git clone  nomdudepot # commande qui clone effectivement le repot distant
+## dans l'exemple 
+## git clone git@github.com:MarieEtienne/reproductibilite_example2023.git
 ls # on regarde ce qui est maintenant dans le repo
 ```
 
@@ -593,14 +593,22 @@ git log --oneline
 ---
 template: gitintro
 
-## pour de vrai (ou presque)
+## pour de vrai (ou presque) : on s'organise
 
-Au sein de votre équipe, essayer de produire des graphiques, des analyses sur le jeu de données manchots (peut etre une ACP, ou tout autre analyse qui vous semble pertinente). 
+La classe doit produire une analyse du jeu de données manchots qui proposent
 
-Les bonnes pratiques, on travaille chacun sur une branche et quuand le résultat nous convient on le merge dans master.
+* une presentation du jeu de données qui décrit les différentes variables,
+* une analyse descriptive (la taille des ailes en fonction du poids du corps, la taille moyenne pour chaque espèce)
+* une analyse statistique pour savoir si le poids du corps et la taille des ailes sont liés
+* une analyse statistique pour savoir si le poids des manchots dépend de l'espèce et/ou de l'île.
+
+
+
+Les bonnes pratiques, on travaille chacun sur une branche et quand le résultat nous convient, on le merge dans master.
 
 Le plus beau graphe de commits, gagne un chokobon !!!
 
+Vous allez avoir de nombreux problèmes, ça vous apprendra !
 
 
 ---
