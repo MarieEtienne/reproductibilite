@@ -10,11 +10,11 @@ navbar:
   left:
   - text: "Supports"
     icon: fa-user-graduate
-    href: _presentation/reproducibility.html
+    href: _presentation/index.html
   right:
   - text: "Github"
     icon: fab fa-github
-    href: https://github.com/MarieEtienne/eproductibilite
+    href: https://github.com/MarieEtienne/reproductibilite
 
       
 output:
