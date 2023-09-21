@@ -115,7 +115,7 @@ Introducing tools to facilitate step 2.
   * some scientific papers,  ([Computo](https://computo.sfds.asso.fr/) asks for submissions throuhg Jupyter Notebook or Rmarkdown document.)
   * dashboards ....
   
-
+]
 
 --
 .pull-right[
@@ -639,6 +639,12 @@ Every one works on its own develoment branch and shae with others when he's read
 ## Cheat sheet
 
 [Git Cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+
+
+## Tobe used as a Sandbox
+
+[Learning Git Demo](https://learngitbranching.js.org/?locale=fr_FR&NODEMO=)
+
 
 ## Références
 
