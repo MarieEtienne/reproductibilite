@@ -310,12 +310,14 @@ template: contribute
 ---
 template: contribute
 
+.pull-left[
 ## The graphical tree summary
 
 <img src="../resources/figs/Vision_globale_git_step2.png" width="800" height = "300" alt = "bilan1"></img>
-
+]
 --
 
+.pull-right[
 ### The snapshot analogy
 
 
@@ -327,7 +329,7 @@ template: contribute
 
 - Push the photo on Insta to share it (remote repo -- push)
 
-
+]
 ---
 template: contribute
 
@@ -351,7 +353,9 @@ template: contribute
 
 ## Working together: graphical tree for a merge
 
-<img src="../resources/figs/git4.svg" width="800" height = "600" alt = "bilan1"></img>
+Before merging
+
+<img src="../resources/figs/git4.svg" width="680" height = "500" alt = "bilan1"></img>
 
 
 ---
@@ -359,9 +363,9 @@ template: contribute
 
 ## Working together: graphical tree for a merge
 
-After the merge 
+After merging
 
-<img src="../resources/figs/git5.svg" width="800" height = "600" alt = "bilan1"></img>
+<img src="../resources/figs/git5.svg" width="680" height = "500" alt = "bilan1"></img>
 
 
 ---
@@ -371,7 +375,7 @@ template: contribute
 
 After the push 
 
-<img src="../resources/figs/git6.svg" width="800" height = "600" alt = "bilan1"></img>
+<img src="../resources/figs/git6.svg" width="680" height = "500" alt = "bilan1"></img>
 
 ---
 template: contribute
