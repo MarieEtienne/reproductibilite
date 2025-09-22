@@ -147,7 +147,19 @@ If successful, you’ll see:
 Hi username! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
----
+## 6. Configuration
+
+The purpose of Git is to keep tracks of different versions of a project and their authors.
+
+To do so, you need to be authenticated. Before using, specify your name 
+
+### The first use after installation
+
+```{r git_config, eval = FALSE}
+git config --global user.email "your email"
+git config --global user.name "your name"`
+git config -l # check
+```
 
 # ✅ Setup complete
 
