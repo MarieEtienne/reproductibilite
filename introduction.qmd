@@ -23,6 +23,7 @@ format:
 
 
 ```{r setup, include = FALSE,  eval = TRUE}
+library(RefManageR)
 BibOptions(check.entries = FALSE,
            bib.style = "authoryear",
            cite.style = "alphabetic",
