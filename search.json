@@ -4,7 +4,7 @@
     "href": "introduction.html#motiv",
     "title": "Reproducible science - motivation and basic tools",
     "section": "Motivations",
-    "text": "Motivations\nReproducible science\nIn their paper @alston2021beginner address the question of science reproducibility in ecology.\nThe key aspects\nIt’s a growing trend: more and more journals require some elements of reproducibility.\nPractically\nWhere is the correct version of the report?\n.center[ ]\nPractically\nAn explanation in images: vidéo by Ignasi Bartomeus."
+    "text": "Motivations\nReproducible science\nIn their paper @alston2021beginner address the question of science reproducibility in ecology.\nThe key aspects\nIt’s a growing trend: more and more journals require some elements of reproducibility.\nPractically\nWhere is the correct version of the report?\n\nPractically\nAn explanation in images: vidéo by Ignasi Bartomeus."
   },
   {
     "objectID": "introduction.html#course-objective",
@@ -18,21 +18,21 @@
     "href": "introduction.html#overview",
     "title": "Reproducible science - motivation and basic tools",
     "section": "Overview",
-    "text": "Overview\nCode / paper writing\n\n.care[git] for\n\nkeeping track of different versions of code\n\ncollective work\n\nreviewing and improving code quality\n\n\nAround the code\n\n.care[Rmarkdown], .care[Jupyter notebooks], .care[Quarto] to bring together code, results, and analysis.\n\nvignettes in R packages\n\nR help pages\n\nsome scientific papers (Computo asks for Jupyter/Quarto submissions)\n\ndashboards …\n\n\nControlling software versions\nReproducibility also relies on stabilizing programming/library versions.\nThe container system .care[Docker] allows freezing a working software environment. ]"
+    "text": "Overview\nCode / paper writing\n\ngit for\n\nkeeping track of different versions of code\n\ncollective work\n\nreviewing and improving code quality\n\n\nAround the code\n\nRmarkdown, .care[Jupyter notebooks], .care[Quarto] to bring together code, results, and analysis.\n\nvignettes in R packages\n\nR help pages\n\nsome scientific papers (Computo asks for Jupyter/Quarto submissions)\n\ndashboards …"
+  },
+  {
+    "objectID": "introduction.html#overview-1",
+    "href": "introduction.html#overview-1",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Overview",
+    "text": "Overview\nControlling software versions\nReproducibility also relies on stabilizing programming/library versions.\nThe container system Docker allows freezing a working software environment."
   },
   {
     "objectID": "introduction.html#the-winning-trio-of-reproducible-research-with-r",
     "href": "introduction.html#the-winning-trio-of-reproducible-research-with-r",
     "title": "Reproducible science - motivation and basic tools",
     "section": "The winning trio of reproducible research with R",
-    "text": "The winning trio of reproducible research with R\n\n.care[git]\n\n.care[Rmarkdown]\n\n.care[Docker]"
-  },
-  {
-    "objectID": "introduction.html#références",
-    "href": "introduction.html#références",
-    "title": "Reproducible science - motivation and basic tools",
-    "section": "Références",
-    "text": "Références\nNULL"
+    "text": "The winning trio of reproducible research with R\n\ngit code versionning\nRmarkdown markup language\n\nDocker Controlling software version (last 2 sessions with Theo Fabien)"
   },
   {
     "objectID": "setup.html#create-a-github-account",
@@ -109,14 +109,21 @@
     "href": "git1.html#cloning-an-existing-reprository",
     "title": "Basics in git, working alone",
     "section": "Cloning an existing reprository",
-    "text": "Cloning an existing reprository\nThis means copy locally on your computer the content of a repository which\n\nthe actual code and text contents\nthe history of all changes\n\nBefore, we nedd basic bash command"
+    "text": "Cloning an existing reprository\nThis means copy locally on your computer the content of a repository which means\n\ncopy the actual code and text contents\ncopy the history of all changes\n\nBefore using Git, we need basic bash commands"
   },
   {
     "objectID": "git1.html#first-element---navigating-using-bash-command",
     "href": "git1.html#first-element---navigating-using-bash-command",
     "title": "Basics in git, working alone",
     "section": "First element - navigating using bash command",
-    "text": "First element - navigating using bash command\nNavigating Directories in the Terminal / Git Bash\n\nChecking where you are\n\n\n$ pwd\n/home/marie/projects\n\n\nListing files\n\n\nls -l #→ long listing\nls -a #→ include hidden files\n\n\nMoving between directories\n\n\n\n\nAction\nLinux/macOS/Git Bash\nWindows Command Prompt\n\n\n\n\nGo to a directory\ncd folder_name\ncd folder_name\n\n\nGo up one level\ncd ..\ncd ..\n\n\nGo to home\ncd ~\ncd %USERPROFILE%\n\n\nAbsolute path\ncd /path/to/folder\ncd C:\\path\\to\\folder\n\n\n\n\nCreate a directory\n\n\nmkdir my_git_dir\n\n\nRemoving files or directory\n\n\nrm my_file\nrmdir my_dir #remove an empty dir\nrm -rf my_dir #remove a directeory and everything inside ! Careful\n\n\nQuick tips\n\nUse Tab for autocomplete paths and filenames.\nPaths on Git Bash use /, even on Windows (/c/Users/...)."
+    "text": "First element - navigating using bash command\nNavigating Directories in the Terminal / Git Bash\n\nChecking where you are\n\n\n$ pwd\n/home/marie/projects\n\n\nListing files\n\n\nls -l #→ long listing\nls -a #→ include hidden files\n\n\nMoving between directories\n\n\n\n\nAction\nLinux/macOS/Git Bash\nWindows Command Prompt\n\n\n\n\nGo to a directory\ncd folder_name\ncd folder_name\n\n\nGo up one level\ncd ..\ncd ..\n\n\nGo to home\ncd ~\ncd %USERPROFILE%\n\n\nAbsolute path\ncd /path/to/folder\ncd C:\\path\\to\\folder"
+  },
+  {
+    "objectID": "git1.html#first-element---navigating-using-bash-command-1",
+    "href": "git1.html#first-element---navigating-using-bash-command-1",
+    "title": "Basics in git, working alone",
+    "section": "First element - navigating using bash command",
+    "text": "First element - navigating using bash command\n\nCreate a directory\n\n\nmkdir my_git_dir\n\n\nRemoving files or directory\n\n\nrm my_file\nrmdir my_dir #remove an empty dir\nrm -rf my_dir #remove a directeory and everything inside ! Careful\n\n\nQuick tips\n\nUse Tab for autocomplete paths and filenames.\nPaths on Git Bash use /, even on Windows (/c/Users/...)."
   },
   {
     "objectID": "git1.html#exercise",
@@ -130,7 +137,7 @@
     "href": "git1.html#cloning-an-existing-reprository-1",
     "title": "Basics in git, working alone",
     "section": "Cloning an existing reprository",
-    "text": "Cloning an existing reprository\nGo to your git Directory and write\n\ngit clone git@github.com:MarieEtienne/stats-reminders.git\n\nWhat is happening ?\n\nls\ncd stats-reminders\nls\n\nWhere to find this magical adress to clone\nNavigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address."
+    "text": "Cloning an existing reprository\nGo to your git Directory and write\n\ngit clone git@github.com:MarieEtienne/stats-reminders.git\n\nWhat is happening ?\n\nls\ncd stats-reminders\nls\n\nWhere to find this magical address to clone\nNavigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address."
   },
   {
     "objectID": "git1.html#reviewing-the-code-development",
@@ -158,7 +165,7 @@
     "href": "git1.html#your-first-commit",
     "title": "Basics in git, working alone",
     "section": "Your first commit",
-    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\n\ngit status # project status\ngit diff\n\n\n\n*Type the command git add penguins.Rmd, then repeat the previous commands.\n\nType the command git commit -m \"Added an author\", and once again check the project status.\ncheck the project on Github\nType the command git push\", and once again check the project on Github"
+    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\n\ngit status # project status\ngit diff\n\n\n\n\nType the command git add penguins.Rmd, then repeat the previous commands.\nType the command git commit -m \"Added an author\", and once again check the project status.\nCheck the project on Github\nType the command git push\", and once again check the project on Github"
   },
   {
     "objectID": "index.html",
