@@ -98,6 +98,13 @@
     "text": "6. Configuration\nThe purpose of Git is to keep tracks of different versions of a project and their authors.\nTo do so, you need to be authenticated. Before using, specify your name\nThe first use after installation"
   },
   {
+    "objectID": "git1.html#what-is-it",
+    "href": "git1.html#what-is-it",
+    "title": "Basics in git, working alone",
+    "section": "What is it?",
+    "text": "What is it?\n\nDeveloped by Linus Torvalds: “I’m an egotistical bastard, and I name all my projects after myself. First Linux, now git.”\n\n\n\nGit is a version control system (the most widely used today).\nIt allows tracking all changes made to code since its creation.\nGit is incredibly efficient."
+  },
+  {
     "objectID": "git1.html#cloning-an-existing-reprository",
     "href": "git1.html#cloning-an-existing-reprository",
     "title": "Basics in git, working alone",
@@ -109,14 +116,14 @@
     "href": "git1.html#first-element---navigating-using-bash-command",
     "title": "Basics in git, working alone",
     "section": "First element - navigating using bash command",
-    "text": "First element - navigating using bash command\nNavigating Directories in the Terminal / Git Bash\n\nChecking where you are\n\n\n$ pwd\n/home/marie/projects\n\n\nListing files\n\n\nls -l #→ long listing\nls -a #→ include hidden files\n\n\nMoving between directories\n\n\n\n\nAction\nLinux/macOS/Git Bash\nWindows Command Prompt\n\n\n\n\nGo to a directory\ncd folder_name\ncd folder_name\n\n\nGo up one level\ncd ..\ncd ..\n\n\nGo to home\ncd ~\ncd %USERPROFILE%\n\n\nAbsolute path\ncd /path/to/folder\ncd C:\\path\\to\\folder\n\n\n\n\nCreate a directory\n\n\nmkdir my_git_dir\n\n\nQuick tips\n\nUse Tab for autocomplete paths and filenames.\nPaths on Git Bash use /, even on Windows (/c/Users/...)."
+    "text": "First element - navigating using bash command\nNavigating Directories in the Terminal / Git Bash\n\nChecking where you are\n\n\n$ pwd\n/home/marie/projects\n\n\nListing files\n\n\nls -l #→ long listing\nls -a #→ include hidden files\n\n\nMoving between directories\n\n\n\n\nAction\nLinux/macOS/Git Bash\nWindows Command Prompt\n\n\n\n\nGo to a directory\ncd folder_name\ncd folder_name\n\n\nGo up one level\ncd ..\ncd ..\n\n\nGo to home\ncd ~\ncd %USERPROFILE%\n\n\nAbsolute path\ncd /path/to/folder\ncd C:\\path\\to\\folder\n\n\n\n\nCreate a directory\n\n\nmkdir my_git_dir\n\n\nRemoving files or directory\n\n\nrm my_file\nrmdir my_dir #remove an empty dir\nrm -rf my_dir #remove a directeory and everything inside ! Careful\n\n\nQuick tips\n\nUse Tab for autocomplete paths and filenames.\nPaths on Git Bash use /, even on Windows (/c/Users/...)."
   },
   {
     "objectID": "git1.html#exercise",
     "href": "git1.html#exercise",
     "title": "Basics in git, working alone",
     "section": "Exercise",
-    "text": "Exercise\n\nGo to your home directory (/home/loginin Linux, probably somethin like C:/Users/yourusername in Windows)\nCreate a directory named git, where you will store all your git projects\nJump within this directory\nlist the files contained in this directory\nJump outside this directory"
+    "text": "Exercise\n\nGo to your home directory (/home/loginin Linux, probably somethin like C:/Users/yourusername in Windows)\nCreate a directory named git, where you will store all your git projects\nJump within this directory\nlist the files contained in this directory\nCreate a test_dir directory\nJump outside the git directeory\nRemove the git directory and everything it contains\nCreate a directory named git, where you will store all your git projects"
   },
   {
     "objectID": "git1.html#cloning-an-existing-reprository-1",
@@ -138,6 +145,20 @@
     "title": "Basics in git, working alone",
     "section": "Forking an existing repository",
     "text": "Forking an existing repository\nWhat is forking?\nForking creates your own copy of someone else’s repository in your GitHub account. This lets you experiment with changes without affecting the original project. How to fork a repo:\nHow\nNavigate to the repository you want to fork on GitHub Click the “Fork” button in the top-right corner of the repository page Choose where to fork it - usually to your personal account Wait a moment - GitHub will create the copy in your account\nWhat happens next:\nYou’ll have a complete copy of the repo in your GitHub account You can clone this forked version to your local machine using git clone Make changes, commit them, and push back to your fork If you want to contribute back to the original project, you can create a pull request\nKey points\nYour fork is independent of the original repo You have full control over your forked version The original repo remains unchanged unless you submit a pull request that gets accepted You can sync your fork with the original repo later if it gets updated\nThis workflow is essential for contributing to open-source projects or collaborating on code when you don’t have direct write access to the original repository."
+  },
+  {
+    "objectID": "git1.html#exercise-1",
+    "href": "git1.html#exercise-1",
+    "title": "Basics in git, working alone",
+    "section": "Exercise",
+    "text": "Exercise\n\nRemove the stats-reminder directory and its content\nFork https://github.com/MarieEtienne/stats-reminders on your personnal GitHub account\nclone your version of stats-reminder\nShow the history of this file"
+  },
+  {
+    "objectID": "git1.html#your-first-commit",
+    "href": "git1.html#your-first-commit",
+    "title": "Basics in git, working alone",
+    "section": "Your first commit",
+    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\n\ngit status # project status\ngit diff\n\n\n\n*Type the command git add penguins.Rmd, then repeat the previous commands.\n\nType the command git commit -m \"Added an author\", and once again check the project status.\ncheck the project on Github\nType the command git push\", and once again check the project on Github"
   },
   {
     "objectID": "index.html",

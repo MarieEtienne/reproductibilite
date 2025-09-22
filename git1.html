@@ -211,6 +211,24 @@ Marie-Pierre Etienne
   <p class="date">2025-09-10</p>
 </section>
 <section>
+<section id="introduction-to-git-gitintro" class="title-slide slide level1 center">
+<h1>Introduction to git {#gitintro} –&gt;</h1>
+
+</section>
+<section id="what-is-it" class="slide level2">
+<h2>What is it?</h2>
+<ul>
+<li>Developed by Linus Torvalds: <em>“I’m an egotistical bastard, and I name all my projects after myself. First Linux, now <a href="https://www.wordreference.com/enfr/git">git</a>.”</em></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Git is a version control system (the most widely used today).</li>
+<li>It allows tracking all changes made to code since its creation.</li>
+<li>Git is incredibly efficient.</li>
+</ul>
+</div>
+</section></section>
+<section>
 <section id="starting-from-an-existing-directory" class="title-slide slide level1 center">
 <h1>Starting from an existing directory</h1>
 
@@ -282,6 +300,14 @@ Marie-Pierre Etienne
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="fu">mkdir</span> my_git_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="5" type="1">
+<li>Removing files or directory</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="fu">rm</span> my_file</span>
+<span id="cb4-2"><a></a><span class="fu">rmdir</span> my_dir <span class="co">#remove an empty dir</span></span>
+<span id="cb4-3"><a></a><span class="fu">rm</span> <span class="at">-rf</span> my_dir <span class="co">#remove a directeory and everything inside ! Careful</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="6" type="1">
 <li>Quick tips</li>
 </ol>
 <p>Use <code>Tab</code> for autocomplete paths and filenames.</p>
@@ -294,20 +320,23 @@ Marie-Pierre Etienne
 <li><p>Create a directory named <code>git</code>, where you will store all your git projects</p></li>
 <li><p>Jump within this directory</p></li>
 <li><p>list the files contained in this directory</p></li>
-<li><p>Jump outside this directory</p></li>
+<li><p>Create a <code>test_dir</code> directory</p></li>
+<li><p>Jump outside the <code>git directeory</code></p></li>
+<li><p>Remove the <code>git</code> directory and everything it contains</p></li>
+<li><p>Create a directory named <code>git</code>, where you will store all your git projects</p></li>
 </ul>
 </section>
 <section id="cloning-an-existing-reprository-1" class="slide level2">
 <h2>Cloning an existing reprository</h2>
 <p>Go to your git Directory and write</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="fu">git</span> clone git@github.com:MarieEtienne/stats-reminders.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="fu">git</span> clone git@github.com:MarieEtienne/stats-reminders.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3 id="what-is-happening">What is happening ?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="fu">ls</span></span>
-<span id="cb5-2"><a></a><span class="bu">cd</span> stats-reminders</span>
-<span id="cb5-3"><a></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="fu">ls</span></span>
+<span id="cb6-2"><a></a><span class="bu">cd</span> stats-reminders</span>
+<span id="cb6-3"><a></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3 id="where-to-find-this-magical-adress-to-clone">Where to find this magical adress to clone</h3>
 <p>Navigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address.</p>
@@ -315,9 +344,9 @@ Marie-Pierre Etienne
 <section id="reviewing-the-code-development" class="slide level2">
 <h2>Reviewing the code development</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="fu">git</span> log</span>
-<span id="cb6-2"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb6-3"><a></a><span class="ex">gitk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="fu">git</span> log</span>
+<span id="cb7-2"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb7-3"><a></a><span class="ex">gitk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="forking-an-existing-repository" class="slide level2">
@@ -331,8 +360,50 @@ Marie-Pierre Etienne
 <h3 id="key-points">Key points</h3>
 <p>Your fork is independent of the original repo You have full control over your forked version The original repo remains unchanged unless you submit a pull request that gets accepted You can sync your fork with the original repo later if it gets updated</p>
 <p>This workflow is essential for contributing to open-source projects or collaborating on code when you don’t have direct write access to the original repository.</p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li><p>Remove the stats-reminder directory and its content</p></li>
+<li><p>Fork <a href="https://github.com/MarieEtienne/stats-reminders">https://github.com/MarieEtienne/stats-reminders</a> on your personnal GitHub account</p></li>
+<li><p>clone your version of stats-reminder</p></li>
+<li><p>Show the history of this file</p></li>
+</ul>
+</section></section>
+<section>
+<section id="creating-new-content" class="title-slide slide level1 center">
+<h1>Creating new content</h1>
+
+</section>
+<section id="your-first-commit" class="slide level2">
+<h2>Your first commit</h2>
+<ul>
+<li>Open the file <code>Penguins_chapter.qmd</code> and add your name and the list of authors, then save your file.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Type the command git log in the console.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Enter the following commands:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">git</span> status <span class="co"># project status</span></span>
+<span id="cb8-2"><a></a><span class="fu">git</span> diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>*Type the command <code>git add penguins.Rmd</code>, then repeat the previous commands.</p>
+<ul>
+<li><p>Type the command <code>git commit -m "Added an author"</code>, and once again check the project status.</p></li>
+<li><p>check the project on Github</p></li>
+<li><p>Type the command <code>git push"</code>, and once again check the project on Github</p></li>
+</ul>
 
 
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
