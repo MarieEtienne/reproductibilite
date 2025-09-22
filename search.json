@@ -1,24 +1,10 @@
 [
   {
-    "objectID": "introduction.html#reproducible-science",
-    "href": "introduction.html#reproducible-science",
+    "objectID": "introduction.html#motiv",
+    "href": "introduction.html#motiv",
     "title": "Reproducible science - motivation and basic tools",
-    "section": "Reproducible science",
-    "text": "Reproducible science\nIn their paper @alston2021beginner address the question of science reproducibility in ecology.\nThe key aspects\nIt’s a growing trend: more and more journals require some elements of reproducibility.\n–"
-  },
-  {
-    "objectID": "introduction.html#practically",
-    "href": "introduction.html#practically",
-    "title": "Reproducible science - motivation and basic tools",
-    "section": "Practically",
-    "text": "Practically\nWhere is the correct version of the report?\n.center[ ]"
-  },
-  {
-    "objectID": "introduction.html#practically-1",
-    "href": "introduction.html#practically-1",
-    "title": "Reproducible science - motivation and basic tools",
-    "section": "Practically",
-    "text": "Practically\nAn explanation in images: vidéo by Ignasi Bartomeus.\n–"
+    "section": "Motivations",
+    "text": "Motivations\nReproducible science\nIn their paper @alston2021beginner address the question of science reproducibility in ecology.\nThe key aspects\nIt’s a growing trend: more and more journals require some elements of reproducibility.\nPractically\nWhere is the correct version of the report?\n.center[ ]\nPractically\nAn explanation in images: vidéo by Ignasi Bartomeus."
   },
   {
     "objectID": "introduction.html#course-objective",
@@ -28,11 +14,18 @@
     "text": "Course objective\nIntroducing tools to facilitate step 2."
   },
   {
-    "objectID": "introduction.html#around-the-code",
-    "href": "introduction.html#around-the-code",
+    "objectID": "introduction.html#overview",
+    "href": "introduction.html#overview",
     "title": "Reproducible science - motivation and basic tools",
-    "section": "Around the code",
-    "text": "Around the code\n\n.care[Rmarkdown], .care[Jupyter notebooks], .care[Quarto] to bring together code, results, and analysis.\n\nvignettes in R packages\n\nR help pages\n\nsome scientific papers (Computo asks for Jupyter/Quarto submissions)\n\ndashboards … ]\n\n\n–\n.pull-right[ ## Controlling software versions\nReproducibility also relies on stabilizing programming/library versions.\nThe container system .care[Docker] allows freezing a working software environment. ]"
+    "section": "Overview",
+    "text": "Overview\nCode / paper writing\n\n.care[git] for\n\nkeeping track of different versions of code\n\ncollective work\n\nreviewing and improving code quality\n\n\nAround the code\n\n.care[Rmarkdown], .care[Jupyter notebooks], .care[Quarto] to bring together code, results, and analysis.\n\nvignettes in R packages\n\nR help pages\n\nsome scientific papers (Computo asks for Jupyter/Quarto submissions)\n\ndashboards …\n\n\nControlling software versions\nReproducibility also relies on stabilizing programming/library versions.\nThe container system .care[Docker] allows freezing a working software environment. ]"
+  },
+  {
+    "objectID": "introduction.html#the-winning-trio-of-reproducible-research-with-r",
+    "href": "introduction.html#the-winning-trio-of-reproducible-research-with-r",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "The winning trio of reproducible research with R",
+    "text": "The winning trio of reproducible research with R\n\n.care[git]\n\n.care[Rmarkdown]\n\n.care[Docker]"
   },
   {
     "objectID": "introduction.html#références",
