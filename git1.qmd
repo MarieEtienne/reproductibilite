@@ -1,0 +1,170 @@
+---
+title: "Basics in git, working alone"
+author: Marie-Pierre Etienne
+date: '2025/09/10 (updated: `r Sys.Date()`)'
+institute: https://github.com/MarieEtienne/reproductibilite
+execute: 
+  freeze: false
+editor: 
+  markdown: 
+    wrap: 72
+css: mpe_pres_revealjs.css
+format:
+  revealjs: 
+    theme: [default, custom.scss]
+    width: 1050
+    margin: 0.05
+    slide-number: true
+    show-slide-number: print
+    menu:
+      useTextContentForMissingTitles: false
+---
+
+
+
+```{r setup, include = FALSE,  eval = TRUE}
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "alphabetic",
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+myBib <- ReadBib('OCR.bib', check = FALSE)
+```
+
+
+
+
+# Starting from an existing directory
+
+## Cloning an existing reprository 
+
+This means copy locally on your computer the content of a repository which 
+
+* the actual code and text contents
+* the history of all changes
+
+Before, we nedd basic bash command
+
+## First element - navigating using bash command 
+
+Navigating Directories in the Terminal / Git Bash
+
+1. Checking where you are
+
+```{bash}
+#| echo: true
+#| eval: false
+$ pwd
+/home/marie/projects
+```
+
+
+2. Listing files
+
+```{bash}
+#| echo: true
+#| eval: false
+ls -l #→ long listing
+ls -a #→ include hidden files
+```
+
+
+3. Moving between directories
+
+| Action            | Linux/macOS/Git Bash | Windows Command Prompt |
+| ----------------- | -------------------- | ---------------------- |
+| Go to a directory | `cd folder_name`     | `cd folder_name`       |
+| Go up one level   | `cd ..`              | `cd ..`                |
+| Go to home        | `cd ~`               | `cd %USERPROFILE%`     |
+| Absolute path     | `cd /path/to/folder` | `cd C:\path\to\folder` |
+
+4. Create a directory 
+
+```{bash}
+#| echo: true
+#| eval: false
+mkdir my_git_dir
+```
+
+5. Quick tips
+
+Use `Tab` for autocomplete paths and filenames.
+
+Paths on Git Bash use `/`, even on Windows (`/c/Users/...`).
+
+## Exercise
+
+* Go to your home directory (`/home/login`in Linux, probably somethin like `C:/Users/yourusername` in Windows)
+
+* Create a directory named `git`, where you will store all your git projects
+
+* Jump within this directory
+
+* list the files contained in this directory
+
+* Jump  outside this directory
+
+## Cloning an existing reprository 
+
+Go to your git Directory and write
+
+```{bash}
+#| echo: true
+#| eval: false
+git clone git@github.com:MarieEtienne/stats-reminders.git
+```
+
+### What is happening ?
+
+```{bash}
+#| echo: true
+#| eval: false
+ls
+cd stats-reminders
+ls
+```
+
+### Where to find this magical adress to clone
+
+Navigate to the repository you want to clone
+On the main page, click on the "Code" green button, be sure to select SSH and copy paste the address.
+
+
+## Reviewing the code development
+
+
+```{bash}
+#| echo: true
+#| eval: false
+git log
+git log --oneline
+gitk
+```
+
+## Forking an existing repository
+
+### What is forking?
+Forking creates your own copy of someone else's repository in your GitHub account. This lets you experiment with changes without affecting the original project.
+How to fork a repo:
+
+### How 
+Navigate to the repository you want to fork on GitHub
+Click the "Fork" button in the top-right corner of the repository page
+Choose where to fork it - usually to your personal account
+Wait a moment - GitHub will create the copy in your account
+
+### What happens next:
+You'll have a complete copy of the repo in your GitHub account
+You can clone this forked version to your local machine using git clone
+Make changes, commit them, and push back to your fork
+If you want to contribute back to the original project, you can create a pull request
+
+### Key points
+Your fork is independent of the original repo
+You have full control over your forked version
+The original repo remains unchanged unless you submit a pull request that gets accepted
+You can sync your fork with the original repo later if it gets updated
+
+This workflow is essential for contributing to open-source projects or collaborating on code when you don't have direct write access to the original repository.
