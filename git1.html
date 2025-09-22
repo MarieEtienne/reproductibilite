@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Marie-Pierre Etienne">
-  <meta name="dcterms.date" content="2025-09-01">
-  <title>Set up your framework</title>
+  <meta name="dcterms.date" content="2025-09-10">
+  <title>Basics in git, working alone</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -195,7 +195,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Set up your framework</h1>
+  <h1 class="title">Basics in git, working alone</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -208,114 +208,132 @@ Marie-Pierre Etienne
     </div>
 </div>
 
-  <p class="date">2025-09-01</p>
+  <p class="date">2025-09-10</p>
 </section>
 <section>
-<section id="setting-up-github-and-ssh" class="title-slide slide level1 center">
-<h1>Setting up GitHub and SSH</h1>
+<section id="starting-from-an-existing-directory" class="title-slide slide level1 center">
+<h1>Starting from an existing directory</h1>
 
 </section>
-<section id="create-a-github-account" class="slide level2">
-<h2>1. Create a GitHub Account</h2>
-<ol type="1">
-<li>Go to <a href="https://github.com">https://github.com</a><br>
-</li>
-<li>Click <strong>Sign up</strong><br>
-</li>
-<li>Choose a username, email, and password<br>
-</li>
-<li>Verify your account by email<br>
-</li>
-<li>(Optional) Install <strong>GitHub Desktop</strong> if you prefer a GUI</li>
-</ol>
-</section>
-<section id="install-git-linux" class="slide level2">
-<h2>2. Install Git (Linux)</h2>
-<p>On most Linux distributions, Git is available from the package manager.</p>
+<section id="cloning-an-existing-reprository" class="slide level2">
+<h2>Cloning an existing reprository</h2>
+<p>This means copy locally on your computer the content of a repository which</p>
 <ul>
-<li>On <strong>Debian/Ubuntu</strong>:</li>
+<li>the actual code and text contents</li>
+<li>the history of all changes</li>
 </ul>
-<p>Check if Git is available if not</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="fu">sudo</span> apt update</span>
-<span id="cb1-2"><a></a><span class="fu">sudo</span> apt install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Before, we nedd basic bash command</p>
 </section>
-<section id="install-git-macos" class="slide level2">
-<h2>2. Install Git (macOS)</h2>
-<p>Check if Git is available if not</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="ex">brew</span> install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Check installation with:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="install-git-windows" class="slide level2">
-<h2>2. Install Git (Windows)</h2>
-<p>Windows users should install <strong>Git for Windows</strong>, which includes Git Bash.</p>
+<section id="first-element---navigating-using-bash-command" class="slide level2">
+<h2>First element - navigating using bash command</h2>
+<p>Navigating Directories in the Terminal / Git Bash</p>
 <ol type="1">
-<li>Download from <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
-<li>Run the installer and keep the default options</li>
-<li>After installation, open <strong>Git Bash</strong> from the Start menu</li>
-<li>Verify installation:</li>
+<li>Checking where you are</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="generate-an-ssh-key-linux-macos" class="slide level2">
-<h2>3. Generate an SSH key (Linux &amp; macOS)</h2>
-<p>Open a terminal and type:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="co"># create a new ssh key RSA (2048 bits) with no passphrase</span></span>
-<span id="cb5-2"><a></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 2048 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span>
-<span id="cb5-3"><a></a></span>
-<span id="cb5-4"><a></a><span class="co"># press enter to accept default file location (~/.ssh/id_rsa)</span></span>
-<span id="cb5-5"><a></a><span class="co"># press enter to use am empty passphrase </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="generate-an-ssh-key-windows-git-bash" class="slide level2">
-<h2>3. Generate an SSH key (Windows, Git Bash)</h2>
-<ol type="1">
-<li>Open <strong>Git Bash</strong></li>
-<li>Run:</li>
-</ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="co"># create a new ssh key RSA (2048 bits) with no passphrase</span></span>
-<span id="cb6-2"><a></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 2048 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># press enter to accept default file location (~/.ssh/id_rsa)</span></span>
-<span id="cb6-5"><a></a><span class="co"># press enter to use am empty passphrase </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li><p>Keys are saved by default in:</p>
-<ul>
-<li><code>C:\Users\&lt;YourUser&gt;\.ssh\id_rsa</code></li>
-</ul></li>
-</ol>
-</section>
-<section id="add-the-ssh-key-to-github" class="slide level2">
-<h2>4. Add the SSH key to GitHub</h2>
-<ol type="1">
-<li>Copy the public key:</li>
-</ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="fu">cat</span> ~/.ssh/id_rsa.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(or open <code>id_rsa.pub</code> in a text editor on Windows)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">$</span> pwd</span>
+<span id="cb1-2"><a></a><span class="ex">/home/marie/projects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ol start="2" type="1">
-<li>Go to <a href="https://github.com/settings/keys">GitHub → Settings → SSH and GPG keys</a></li>
-<li>Click <strong>New SSH key</strong></li>
-<li>Paste the key, give it a name (e.g.&nbsp;<em>My laptop</em>), save</li>
+<li>Listing files</li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="fu">ls</span> <span class="at">-l</span> <span class="co">#→ long listing</span></span>
+<span id="cb2-2"><a></a><span class="fu">ls</span> <span class="at">-a</span> <span class="co">#→ include hidden files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Moving between directories</li>
+</ol>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>Linux/macOS/Git Bash</th>
+<th>Windows Command Prompt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Go to a directory</td>
+<td><code>cd folder_name</code></td>
+<td><code>cd folder_name</code></td>
+</tr>
+<tr class="even">
+<td>Go up one level</td>
+<td><code>cd ..</code></td>
+<td><code>cd ..</code></td>
+</tr>
+<tr class="odd">
+<td>Go to home</td>
+<td><code>cd ~</code></td>
+<td><code>cd %USERPROFILE%</code></td>
+</tr>
+<tr class="even">
+<td>Absolute path</td>
+<td><code>cd /path/to/folder</code></td>
+<td><code>cd C:\path\to\folder</code></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li>Create a directory</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="fu">mkdir</span> my_git_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li>Quick tips</li>
+</ol>
+<p>Use <code>Tab</code> for autocomplete paths and filenames.</p>
+<p>Paths on Git Bash use <code>/</code>, even on Windows (<code>/c/Users/...</code>).</p>
 </section>
-<section id="test-the-connection" class="slide level2">
-<h2>5. Test the connection</h2>
-<p>Run:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If successful, you’ll see:</p>
-<pre><code>Hi username! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li><p>Go to your home directory (<code>/home/login</code>in Linux, probably somethin like <code>C:/Users/yourusername</code> in Windows)</p></li>
+<li><p>Create a directory named <code>git</code>, where you will store all your git projects</p></li>
+<li><p>Jump within this directory</p></li>
+<li><p>list the files contained in this directory</p></li>
+<li><p>Jump outside this directory</p></li>
+</ul>
 </section>
-<section id="configuration" class="slide level2">
-<h2>6. Configuration</h2>
-<p>The purpose of Git is to keep tracks of different versions of a project and their authors.</p>
-<p>To do so, you need to be authenticated. Before using, specify your name</p>
-<h3 id="the-first-use-after-installation">The first use after installation</h3>
+<section id="cloning-an-existing-reprository-1" class="slide level2">
+<h2>Cloning an existing reprository</h2>
+<p>Go to your git Directory and write</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="fu">git</span> clone git@github.com:MarieEtienne/stats-reminders.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h3 id="what-is-happening">What is happening ?</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="fu">ls</span></span>
+<span id="cb5-2"><a></a><span class="bu">cd</span> stats-reminders</span>
+<span id="cb5-3"><a></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h3 id="where-to-find-this-magical-adress-to-clone">Where to find this magical adress to clone</h3>
+<p>Navigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address.</p>
+</section>
+<section id="reviewing-the-code-development" class="slide level2">
+<h2>Reviewing the code development</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="fu">git</span> log</span>
+<span id="cb6-2"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb6-3"><a></a><span class="ex">gitk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="forking-an-existing-repository" class="slide level2">
+<h2>Forking an existing repository</h2>
+<h3 id="what-is-forking">What is forking?</h3>
+<p>Forking creates your own copy of someone else’s repository in your GitHub account. This lets you experiment with changes without affecting the original project. How to fork a repo:</p>
+<h3 id="how">How</h3>
+<p>Navigate to the repository you want to fork on GitHub Click the “Fork” button in the top-right corner of the repository page Choose where to fork it - usually to your personal account Wait a moment - GitHub will create the copy in your account</p>
+<h3 id="what-happens-next">What happens next:</h3>
+<p>You’ll have a complete copy of the repo in your GitHub account You can clone this forked version to your local machine using git clone Make changes, commit them, and push back to your fork If you want to contribute back to the original project, you can create a pull request</p>
+<h3 id="key-points">Key points</h3>
+<p>Your fork is independent of the original repo You have full control over your forked version The original repo remains unchanged unless you submit a pull request that gets accepted You can sync your fork with the original repo later if it gets updated</p>
+<p>This workflow is essential for contributing to open-source projects or collaborating on code when you don’t have direct write access to the original repository.</p>
+
+
 </section></section>
-<section id="setup-complete" class="title-slide slide level1 center">
-<h1>✅ Setup complete</h1>
-<p>You are now ready to <strong>clone, push, and pull</strong> using SSH with your GitHub account!</p>
-
-
-</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
