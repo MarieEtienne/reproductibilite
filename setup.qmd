@@ -1,0 +1,156 @@
+---
+title: "Set up your framework"
+author: Marie-Pierre Etienne
+date: '2025/09/01 (updated: `r Sys.Date()`)'
+institute: https://github.com/MarieEtienne/reproductibilite
+execute: 
+  freeze: false
+editor: 
+  markdown: 
+    wrap: 72
+css: mpe_pres_revealjs.css
+format:
+  revealjs: 
+    theme: [default, custom.scss]
+    width: 1050
+    margin: 0.05
+    slide-number: true
+    show-slide-number: print
+    menu:
+      useTextContentForMissingTitles: false
+---
+
+# Setting up GitHub and SSH
+
+---
+
+## 1. Create a GitHub Account
+
+1. Go to [https://github.com](https://github.com)  
+2. Click **Sign up**  
+3. Choose a username, email, and password  
+4. Verify your account by email  
+5. (Optional) Install **GitHub Desktop** if you prefer a GUI  
+
+---
+
+## 2. Install Git (Linux)
+
+On most Linux distributions, Git is available from the package manager. 
+
+
+
+- On **Debian/Ubuntu**:  
+
+Check if Git is available if not
+
+```bash
+sudo apt update
+sudo apt install git
+````
+
+---
+
+## 2. Install Git (macOS)
+
+Check if Git is available if not 
+
+
+```bash
+brew install git
+```
+
+Check installation with:
+
+```bash
+git --version
+```
+
+---
+
+## 2. Install Git (Windows)
+
+Windows users should install **Git for Windows**, which includes Git Bash.
+
+1. Download from [https://git-scm.com/download/win](https://git-scm.com/download/win)
+2. Run the installer and keep the default options
+3. After installation, open **Git Bash** from the Start menu
+4. Verify installation:
+
+```bash
+git --version
+```
+
+---
+
+## 3. Generate an SSH key (Linux & macOS)
+
+Open a terminal and type:
+
+```bash
+# create a new ssh key RSA (2048 bits) with no passphrase
+ssh-keygen -t rsa -b 2048 -C "your_email@example.com"
+
+# press enter to accept default file location (~/.ssh/id_rsa)
+# press enter to use am empty passphrase 
+
+```
+
+---
+
+## 3. Generate an SSH key (Windows, Git Bash)
+
+1. Open **Git Bash**
+2. Run:
+
+```bash
+# create a new ssh key RSA (2048 bits) with no passphrase
+ssh-keygen -t rsa -b 2048 -C "your_email@example.com"
+
+# press enter to accept default file location (~/.ssh/id_rsa)
+# press enter to use am empty passphrase 
+```
+
+3. Keys are saved by default in:
+
+   * `C:\Users\<YourUser>\.ssh\id_rsa`
+
+---
+
+## 4. Add the SSH key to GitHub
+
+1. Copy the public key:
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+(or open `id_rsa.pub` in a text editor on Windows)
+
+2. Go to [GitHub → Settings → SSH and GPG keys](https://github.com/settings/keys)
+3. Click **New SSH key**
+4. Paste the key, give it a name (e.g. *My laptop*), save
+
+---
+
+## 5. Test the connection
+
+Run:
+
+```bash
+ssh -T git@github.com
+```
+
+If successful, you’ll see:
+
+```
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+---
+
+# ✅ Setup complete
+
+You are now ready to **clone, push, and pull** using SSH with your GitHub account!
+
+
