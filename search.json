@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "introduction.html#motiv",
-    "href": "introduction.html#motiv",
+    "objectID": "introduction.html#motivations",
+    "href": "introduction.html#motivations",
     "title": "Reproducible science - motivation and basic tools",
     "section": "Motivations",
-    "text": "Motivations\nReproducible science\nIn their paper @alston2021beginner address the question of science reproducibility in ecology.\nThe key aspects\nIt’s a growing trend: more and more journals require some elements of reproducibility.\nPractically\nWhere is the correct version of the report?\n\nPractically\nAn explanation in images: vidéo by Ignasi Bartomeus."
+    "text": "Motivations\nReproducible science\nIn their paper @alston2021beginner address the question of science reproducibility in ecology.\nThe key aspects\nIt’s a growing trend: more and more journals require some elements of reproducibility."
+  },
+  {
+    "objectID": "introduction.html#motivations-1",
+    "href": "introduction.html#motivations-1",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Motivations",
+    "text": "Motivations\nPractically\nWhere is the correct version of the report?"
+  },
+  {
+    "objectID": "introduction.html#motivations-2",
+    "href": "introduction.html#motivations-2",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Motivations",
+    "text": "Motivations\nPractically\nAn explanation in images: vidéo by Ignasi Bartomeus."
   },
   {
     "objectID": "introduction.html#course-objective",
@@ -95,7 +109,7 @@
     "href": "setup.html#configuration",
     "title": "Set up your framework",
     "section": "6. Configuration",
-    "text": "6. Configuration\nThe purpose of Git is to keep tracks of different versions of a project and their authors.\nTo do so, you need to be authenticated. Before using, specify your name\nThe first use after installation"
+    "text": "6. Configuration\nThe purpose of Git is to keep tracks of different versions of a project and their authors.\nTo do so, you need to be authenticated. Before using, specify your name\nThe first use after installation\n\ngit config --global user.email \"your email\"\ngit config --global user.name \"your name\"`\ngit config -l # check"
   },
   {
     "objectID": "git1.html#what-is-it",
