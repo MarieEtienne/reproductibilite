@@ -30,7 +30,7 @@ BibOptions(check.entries = FALSE,
            style = "markdown",
            hyperlink = FALSE,
            dashed = FALSE)
-myBib <- ReadBib('bibliography.bib', check = FALSE)
+myBib <- ReadBib('OCR.bib', check = FALSE)
 ```
 
 
