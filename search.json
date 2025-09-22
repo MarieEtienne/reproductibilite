@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "introduction.html#reproducible-science",
+    "href": "introduction.html#reproducible-science",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Reproducible science",
+    "text": "Reproducible science\nIn their paper @alston2021beginner address the question of science reproducibility in ecology.\nThe key aspects\nIt’s a growing trend: more and more journals require some elements of reproducibility.\n–"
+  },
+  {
+    "objectID": "introduction.html#practically",
+    "href": "introduction.html#practically",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Practically",
+    "text": "Practically\nWhere is the correct version of the report?\n.center[ ]"
+  },
+  {
+    "objectID": "introduction.html#practically-1",
+    "href": "introduction.html#practically-1",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Practically",
+    "text": "Practically\nAn explanation in images: vidéo by Ignasi Bartomeus.\n–"
+  },
+  {
+    "objectID": "introduction.html#course-objective",
+    "href": "introduction.html#course-objective",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Course objective",
+    "text": "Course objective\nIntroducing tools to facilitate step 2."
+  },
+  {
+    "objectID": "introduction.html#around-the-code",
+    "href": "introduction.html#around-the-code",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Around the code",
+    "text": "Around the code\n\n.care[Rmarkdown], .care[Jupyter notebooks], .care[Quarto] to bring together code, results, and analysis.\n\nvignettes in R packages\n\nR help pages\n\nsome scientific papers (Computo asks for Jupyter/Quarto submissions)\n\ndashboards … ]\n\n\n–\n.pull-right[ ## Controlling software versions\nReproducibility also relies on stabilizing programming/library versions.\nThe container system .care[Docker] allows freezing a working software environment. ]"
+  },
+  {
+    "objectID": "introduction.html#références",
+    "href": "introduction.html#références",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Références",
+    "text": "Références\nNULL"
+  },
+  {
+    "objectID": "setup.html#create-a-github-account",
+    "href": "setup.html#create-a-github-account",
+    "title": "Set up your framework",
+    "section": "1. Create a GitHub Account",
+    "text": "1. Create a GitHub Account\n\nGo to https://github.com\n\nClick Sign up\n\nChoose a username, email, and password\n\nVerify your account by email\n\n(Optional) Install GitHub Desktop if you prefer a GUI"
+  },
+  {
+    "objectID": "setup.html#install-git-linux",
+    "href": "setup.html#install-git-linux",
+    "title": "Set up your framework",
+    "section": "2. Install Git (Linux)",
+    "text": "2. Install Git (Linux)\nOn most Linux distributions, Git is available from the package manager.\n\nOn Debian/Ubuntu:\n\nCheck if Git is available if not\nsudo apt update\nsudo apt install git"
+  },
+  {
+    "objectID": "setup.html#install-git-macos",
+    "href": "setup.html#install-git-macos",
+    "title": "Set up your framework",
+    "section": "2. Install Git (macOS)",
+    "text": "2. Install Git (macOS)\nCheck if Git is available if not\nbrew install git\nCheck installation with:\ngit --version"
+  },
+  {
+    "objectID": "setup.html#install-git-windows",
+    "href": "setup.html#install-git-windows",
+    "title": "Set up your framework",
+    "section": "2. Install Git (Windows)",
+    "text": "2. Install Git (Windows)\nWindows users should install Git for Windows, which includes Git Bash.\n\nDownload from https://git-scm.com/download/win\nRun the installer and keep the default options\nAfter installation, open Git Bash from the Start menu\nVerify installation:\n\ngit --version"
+  },
+  {
+    "objectID": "setup.html#generate-an-ssh-key-linux-macos",
+    "href": "setup.html#generate-an-ssh-key-linux-macos",
+    "title": "Set up your framework",
+    "section": "3. Generate an SSH key (Linux & macOS)",
+    "text": "3. Generate an SSH key (Linux & macOS)\nOpen a terminal and type:\n# create a new ssh key RSA (2048 bits) with no passphrase\nssh-keygen -t rsa -b 2048 -C \"your_email@example.com\"\n\n# press enter to accept default file location (~/.ssh/id_rsa)\n# press enter to use am empty passphrase"
+  },
+  {
+    "objectID": "setup.html#generate-an-ssh-key-windows-git-bash",
+    "href": "setup.html#generate-an-ssh-key-windows-git-bash",
+    "title": "Set up your framework",
+    "section": "3. Generate an SSH key (Windows, Git Bash)",
+    "text": "3. Generate an SSH key (Windows, Git Bash)\n\nOpen Git Bash\nRun:\n\n# create a new ssh key RSA (2048 bits) with no passphrase\nssh-keygen -t rsa -b 2048 -C \"your_email@example.com\"\n\n# press enter to accept default file location (~/.ssh/id_rsa)\n# press enter to use am empty passphrase \n\nKeys are saved by default in:\n\nC:\\Users\\&lt;YourUser&gt;\\.ssh\\id_rsa"
+  },
+  {
+    "objectID": "setup.html#add-the-ssh-key-to-github",
+    "href": "setup.html#add-the-ssh-key-to-github",
+    "title": "Set up your framework",
+    "section": "4. Add the SSH key to GitHub",
+    "text": "4. Add the SSH key to GitHub\n\nCopy the public key:\n\ncat ~/.ssh/id_rsa.pub\n(or open id_rsa.pub in a text editor on Windows)\n\nGo to GitHub → Settings → SSH and GPG keys\nClick New SSH key\nPaste the key, give it a name (e.g. My laptop), save"
+  },
+  {
+    "objectID": "setup.html#test-the-connection",
+    "href": "setup.html#test-the-connection",
+    "title": "Set up your framework",
+    "section": "5. Test the connection",
+    "text": "5. Test the connection\nRun:\nssh -T git@github.com\nIf successful, you’ll see:\nHi username! You've successfully authenticated, but GitHub does not provide shell access."
+  }
+]

@@ -11,7 +11,7 @@
 
   <meta name="author" content="Marie-Pierre Etienne">
   <meta name="dcterms.date" content="2024-07-24">
-  <title>OCR – Online Collaborative Resources</title>
+  <title>Reproducible science - motivation and basic tools</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -129,7 +129,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">OCR – Online Collaborative Resources</h1>
+  <h1 class="title">Reproducible science - motivation and basic tools</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -145,81 +145,381 @@ Marie-Pierre Etienne
   <p class="date">2024-07-24</p>
 </section>
 <section>
-<section id="welcome" class="title-slide slide level1 center">
-<h1>Welcome</h1>
-<p>The course <strong>OCR (Online Collaborative Resources)</strong> introduces tools and practices for <strong>reproducible and collaborative science</strong>.<br>
-It is designed for students who want to learn how to:</p>
-<ul>
-<li>Organize their work for transparency and reproducibility<br>
-</li>
-<li>Use version control systems such as <strong>Git</strong><br>
-</li>
-<li>Collaborate effectively on shared projects<br>
-</li>
-<li>Document analyses and results in a reproducible way</li>
-</ul>
+<section id="motiv" class="title-slide slide level1 center">
+<h1>Motivations</h1>
+
+</section>
+<section id="reproducible-science" class="slide level2">
+<h2>Reproducible science</h2>
+<p>In their <a href="../resources/bes2.1801.pdf">paper</a> <span class="citation" data-cites="alston2021beginner">@alston2021beginner</span> address the question of science reproducibility in ecology.</p>
+<p>The <a href="../resources/bes2.1801_crop.pdf">key aspects</a></p>
+<p>It’s a growing trend: more and more journals require some elements of reproducibility.</p>
+<p>–</p>
+</section>
+<section id="practically" class="slide level2">
+<h2>Practically</h2>
+<p>Where is the correct version of the report?</p>
+<p>.center[ <img data-src="../resources/figs/rapports.png" width="450" height="300">]</p>
 </section>
 <section class="slide level2">
 
 </section></section>
 <section>
-<section id="course-content" class="title-slide slide level1 center">
-<h1>Course Content</h1>
-<p>During this course, you will explore:</p>
-<ol type="1">
-<li><p><strong>Introduction</strong><br>
-Why reproducibility and collaboration matter in science, and the main challenges researchers face.</p></li>
-<li><p><strong>Setting up your framework</strong><br>
-Installing and configuring the software environment (Git, Quarto, etc.).</p></li>
-<li><p><strong>Git basics (working alone)</strong><br>
-Understanding repositories, commits, and tracking changes in your own projects.</p></li>
-<li><p><strong>Working collaboratively</strong><br>
-Using branches, pull requests, and collaborative workflows on shared repositories.</p></li>
-<li><p><strong>Final assignment</strong><br>
-Applying what you learned in a collaborative project.</p></li>
-</ol>
+<section id="reproducible-science-2" class="title-slide slide level1 center" data-template="motiv">
+<h1>Reproducible science (2)</h1>
+<p>In their <a href="../resources/bes2.1801.pdf">paper</a> <span class="citation" data-cites="alston2021beginner">@alston2021beginner</span> address the question of science reproducibility in ecology.</p>
+<p>The <a href="../resources/bes2.1801_crop.pdf">key aspects</a></p>
+<p>It’s a growing trend, more and more journal requires some elements of reproducibility.</p>
+<p>–</p>
+</section>
+<section id="practically-1" class="slide level2">
+<h2>Practically</h2>
+<p>An explanation in images: <a href="https://youtu.be/s3JldKoA0zw">vidéo</a> by <a href="https://bartomeuslab.com/">Ignasi Bartomeus</a>.</p>
+<p>–</p>
+</section>
+<section id="course-objective" class="slide level2">
+<h2>Course objective</h2>
+<p>Introducing tools to facilitate step 2.</p>
 </section>
 <section class="slide level2">
 
 </section></section>
 <section>
-<section id="final-assignment" class="title-slide slide level1 center">
-<h1>Final Assignment</h1>
-<p>The final project of this course is to <strong>collaboratively produce a set of reminders about basic statistical concepts</strong>.</p>
+<section id="overview" class="title-slide slide level1 center">
+<h1>Overview</h1>
+<p>.pull-left[ ## Code / paper writing</p>
 <ul>
-<li>Each student will write a short note (max 1 page) on a chosen concept (e.g., mean, variance, regression, probability).<br>
+<li>.care[<a href="https://git-scm.com/">git</a>] for
+<ul>
+<li>keeping track of different versions of code<br>
 </li>
-<li>Notes will be written in <strong>Quarto (<code>.qmd</code>) files</strong> inside a shared repository.<br>
+<li>collective work<br>
 </li>
-<li>You will practice <strong>Git collaboration</strong> by creating branches, making commits, and opening pull requests.<br>
-</li>
-<li>At the end, all contributions will be merged into a <strong>collective resource: a mini-encyclopedia of statistics reminders</strong>.</li>
+<li>reviewing and improving code quality</li>
+</ul></li>
 </ul>
-<p>This project will allow you to <strong>experience real-world collaborative workflows</strong> while reinforcing key concepts in statistics.</p>
+</section>
+<section id="around-the-code" class="slide level2">
+<h2>Around the code</h2>
+<ul>
+<li>.care[<a href="https://rmarkdown.rstudio.com/">Rmarkdown</a>], .care[<a href="https://jupyter.org/">Jupyter notebooks</a>], .care[<a href="https://quarto.org/">Quarto</a>] to bring together code, results, and analysis.
+<ul>
+<li>vignettes in R packages<br>
+</li>
+<li>R help pages<br>
+</li>
+<li>some scientific papers (<a href="https://computo.sfds.asso.fr/">Computo</a> asks for Jupyter/Quarto submissions)<br>
+</li>
+<li>dashboards … ]</li>
+</ul></li>
+</ul>
+<p>–</p>
+<p>.pull-right[ ## Controlling software versions</p>
+<p>Reproducibility also relies on stabilizing programming/library versions.</p>
+<p>The container system .care[<a href="https://www.docker.com/">Docker</a>] allows freezing a working software environment. ]</p>
 </section>
 <section class="slide level2">
 
 </section></section>
 <section>
-<section id="how-to-use-this-website" class="title-slide slide level1 center">
-<h1>How to Use This Website</h1>
-<p>Use the top menu to navigate through the course:</p>
+<section id="the-winning-trio-of-reproducible-research-with-r" class="title-slide slide level1 center">
+<h1>The winning trio of reproducible research with R</h1>
 <ul>
-<li><strong>Introduction</strong> – motivations and context<br>
+<li>.care[git]<br>
 </li>
-<li><strong>Set up your framework</strong> – installing tools<br>
+<li>.care[Rmarkdown]<br>
 </li>
-<li><strong>Basics in git, working alone</strong> – first steps with Git<br>
-</li>
-<li><strong>Working collaboratively</strong> – branches, merges, pull requests<br>
-</li>
-<li><strong>Final assignment</strong> – description of the project and instructions<br>
-</li>
-<li><strong>Stats Reminders</strong> – where all student contributions will appear</li>
+<li>.care[Docker]</li>
 </ul>
+<!-- --- -->
+<!-- # Introduction to git {#gitintro} -->
+<!-- ## What is it? -->
+<!-- - Developed by Linus Torvalds: *“I'm an egotistical bastard, and I name all my projects after myself. First Linux, now [git](https://www.wordreference.com/enfr/git).”* -->
+<!-- -- -->
+<!-- - Git is a version control system (the most widely used today).   -->
+<!-- - It allows tracking all changes made to code since its creation.   -->
+<!-- - Git is incredibly efficient.   -->
+<!-- --- -->
+<!-- template: gitintro -->
+<!-- ## Graphical representation of code development -->
+<!-- <img src="../resources/figs/git1.svg" width="900" height = "300" alt = "simple branche"></img> -->
+<!-- Cf example git_example git example -->
+<!-- ```{r git_illustration, eval = FALSE} -->
+<!-- git log -->
+<!-- ``` -->
+<!-- --- -->
+<!-- # Configuration -->
+<!-- The purpose of Git is to keep tracks of different versions of a project and their authors. -->
+<!-- To do so, you need to be authenticated. Before using, specify your name  -->
+<!-- ## The first use after installation -->
+<!-- ```{r git_config, eval = FALSE} -->
+<!-- git config --global user.email "your email" -->
+<!-- git config --global user.name "your name"` -->
+<!-- git config -l # check -->
+<!-- ``` -->
+<!-- --- -->
+<!-- # Starting from the existing: cloning a remote repository -->
+<!-- * Clone the repository that will serve as our example `git@github.com:MarieEtienne/MODE_reproductible_example2023.git`  -->
+<!-- in a Git console, type the following command: -->
+<!-- ```{r git_clone, eval = FALSE} -->
+<!-- cd # to navigate to your main directory -->
+<!-- ls   # command to list the contents of a directory -->
+<!-- git clone  repositoryname # command to actually clone the remote repository -->
+<!-- ls # we're checking what's now in the repository -->
+<!-- ``` -->
+<!-- -- -->
+<!-- *  Type the command git log. -->
+<!-- *  Or for a more visual representation, gitk. -->
+<!-- --- -->
+<!-- name: contribute -->
+<!-- # Your first commit -->
+<!-- * Open the file `penguins.Rmd` and add your name and the list of authors, then save your file. -->
+<!-- -- -->
+<!-- * Type the command git log in the console. -->
+<!-- -- -->
+<!-- * Enter the following commands: -->
+<!-- ```{r status_diff, eval = FALSE} -->
+<!-- git status # project status -->
+<!-- git diff -->
+<!-- ``` -->
+<!-- -- -->
+<!-- *Type the command `git add penguins.Rmd`, then repeat the previous commands. -->
+<!-- * Type the command `git commit -m "Added an author"`, and once again check the project status. -->
+<!-- -- -->
+<!-- * Draw the commit tree. -->
+<!-- -- -->
+<!-- <img src="../resources/figs/git2.svg" width="800" height = "250" alt = "simple branche"></img> -->
+<!-- --- -->
+<!-- template: contirbute -->
+<!-- ## Process overview -->
+<!-- <img src="../resources/figs/Vision_globale_git_step1.png" width="800" height = "300" alt = "bilan1"></img> -->
+<!-- -- -->
+<!-- ### The snapshot analogy -->
+<!-- - In the working directory, let's try different poses (the version of the project in the working directory)  -->
+<!-- - When satisfied by the pose of one guy, ask him stop moving (Staging area) -->
+<!-- - When satisfied with the whole scene, take the photo (Commit in the local repo) -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Share your progress with your co workers -->
+<!-- The current version of the project is indeed recorded in the version control system, but you are the only ones who know it. -->
+<!-- You may want to sharethese changes to the remote repository from which we started. -->
+<!-- * To view the differences with the remote repository, use `git diff origin/master`. -->
+<!-- * To send our changes, , use `git push`. -->
+<!-- * Is the content of the local repository now pushed to the server?  -->
+<!-- * Are the local repository and the remote copy identical? -->
+<!-- -- -->
+<!-- `git diff master origin/master` -->
+<!-- -- -->
+<!-- * Modify the `penguins.Rmd` file. What will the `git diff master origin/master` command show, and why? -->
+<!-- * What will the `git diff origin/master` command show? -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## The graphical tree summary -->
+<!-- .pull-left[ -->
+<!-- * Before the push  -->
+<!-- <img src="../resources/figs/git3.svg" width="600" height = "200" alt = "bilan1"></img> -->
+<!-- ] -->
+<!-- -- -->
+<!-- .pull-right[ -->
+<!-- * After the push  -->
+<!-- <img src="../resources/figs/git3_bis.svg" width="600" height = "200x" alt = "bilan1"></img> -->
+<!-- ] -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- .pull-left[ -->
+<!-- ## The graphical tree summary -->
+<!-- <img src="../resources/figs/Vision_globale_git_step2.png" width="800" height = "300" alt = "bilan1"></img> -->
+<!-- ] -->
+<!-- -- -->
+<!-- .pull-right[ -->
+<!-- ### The snapshot analogy -->
+<!-- - In the working directory, let's try different poses (the version of the project in the working directory)  -->
+<!-- - When satisfied by the pose of one guy, ask him stop moving (Staging area) -->
+<!-- - When satisfied with the whole scene, take the photo (Commit in the local repo) -->
+<!-- - Push the photo on Insta to share it (remote repo -- push) -->
+<!-- ] -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Share your progress with your co workers -->
+<!-- The remote repo might have changed while we were working on our local version. -->
+<!-- Before bein allowed to push your modification, you have to accounts for the change made by others -->
+<!-- ```{r git_pull, eval = FALSE } -->
+<!-- git pull  -->
+<!-- ``` -->
+<!-- -- -->
+<!-- If no one has modified the same portion of the file as you, Git will smoothly incorporate the changes made by others into your code. -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: graphical tree for a merge -->
+<!-- Before merging -->
+<!-- <img src="../resources/figs/git4.svg" width="680" height = "500" alt = "bilan1"></img> -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: graphical tree for a merge -->
+<!-- After merging -->
+<!-- <img src="../resources/figs/git5.svg" width="680" height = "500" alt = "bilan1"></img> -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: graphical tree for a merge -->
+<!-- After the push  -->
+<!-- <img src="../resources/figs/git6.svg" width="680" height = "500" alt = "bilan1"></img> -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: handling conflicts -->
+<!-- If the same portion of the file has been modified on the server, Git panics; this is the -->
+<!-- -- -->
+<!-- .care[CONFLICT] -->
+<!-- ```{r git_conflit, eval = FALSE} -->
+<!-- CONFLICT (content): Merge conflict in penguins.Rmd -->
+<!-- Automatic merge failed; fix conflicts and then commit the result. -->
+<!-- ``` -->
+<!-- -- -->
+<!-- You must resolve the conflict -->
+<!-- ```{r git_conflit_resolve, eval = FALSE} -->
+<!-- <<<<<<< HEAD -->
+<!-- L'objectif de cette classe est de proposer des représentations graphiques de ces données en collaborant à l'aide de l'outil git. Il faut bien une raison d'utiliser git. -->
+<!-- ======= -->
+<!-- L'objectif de cette classe est de proposer des représentations graphiques de ces données en collaborant à l'aide de l'outil git. C'est un prétexte pour utiliser git. -->
+<!-- >>>>>>> conflit -->
+<!-- ``` -->
+<!-- * We edit the file to choose the correct version, then `git add, commit, push` -->
+<!-- ** Please  take some time to produce conflicts and solve it ** -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: Graphical tree overview -->
+<!-- <img src="../resources/figs/Vision_globale_git_step3.png" width="800" height = "300" alt = "bilan1"></img> -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: less share, less pain  -->
+<!-- To limit conflicts, conduct tests without interfering with others, there is the concept of *branching*. -->
+<!-- You work independantly for a while and merge from time to time. -->
+<!-- -- -->
+<!-- <img src="../resources/figs/git7.svg" width="800" height = "600" alt = "bilan1"></img> -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: branches  practically speaking -->
+<!-- * Create your branch -->
+<!-- ```{r git_branch, eval = FALSE } -->
+<!-- git branch -a -->
+<!-- git branch test -->
+<!-- git branch -a -->
+<!-- ``` -->
+<!-- * To jump on a branch -->
+<!-- ```{r git_switch, eval = FALSE } -->
+<!-- git switch test -->
+<!-- git branch -a -->
+<!-- ``` -->
+<!-- Let's make whatever changes you like and then commit. -->
+<!-- when you return to the master branch, you will find your project just as you left it before branching. -->
+<!-- ** Take a moment to try** -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: branches  practically speaking -->
+<!-- * Let's create your own branch  and jump on it  `git branch` (`git branch -a` to have the remotes branches also). -->
+<!-- The stared branch is the one we currently sit on. -->
+<!-- * Please remove `penguins.Rmd ` then register this change -->
+<!-- ```{r illustration_branche, eval = FALSE}  -->
+<!-- rm penguins.Rmd # to remove the file -->
+<!-- git status -->
+<!-- git add penguins.Rmd # add the changes aka it's deletion -- ok it's weird -->
+<!-- git commit -m "Removing penguins.Rmd" -->
+<!-- ls #list the content of the working directory -->
+<!-- ``` -->
+<!-- * Jump back on the master branch `git switch master` and list the contents of your working directory.  -->
+<!-- -- -->
+<!-- You may want to suppress an old unuseful branch with  -->
+<!-- ```{r delete_branche, eval = FALSE}  -->
+<!-- git branch  -d test  -->
+<!-- ``` -->
+<!-- -- -->
+<!-- As the changes stored in this branch have not been pushed on the remote repo, you will lose every changes if you delete the branch, -->
+<!-- The vigilant Git system is worried about us. Are we not on the verge of losing important work? -->
+<!-- We reassure it by letting it know that we know exactly what we are doing by using the  `-D` option -->
+<!-- ```{r delete_branche_force, eval = FALSE}  -->
+<!-- git branch  -D test  -->
+<!-- ``` -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: incorporate the changes made in another branch -- merge -->
+<!-- * Create a branch dev and switch to this branch. -->
+<!-- * Add a nice chart to penguins.Rmd and then incorporate your changes into the project on the dev branch. -->
+<!-- * Push your work to the remote repository (look at Git's instructions on git push options) (optional for now but generally useful). -->
+<!-- * Switch to the master branch and type the command git merge dev. You have integrated the changes made in dev into the master branch. -->
+<!-- * Draw the commit tree in this case. -->
+<!-- --- -->
+<!-- name: navigate -->
+<!-- # Navigate from one version to another -->
+<!-- --- -->
+<!-- template: navigate -->
+<!-- ## Go back to a previous version -- checkout -->
+<!-- To go back to a previous specific version, use the `checkout`  command -->
+<!-- Open the files `penguins.Rmd` and execute -->
+<!-- ```{r git_checkout, eval = FALSE} -->
+<!-- git log --oneline -->
+<!-- git checkout A_specific_hash_version_number -->
+<!-- ``` -->
+<!-- The current working version of  `penguins.Rmd` is in the state of commit `A_specific_hash_version_number` -->
+<!-- Go back to the lates version on master by  -->
+<!-- -- -->
+<!-- ```{r git_checkout_2, eval = FALSE} -->
+<!-- git checkout master -->
+<!-- ``` -->
+<!-- Everything is back to normal! -->
+<!-- ** That's the Git Magic" -->
+<!-- --- -->
+<!-- template: navigate -->
+<!-- ## To suppress a local commit (not present on the remote repo) -->
+<!-- * Remove the file `penguins.Rmd`, and commit this change -->
+<!-- ```{r git_checkout_suppress, eval = FALSE} -->
+<!-- git log --oneline -->
+<!-- git reset --hard The_previous_commit_number -->
+<!-- git log --oneline -->
+<!-- ``` -->
+<!-- -- -->
+<!-- Be very very very careful, it is a destructive process. All information regarding your previous commit is lost. -->
+<!-- It's a very dangerous way of living with Git, an unfortunate removal of a commit present on the remote server can break the commit trees for all your coworkers and you won't have friends anymore.  -->
+<!-- --- -->
+<!-- template: navigate -->
+<!-- ## How to suppress a commit shared on the remote repo -->
+<!-- * Remove the file  `penguins.Rmd` and commit this modification. -->
+<!-- You can "suppress" this commit by applying the opposit! That's what you do by  -->
+<!-- ```{r git_checkout_suppress_2, eval = FALSE} -->
+<!-- git log --oneline -->
+<!-- git revert commit_number_to_revert -->
+<!-- git log --oneline -->
+<!-- ``` -->
+<!-- --- -->
+<!-- template: gitintro -->
+<!-- ## Practice -->
+<!-- within your team, divide and conquer to produce -->
+<!-- * a short text to present the Palmer Penguins dataset, -->
+<!-- * insigthful plots of the Palmer penguins dataset, -->
+<!-- * a statistical analysis to deceide wheter or not the average body mass in the same whatever species you consider, -->
+<!-- Good Practice : -->
+<!-- Every one works on its own develoment branch and shae with others when he's ready -->
+<!-- --- -->
+<!-- # If we have time  -->
+<!-- `git rebase` -->
+<!-- `git cherry pick` -->
+<!-- --- -->
+<!-- # Last few words -->
+<!-- * Git is a standard control version system in industry AND research for version control (wheter you use it with Github or not), -->
+<!-- * Being proficient with Git requires to use it as much as possible: The more problems you have, the more you learn -->
+<!-- * Go back to the documentation as much as needed -->
+<!-- * By no means, Git is an alternative to a proper documented code (in R you might want to use package like `formatR`, `styleR` and document it with `roxygen`) -->
+<!-- --- -->
+<!-- # Some help other than Claude.ai and ChatGPT -->
+<!-- ## Resources -->
+<!-- * [The Git Book](https://git-scm.com/book/en/v2) -->
+<!-- * [Atlassian tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control) -->
+<!-- ## Cheat sheet -->
+<!-- [Git Cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf) -->
+<!-- ## Tobe used as a Sandbox -->
+<!-- [Learning Git Demo](https://learngitbranching.js.org/?locale=fr_FR&NODEMO=) -->
 </section>
-<section class="slide level2">
-
+<section id="références" class="slide level2">
+<h2>Références</h2>
+<p>NULL</p>
 
 
 </section></section>
@@ -438,6 +738,44 @@ Applying what you learned in a collaborative project.</p></li>
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

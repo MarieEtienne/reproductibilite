@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Marie-Pierre Etienne">
-  <meta name="dcterms.date" content="2024-07-24">
-  <title>OCR – Online Collaborative Resources</title>
+  <meta name="dcterms.date" content="2025-09-01">
+  <title>Set up your framework</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-e0c7ac129122cc7fb151e4cf0ee867a5.css">
   <link rel="stylesheet" href="mpe_pres_revealjs.css">
@@ -129,7 +195,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">OCR – Online Collaborative Resources</h1>
+  <h1 class="title">Set up your framework</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -142,87 +208,111 @@ Marie-Pierre Etienne
     </div>
 </div>
 
-  <p class="date">2024-07-24</p>
+  <p class="date">2025-09-01</p>
 </section>
 <section>
-<section id="welcome" class="title-slide slide level1 center">
-<h1>Welcome</h1>
-<p>The course <strong>OCR (Online Collaborative Resources)</strong> introduces tools and practices for <strong>reproducible and collaborative science</strong>.<br>
-It is designed for students who want to learn how to:</p>
-<ul>
-<li>Organize their work for transparency and reproducibility<br>
-</li>
-<li>Use version control systems such as <strong>Git</strong><br>
-</li>
-<li>Collaborate effectively on shared projects<br>
-</li>
-<li>Document analyses and results in a reproducible way</li>
-</ul>
-</section>
-<section class="slide level2">
+<section id="setting-up-github-and-ssh" class="title-slide slide level1 center">
+<h1>Setting up GitHub and SSH</h1>
 
-</section></section>
-<section>
-<section id="course-content" class="title-slide slide level1 center">
-<h1>Course Content</h1>
-<p>During this course, you will explore:</p>
+</section>
+<section id="create-a-github-account" class="slide level2">
+<h2>1. Create a GitHub Account</h2>
 <ol type="1">
-<li><p><strong>Introduction</strong><br>
-Why reproducibility and collaboration matter in science, and the main challenges researchers face.</p></li>
-<li><p><strong>Setting up your framework</strong><br>
-Installing and configuring the software environment (Git, Quarto, etc.).</p></li>
-<li><p><strong>Git basics (working alone)</strong><br>
-Understanding repositories, commits, and tracking changes in your own projects.</p></li>
-<li><p><strong>Working collaboratively</strong><br>
-Using branches, pull requests, and collaborative workflows on shared repositories.</p></li>
-<li><p><strong>Final assignment</strong><br>
-Applying what you learned in a collaborative project.</p></li>
+<li>Go to <a href="https://github.com">https://github.com</a><br>
+</li>
+<li>Click <strong>Sign up</strong><br>
+</li>
+<li>Choose a username, email, and password<br>
+</li>
+<li>Verify your account by email<br>
+</li>
+<li>(Optional) Install <strong>GitHub Desktop</strong> if you prefer a GUI</li>
 </ol>
 </section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="final-assignment" class="title-slide slide level1 center">
-<h1>Final Assignment</h1>
-<p>The final project of this course is to <strong>collaboratively produce a set of reminders about basic statistical concepts</strong>.</p>
+<section id="install-git-linux" class="slide level2">
+<h2>2. Install Git (Linux)</h2>
+<p>On most Linux distributions, Git is available from the package manager.</p>
 <ul>
-<li>Each student will write a short note (max 1 page) on a chosen concept (e.g., mean, variance, regression, probability).<br>
-</li>
-<li>Notes will be written in <strong>Quarto (<code>.qmd</code>) files</strong> inside a shared repository.<br>
-</li>
-<li>You will practice <strong>Git collaboration</strong> by creating branches, making commits, and opening pull requests.<br>
-</li>
-<li>At the end, all contributions will be merged into a <strong>collective resource: a mini-encyclopedia of statistics reminders</strong>.</li>
+<li>On <strong>Debian/Ubuntu</strong>:</li>
 </ul>
-<p>This project will allow you to <strong>experience real-world collaborative workflows</strong> while reinforcing key concepts in statistics.</p>
+<p>Check if Git is available if not</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-2"><a></a><span class="fu">sudo</span> apt install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="install-git-macos" class="slide level2">
+<h2>2. Install Git (macOS)</h2>
+<p>Check if Git is available if not</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="ex">brew</span> install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Check installation with:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="install-git-windows" class="slide level2">
+<h2>2. Install Git (Windows)</h2>
+<p>Windows users should install <strong>Git for Windows</strong>, which includes Git Bash.</p>
+<ol type="1">
+<li>Download from <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
+<li>Run the installer and keep the default options</li>
+<li>After installation, open <strong>Git Bash</strong> from the Start menu</li>
+<li>Verify installation:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="generate-an-ssh-key-linux-macos" class="slide level2">
+<h2>3. Generate an SSH key (Linux &amp; macOS)</h2>
+<p>Open a terminal and type:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="co"># create a new ssh key RSA (2048 bits) with no passphrase</span></span>
+<span id="cb5-2"><a></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 2048 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a><span class="co"># press enter to accept default file location (~/.ssh/id_rsa)</span></span>
+<span id="cb5-5"><a></a><span class="co"># press enter to use am empty passphrase </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="generate-an-ssh-key-windows-git-bash" class="slide level2">
+<h2>3. Generate an SSH key (Windows, Git Bash)</h2>
+<ol type="1">
+<li>Open <strong>Git Bash</strong></li>
+<li>Run:</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="co"># create a new ssh key RSA (2048 bits) with no passphrase</span></span>
+<span id="cb6-2"><a></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-b</span> 2048 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="co"># press enter to accept default file location (~/.ssh/id_rsa)</span></span>
+<span id="cb6-5"><a></a><span class="co"># press enter to use am empty passphrase </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><p>Keys are saved by default in:</p>
+<ul>
+<li><code>C:\Users\&lt;YourUser&gt;\.ssh\id_rsa</code></li>
+</ul></li>
+</ol>
+</section>
+<section id="add-the-ssh-key-to-github" class="slide level2">
+<h2>4. Add the SSH key to GitHub</h2>
+<ol type="1">
+<li>Copy the public key:</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="fu">cat</span> ~/.ssh/id_rsa.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(or open <code>id_rsa.pub</code> in a text editor on Windows)</p>
+<ol start="2" type="1">
+<li>Go to <a href="https://github.com/settings/keys">GitHub → Settings → SSH and GPG keys</a></li>
+<li>Click <strong>New SSH key</strong></li>
+<li>Paste the key, give it a name (e.g.&nbsp;<em>My laptop</em>), save</li>
+</ol>
+</section>
+<section id="test-the-connection" class="slide level2">
+<h2>5. Test the connection</h2>
+<p>Run:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If successful, you’ll see:</p>
+<pre><code>Hi username! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
 </section>
 <section class="slide level2">
 
 </section></section>
-<section>
-<section id="how-to-use-this-website" class="title-slide slide level1 center">
-<h1>How to Use This Website</h1>
-<p>Use the top menu to navigate through the course:</p>
-<ul>
-<li><strong>Introduction</strong> – motivations and context<br>
-</li>
-<li><strong>Set up your framework</strong> – installing tools<br>
-</li>
-<li><strong>Basics in git, working alone</strong> – first steps with Git<br>
-</li>
-<li><strong>Working collaboratively</strong> – branches, merges, pull requests<br>
-</li>
-<li><strong>Final assignment</strong> – description of the project and instructions<br>
-</li>
-<li><strong>Stats Reminders</strong> – where all student contributions will appear</li>
-</ul>
+<section id="setup-complete" class="title-slide slide level1 center">
+<h1>✅ Setup complete</h1>
+<p>You are now ready to <strong>clone, push, and pull</strong> using SSH with your GitHub account!</p>
+
+
 </section>
-<section class="slide level2">
-
-
-
-</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
