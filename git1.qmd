@@ -34,6 +34,17 @@ myBib <- ReadBib('OCR.bib', check = FALSE)
 ```
 
 
+# Introduction to git {#gitintro} -->
+
+## What is it?
+
+- Developed by Linus Torvalds: *“I'm an egotistical bastard, and I name all my projects after myself. First Linux, now [git](https://www.wordreference.com/enfr/git).”*
+
+. . .
+
+- Git is a version control system (the most widely used today).
+- It allows tracking all changes made to code since its creation.
+- Git is incredibly efficient.
 
 
 # Starting from an existing directory
@@ -88,7 +99,18 @@ ls -a #→ include hidden files
 mkdir my_git_dir
 ```
 
-5. Quick tips
+5. Removing files or directory
+
+```{bash}
+#| echo: true
+#| eval: false
+rm my_file
+rmdir my_dir #remove an empty dir
+rm -rf my_dir #remove a directeory and everything inside ! Careful
+```
+
+
+6. Quick tips
 
 Use `Tab` for autocomplete paths and filenames.
 
@@ -104,7 +126,13 @@ Paths on Git Bash use `/`, even on Windows (`/c/Users/...`).
 
 * list the files contained in this directory
 
-* Jump  outside this directory
+* Create a `test_dir` directory 
+
+* Jump  outside the `git directeory`
+
+* Remove the `git` directory and everything it contains
+
+* Create a directory named `git`, where you will store all your git projects
 
 ## Cloning an existing reprository 
 
@@ -168,3 +196,46 @@ The original repo remains unchanged unless you submit a pull request that gets a
 You can sync your fork with the original repo later if it gets updated
 
 This workflow is essential for contributing to open-source projects or collaborating on code when you don't have direct write access to the original repository.
+
+
+## Exercise
+
+* Remove the stats-reminder directory and its content
+
+* Fork [https://github.com/MarieEtienne/stats-reminders](https://github.com/MarieEtienne/stats-reminders) on your personnal GitHub account
+
+* clone your version of stats-reminder
+
+* Show the history of this file
+
+# Creating new content 
+
+## Your first commit
+
+* Open the file `Penguins_chapter.qmd` and add your name and the list of authors, then save your file.
+
+. . .
+
+* Type the command git log in the console.
+
+. . .
+
+* Enter the following commands:
+
+```{bash}
+#| echo: true
+#| eval: false
+git status # project status
+git diff
+```
+
+. . .
+
+*Type the command `git add penguins.Rmd`, then repeat the previous commands.
+
+* Type the command `git commit -m "Added an author"`, and once again check the project status.
+
+* check the project on Github 
+
+* Type the command `git push"`, and once again check the project on Github
+
