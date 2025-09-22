@@ -35,7 +35,7 @@ myBib <- ReadBib('OCR.bib', check = FALSE)
 
 
 
-## Motivations {#motiv}
+## Motivations 
 
 ### Reproducible science
 
@@ -47,6 +47,8 @@ It’s a growing trend: more and more journals require some elements of reproduc
 
 
 
+## Motivations 
+
 ### Practically
 
 Where is the correct version of the report?
@@ -56,6 +58,7 @@ Where is the correct version of the report?
 
 
 
+## Motivations 
 
 ### Practically
 

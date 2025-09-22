@@ -155,7 +155,7 @@ To do so, you need to be authenticated. Before using, specify your name
 
 ### The first use after installation
 
-```{r git_config, eval = FALSE}
+```{r git_config, eval = FALSE, echo = TRUE}
 git config --global user.email "your email"
 git config --global user.name "your name"`
 git config -l # check
