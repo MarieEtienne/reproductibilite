@@ -1,0 +1,32 @@
+project:
+  type: website
+
+website:
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: introduction.qmd
+        text: Introduction
+      - href: setup.qmd
+        text: Set up your framework
+      - href: git1.qmd
+        text: Basics in git, working alone
+      - href: git2.qmd
+        text: Working collaboratively
+
+    right:
+      - href: stats-reminders/index.qmd
+        text: Stats Reminders
+       
+
+format:
+  html:
+    theme: flatly
+    linkcolor: "#c0392b"
+    fontcolor: "#057174"
+    css: mpe_pres_revealjs.css
+    toc: true
+
+
+    
