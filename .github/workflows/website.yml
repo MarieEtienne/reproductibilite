@@ -9,7 +9,7 @@ jobs:
   build:
     name: Build website with quarto
     runs-on: ubuntu-latest
-    container: mpetienne/mode2025:latest
+    container: mpetienne/mode2025:0.1
     permissions:
       contents: write
 
@@ -33,9 +33,6 @@ jobs:
         run: |
           Rscript -e "install.packages(c('Factoshiny', 'RefManageR', 'wesanderson', 'palmerpenguins', 'plotly'))"
           Rscript -e "install.packages(c('reticulate', 'ggpubr', 'GGally', 'xaringanExtra', 'flipbookr', 'ggrepel'))"
-      - name: Additional Python packages
-        run: |
-          pip install numpy scipy pandas seaborn scikit-learn statsmodels palmerpenguins 
       - name: Generate slides
         run: "quarto render"
       - name: GitHub Pages action
