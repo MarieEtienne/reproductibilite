@@ -7,7 +7,7 @@ jobs:
   build:
     name: Build website with quarto
     runs-on: ubuntu-latest
-    container: mpetienne/topics:latest
+    container: mpetienne/mode2025:latest
     permissions:
       contents: write
 
