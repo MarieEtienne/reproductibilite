@@ -1,7 +1,6 @@
 ---
 title: "OCR – Online Collaborative Resources"
 author: Marie-Pierre Etienne
-date: '2024/07/24 (updated: `r Sys.Date()`)'
 institute: https://github.com/MarieEtienne/reproductibilite
 format: html
 toc: true
@@ -23,7 +22,7 @@ It is designed for students who want to learn how to:
 
 ---
 
-# Course Content
+# Course content
 
 During this course, you will explore:
 
@@ -51,13 +50,14 @@ The final project of this course is to **collaboratively produce a set of remind
 - Each student will write a short note (max 1 page) on a chosen concept (e.g., mean, variance, regression, probability).  
 - Notes will be written in **Quarto (`.qmd`) files** inside a shared repository.  
 - You will practice **Git collaboration** by creating branches, making commits, and opening pull requests.  
+- You are also requested to review others' production and provide useful comments, accet or not pull requests
 - At the end, all contributions will be merged into a **collective resource: a mini-encyclopedia of statistics reminders**.  
 
 This project will allow you to **experience real-world collaborative workflows** while reinforcing key concepts in statistics.  
 
 ---
 
-# How to Use This Website
+# How to use this website
 
 Use the top menu to navigate through the course:  
 
