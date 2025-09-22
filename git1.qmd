@@ -34,7 +34,7 @@ myBib <- ReadBib('OCR.bib', check = FALSE)
 ```
 
 
-# Introduction to git {#gitintro} -->
+# Introduction to git 
 
 ## What is it?
 
@@ -51,12 +51,12 @@ myBib <- ReadBib('OCR.bib', check = FALSE)
 
 ## Cloning an existing reprository 
 
-This means copy locally on your computer the content of a repository which 
+This means copy locally on your computer the content of a repository which means
 
-* the actual code and text contents
-* the history of all changes
+* copy the actual code and text contents
+* copy the history of all changes
 
-Before, we nedd basic bash command
+Before using Git, we need basic bash commands
 
 ## First element - navigating using bash command 
 
@@ -90,6 +90,9 @@ ls -a #→ include hidden files
 | Go up one level   | `cd ..`              | `cd ..`                |
 | Go to home        | `cd ~`               | `cd %USERPROFILE%`     |
 | Absolute path     | `cd /path/to/folder` | `cd C:\path\to\folder` |
+
+## First element - navigating using bash command 
+
 
 4. Create a directory 
 
@@ -154,7 +157,7 @@ cd stats-reminders
 ls
 ```
 
-### Where to find this magical adress to clone
+### Where to find this magical address to clone
 
 Navigate to the repository you want to clone
 On the main page, click on the "Code" green button, be sure to select SSH and copy paste the address.
@@ -231,11 +234,11 @@ git diff
 
 . . .
 
-*Type the command `git add penguins.Rmd`, then repeat the previous commands.
+* Type the command `git add penguins.Rmd`, then repeat the previous commands.
 
 * Type the command `git commit -m "Added an author"`, and once again check the project status.
 
-* check the project on Github 
+* Check the project on Github 
 
 * Type the command `git push"`, and once again check the project on Github
 

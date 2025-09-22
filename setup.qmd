@@ -163,6 +163,6 @@ git config -l # check
 
 # ✅ Setup complete
 
-You are now ready to **clone, push, and pull** using SSH with your GitHub account!
+[You are now ready to **clone, push, and pull** using SSH with your GitHub account!]{.care}
 
 
