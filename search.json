@@ -32,7 +32,7 @@
     "href": "introduction.html#overview",
     "title": "Reproducible science - motivation and basic tools",
     "section": "Overview",
-    "text": "Overview\nCode / paper writing\n\ngit for\n\nkeeping track of different versions of code\n\ncollective work\n\nreviewing and improving code quality\n\n\nAround the code\n\nRmarkdown, .care[Jupyter notebooks], .care[Quarto] to bring together code, results, and analysis.\n\nvignettes in R packages\n\nR help pages\n\nsome scientific papers (Computo asks for Jupyter/Quarto submissions)\n\ndashboards …"
+    "text": "Overview\nCode / paper writing\n\ngit for\n\nkeeping track of different versions of code\n\ncollective work\n\nreviewing and improving code quality\n\n\nAround the code\n\nRmarkdown, Jupyter notebooks, Quarto to bring together code, results, and analysis.\n\nvignettes in R packages\n\nR help pages\n\nsome scientific papers (Computo asks for Jupyter/Quarto submissions)\n\ndashboards …"
   },
   {
     "objectID": "introduction.html#overview-1",
