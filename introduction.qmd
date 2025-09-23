@@ -81,7 +81,7 @@ An explanation in images: [vidéo](https://youtu.be/s3JldKoA0zw) by [Ignasi Bart
 
 ### Around the code
 
-- [[Rmarkdown](https://rmarkdown.rstudio.com/)]{.care}, .care[[Jupyter notebooks](https://jupyter.org/)], .care[[Quarto](https://quarto.org/)] to bring together code, results, and analysis.  
+- [[Rmarkdown](https://rmarkdown.rstudio.com/)]{.care}, [[Jupyter notebooks](https://jupyter.org/)]{.care},  [[Quarto](https://quarto.org/)]{.care} to bring together code, results, and analysis.  
   - vignettes in R packages  
   - R help pages  
   - some scientific papers ([Computo](https://computo.sfds.asso.fr/) asks for Jupyter/Quarto submissions)  
