@@ -258,6 +258,7 @@ git push
 
 ::::
 
+:::::
 
 [Associate trees with actions]{.care}
 
@@ -297,7 +298,8 @@ Merging test within master:
 ::::
 
 
-:::
+:::::
+
 
 
 
@@ -443,7 +445,7 @@ History stays clean and easy to read
 
 # Navigate from one version to another 
 
-## Going back in time : restor  version -- checkout 
+## Going back in time : restore  version -- checkout 
 
 To go back to a previous specific version, use the `checkout`  command
 
