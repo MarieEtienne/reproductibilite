@@ -310,12 +310,12 @@ Marie-Pierre Etienne
 <section id="share-your-progress-with-your-co-workers-1" class="slide level2">
 <h2>Share your progress with your co workers</h2>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Graphically</a></li><li><a href="#tabset-3-2">The theory</a></li><li><a href="#tabset-3-3">Solving conflicts = deciding</a></li><li><a href="#tabset-3-4">In practice, the easy dirty way</a></li><li><a href="#tabset-3-5">Example</a></li><li><a href="#tabset-3-6">Process overview</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Graphically</a></li><li><a href="#tabset-5-2">The theory</a></li><li><a href="#tabset-5-3">Solving</a></li><li><a href="#tabset-5-4">Practically (easy but dirty)</a></li><li><a href="#tabset-5-5">Example</a></li><li><a href="#tabset-5-6">Process overview</a></li><li><a href="#tabset-5-7">Goal minimising conflicts</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-5-1">
 <p><img src="resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-5-2">
 <ul>
 <li><p>Be sure that all your changes have been committed</p></li>
 <li><p>when works are diverged, you can have different attitudes. We go for the simple one for now and we need to specify this config for git</p></li>
@@ -336,8 +336,10 @@ Marie-Pierre Etienne
 <li>Share the merged version on the server</li>
 </ul>
 </div>
-<div id="tabset-3-3">
-<p>You must resolve the conflict</p>
+<div id="tabset-5-3">
+<ul>
+<li>Solving conflicts implies choosing and You must resolve the conflict</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
 <span id="cb7-2"><a></a><span class="ex">It</span> will also served as sandbox during the lectures. Therefore the git history might be a bit fuzy.</span>
@@ -348,7 +350,7 @@ Marie-Pierre Etienne
 </div>
 <p>Portion between <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> and <code>=======</code> is your local version, while part between <code>=======</code>and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; dfdf5995ade6e47899531a99e5947e719da86020</code> is the version available at commit with hash dfdf5995ade6e47899531a99e5947e719da86020.</p>
 </div>
-<div id="tabset-3-4">
+<div id="tabset-5-4">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">git</span> pull origin master <span class="co"># retrieve the laste version on the server and try to merge with yours</span></span>
 <span id="cb8-2"><a></a><span class="fu">git</span> status <span class="co"># see the conflicted files</span></span>
@@ -359,7 +361,7 @@ Marie-Pierre Etienne
 </div>
 <p><span class="care">Problem</span>: the merge commit is not very readable in the development process. But one step at a time</p>
 </div>
-<div id="tabset-3-5">
+<div id="tabset-5-5">
 <ul>
 <li><p>Change someting in your local version of <code>Penguins_chapter.qmd</code>,</p></li>
 <li><p><code>git add, commit, pull</code> …..</p></li>
@@ -369,181 +371,212 @@ Marie-Pierre Etienne
 <p><span class="care">Problem</span>: Too much time spent at solving conflicts. We need another to minimize conflilcts</p>
 <p><img src="resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
 </div>
+<div id="tabset-5-6">
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><span class="care">T1</span> <img src="resources/figs/git6.svg" width="600" height="200" alt="bilan1"></p>
+<p><span class="care">T2</span> <img src="resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
+</div><div class="column" style="width:48%;">
+<p><span class="care">T3</span> <img src="resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
+</div><p><span class="care">Associate trees with actions</span></p>
+</div>
+<section id="one-branch-for-one-task" class="slide level2">
+<h2>One branch for one task</h2>
+</section>
+</div>
+<div id="tabset-5-7">
+<p>Working in parralel and merging from time to time</p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Graphically</a></li><li><a href="#tabset-3-2">Create</a></li><li><a href="#tabset-3-3">Share</a></li><li><a href="#tabset-3-4">Merge</a></li><li><a href="#tabset-3-5">Exercise - 1</a></li><li><a href="#tabset-3-6">Exercise - 2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="columns">
+<div class="column" style="width:48%;">
+<p>Working in parallel:</p>
+<p><img src="resources/figs/git7.svg" width="600" height="200" alt="bilan1"></p>
+</div><div class="column" style="width:48%;">
+<p>Merging test within master: <img src="resources/figs/git8.svg" width="600" height="200" alt="bilan1"></p>
+</div></div>
+</div>
+<div id="tabset-3-2">
+<p>Creat a local branch and navigating between different branches</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="fu">git</span> branch mpe_test_branch <span class="co"># create a branch</span></span>
+<span id="cb9-2"><a></a><span class="fu">git</span> branch <span class="at">-a</span> <span class="co"># list the branch and indicates on which you are sitting</span></span>
+<span id="cb9-3"><a></a><span class="fu">git</span> switch  mpe_test_branch <span class="co"># switch/jump on mpe_test_branch</span></span>
+<span id="cb9-4"><a></a><span class="fu">git</span> branch <span class="at">-a</span> </span>
+<span id="cb9-5"><a></a><span class="fu">git</span> switch master</span>
+<span id="cb9-6"><a></a><span class="fu">git</span> branch <span class="at">-d</span> mpe_test_branch <span class="co"># deletes the branch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-3">
+<ul>
+<li>Create your own branch and make some changes, add and commit them and now trying to push</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="fu">git</span> push origin YOUR_BRANCH_NAME</span>
+<span id="cb10-2"><a></a><span class="fu">git</span> switch master <span class="co">#go back on the master branch</span></span>
+<span id="cb10-3"><a></a><span class="fu">git</span> branch <span class="at">-a</span> <span class="co">#list all the branchs and show on which you are sitting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Go on Github and look !</p>
+</div>
+<div id="tabset-3-4">
+<ul>
+<li><p>Create a second test branch <code>test_branch2</code> and make some changes</p></li>
+<li><p>We want to incorprate change make in test_branch2 in your personnal branch</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="fu">git</span> switch YOUR_BRANCH_NAME</span>
+<span id="cb11-2"><a></a><span class="fu">git</span> merge test_branch2 <span class="co">#merging the commits of test_branch2 in the branch you are sitting</span></span>
+<span id="cb11-3"><a></a><span class="co">## look at your files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-5">
+<ul>
+<li><p>Creates your own test_branch from the master branch and go on this branch</p></li>
+<li><p>Remove <code>Penguins_chapter.qmd</code> from the versioning system <code>git rm Penguins_chapter.qmd</code></p></li>
+<li><p>list the content your directory</p></li>
+<li><p>Commit your changes in your branch</p></li>
+<li><p>Switch to the master branch</p></li>
+<li><p>List the contents of your directory</p></li>
+<li><p>Delete your test_branch <code>git branch -d NAME_OF_YOUR_BRANCH</code></p></li>
+</ul>
+</div>
 <div id="tabset-3-6">
-<p>Before the pull:</p>
-<p><img src="resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
-<p>After conflicts solved: <img src="resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
-<p>After the push: <img src="resources/figs/git6.svg" width="600" height="200" alt="bilan1"></p>
+<ul>
+<li><p>Create a branch and switch to this branch</p></li>
+<li><p>Create a qmd file, name `Row_id.qmd”, id being the order of your row, 1 is the closes to the board.</p></li>
+<li><p>Work by team, (a team = a row), to crate and solve conflicts</p></li>
+</ul>
+</div>
+</div>
+</div>
+<section id="writing-a-clean-history---a-proper-way-to-merge" class="slide level2">
+<h2>Writing a clean history - a proper way to merge</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Step 1: Fetch Latest History</a></li><li><a href="#tabset-4-2">Step 2: Rebase Your Branch</a></li><li><a href="#tabset-4-3">Step 3: Merge (Fast-Forward)</a></li><li><a href="#tabset-4-4">Summary</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="fu">git</span> fetch origin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Updates your local references to remote branches</p></li>
+<li><p>Does not change your working directory</p></li>
+<li><p>Prepares you to rebase onto the latest master</p></li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<p>Suppose you are on your feature branch:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="fu">git</span> switch my_branch_to_be_shared</span>
+<span id="cb13-2"><a></a><span class="fu">git</span> rebase origin/master </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Re-applies your commits on top of the latest master Lets you resolve conflicts now, instead of later during merge</p>
+</div>
+<div id="tabset-4-3">
+<p>Once rebase was successful:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a></a><span class="fu">git</span> switch master</span>
+<span id="cb14-2"><a></a><span class="fu">git</span> merge my_branch_to_be_shared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Since history is linear, this is a fast-forward merge</p>
+<p>No extra merge commits</p>
+<p>History stays clean and easy to read</p>
+</div>
+<div id="tabset-4-4">
+<ul>
+<li><p>git fetch: update local info about remote</p></li>
+<li><p>git rebase origin/master: reapply work on top of latest master</p></li>
+<li><p>git merge: integrate cleanly</p></li>
+<li><p>you can delete your branch one your work is included</p></li>
+</ul>
 </div>
 </div>
 </div>
 </section>
-<section id="one-branch-for-one-task" class="slide level2">
-<h2>One branch for one task</h2>
-<h3 id="goal-minimising-conflicts">Goal minimising conflicts</h3>
-<p>Working in parralel and merging from time to time</p>
-<div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Graphically</a></li><li><a href="#tabset-4-2">Practically</a></li><li><a href="#tabset-4-3">Exercise</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1">
-<p>After the push: <img src="resources/figs/git7.svg" width="600" height="200" alt="bilan1"></p>
+<section id="navigate-from-one-version-to-another" class="title-slide slide level1 center">
+<h1>Navigate from one version to another</h1>
+
+</section>
+<section id="going-back-in-time-restor-version-checkout" class="slide level2">
+<h2>Going back in time : restor version – checkout</h2>
+<p>To go back to a previous specific version, use the <code>checkout</code> command</p>
+<p>Open the files <code>Penguins_chapter.qmd</code> and execute</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb15-2"><a></a><span class="fu">git</span> checkout A_specific_hash_version_number</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-4-2">
+<p>The current working version of <code>Penguins_chapter.qmd</code> is in the state of commit <code>A_specific_hash_version_number</code></p>
+<p>You can branch from this moment if you want to</p>
+<p>Go back to the latest version on master by</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a></a><span class="fu">git</span> checkout master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Everything is back to normal!</p>
+<p><strong>That’s the Git Magic</strong></p>
+</section>
+<section id="to-suppress-a-local-commit-not-present-on-the-remote-repo" class="slide level2">
+<h2>To suppress a local commit (not present on the remote repo)</h2>
 <ul>
-<li>Create a local branch</li>
+<li>Remove the file <code>Penguins_chapter.qmd</code>, and commit this change</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="fu">git</span> checkout <span class="at">-b</span> mpe_test_branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb17-2"><a></a><span class="fu">git</span> reset <span class="at">--hard</span> The_previous_commit_number</span>
+<span id="cb17-3"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Make some changes, add and commit them and now trying to push</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="fu">git</span> push origin mpe_test_branch</span>
-<span id="cb10-2"><a></a><span class="fu">git</span> switch master <span class="co">#go back on the master branch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Be very very very careful, it is a destructive process. All information regarding your previous commit is lost.</p>
+<p>It’s a very dangerous way of living with Git, an unfortunate removal of a commit present on the remote server can break the commit trees for all your coworkers and you won’t have friends anymore.</p>
 </div>
-<p>Go on Giuthub and look !</p>
-</div>
-<div id="tabset-4-3">
+</section>
+<section id="how-to-suppress-a-commit-shared-on-the-remote-repo" class="slide level2">
+<h2>How to suppress a commit shared on the remote repo</h2>
 <ul>
-<li><p>Creates your own test_branch from the master branch and go on this branch</p></li>
-<li><p>Remove <code>Penguins_chapter.qmd</code> from the versioning system</p></li>
+<li>Remove the file <code>Penguins_chapter.qmd</code> and commit this modification.</li>
 </ul>
+<p>You can “suppress” this commit by applying the opposit! That’s what you do by</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb18-2"><a></a><span class="fu">git</span> revert commit_number_to_revert</span>
+<span id="cb18-3"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<!-- ### Best way -->
-<!-- ```{bash} -->
-<!-- #| echo: true -->
-<!-- #| eval: false -->
-<!-- git fetch origin # retrieve the latest version on the server but do no merge -->
-<!-- git rebase origin/master  # put your work on the top of the commit tree of the local copy o origin master -->
-<!-- ## solve conflicts and  -->
-<!-- git rebase --continue -->
-<!-- ``` -->
-<!-- * We edit the file to choose the correct version, then `git add, commit, push` -->
-<!-- ** Please  take some time to produce conflicts and solve it ** -->
-<!-- --- -->
-<!-- template: contribute -->
-<!-- ## Working together: Graphical tree overview -->
-<!-- <img src="resources/figs/Vision_globale_git_step3.png" width="800" height = "300" alt = "bilan1"></img> -->
-<!-- --- -->
-<!-- template: contribute -->
-<!-- ## Working together: less share, less pain  -->
-<!-- To limit conflicts, conduct tests without interfering with others, there is the concept of *branching*. -->
-<!-- You work independantly for a while and merge from time to time. -->
-<!-- -- -->
-<!-- <img src="resources/figs/git7.svg" width="800" height = "600" alt = "bilan1"></img> -->
-<!-- --- -->
-<!-- template: contribute -->
-<!-- ## Working together: branches  practically speaking -->
-<!-- * Create your branch -->
-<!-- ```{r git_branch, eval = FALSE } -->
-<!-- git branch -a -->
-<!-- git branch test -->
-<!-- git branch -a -->
-<!-- ``` -->
-<!-- * To jump on a branch -->
-<!-- ```{r git_switch, eval = FALSE } -->
-<!-- git switch test -->
-<!-- git branch -a -->
-<!-- ``` -->
-<!-- Let's make whatever changes you like and then commit. -->
-<!-- when you return to the master branch, you will find your project just as you left it before branching. -->
-<!-- ** Take a moment to try** -->
-<!-- --- -->
-<!-- template: contribute -->
-<!-- ## Working together: branches  practically speaking -->
-<!-- * Let's create your own branch  and jump on it  `git branch` (`git branch -a` to have the remotes branches also). -->
-<!-- The stared branch is the one we currently sit on. -->
-<!-- * Please remove `penguins.Rmd ` then register this change -->
-<!-- ```{r illustration_branche, eval = FALSE}  -->
-<!-- rm penguins.Rmd # to remove the file -->
-<!-- git status -->
-<!-- git add penguins.Rmd # add the changes aka it's deletion -- ok it's weird -->
-<!-- git commit -m "Removing penguins.Rmd" -->
-<!-- ls #list the content of the working directory -->
-<!-- ``` -->
-<!-- * Jump back on the master branch `git switch master` and list the contents of your working directory.  -->
-<!-- -- -->
-<!-- You may want to suppress an old unuseful branch with  -->
-<!-- ```{r delete_branche, eval = FALSE}  -->
-<!-- git branch  -d test  -->
-<!-- ``` -->
-<!-- -- -->
-<!-- As the changes stored in this branch have not been pushed on the remote repo, you will lose every changes if you delete the branch, -->
-<!-- The vigilant Git system is worried about us. Are we not on the verge of losing important work? -->
-<!-- We reassure it by letting it know that we know exactly what we are doing by using the  `-D` option -->
-<!-- ```{r delete_branche_force, eval = FALSE}  -->
-<!-- git branch  -D test  -->
-<!-- ``` -->
-<!-- --- -->
-<!-- template: contribute -->
-<!-- ## Working together: incorporate the changes made in another branch -- merge -->
-<!-- * Create a branch dev and switch to this branch. -->
-<!-- * Add a nice chart to penguins.Rmd and then incorporate your changes into the project on the dev branch. -->
-<!-- * Push your work to the remote repository (look at Git's instructions on git push options) (optional for now but generally useful). -->
-<!-- * Switch to the master branch and type the command git merge dev. You have integrated the changes made in dev into the master branch. -->
-<!-- * Draw the commit tree in this case. -->
-<!-- --- -->
-<!-- name: navigate -->
-<!-- # Navigate from one version to another -->
-<!-- --- -->
-<!-- template: navigate -->
-<!-- ## Go back to a previous version -- checkout -->
-<!-- To go back to a previous specific version, use the `checkout`  command -->
-<!-- Open the files `penguins.Rmd` and execute -->
-<!-- ```{r git_checkout, eval = FALSE} -->
-<!-- git log --oneline -->
-<!-- git checkout A_specific_hash_version_number -->
-<!-- ``` -->
-<!-- The current working version of  `penguins.Rmd` is in the state of commit `A_specific_hash_version_number` -->
-<!-- Go back to the lates version on master by  -->
-<!-- -- -->
-<!-- ```{r git_checkout_2, eval = FALSE} -->
-<!-- git checkout master -->
-<!-- ``` -->
-<!-- Everything is back to normal! -->
-<!-- ** That's the Git Magic" -->
-<!-- --- -->
-<!-- template: navigate -->
-<!-- ## To suppress a local commit (not present on the remote repo) -->
-<!-- * Remove the file `penguins.Rmd`, and commit this change -->
-<!-- ```{r git_checkout_suppress, eval = FALSE} -->
-<!-- git log --oneline -->
-<!-- git reset --hard The_previous_commit_number -->
-<!-- git log --oneline -->
-<!-- ``` -->
-<!-- -- -->
-<!-- Be very very very careful, it is a destructive process. All information regarding your previous commit is lost. -->
-<!-- It's a very dangerous way of living with Git, an unfortunate removal of a commit present on the remote server can break the commit trees for all your coworkers and you won't have friends anymore.  -->
-<!-- --- -->
-<!-- template: navigate -->
-<!-- ## How to suppress a commit shared on the remote repo -->
-<!-- * Remove the file  `penguins.Rmd` and commit this modification. -->
-<!-- You can "suppress" this commit by applying the opposit! That's what you do by  -->
-<!-- ```{r git_checkout_suppress_2, eval = FALSE} -->
-<!-- git log --oneline -->
-<!-- git revert commit_number_to_revert -->
-<!-- git log --oneline -->
-<!-- ``` -->
-<!-- --- -->
-<!-- template: gitintro -->
-<!-- ## Practice -->
-<!-- within your team, divide and conquer to produce -->
-<!-- * a short text to present the Palmer Penguins dataset, -->
-<!-- * insigthful plots of the Palmer penguins dataset, -->
-<!-- * a statistical analysis to deceide wheter or not the average body mass in the same whatever species you consider, -->
-<!-- Good Practice : -->
-<!-- Every one works on its own develoment branch and shae with others when he's ready -->
-<!-- --- -->
-<!-- # If we have time  -->
-<!-- `git rebase` -->
-<!-- `git cherry pick` -->
-<!-- --- -->
-<!-- # Last few words -->
-<!-- * Git is a standard control version system in industry AND research for version control (wheter you use it with Github or not), -->
-<!-- * Being proficient with Git requires to use it as much as possible: The more problems you have, the more you learn -->
-<!-- * Go back to the documentation as much as needed -->
-<!-- * By no means, Git is an alternative to a proper documented code (in R you might want to use package like `formatR`, `styleR` and document it with `roxygen`) -->
+<p>This becomes more difficult with dirty merge commits, so try to keep a clean history</p>
+</section>
+
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
+
+</section>
+<section id="last-few-words" class="slide level2">
+<h2>Last few words</h2>
+<ul>
+<li><p>Git is a standard control version system in industry AND research for version control (whether you use it with Github or not),</p></li>
+<li><p>Being proficient with Git requires to use it as much as possible: The more problems you have, the more you learn</p></li>
+<li><p>Go back to the documentation as much as needed</p></li>
+<li><p>By no means, Git is an alternative to a proper documented code (in R you might want to use package like <code>formatR</code>, <code>styleR</code> and document it with <code>roxygen</code>)</p></li>
+</ul>
+</section>
+<section id="evaluation" class="slide level2">
+<h2>Evaluation</h2>
+<ul>
+<li><p>A short quizz on November 5th, to check your understanding of git behaviours command, errors and message. It could be explaining in words the development of a project by looking at a project history, explaining the actions to be taken according to one mean git message, explaining the purpose of one command. No need to learn commands, regulard practice before this date should be enough.</p></li>
+<li><p>Stats reminder project</p>
+<ul>
+<li>I will be looking at the qality of the commits</li>
+<li>The use of PR</li>
+<li>Respect the checks</li>
+<li>Review Other’s work</li>
+</ul></li>
+<li><p>For next session: 3 teams</p>
+<ul>
+<li>the linear model team</li>
+<li>the factorial analysis team</li>
+<li>The Differential equation team</li>
+</ul>
+<p>Within each team, 3 specific mthods within the gen,eral team, illusrated by an ecological example.</p></li>
+</ul>
 <!-- --- -->
 <!-- # Some help other than Claude.ai and ChatGPT -->
 <!-- ## Resources -->
@@ -559,6 +592,11 @@ Marie-Pierre Etienne
 <!-- ``` -->
 
 
+</section>
+
+</div>
+</div>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
