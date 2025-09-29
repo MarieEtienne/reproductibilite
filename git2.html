@@ -257,7 +257,7 @@ Marie-Pierre Etienne
 </section>
 <section id="process-overview" class="slide level2">
 <h2>Process overview</h2>
-<p><img src="../resources/figs/Vision_globale_git_step1.png" width="800" height="300" alt="bilan1"></p>
+<p><img src="resources/figs/Vision_globale_git_step1.png" width="800" height="300" alt="bilan1"></p>
 <h3 id="the-snapshot-analogy">The snapshot analogy</h3>
 <ul>
 <li><p>In the working directory, let’s try different poses (the version of the project in the working directory)</p></li>
@@ -277,13 +277,13 @@ Marie-Pierre Etienne
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Graphically</a></li><li><a href="#tabset-2-2">Theoretically after the push</a></li><li><a href="#tabset-2-3">Process overview</a></li><li><a href="#tabset-2-4">But</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<p><img src="../resources/figs/git3.svg" width="600" height="200" alt="bilan1"></p>
+<p><img src="resources/figs/git3.svg" width="600" height="200" alt="bilan1"></p>
 </div>
 <div id="tabset-2-2">
-<p><img src="../resources/figs/git3_bis.svg" width="600" height="200" alt="bilan1"></p>
+<p><img src="resources/figs/git3_bis.svg" width="600" height="200" alt="bilan1"></p>
 </div>
 <div id="tabset-2-3">
-<p><img src="../resources/figs/Vision_globale_git_step2.png" width="800" height="300" alt="bilan1"></p>
+<p><img src="resources/figs/Vision_globale_git_step2.png" width="800" height="300" alt="bilan1"></p>
 </div>
 <div id="tabset-2-4">
 <ul>
@@ -313,7 +313,7 @@ Marie-Pierre Etienne
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Graphically</a></li><li><a href="#tabset-3-2">The theory</a></li><li><a href="#tabset-3-3">Solving conflicts = deciding</a></li><li><a href="#tabset-3-4">In practice, the easy dirty way</a></li><li><a href="#tabset-3-5">Example</a></li><li><a href="#tabset-3-6">Process overview</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
-<p><img src="../resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
+<p><img src="resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
 </div>
 <div id="tabset-3-2">
 <ul>
@@ -367,13 +367,13 @@ Marie-Pierre Etienne
 <li><p>`git push’</p></li>
 </ul>
 <p><span class="care">Problem</span>: Too much time spent at solving conflicts. We need another to minimize conflilcts</p>
-<p><img src="../resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
+<p><img src="resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
 </div>
 <div id="tabset-3-6">
 <p>Before the pull:</p>
-<p><img src="../resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
-<p>After conflicts solved: <img src="../resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
-<p>After the push: <img src="../resources/figs/git6.svg" width="600" height="200" alt="bilan1"></p>
+<p><img src="resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
+<p>After conflicts solved: <img src="resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
+<p>After the push: <img src="resources/figs/git6.svg" width="600" height="200" alt="bilan1"></p>
 </div>
 </div>
 </div>
@@ -383,10 +383,30 @@ Marie-Pierre Etienne
 <h3 id="goal-minimising-conflicts">Goal minimising conflicts</h3>
 <p>Working in parralel and merging from time to time</p>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Graphically</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Graphically</a></li><li><a href="#tabset-4-2">Practically</a></li><li><a href="#tabset-4-3">Exercise</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
-
+<p>After the push: <img src="resources/figs/git7.svg" width="600" height="200" alt="bilan1"></p>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li>Create a local branch</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="fu">git</span> checkout <span class="at">-b</span> mpe_test_branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Make some changes, add and commit them and now trying to push</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a></a><span class="fu">git</span> push origin mpe_test_branch</span>
+<span id="cb10-2"><a></a><span class="fu">git</span> switch master <span class="co">#go back on the master branch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Go on Giuthub and look !</p>
+</div>
+<div id="tabset-4-3">
+<ul>
+<li><p>Creates your own test_branch from the master branch and go on this branch</p></li>
+<li><p>Remove <code>Penguins_chapter.qmd</code> from the versioning system</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -404,14 +424,14 @@ Marie-Pierre Etienne
 <!-- --- -->
 <!-- template: contribute -->
 <!-- ## Working together: Graphical tree overview -->
-<!-- <img src="../resources/figs/Vision_globale_git_step3.png" width="800" height = "300" alt = "bilan1"></img> -->
+<!-- <img src="resources/figs/Vision_globale_git_step3.png" width="800" height = "300" alt = "bilan1"></img> -->
 <!-- --- -->
 <!-- template: contribute -->
 <!-- ## Working together: less share, less pain  -->
 <!-- To limit conflicts, conduct tests without interfering with others, there is the concept of *branching*. -->
 <!-- You work independantly for a while and merge from time to time. -->
 <!-- -- -->
-<!-- <img src="../resources/figs/git7.svg" width="800" height = "600" alt = "bilan1"></img> -->
+<!-- <img src="resources/figs/git7.svg" width="800" height = "600" alt = "bilan1"></img> -->
 <!-- --- -->
 <!-- template: contribute -->
 <!-- ## Working together: branches  practically speaking -->

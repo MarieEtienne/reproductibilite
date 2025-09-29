@@ -158,7 +158,7 @@
     "href": "git2.html#one-branch-for-one-task",
     "title": "Git : Working collaboratively",
     "section": "One branch for one task",
-    "text": "One branch for one task\nGoal minimising conflicts\nWorking in parralel and merging from time to time\n\nGraphically"
+    "text": "One branch for one task\nGoal minimising conflicts\nWorking in parralel and merging from time to time\n\nGraphicallyPracticallyExercise\n\n\nAfter the push: \n\n\n\nCreate a local branch\n\n\ngit checkout -b mpe_test_branch\n\nMake some changes, add and commit them and now trying to push\n\ngit push origin mpe_test_branch\ngit switch master #go back on the master branch\n\nGo on Giuthub and look !\n\n\n\nCreates your own test_branch from the master branch and go on this branch\nRemove Penguins_chapter.qmd from the versioning system"
   },
   {
     "objectID": "index.html",
