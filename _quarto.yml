@@ -16,7 +16,7 @@ website:
         text: Working collaboratively
 
     right:
-      - href: stats-reminders/index.qmd
+      - href: https://github.com/MarieEtienne/stats-reminders
         text: Stats Reminders
        
 
