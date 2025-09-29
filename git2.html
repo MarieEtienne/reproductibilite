@@ -310,12 +310,12 @@ Marie-Pierre Etienne
 <section id="share-your-progress-with-your-co-workers-1" class="slide level2">
 <h2>Share your progress with your co workers</h2>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Graphically</a></li><li><a href="#tabset-5-2">The theory</a></li><li><a href="#tabset-5-3">Solving</a></li><li><a href="#tabset-5-4">Practically (easy but dirty)</a></li><li><a href="#tabset-5-5">Example</a></li><li><a href="#tabset-5-6">Process overview</a></li><li><a href="#tabset-5-7">Goal minimising conflicts</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Graphically</a></li><li><a href="#tabset-3-2">The theory</a></li><li><a href="#tabset-3-3">Solving</a></li><li><a href="#tabset-3-4">Practically (easy but dirty)</a></li><li><a href="#tabset-3-5">Example</a></li><li><a href="#tabset-3-6">Process overview</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-3-1">
 <p><img src="resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-3-2">
 <ul>
 <li><p>Be sure that all your changes have been committed</p></li>
 <li><p>when works are diverged, you can have different attitudes. We go for the simple one for now and we need to specify this config for git</p></li>
@@ -336,7 +336,7 @@ Marie-Pierre Etienne
 <li>Share the merged version on the server</li>
 </ul>
 </div>
-<div id="tabset-5-3">
+<div id="tabset-3-3">
 <ul>
 <li>Solving conflicts implies choosing and You must resolve the conflict</li>
 </ul>
@@ -350,7 +350,7 @@ Marie-Pierre Etienne
 </div>
 <p>Portion between <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> and <code>=======</code> is your local version, while part between <code>=======</code>and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; dfdf5995ade6e47899531a99e5947e719da86020</code> is the version available at commit with hash dfdf5995ade6e47899531a99e5947e719da86020.</p>
 </div>
-<div id="tabset-5-4">
+<div id="tabset-3-4">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">git</span> pull origin master <span class="co"># retrieve the laste version on the server and try to merge with yours</span></span>
 <span id="cb8-2"><a></a><span class="fu">git</span> status <span class="co"># see the conflicted files</span></span>
@@ -361,7 +361,7 @@ Marie-Pierre Etienne
 </div>
 <p><span class="care">Problem</span>: the merge commit is not very readable in the development process. But one step at a time</p>
 </div>
-<div id="tabset-5-5">
+<div id="tabset-3-5">
 <ul>
 <li><p>Change someting in your local version of <code>Penguins_chapter.qmd</code>,</p></li>
 <li><p><code>git add, commit, pull</code> …..</p></li>
@@ -371,25 +371,27 @@ Marie-Pierre Etienne
 <p><span class="care">Problem</span>: Too much time spent at solving conflicts. We need another to minimize conflilcts</p>
 <p><img src="resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
 </div>
-<div id="tabset-5-6">
+<div id="tabset-3-6">
 <div class="columns">
 <div class="column" style="width:48%;">
 <p><span class="care">T1</span> <img src="resources/figs/git6.svg" width="600" height="200" alt="bilan1"></p>
 <p><span class="care">T2</span> <img src="resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
 </div><div class="column" style="width:48%;">
 <p><span class="care">T3</span> <img src="resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
-</div><p><span class="care">Associate trees with actions</span></p>
+</div></div>
+<p><span class="care">Associate trees with actions</span></p>
 </div>
+</div>
+</div>
+</section>
 <section id="one-branch-for-one-task" class="slide level2">
 <h2>One branch for one task</h2>
-</section>
-</div>
-<div id="tabset-5-7">
+<h3 id="goal-minimising-conflicts">Goal minimising conflicts</h3>
 <p>Working in parralel and merging from time to time</p>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Graphically</a></li><li><a href="#tabset-3-2">Create</a></li><li><a href="#tabset-3-3">Share</a></li><li><a href="#tabset-3-4">Merge</a></li><li><a href="#tabset-3-5">Exercise - 1</a></li><li><a href="#tabset-3-6">Exercise - 2</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Graphically</a></li><li><a href="#tabset-4-2">Create</a></li><li><a href="#tabset-4-3">Share</a></li><li><a href="#tabset-4-4">Merge</a></li><li><a href="#tabset-4-5">Exercise - 1</a></li><li><a href="#tabset-4-6">Exercise - 2</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-4-1">
 <div class="columns">
 <div class="column" style="width:48%;">
 <p>Working in parallel:</p>
@@ -398,7 +400,7 @@ Marie-Pierre Etienne
 <p>Merging test within master: <img src="resources/figs/git8.svg" width="600" height="200" alt="bilan1"></p>
 </div></div>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-4-2">
 <p>Creat a local branch and navigating between different branches</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="fu">git</span> branch mpe_test_branch <span class="co"># create a branch</span></span>
@@ -409,7 +411,7 @@ Marie-Pierre Etienne
 <span id="cb9-6"><a></a><span class="fu">git</span> branch <span class="at">-d</span> mpe_test_branch <span class="co"># deletes the branch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-3-3">
+<div id="tabset-4-3">
 <ul>
 <li>Create your own branch and make some changes, add and commit them and now trying to push</li>
 </ul>
@@ -420,7 +422,7 @@ Marie-Pierre Etienne
 </div>
 <p>Go on Github and look !</p>
 </div>
-<div id="tabset-3-4">
+<div id="tabset-4-4">
 <ul>
 <li><p>Create a second test branch <code>test_branch2</code> and make some changes</p></li>
 <li><p>We want to incorprate change make in test_branch2 in your personnal branch</p></li>
@@ -431,7 +433,7 @@ Marie-Pierre Etienne
 <span id="cb11-3"><a></a><span class="co">## look at your files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-3-5">
+<div id="tabset-4-5">
 <ul>
 <li><p>Creates your own test_branch from the master branch and go on this branch</p></li>
 <li><p>Remove <code>Penguins_chapter.qmd</code> from the versioning system <code>git rm Penguins_chapter.qmd</code></p></li>
@@ -442,7 +444,7 @@ Marie-Pierre Etienne
 <li><p>Delete your test_branch <code>git branch -d NAME_OF_YOUR_BRANCH</code></p></li>
 </ul>
 </div>
-<div id="tabset-3-6">
+<div id="tabset-4-6">
 <ul>
 <li><p>Create a branch and switch to this branch</p></li>
 <li><p>Create a qmd file, name `Row_id.qmd”, id being the order of your row, 1 is the closes to the board.</p></li>
@@ -451,12 +453,13 @@ Marie-Pierre Etienne
 </div>
 </div>
 </div>
+</section>
 <section id="writing-a-clean-history---a-proper-way-to-merge" class="slide level2">
 <h2>Writing a clean history - a proper way to merge</h2>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Step 1: Fetch Latest History</a></li><li><a href="#tabset-4-2">Step 2: Rebase Your Branch</a></li><li><a href="#tabset-4-3">Step 3: Merge (Fast-Forward)</a></li><li><a href="#tabset-4-4">Summary</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Step 1: Fetch Latest History</a></li><li><a href="#tabset-5-2">Step 2: Rebase Your Branch</a></li><li><a href="#tabset-5-3">Step 3: Merge (Fast-Forward)</a></li><li><a href="#tabset-5-4">Summary</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-5-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="fu">git</span> fetch origin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -466,7 +469,7 @@ Marie-Pierre Etienne
 <li><p>Prepares you to rebase onto the latest master</p></li>
 </ul>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-5-2">
 <p>Suppose you are on your feature branch:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="fu">git</span> switch my_branch_to_be_shared</span>
@@ -474,7 +477,7 @@ Marie-Pierre Etienne
 </div>
 <p>Re-applies your commits on top of the latest master Lets you resolve conflicts now, instead of later during merge</p>
 </div>
-<div id="tabset-4-3">
+<div id="tabset-5-3">
 <p>Once rebase was successful:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a></a><span class="fu">git</span> switch master</span>
@@ -484,7 +487,7 @@ Marie-Pierre Etienne
 <p>No extra merge commits</p>
 <p>History stays clean and easy to read</p>
 </div>
-<div id="tabset-4-4">
+<div id="tabset-5-4">
 <ul>
 <li><p>git fetch: update local info about remote</p></li>
 <li><p>git rebase origin/master: reapply work on top of latest master</p></li>
@@ -494,13 +497,14 @@ Marie-Pierre Etienne
 </div>
 </div>
 </div>
-</section>
+</section></section>
+<section>
 <section id="navigate-from-one-version-to-another" class="title-slide slide level1 center">
 <h1>Navigate from one version to another</h1>
 
 </section>
-<section id="going-back-in-time-restor-version-checkout" class="slide level2">
-<h2>Going back in time : restor version – checkout</h2>
+<section id="going-back-in-time-restore-version-checkout" class="slide level2">
+<h2>Going back in time : restore version – checkout</h2>
 <p>To go back to a previous specific version, use the <code>checkout</code> command</p>
 <p>Open the files <code>Penguins_chapter.qmd</code> and execute</p>
 <div class="cell">
@@ -543,8 +547,8 @@ Marie-Pierre Etienne
 <span id="cb18-3"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This becomes more difficult with dirty merge commits, so try to keep a clean history</p>
-</section>
-
+</section></section>
+<section>
 <section id="conclusion" class="title-slide slide level1 center">
 <h1>Conclusion</h1>
 
@@ -592,11 +596,6 @@ Marie-Pierre Etienne
 <!-- ``` -->
 
 
-</section>
-
-</div>
-</div>
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
