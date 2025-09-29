@@ -525,7 +525,23 @@ This becomes more difficult with dirty merge commits, so try to keep a clean his
 
 * By no means, Git is an alternative to a proper documented code (in R you might want to use package like `formatR`, `styleR` and document it with `roxygen`)
 
+## Evaluation
 
+* A short quizz on November 5th, to check your understanding of git behaviours command, errors and message. It could be explaining in words the development of a project by looking at a project history, explaining the actions to be taken according to one mean git message, explaining the purpose of one command. No need to learn commands, regulard practice before this date should be enough.
+
+* Stats reminder project 
+  * I will be looking at the qality of the commits
+  * The use of PR
+  * Respect the checks
+  * Review Other's work 
+  
+* For next session: 3 teams
+  - the linear model team
+  - the factorial analysis team
+  - The Differential equation team
+  
+  Within each team, 3 specific mthods within the gen,eral team, illusrated by an ecological example.
+  
 
 
 
