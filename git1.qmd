@@ -131,7 +131,7 @@ Paths on Git Bash use `/`, even on Windows (`/c/Users/...`).
 
 * Create a `test_dir` directory 
 
-* Jump  outside the `git directeory`
+* Jump  outside the `git` directory
 
 * Remove the `git` directory and everything it contains
 
