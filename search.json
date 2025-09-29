@@ -49,6 +49,125 @@
     "text": "The winning trio of reproducible research with R\n\ngit code versionning\nRmarkdown markup language\n\nDocker Controlling software version (last 2 sessions with Theo Fabien)"
   },
   {
+    "objectID": "git1.html#what-is-it",
+    "href": "git1.html#what-is-it",
+    "title": "Basics in git, working alone",
+    "section": "What is it?",
+    "text": "What is it?\n\nDeveloped by Linus Torvalds: “I’m an egotistical bastard, and I name all my projects after myself. First Linux, now git.”\n\n\n\nGit is a version control system (the most widely used today).\nIt allows tracking all changes made to code since its creation.\nGit is incredibly efficient."
+  },
+  {
+    "objectID": "git1.html#cloning-an-existing-reprository",
+    "href": "git1.html#cloning-an-existing-reprository",
+    "title": "Basics in git, working alone",
+    "section": "Cloning an existing reprository",
+    "text": "Cloning an existing reprository\nThis means copy locally on your computer the content of a repository which means\n\ncopy the actual code and text contents\ncopy the history of all changes\n\nBefore using Git, we need basic bash commands"
+  },
+  {
+    "objectID": "git1.html#first-element---navigating-using-bash-command",
+    "href": "git1.html#first-element---navigating-using-bash-command",
+    "title": "Basics in git, working alone",
+    "section": "First element - navigating using bash command",
+    "text": "First element - navigating using bash command\nNavigating Directories in the Terminal / Git Bash\n\nChecking where you are\n\n\n$ pwd\n/home/marie/projects\n\n\nListing files\n\n\nls -l #→ long listing\nls -a #→ include hidden files\n\n\nMoving between directories\n\n\n\n\nAction\nLinux/macOS/Git Bash\nWindows Command Prompt\n\n\n\n\nGo to a directory\ncd folder_name\ncd folder_name\n\n\nGo up one level\ncd ..\ncd ..\n\n\nGo to home\ncd ~\ncd %USERPROFILE%\n\n\nAbsolute path\ncd /path/to/folder\ncd C:\\path\\to\\folder"
+  },
+  {
+    "objectID": "git1.html#first-element---navigating-using-bash-command-1",
+    "href": "git1.html#first-element---navigating-using-bash-command-1",
+    "title": "Basics in git, working alone",
+    "section": "First element - navigating using bash command",
+    "text": "First element - navigating using bash command\n\nCreate a directory\n\n\nmkdir my_git_dir\n\n\nRemoving files or directory\n\n\nrm my_file\nrmdir my_dir #remove an empty dir\nrm -rf my_dir #remove a directeory and everything inside ! Careful\n\n\nQuick tips\n\nUse Tab for autocomplete paths and filenames.\nPaths on Git Bash use /, even on Windows (/c/Users/...)."
+  },
+  {
+    "objectID": "git1.html#exercise",
+    "href": "git1.html#exercise",
+    "title": "Basics in git, working alone",
+    "section": "Exercise",
+    "text": "Exercise\n\nGo to your home directory (/home/loginin Linux, probably somethin like C:/Users/yourusername in Windows)\nCreate a directory named git, where you will store all your git projects\nJump within this directory\nlist the files contained in this directory\nCreate a test_dir directory\nJump outside the git directory\nRemove the git directory and everything it contains\nCreate a directory named git, where you will store all your git projects"
+  },
+  {
+    "objectID": "git1.html#cloning-an-existing-reprository-1",
+    "href": "git1.html#cloning-an-existing-reprository-1",
+    "title": "Basics in git, working alone",
+    "section": "Cloning an existing reprository",
+    "text": "Cloning an existing reprository\nGo to your git Directory and write\n\ngit clone git@github.com:MarieEtienne/stats-reminders.git\n\nWhat is happening ?\n\nls\ncd stats-reminders\nls\n\nWhere to find this magical address to clone\nNavigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address."
+  },
+  {
+    "objectID": "git1.html#reviewing-the-code-development",
+    "href": "git1.html#reviewing-the-code-development",
+    "title": "Basics in git, working alone",
+    "section": "Reviewing the code development",
+    "text": "Reviewing the code development\n\ngit log\ngit log --oneline\ngitk"
+  },
+  {
+    "objectID": "git1.html#forking-an-existing-repository",
+    "href": "git1.html#forking-an-existing-repository",
+    "title": "Basics in git, working alone",
+    "section": "Forking an existing repository",
+    "text": "Forking an existing repository\nWhat is forking?\nForking creates your own copy of someone else’s repository in your GitHub account. This lets you experiment with changes without affecting the original project. How to fork a repo:\nHow\nNavigate to the repository you want to fork on GitHub Click the “Fork” button in the top-right corner of the repository page Choose where to fork it - usually to your personal account Wait a moment - GitHub will create the copy in your account\nWhat happens next:\nYou’ll have a complete copy of the repo in your GitHub account You can clone this forked version to your local machine using git clone Make changes, commit them, and push back to your fork If you want to contribute back to the original project, you can create a pull request\nKey points\nYour fork is independent of the original repo You have full control over your forked version The original repo remains unchanged unless you submit a pull request that gets accepted You can sync your fork with the original repo later if it gets updated\nThis workflow is essential for contributing to open-source projects or collaborating on code when you don’t have direct write access to the original repository."
+  },
+  {
+    "objectID": "git1.html#exercise-1",
+    "href": "git1.html#exercise-1",
+    "title": "Basics in git, working alone",
+    "section": "Exercise",
+    "text": "Exercise\n\nRemove the stats-reminder directory and its content\nFork https://github.com/MarieEtienne/stats-reminders on your personnal GitHub account\nclone your version of stats-reminder\nShow the history of this file"
+  },
+  {
+    "objectID": "git1.html#your-first-commit",
+    "href": "git1.html#your-first-commit",
+    "title": "Basics in git, working alone",
+    "section": "Your first commit",
+    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\n\ngit status # project status\ngit diff\n\n\n\n\nType the command git add penguins.Rmd, then repeat the previous commands.\nType the command git commit -m \"Added an author\", and once again check the project status.\nCheck the project on Github\nType the command git push\", and once again check the project on Github"
+  },
+  {
+    "objectID": "git2.html#commit-tree",
+    "href": "git2.html#commit-tree",
+    "title": "Git : Working collaboratively",
+    "section": "Commit tree",
+    "text": "Commit tree\n\nGraphical representationExercise\n\n\n\n\n\nWrite the commit tree of MarieEtienne/stats-reminder repo with the actual commit number\n\ngit clone .... ## cloning the repo\ngit ...  ## print history\n\nRemark: To show only the last 3 commits you can use\n\ngit log -n 3"
+  },
+  {
+    "objectID": "git2.html#a-first-commit",
+    "href": "git2.html#a-first-commit",
+    "title": "Git : Working collaboratively",
+    "section": "A first commit",
+    "text": "A first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\ngit status # project status\ngit diff\n\n\nType the command git add Penguins_chapter.qmd, then repeat the previous commands.\nType the command git commit -m \"Change title\", and once again check the project status.\nDraw the commit tree."
+  },
+  {
+    "objectID": "git2.html#process-overview",
+    "href": "git2.html#process-overview",
+    "title": "Git : Working collaboratively",
+    "section": "Process overview",
+    "text": "Process overview\n\nThe snapshot analogy\n\nIn the working directory, let’s try different poses (the version of the project in the working directory)\nWhen satisfied by the pose of one guy, ask him stop moving (Staging area)\nWhen satisfied with the whole scene, take the photo (Commit in the local repo)"
+  },
+  {
+    "objectID": "git2.html#share-your-progress-with-your-co-workers",
+    "href": "git2.html#share-your-progress-with-your-co-workers",
+    "title": "Git : Working collaboratively",
+    "section": "Share your progress with your co workers",
+    "text": "Share your progress with your co workers\nThe current version of the project is indeed recorded in the version control system, but you are the only ones who know it.\nYou may want to share these changes to the remote repository from which we started.\n\nTo view the differences with the remote repository, use git diff origin/master.\nTo send our changes, , use git push.\n\n\nGraphicallyTheoretically after the pushProcess overviewBut\n\n\n\n\n\n\n\n\n\n\n\n\nMost of view receive errors message like\n\n\nTo github.com:MarieEtienne/stats-reminders.git\n ! [rejected]        master -&gt; master (fetch first)\nerror: failed to push some refs to 'github.com:MarieEtienne/stats-reminders.git'\nhint: Updates were rejected because the remote contains work that you do not\nhint: have locally. This is usually caused by another repository pushing to\nhint: the same ref. If you want to integrate the remote changes, use\nhint: 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n\n, why ?\n\nDraw the commit tree."
+  },
+  {
+    "objectID": "git2.html#share-your-progress-with-your-co-workers-1",
+    "href": "git2.html#share-your-progress-with-your-co-workers-1",
+    "title": "Git : Working collaboratively",
+    "section": "Share your progress with your co workers",
+    "text": "Share your progress with your co workers\n\nGraphicallyThe theorySolving conflicts = decidingIn practice, the easy dirty wayExampleProcess overview\n\n\n\n\n\n\nBe sure that all your changes have been committed\nwhen works are diverged, you can have different attitudes. We go for the simple one for now and we need to specify this config for git\n\n\ngit config pull.rebase false\n\n\nRetrieve the last version of the project on the server: git pull origin master\nThis might highlights conflicts: In case of conflict, you receive a very nasty message.\n\n\nAuto-merging README.md\nCONFLICT (content): Merge conflict in README.md\nAutomatic merge failed; fix conflicts and then commit the result.\n\n\nShare the merged version on the server\n\n\n\nYou must resolve the conflict\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nIt will also served as sandbox during the lectures. Therefore the git history might be a bit fuzy.\n\n=======\nIt will be used as sandbox during the lectures. Don't be scared by the messy git tree!\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; dfdf5995ade6e47899531a99e5947e719da86020\n\nPortion between &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD and ======= is your local version, while part between =======and &gt;&gt;&gt;&gt;&gt;&gt;&gt; dfdf5995ade6e47899531a99e5947e719da86020 is the version available at commit with hash dfdf5995ade6e47899531a99e5947e719da86020.\n\n\n\ngit pull origin master # retrieve the laste version on the server and try to merge with yours\ngit status # see the conflicted files\n## revise each conflicted file to remove conflicts\ngit add any files with solved conflicts\ngit commit -m \"Merge conflicts solved\"\ngit push\n\nProblem: the merge commit is not very readable in the development process. But one step at a time\n\n\n\nChange someting in your local version of Penguins_chapter.qmd,\ngit add, commit, pull …..\nSolve conflicts\n`git push’\n\nProblem: Too much time spent at solving conflicts. We need another to minimize conflilcts\n\n\n\nBefore the pull:\n\nAfter conflicts solved: \nAfter the push:"
+  },
+  {
+    "objectID": "git2.html#one-branch-for-one-task",
+    "href": "git2.html#one-branch-for-one-task",
+    "title": "Git : Working collaboratively",
+    "section": "One branch for one task",
+    "text": "One branch for one task\nGoal minimising conflicts\nWorking in parralel and merging from time to time\n\nGraphically"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OCR – Online Collaborative Resources",
+    "section": "",
+    "text": "Welcome\nThe course OCR (Online Collaborative Resources) introduces tools and practices for reproducible and collaborative science.\nIt is designed for students who want to learn how to:\n\nOrganize their work for transparency and reproducibility\n\nUse version control systems such as Git\n\nCollaborate effectively on shared projects\n\nDocument analyses and results in a reproducible way\n\n\n\n\nCourse content\nDuring this course, you will explore:\n\nIntroduction\nWhy reproducibility and collaboration matter in science, and the main challenges researchers face.\nSetting up your framework\nInstalling and configuring the software environment (Git, Quarto, etc.).\nGit basics (working alone)\nUnderstanding repositories, commits, and tracking changes in your own projects.\nWorking collaboratively\nUsing branches, pull requests, and collaborative workflows on shared repositories.\nFinal assignment\nApplying what you learned in a collaborative project.\n\n\n\n\nFinal Assignment\nThe final project of this course is to collaboratively produce a set of reminders about basic statistical concepts.\n\nEach student will write a short note (max 1 page) on a chosen concept (e.g., mean, variance, regression, probability).\n\nNotes will be written in Quarto (.qmd) files inside a shared repository.\n\nYou will practice Git collaboration by creating branches, making commits, and opening pull requests.\n\nYou are also requested to review others’ production and provide useful comments, accet or not pull requests\nAt the end, all contributions will be merged into a collective resource: a mini-encyclopedia of statistics reminders.\n\nThis project will allow you to experience real-world collaborative workflows while reinforcing key concepts in statistics.\n\n\n\nHow to use this website\nUse the top menu to navigate through the course:\n\nIntroduction – motivations and context\n\nSet up your framework – installing tools\n\nBasics in git, working alone – first steps with Git\n\nWorking collaboratively – branches, merges, pull requests\n\nFinal assignment – description of the project and instructions\n\nStats Reminders – where all student contributions will appear"
+  },
+  {
     "objectID": "setup.html#create-a-github-account",
     "href": "setup.html#create-a-github-account",
     "title": "Set up your framework",
@@ -110,82 +229,5 @@
     "title": "Set up your framework",
     "section": "6. Configuration",
     "text": "6. Configuration\nThe purpose of Git is to keep tracks of different versions of a project and their authors.\nTo do so, you need to be authenticated. Before using, specify your name\nThe first use after installation\n\ngit config --global user.email \"your email\"\ngit config --global user.name \"your name\"`\ngit config -l # check"
-  },
-  {
-    "objectID": "git1.html#what-is-it",
-    "href": "git1.html#what-is-it",
-    "title": "Basics in git, working alone",
-    "section": "What is it?",
-    "text": "What is it?\n\nDeveloped by Linus Torvalds: “I’m an egotistical bastard, and I name all my projects after myself. First Linux, now git.”\n\n\n\nGit is a version control system (the most widely used today).\nIt allows tracking all changes made to code since its creation.\nGit is incredibly efficient."
-  },
-  {
-    "objectID": "git1.html#cloning-an-existing-reprository",
-    "href": "git1.html#cloning-an-existing-reprository",
-    "title": "Basics in git, working alone",
-    "section": "Cloning an existing reprository",
-    "text": "Cloning an existing reprository\nThis means copy locally on your computer the content of a repository which means\n\ncopy the actual code and text contents\ncopy the history of all changes\n\nBefore using Git, we need basic bash commands"
-  },
-  {
-    "objectID": "git1.html#first-element---navigating-using-bash-command",
-    "href": "git1.html#first-element---navigating-using-bash-command",
-    "title": "Basics in git, working alone",
-    "section": "First element - navigating using bash command",
-    "text": "First element - navigating using bash command\nNavigating Directories in the Terminal / Git Bash\n\nChecking where you are\n\n\n$ pwd\n/home/marie/projects\n\n\nListing files\n\n\nls -l #→ long listing\nls -a #→ include hidden files\n\n\nMoving between directories\n\n\n\n\nAction\nLinux/macOS/Git Bash\nWindows Command Prompt\n\n\n\n\nGo to a directory\ncd folder_name\ncd folder_name\n\n\nGo up one level\ncd ..\ncd ..\n\n\nGo to home\ncd ~\ncd %USERPROFILE%\n\n\nAbsolute path\ncd /path/to/folder\ncd C:\\path\\to\\folder"
-  },
-  {
-    "objectID": "git1.html#first-element---navigating-using-bash-command-1",
-    "href": "git1.html#first-element---navigating-using-bash-command-1",
-    "title": "Basics in git, working alone",
-    "section": "First element - navigating using bash command",
-    "text": "First element - navigating using bash command\n\nCreate a directory\n\n\nmkdir my_git_dir\n\n\nRemoving files or directory\n\n\nrm my_file\nrmdir my_dir #remove an empty dir\nrm -rf my_dir #remove a directeory and everything inside ! Careful\n\n\nQuick tips\n\nUse Tab for autocomplete paths and filenames.\nPaths on Git Bash use /, even on Windows (/c/Users/...)."
-  },
-  {
-    "objectID": "git1.html#exercise",
-    "href": "git1.html#exercise",
-    "title": "Basics in git, working alone",
-    "section": "Exercise",
-    "text": "Exercise\n\nGo to your home directory (/home/loginin Linux, probably somethin like C:/Users/yourusername in Windows)\nCreate a directory named git, where you will store all your git projects\nJump within this directory\nlist the files contained in this directory\nCreate a test_dir directory\nJump outside the git directeory\nRemove the git directory and everything it contains\nCreate a directory named git, where you will store all your git projects"
-  },
-  {
-    "objectID": "git1.html#cloning-an-existing-reprository-1",
-    "href": "git1.html#cloning-an-existing-reprository-1",
-    "title": "Basics in git, working alone",
-    "section": "Cloning an existing reprository",
-    "text": "Cloning an existing reprository\nGo to your git Directory and write\n\ngit clone git@github.com:MarieEtienne/stats-reminders.git\n\nWhat is happening ?\n\nls\ncd stats-reminders\nls\n\nWhere to find this magical address to clone\nNavigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address."
-  },
-  {
-    "objectID": "git1.html#reviewing-the-code-development",
-    "href": "git1.html#reviewing-the-code-development",
-    "title": "Basics in git, working alone",
-    "section": "Reviewing the code development",
-    "text": "Reviewing the code development\n\ngit log\ngit log --oneline\ngitk"
-  },
-  {
-    "objectID": "git1.html#forking-an-existing-repository",
-    "href": "git1.html#forking-an-existing-repository",
-    "title": "Basics in git, working alone",
-    "section": "Forking an existing repository",
-    "text": "Forking an existing repository\nWhat is forking?\nForking creates your own copy of someone else’s repository in your GitHub account. This lets you experiment with changes without affecting the original project. How to fork a repo:\nHow\nNavigate to the repository you want to fork on GitHub Click the “Fork” button in the top-right corner of the repository page Choose where to fork it - usually to your personal account Wait a moment - GitHub will create the copy in your account\nWhat happens next:\nYou’ll have a complete copy of the repo in your GitHub account You can clone this forked version to your local machine using git clone Make changes, commit them, and push back to your fork If you want to contribute back to the original project, you can create a pull request\nKey points\nYour fork is independent of the original repo You have full control over your forked version The original repo remains unchanged unless you submit a pull request that gets accepted You can sync your fork with the original repo later if it gets updated\nThis workflow is essential for contributing to open-source projects or collaborating on code when you don’t have direct write access to the original repository."
-  },
-  {
-    "objectID": "git1.html#exercise-1",
-    "href": "git1.html#exercise-1",
-    "title": "Basics in git, working alone",
-    "section": "Exercise",
-    "text": "Exercise\n\nRemove the stats-reminder directory and its content\nFork https://github.com/MarieEtienne/stats-reminders on your personnal GitHub account\nclone your version of stats-reminder\nShow the history of this file"
-  },
-  {
-    "objectID": "git1.html#your-first-commit",
-    "href": "git1.html#your-first-commit",
-    "title": "Basics in git, working alone",
-    "section": "Your first commit",
-    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\n\ngit status # project status\ngit diff\n\n\n\n\nType the command git add penguins.Rmd, then repeat the previous commands.\nType the command git commit -m \"Added an author\", and once again check the project status.\nCheck the project on Github\nType the command git push\", and once again check the project on Github"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "OCR – Online Collaborative Resources",
-    "section": "",
-    "text": "Welcome\nThe course OCR (Online Collaborative Resources) introduces tools and practices for reproducible and collaborative science.\nIt is designed for students who want to learn how to:\n\nOrganize their work for transparency and reproducibility\n\nUse version control systems such as Git\n\nCollaborate effectively on shared projects\n\nDocument analyses and results in a reproducible way\n\n\n\n\nCourse content\nDuring this course, you will explore:\n\nIntroduction\nWhy reproducibility and collaboration matter in science, and the main challenges researchers face.\nSetting up your framework\nInstalling and configuring the software environment (Git, Quarto, etc.).\nGit basics (working alone)\nUnderstanding repositories, commits, and tracking changes in your own projects.\nWorking collaboratively\nUsing branches, pull requests, and collaborative workflows on shared repositories.\nFinal assignment\nApplying what you learned in a collaborative project.\n\n\n\n\nFinal Assignment\nThe final project of this course is to collaboratively produce a set of reminders about basic statistical concepts.\n\nEach student will write a short note (max 1 page) on a chosen concept (e.g., mean, variance, regression, probability).\n\nNotes will be written in Quarto (.qmd) files inside a shared repository.\n\nYou will practice Git collaboration by creating branches, making commits, and opening pull requests.\n\nYou are also requested to review others’ production and provide useful comments, accet or not pull requests\nAt the end, all contributions will be merged into a collective resource: a mini-encyclopedia of statistics reminders.\n\nThis project will allow you to experience real-world collaborative workflows while reinforcing key concepts in statistics.\n\n\n\nHow to use this website\nUse the top menu to navigate through the course:\n\nIntroduction – motivations and context\n\nSet up your framework – installing tools\n\nBasics in git, working alone – first steps with Git\n\nWorking collaboratively – branches, merges, pull requests\n\nFinal assignment – description of the project and instructions\n\nStats Reminders – where all student contributions will appear"
   }
 ]

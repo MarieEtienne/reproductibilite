@@ -11,7 +11,7 @@
 
   <meta name="author" content="Marie-Pierre Etienne">
   <meta name="dcterms.date" content="2025-09-10">
-  <title>Basics in git, working alone</title>
+  <title>Git : Working collaboratively</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -195,7 +195,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Basics in git, working alone</h1>
+  <h1 class="title">Git : Working collaboratively</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -211,202 +211,334 @@ Marie-Pierre Etienne
   <p class="date">2025-09-10</p>
 </section>
 <section>
-<section id="introduction-to-git" class="title-slide slide level1 center">
-<h1>Introduction to git</h1>
+<section id="brief-reminder-of-basic-git" class="title-slide slide level1 center">
+<h1>Brief Reminder of Basic Git</h1>
 
 </section>
-<section id="what-is-it" class="slide level2">
-<h2>What is it?</h2>
-<ul>
-<li>Developed by Linus Torvalds: <em>“I’m an egotistical bastard, and I name all my projects after myself. First Linux, now <a href="https://www.wordreference.com/enfr/git">git</a>.”</em></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Git is a version control system (the most widely used today).</li>
-<li>It allows tracking all changes made to code since its creation.</li>
-<li>Git is incredibly efficient.</li>
-</ul>
+<section id="commit-tree" class="slide level2">
+<h2>Commit tree</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Graphical representation</a></li><li><a href="#tabset-1-2">Exercise</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p><img src="resources/figs/git1.svg" width="900" height="300" alt="simple branche"></p>
 </div>
-</section></section>
-<section>
-<section id="starting-from-an-existing-directory" class="title-slide slide level1 center">
-<h1>Starting from an existing directory</h1>
-
-</section>
-<section id="cloning-an-existing-reprository" class="slide level2">
-<h2>Cloning an existing reprository</h2>
-<p>This means copy locally on your computer the content of a repository which means</p>
-<ul>
-<li>copy the actual code and text contents</li>
-<li>copy the history of all changes</li>
-</ul>
-<p>Before using Git, we need basic bash commands</p>
-</section>
-<section id="first-element---navigating-using-bash-command" class="slide level2">
-<h2>First element - navigating using bash command</h2>
-<p>Navigating Directories in the Terminal / Git Bash</p>
-<ol type="1">
-<li>Checking where you are</li>
-</ol>
+<div id="tabset-1-2">
+<p>Write the commit tree of <code>MarieEtienne/stats-reminder</code> repo with the actual commit number</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">$</span> pwd</span>
-<span id="cb1-2"><a></a><span class="ex">/home/marie/projects</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="fu">git</span> clone .... <span class="co">## cloning the repo</span></span>
+<span id="cb1-2"><a></a><span class="fu">git</span> ...  <span class="co">## print history</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="2" type="1">
-<li>Listing files</li>
-</ol>
+<p>Remark: To show only the last 3 commits you can use</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="fu">ls</span> <span class="at">-l</span> <span class="co">#→ long listing</span></span>
-<span id="cb2-2"><a></a><span class="fu">ls</span> <span class="at">-a</span> <span class="co">#→ include hidden files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a></a><span class="fu">git</span> log <span class="at">-n</span> 3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="3" type="1">
-<li>Moving between directories</li>
-</ol>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Action</th>
-<th>Linux/macOS/Git Bash</th>
-<th>Windows Command Prompt</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Go to a directory</td>
-<td><code>cd folder_name</code></td>
-<td><code>cd folder_name</code></td>
-</tr>
-<tr class="even">
-<td>Go up one level</td>
-<td><code>cd ..</code></td>
-<td><code>cd ..</code></td>
-</tr>
-<tr class="odd">
-<td>Go to home</td>
-<td><code>cd ~</code></td>
-<td><code>cd %USERPROFILE%</code></td>
-</tr>
-<tr class="even">
-<td>Absolute path</td>
-<td><code>cd /path/to/folder</code></td>
-<td><code>cd C:\path\to\folder</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="first-element---navigating-using-bash-command-1" class="slide level2">
-<h2>First element - navigating using bash command</h2>
-<ol start="4" type="1">
-<li>Create a directory</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="fu">mkdir</span> my_git_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="5" type="1">
-<li>Removing files or directory</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="fu">rm</span> my_file</span>
-<span id="cb4-2"><a></a><span class="fu">rmdir</span> my_dir <span class="co">#remove an empty dir</span></span>
-<span id="cb4-3"><a></a><span class="fu">rm</span> <span class="at">-rf</span> my_dir <span class="co">#remove a directeory and everything inside ! Careful</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="6" type="1">
-<li>Quick tips</li>
-</ol>
-<p>Use <code>Tab</code> for autocomplete paths and filenames.</p>
-<p>Paths on Git Bash use <code>/</code>, even on Windows (<code>/c/Users/...</code>).</p>
-</section>
-<section id="exercise" class="slide level2">
-<h2>Exercise</h2>
-<ul>
-<li><p>Go to your home directory (<code>/home/login</code>in Linux, probably somethin like <code>C:/Users/yourusername</code> in Windows)</p></li>
-<li><p>Create a directory named <code>git</code>, where you will store all your git projects</p></li>
-<li><p>Jump within this directory</p></li>
-<li><p>list the files contained in this directory</p></li>
-<li><p>Create a <code>test_dir</code> directory</p></li>
-<li><p>Jump outside the <code>git</code> directory</p></li>
-<li><p>Remove the <code>git</code> directory and everything it contains</p></li>
-<li><p>Create a directory named <code>git</code>, where you will store all your git projects</p></li>
-</ul>
-</section>
-<section id="cloning-an-existing-reprository-1" class="slide level2">
-<h2>Cloning an existing reprository</h2>
-<p>Go to your git Directory and write</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="fu">git</span> clone git@github.com:MarieEtienne/stats-reminders.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<h3 id="what-is-happening">What is happening ?</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="fu">ls</span></span>
-<span id="cb6-2"><a></a><span class="bu">cd</span> stats-reminders</span>
-<span id="cb6-3"><a></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<h3 id="where-to-find-this-magical-address-to-clone">Where to find this magical address to clone</h3>
-<p>Navigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address.</p>
-</section>
-<section id="reviewing-the-code-development" class="slide level2">
-<h2>Reviewing the code development</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="fu">git</span> log</span>
-<span id="cb7-2"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb7-3"><a></a><span class="ex">gitk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="forking-an-existing-repository" class="slide level2">
-<h2>Forking an existing repository</h2>
-<h3 id="what-is-forking">What is forking?</h3>
-<p>Forking creates your own copy of someone else’s repository in your GitHub account. This lets you experiment with changes without affecting the original project. How to fork a repo:</p>
-<h3 id="how">How</h3>
-<p>Navigate to the repository you want to fork on GitHub Click the “Fork” button in the top-right corner of the repository page Choose where to fork it - usually to your personal account Wait a moment - GitHub will create the copy in your account</p>
-<h3 id="what-happens-next">What happens next:</h3>
-<p>You’ll have a complete copy of the repo in your GitHub account You can clone this forked version to your local machine using git clone Make changes, commit them, and push back to your fork If you want to contribute back to the original project, you can create a pull request</p>
-<h3 id="key-points">Key points</h3>
-<p>Your fork is independent of the original repo You have full control over your forked version The original repo remains unchanged unless you submit a pull request that gets accepted You can sync your fork with the original repo later if it gets updated</p>
-<p>This workflow is essential for contributing to open-source projects or collaborating on code when you don’t have direct write access to the original repository.</p>
-</section>
-<section id="exercise-1" class="slide level2">
-<h2>Exercise</h2>
-<ul>
-<li><p>Remove the stats-reminder directory and its content</p></li>
-<li><p>Fork <a href="https://github.com/MarieEtienne/stats-reminders">https://github.com/MarieEtienne/stats-reminders</a> on your personnal GitHub account</p></li>
-<li><p>clone your version of stats-reminder</p></li>
-<li><p>Show the history of this file</p></li>
-</ul>
-</section></section>
-<section>
-<section id="creating-new-content" class="title-slide slide level1 center">
-<h1>Creating new content</h1>
-
-</section>
-<section id="your-first-commit" class="slide level2">
-<h2>Your first commit</h2>
+<section id="a-first-commit" class="slide level2">
+<h2>A first commit</h2>
 <ul>
 <li>Open the file <code>Penguins_chapter.qmd</code> and add your name and the list of authors, then save your file.</li>
 </ul>
-<div class="fragment">
-<ul>
-<li>Type the command git log in the console.</li>
-</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="fu">git</span> status <span class="co"># project status</span></span>
+<span id="cb3-2"><a></a><span class="fu">git</span> diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="fragment">
 <ul>
-<li>Enter the following commands:</li>
+<li><p>Type the command <code>git add Penguins_chapter.qmd</code>, then repeat the previous commands.</p></li>
+<li><p>Type the command <code>git commit -m "Change title"</code>, and once again check the project status.</p></li>
+<li><p>Draw the commit tree.</p></li>
+</ul>
+<div class="fragment">
+<p><img src="resources/figs/git2.svg" width="800" height="250" alt="simple branche"></p>
+</div>
+</section>
+<section id="process-overview" class="slide level2">
+<h2>Process overview</h2>
+<p><img src="../resources/figs/Vision_globale_git_step1.png" width="800" height="300" alt="bilan1"></p>
+<h3 id="the-snapshot-analogy">The snapshot analogy</h3>
+<ul>
+<li><p>In the working directory, let’s try different poses (the version of the project in the working directory)</p></li>
+<li><p>When satisfied by the pose of one guy, ask him stop moving (Staging area)</p></li>
+<li><p>When satisfied with the whole scene, take the photo (Commit in the local repo)</p></li>
+</ul>
+</section>
+<section id="share-your-progress-with-your-co-workers" class="slide level2">
+<h2>Share your progress with your co workers</h2>
+<p>The current version of the project is indeed recorded in the version control system, but you are the only ones who know it.</p>
+<p>You may want to share these changes to the remote repository from which we started.</p>
+<ul>
+<li><p>To view the differences with the remote repository, use <code>git diff origin/master</code>.</p></li>
+<li><p>To send our changes, , use <code>git push</code>.</p></li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Graphically</a></li><li><a href="#tabset-2-2">Theoretically after the push</a></li><li><a href="#tabset-2-3">Process overview</a></li><li><a href="#tabset-2-4">But</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p><img src="../resources/figs/git3.svg" width="600" height="200" alt="bilan1"></p>
+</div>
+<div id="tabset-2-2">
+<p><img src="../resources/figs/git3_bis.svg" width="600" height="200" alt="bilan1"></p>
+</div>
+<div id="tabset-2-3">
+<p><img src="../resources/figs/Vision_globale_git_step2.png" width="800" height="300" alt="bilan1"></p>
+</div>
+<div id="tabset-2-4">
+<ul>
+<li>Most of view receive errors message like</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">git</span> status <span class="co"># project status</span></span>
-<span id="cb8-2"><a></a><span class="fu">git</span> diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">To</span> github.com:MarieEtienne/stats-reminders.git</span>
+<span id="cb4-2"><a></a> <span class="ot">! </span><span class="ex">[rejected]</span>        master <span class="at">-</span><span class="op">&gt;</span> master <span class="er">(</span><span class="ex">fetch</span> first<span class="kw">)</span></span>
+<span id="cb4-3"><a></a><span class="ex">error:</span> failed to push some refs to <span class="st">'github.com:MarieEtienne/stats-reminders.git'</span></span>
+<span id="cb4-4"><a></a><span class="ex">hint:</span> Updates were rejected because the remote contains work that you do not</span>
+<span id="cb4-5"><a></a><span class="ex">hint:</span> have locally. This is usually caused by another repository pushing to</span>
+<span id="cb4-6"><a></a><span class="ex">hint:</span> the same ref. If you want to integrate the remote changes, use</span>
+<span id="cb4-7"><a></a><span class="ex">hint:</span> <span class="st">'git pull'</span> before pushing again.</span>
+<span id="cb4-8"><a></a><span class="ex">hint:</span> See the <span class="st">'Note about fast-forwards'</span> in <span class="st">'git push --help'</span> for details.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div class="fragment">
+<p>, why ?</p>
 <ul>
-<li><p>Type the command <code>git add penguins.Rmd</code>, then repeat the previous commands.</p></li>
-<li><p>Type the command <code>git commit -m "Added an author"</code>, and once again check the project status.</p></li>
-<li><p>Check the project on Github</p></li>
-<li><p>Type the command <code>git push"</code>, and once again check the project on Github</p></li>
+<li>Draw the commit tree.</li>
 </ul>
-
+</div>
+</div>
+</div>
+</section>
+<section id="share-your-progress-with-your-co-workers-1" class="slide level2">
+<h2>Share your progress with your co workers</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Graphically</a></li><li><a href="#tabset-3-2">The theory</a></li><li><a href="#tabset-3-3">Solving conflicts = deciding</a></li><li><a href="#tabset-3-4">In practice, the easy dirty way</a></li><li><a href="#tabset-3-5">Example</a></li><li><a href="#tabset-3-6">Process overview</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p><img src="../resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
+</div>
+<div id="tabset-3-2">
+<ul>
+<li><p>Be sure that all your changes have been committed</p></li>
+<li><p>when works are diverged, you can have different attitudes. We go for the simple one for now and we need to specify this config for git</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="fu">git</span> config pull.rebase false</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Retrieve the last version of the project on the server: <code>git pull origin master</code></p></li>
+<li><p>This might highlights conflicts: In case of conflict, you receive a very nasty message.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="ex">Auto-merging</span> README.md</span>
+<span id="cb6-2"><a></a><span class="ex">CONFLICT</span> <span class="er">(</span><span class="ex">content</span><span class="kw">)</span><span class="bu">:</span> Merge conflict in README.md</span>
+<span id="cb6-3"><a></a><span class="ex">Automatic</span> merge failed<span class="kw">;</span> <span class="ex">fix</span> conflicts and then commit the result.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Share the merged version on the server</li>
+</ul>
+</div>
+<div id="tabset-3-3">
+<p>You must resolve the conflict</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
+<span id="cb7-2"><a></a><span class="ex">It</span> will also served as sandbox during the lectures. Therefore the git history might be a bit fuzy.</span>
+<span id="cb7-3"><a></a></span>
+<span id="cb7-4"><a></a><span class="ex">=======</span></span>
+<span id="cb7-5"><a></a><span class="ex">It</span> will be used as sandbox during the lectures. Don<span class="st">'t be scared by the messy git tree!</span></span>
+<span id="cb7-6"><a></a><span class="st">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dfdf5995ade6e47899531a99e5947e719da86020</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Portion between <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> and <code>=======</code> is your local version, while part between <code>=======</code>and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; dfdf5995ade6e47899531a99e5947e719da86020</code> is the version available at commit with hash dfdf5995ade6e47899531a99e5947e719da86020.</p>
+</div>
+<div id="tabset-3-4">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="fu">git</span> pull origin master <span class="co"># retrieve the laste version on the server and try to merge with yours</span></span>
+<span id="cb8-2"><a></a><span class="fu">git</span> status <span class="co"># see the conflicted files</span></span>
+<span id="cb8-3"><a></a><span class="co">## revise each conflicted file to remove conflicts</span></span>
+<span id="cb8-4"><a></a><span class="fu">git</span> add any files with solved conflicts</span>
+<span id="cb8-5"><a></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Merge conflicts solved"</span></span>
+<span id="cb8-6"><a></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span class="care">Problem</span>: the merge commit is not very readable in the development process. But one step at a time</p>
+</div>
+<div id="tabset-3-5">
+<ul>
+<li><p>Change someting in your local version of <code>Penguins_chapter.qmd</code>,</p></li>
+<li><p><code>git add, commit, pull</code> …..</p></li>
+<li><p>Solve conflicts</p></li>
+<li><p>`git push’</p></li>
+</ul>
+<p><span class="care">Problem</span>: Too much time spent at solving conflicts. We need another to minimize conflilcts</p>
+<p><img src="../resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
+</div>
+<div id="tabset-3-6">
+<p>Before the pull:</p>
+<p><img src="../resources/figs/git4.svg" width="600" height="200" alt="bilan1"></p>
+<p>After conflicts solved: <img src="../resources/figs/git5.svg" width="600" height="200" alt="bilan1"></p>
+<p>After the push: <img src="../resources/figs/git6.svg" width="600" height="200" alt="bilan1"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="one-branch-for-one-task" class="slide level2">
+<h2>One branch for one task</h2>
+<h3 id="goal-minimising-conflicts">Goal minimising conflicts</h3>
+<p>Working in parralel and merging from time to time</p>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Graphically</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
 
 </div>
+</div>
+</div>
+<!-- ### Best way -->
+<!-- ```{bash} -->
+<!-- #| echo: true -->
+<!-- #| eval: false -->
+<!-- git fetch origin # retrieve the latest version on the server but do no merge -->
+<!-- git rebase origin/master  # put your work on the top of the commit tree of the local copy o origin master -->
+<!-- ## solve conflicts and  -->
+<!-- git rebase --continue -->
+<!-- ``` -->
+<!-- * We edit the file to choose the correct version, then `git add, commit, push` -->
+<!-- ** Please  take some time to produce conflicts and solve it ** -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: Graphical tree overview -->
+<!-- <img src="../resources/figs/Vision_globale_git_step3.png" width="800" height = "300" alt = "bilan1"></img> -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: less share, less pain  -->
+<!-- To limit conflicts, conduct tests without interfering with others, there is the concept of *branching*. -->
+<!-- You work independantly for a while and merge from time to time. -->
+<!-- -- -->
+<!-- <img src="../resources/figs/git7.svg" width="800" height = "600" alt = "bilan1"></img> -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: branches  practically speaking -->
+<!-- * Create your branch -->
+<!-- ```{r git_branch, eval = FALSE } -->
+<!-- git branch -a -->
+<!-- git branch test -->
+<!-- git branch -a -->
+<!-- ``` -->
+<!-- * To jump on a branch -->
+<!-- ```{r git_switch, eval = FALSE } -->
+<!-- git switch test -->
+<!-- git branch -a -->
+<!-- ``` -->
+<!-- Let's make whatever changes you like and then commit. -->
+<!-- when you return to the master branch, you will find your project just as you left it before branching. -->
+<!-- ** Take a moment to try** -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: branches  practically speaking -->
+<!-- * Let's create your own branch  and jump on it  `git branch` (`git branch -a` to have the remotes branches also). -->
+<!-- The stared branch is the one we currently sit on. -->
+<!-- * Please remove `penguins.Rmd ` then register this change -->
+<!-- ```{r illustration_branche, eval = FALSE}  -->
+<!-- rm penguins.Rmd # to remove the file -->
+<!-- git status -->
+<!-- git add penguins.Rmd # add the changes aka it's deletion -- ok it's weird -->
+<!-- git commit -m "Removing penguins.Rmd" -->
+<!-- ls #list the content of the working directory -->
+<!-- ``` -->
+<!-- * Jump back on the master branch `git switch master` and list the contents of your working directory.  -->
+<!-- -- -->
+<!-- You may want to suppress an old unuseful branch with  -->
+<!-- ```{r delete_branche, eval = FALSE}  -->
+<!-- git branch  -d test  -->
+<!-- ``` -->
+<!-- -- -->
+<!-- As the changes stored in this branch have not been pushed on the remote repo, you will lose every changes if you delete the branch, -->
+<!-- The vigilant Git system is worried about us. Are we not on the verge of losing important work? -->
+<!-- We reassure it by letting it know that we know exactly what we are doing by using the  `-D` option -->
+<!-- ```{r delete_branche_force, eval = FALSE}  -->
+<!-- git branch  -D test  -->
+<!-- ``` -->
+<!-- --- -->
+<!-- template: contribute -->
+<!-- ## Working together: incorporate the changes made in another branch -- merge -->
+<!-- * Create a branch dev and switch to this branch. -->
+<!-- * Add a nice chart to penguins.Rmd and then incorporate your changes into the project on the dev branch. -->
+<!-- * Push your work to the remote repository (look at Git's instructions on git push options) (optional for now but generally useful). -->
+<!-- * Switch to the master branch and type the command git merge dev. You have integrated the changes made in dev into the master branch. -->
+<!-- * Draw the commit tree in this case. -->
+<!-- --- -->
+<!-- name: navigate -->
+<!-- # Navigate from one version to another -->
+<!-- --- -->
+<!-- template: navigate -->
+<!-- ## Go back to a previous version -- checkout -->
+<!-- To go back to a previous specific version, use the `checkout`  command -->
+<!-- Open the files `penguins.Rmd` and execute -->
+<!-- ```{r git_checkout, eval = FALSE} -->
+<!-- git log --oneline -->
+<!-- git checkout A_specific_hash_version_number -->
+<!-- ``` -->
+<!-- The current working version of  `penguins.Rmd` is in the state of commit `A_specific_hash_version_number` -->
+<!-- Go back to the lates version on master by  -->
+<!-- -- -->
+<!-- ```{r git_checkout_2, eval = FALSE} -->
+<!-- git checkout master -->
+<!-- ``` -->
+<!-- Everything is back to normal! -->
+<!-- ** That's the Git Magic" -->
+<!-- --- -->
+<!-- template: navigate -->
+<!-- ## To suppress a local commit (not present on the remote repo) -->
+<!-- * Remove the file `penguins.Rmd`, and commit this change -->
+<!-- ```{r git_checkout_suppress, eval = FALSE} -->
+<!-- git log --oneline -->
+<!-- git reset --hard The_previous_commit_number -->
+<!-- git log --oneline -->
+<!-- ``` -->
+<!-- -- -->
+<!-- Be very very very careful, it is a destructive process. All information regarding your previous commit is lost. -->
+<!-- It's a very dangerous way of living with Git, an unfortunate removal of a commit present on the remote server can break the commit trees for all your coworkers and you won't have friends anymore.  -->
+<!-- --- -->
+<!-- template: navigate -->
+<!-- ## How to suppress a commit shared on the remote repo -->
+<!-- * Remove the file  `penguins.Rmd` and commit this modification. -->
+<!-- You can "suppress" this commit by applying the opposit! That's what you do by  -->
+<!-- ```{r git_checkout_suppress_2, eval = FALSE} -->
+<!-- git log --oneline -->
+<!-- git revert commit_number_to_revert -->
+<!-- git log --oneline -->
+<!-- ``` -->
+<!-- --- -->
+<!-- template: gitintro -->
+<!-- ## Practice -->
+<!-- within your team, divide and conquer to produce -->
+<!-- * a short text to present the Palmer Penguins dataset, -->
+<!-- * insigthful plots of the Palmer penguins dataset, -->
+<!-- * a statistical analysis to deceide wheter or not the average body mass in the same whatever species you consider, -->
+<!-- Good Practice : -->
+<!-- Every one works on its own develoment branch and shae with others when he's ready -->
+<!-- --- -->
+<!-- # If we have time  -->
+<!-- `git rebase` -->
+<!-- `git cherry pick` -->
+<!-- --- -->
+<!-- # Last few words -->
+<!-- * Git is a standard control version system in industry AND research for version control (wheter you use it with Github or not), -->
+<!-- * Being proficient with Git requires to use it as much as possible: The more problems you have, the more you learn -->
+<!-- * Go back to the documentation as much as needed -->
+<!-- * By no means, Git is an alternative to a proper documented code (in R you might want to use package like `formatR`, `styleR` and document it with `roxygen`) -->
+<!-- --- -->
+<!-- # Some help other than Claude.ai and ChatGPT -->
+<!-- ## Resources -->
+<!-- * [The Git Book](https://git-scm.com/book/en/v2) -->
+<!-- * [Atlassian tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control) -->
+<!-- ## Cheat sheet -->
+<!-- [Git Cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf) -->
+<!-- ## Tobe used as a Sandbox -->
+<!-- [Learning Git Demo](https://learngitbranching.js.org/?locale=fr_FR&NODEMO=) -->
+<!-- ## Références -->
+<!-- ```{r refs, echo=FALSE, results="asis", eval = TRUE, cache = FALSE} -->
+<!-- PrintBibliography(myBib) -->
+<!-- ``` -->
+
+
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
