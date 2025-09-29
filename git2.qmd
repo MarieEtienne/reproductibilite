@@ -191,9 +191,9 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 * Share the merged version on the server
 
-### Solving conflicts = deciding
-
-You must resolve the conflict
+### Solving 
+*
+Solving conflicts implies choosing and You must resolve the conflict
 
 ```{bash git_conflict_resolve}
 #| echo: true
@@ -209,7 +209,7 @@ It will be used as sandbox during the lectures. Don't be scared by the messy git
 Portion between  `<<<<<<< HEAD` and `=======` is your local version,  while part between `=======`and `>>>>>>> dfdf5995ade6e47899531a99e5947e719da86020` is the version available at commit with hash dfdf5995ade6e47899531a99e5947e719da86020.
 
 
-### In practice, the easy dirty way
+### Practically (easy but dirty)
 
 ```{bash}
 #| echo: true
@@ -240,17 +240,26 @@ git push
 
 ### Process overview
 
-Before the pull:
+::::: columns
+:::: {.column width="48%"}
 
-<img src="resources/figs/git4.svg" width="600" height = "200" alt = "bilan1"></img>
+[T1]{.care}
+<img src="resources/figs/git6.svg" width="600" height = "200" alt = "bilan1"></img>
 
 
-After conflicts solved:
+[T2]{.care}
 <img src="resources/figs/git5.svg" width="600" height = "200" alt = "bilan1"></img>
 
+::::
 
-After the push:
-<img src="resources/figs/git6.svg" width="600" height = "200" alt = "bilan1"></img>
+:::: {.column width="48%"}
+[T3]{.care}
+<img src="resources/figs/git4.svg" width="600" height = "200" alt = "bilan1"></img>
+
+::::
+
+
+[Associate trees with actions]{.care}
 
 :::
 
@@ -267,279 +276,254 @@ Working in parralel and merging from time to time
 
 ### Graphically
 
+::::: columns
+:::: {.column width="48%"}
 
-After the push:
+Working in parallel: 
+
 <img src="resources/figs/git7.svg" width="600" height = "200" alt = "bilan1"></img>
 
 
-### Practically 
 
-* Create a local branch
-
-```{bash}
-#| echo: true
-#| eval: false
-git checkout -b mpe_test_branch
-```
-
-Make some changes, add and commit them and now trying to push
+::::
 
 
-```{bash}
-#| echo: true
-#| eval: false
-git push origin mpe_test_branch
-git switch master #go back on the master branch
-```
-
-Go on Giuthub and look !
+:::: {.column width="48%"}
 
 
-### Exercise
+Merging test within master: 
+<img src="resources/figs/git8.svg" width="600" height = "200" alt = "bilan1"></img>
 
-* Creates your own test_branch from the master branch  and go on this branch
-
-* Remove  `Penguins_chapter.qmd` from the versioning system
+::::
 
 
 :::
 
-<!-- ### Best way -->
 
 
-<!-- ```{bash} -->
-<!-- #| echo: true -->
-<!-- #| eval: false -->
-<!-- git fetch origin # retrieve the latest version on the server but do no merge -->
-<!-- git rebase origin/master  # put your work on the top of the commit tree of the local copy o origin master -->
-<!-- ## solve conflicts and  -->
-<!-- git rebase --continue -->
-<!-- ``` -->
+### Create 
 
+Creat a local branch and navigating between different branches
 
+```{bash}
+#| echo: true
+#| eval: false
+git branch mpe_test_branch # create a branch
+git branch -a # list the branch and indicates on which you are sitting
+git switch  mpe_test_branch # switch/jump on mpe_test_branch
+git branch -a 
+git switch master
+git branch -d mpe_test_branch # deletes the branch
+```
 
 
+### Share 
 
+* Create your own branch and make some changes, add and commit them and now trying to push
 
-<!-- * We edit the file to choose the correct version, then `git add, commit, push` -->
 
+```{bash}
+#| echo: true
+#| eval: false
+git push origin YOUR_BRANCH_NAME
+git switch master #go back on the master branch
+git branch -a #list all the branchs and show on which you are sitting
+```
 
-<!-- ** Please  take some time to produce conflicts and solve it ** -->
+Go on Github and look !
 
+### Merge 
 
-<!-- --- -->
-<!-- template: contribute -->
+* Create a second test branch `test_branch2` and make some changes
 
-<!-- ## Working together: Graphical tree overview -->
+* We want to incorprate change make in test_branch2 in your personnal branch
 
-<!-- <img src="resources/figs/Vision_globale_git_step3.png" width="800" height = "300" alt = "bilan1"></img> -->
 
+```{bash}
+#| echo: true
+#| eval: false
+git switch YOUR_BRANCH_NAME
+git merge test_branch2 #merging the commits of test_branch2 in the branch you are sitting
+## look at your files
+```
 
+### Exercise - 1
 
+* Creates your own test_branch from the master branch  and go on this branch
 
-<!-- --- -->
-<!-- template: contribute -->
+* Remove  `Penguins_chapter.qmd` from the versioning system `git rm Penguins_chapter.qmd`
 
-<!-- ## Working together: less share, less pain  -->
+* list the content your directory
 
-<!-- To limit conflicts, conduct tests without interfering with others, there is the concept of *branching*. -->
+* Commit your changes in your branch
 
-<!-- You work independantly for a while and merge from time to time. -->
-<!-- -- -->
+* Switch to the master branch
 
-<!-- <img src="resources/figs/git7.svg" width="800" height = "600" alt = "bilan1"></img> -->
+* List the contents of your directory
 
+* Delete your test_branch `git branch -d NAME_OF_YOUR_BRANCH`
 
-<!-- --- -->
-<!-- template: contribute -->
+### Exercise - 2
 
-<!-- ## Working together: branches  practically speaking -->
+* Create a branch and switch to this branch
 
+* Create a qmd file, name `Row_id.qmd", id being the order of your row, 1 is the closes to the board.
 
-<!-- * Create your branch -->
+* Work by team, (a team = a row), to crate and solve conflicts
 
-<!-- ```{r git_branch, eval = FALSE } -->
-<!-- git branch -a -->
-<!-- git branch test -->
-<!-- git branch -a -->
-<!-- ``` -->
 
-<!-- * To jump on a branch -->
+:::
 
-<!-- ```{r git_switch, eval = FALSE } -->
-<!-- git switch test -->
-<!-- git branch -a -->
-<!-- ``` -->
 
-<!-- Let's make whatever changes you like and then commit. -->
-<!-- when you return to the master branch, you will find your project just as you left it before branching. -->
 
-<!-- ** Take a moment to try** -->
 
-<!-- --- -->
-<!-- template: contribute -->
 
-<!-- ## Working together: branches  practically speaking -->
+## Writing a clean history - a proper way to merge
 
-<!-- * Let's create your own branch  and jump on it  `git branch` (`git branch -a` to have the remotes branches also). -->
+::: panel-tabset
 
-<!-- The stared branch is the one we currently sit on. -->
+### Step 1: Fetch Latest History
 
-<!-- * Please remove `penguins.Rmd ` then register this change -->
+```{bash}
+#| echo: true
+#| eval: false
+git fetch origin
+```
 
-<!-- ```{r illustration_branche, eval = FALSE}  -->
-<!-- rm penguins.Rmd # to remove the file -->
-<!-- git status -->
-<!-- git add penguins.Rmd # add the changes aka it's deletion -- ok it's weird -->
-<!-- git commit -m "Removing penguins.Rmd" -->
-<!-- ls #list the content of the working directory -->
-<!-- ``` -->
+* Updates your local references to remote branches
 
-<!-- * Jump back on the master branch `git switch master` and list the contents of your working directory.  -->
+* Does not change your working directory
 
-<!-- -- -->
+* Prepares you to rebase onto the latest master
 
-<!-- You may want to suppress an old unuseful branch with  -->
+### Step 2: Rebase Your Branch
 
-<!-- ```{r delete_branche, eval = FALSE}  -->
-<!-- git branch  -d test  -->
-<!-- ``` -->
+Suppose you are on your feature branch:
 
-<!-- -- -->
+```{bash}
+#| echo: true
+#| eval: false
+git switch my_branch_to_be_shared
+git rebase origin/master 
+```
 
-<!-- As the changes stored in this branch have not been pushed on the remote repo, you will lose every changes if you delete the branch, -->
+Re-applies your commits on top of the latest master
+Lets you resolve conflicts now, instead of later during merge
 
-<!-- The vigilant Git system is worried about us. Are we not on the verge of losing important work? -->
 
-<!-- We reassure it by letting it know that we know exactly what we are doing by using the  `-D` option -->
+### Step 3: Merge (Fast-Forward)
 
-<!-- ```{r delete_branche_force, eval = FALSE}  -->
-<!-- git branch  -D test  -->
-<!-- ``` -->
+Once rebase was successful:
 
-<!-- --- -->
-<!-- template: contribute -->
+```{bash}
+#| echo: true
+#| eval: false
+git switch master
+git merge my_branch_to_be_shared
+```
 
+Since history is linear, this is a fast-forward merge
 
-<!-- ## Working together: incorporate the changes made in another branch -- merge -->
+No extra merge commits
 
-<!-- * Create a branch dev and switch to this branch. -->
+History stays clean and easy to read
 
-<!-- * Add a nice chart to penguins.Rmd and then incorporate your changes into the project on the dev branch. -->
+### Summary
 
-<!-- * Push your work to the remote repository (look at Git's instructions on git push options) (optional for now but generally useful). -->
+* git fetch: update local info about remote
 
-<!-- * Switch to the master branch and type the command git merge dev. You have integrated the changes made in dev into the master branch. -->
+* git rebase origin/master: reapply work on top of latest master
 
-<!-- * Draw the commit tree in this case. -->
+* git merge: integrate cleanly
+    
+* you can delete your branch one your work is included
+  
+:::
 
-<!-- --- -->
-<!-- name: navigate -->
 
-<!-- # Navigate from one version to another -->
+# Navigate from one version to another 
 
-<!-- --- -->
-<!-- template: navigate -->
+## Going back in time : restor  version -- checkout 
 
-<!-- ## Go back to a previous version -- checkout -->
+To go back to a previous specific version, use the `checkout`  command
 
-<!-- To go back to a previous specific version, use the `checkout`  command -->
+Open the files `Penguins_chapter.qmd` and execute
 
-<!-- Open the files `penguins.Rmd` and execute -->
+```{bash git_checkout}
+#| echo: true
+#| eval: false
+git log --oneline
+git checkout A_specific_hash_version_number
+```
 
-<!-- ```{r git_checkout, eval = FALSE} -->
-<!-- git log --oneline -->
-<!-- git checkout A_specific_hash_version_number -->
-<!-- ``` -->
+The current working version of  `Penguins_chapter.qmd` is in the state of commit `A_specific_hash_version_number`
 
-<!-- The current working version of  `penguins.Rmd` is in the state of commit `A_specific_hash_version_number` -->
 
-<!-- Go back to the lates version on master by  -->
+You can branch from this moment if you want to 
 
-<!-- -- -->
+Go back to the latest version on master by
 
-<!-- ```{r git_checkout_2, eval = FALSE} -->
-<!-- git checkout master -->
-<!-- ``` -->
 
-<!-- Everything is back to normal! -->
+```{bash git_checkout2}
+#| echo: true
+#| eval: false
+git checkout master
+```
 
+Everything is back to normal!
 
-<!-- ** That's the Git Magic" -->
 
+**That's the Git Magic**
 
-<!-- --- -->
-<!-- template: navigate -->
 
-<!-- ## To suppress a local commit (not present on the remote repo) -->
+## To suppress a local commit (not present on the remote repo)
 
-<!-- * Remove the file `penguins.Rmd`, and commit this change -->
+* Remove the file `Penguins_chapter.qmd`, and commit this change
 
-<!-- ```{r git_checkout_suppress, eval = FALSE} -->
-<!-- git log --oneline -->
-<!-- git reset --hard The_previous_commit_number -->
-<!-- git log --oneline -->
-<!-- ``` -->
+```{bash git_checkout_suppress}
+#| echo: true
+#| eval: false
+git log --oneline
+git reset --hard The_previous_commit_number
+git log --oneline
+```
 
-<!-- -- -->
+. . .
 
-<!-- Be very very very careful, it is a destructive process. All information regarding your previous commit is lost. -->
+Be very very very careful, it is a destructive process. All information regarding your previous commit is lost.
 
-<!-- It's a very dangerous way of living with Git, an unfortunate removal of a commit present on the remote server can break the commit trees for all your coworkers and you won't have friends anymore.  -->
+It's a very dangerous way of living with Git, an unfortunate removal of a commit present on the remote server can break the commit trees for all your coworkers and you won't have friends anymore.
 
 
-<!-- --- -->
-<!-- template: navigate -->
+## How to suppress a commit shared on the remote repo
 
-<!-- ## How to suppress a commit shared on the remote repo -->
+* Remove the file  `Penguins_chapter.qmd` and commit this modification.
 
+You can "suppress" this commit by applying the opposit! That's what you do by
 
-<!-- * Remove the file  `penguins.Rmd` and commit this modification. -->
+```{bash git_suppress2}
+#| echo: true
+#| eval: false
+git log --oneline
+git revert commit_number_to_revert
+git log --oneline
+```
 
-<!-- You can "suppress" this commit by applying the opposit! That's what you do by  -->
+This becomes more difficult with dirty merge commits, so try to keep a clean history
 
-<!-- ```{r git_checkout_suppress_2, eval = FALSE} -->
-<!-- git log --oneline -->
-<!-- git revert commit_number_to_revert -->
-<!-- git log --oneline -->
-<!-- ``` -->
 
-<!-- --- -->
-<!-- template: gitintro -->
 
-<!-- ## Practice -->
+# Conclusion 
 
-<!-- within your team, divide and conquer to produce -->
+## Last few words
 
-<!-- * a short text to present the Palmer Penguins dataset, -->
-<!-- * insigthful plots of the Palmer penguins dataset, -->
-<!-- * a statistical analysis to deceide wheter or not the average body mass in the same whatever species you consider, -->
+* Git is a standard control version system in industry AND research for version control (whether you use it with Github or not),
 
-<!-- Good Practice : -->
+* Being proficient with Git requires to use it as much as possible: The more problems you have, the more you learn
 
-<!-- Every one works on its own develoment branch and shae with others when he's ready -->
+* Go back to the documentation as much as needed 
 
-
-<!-- --- -->
-<!-- # If we have time  -->
-
-<!-- `git rebase` -->
-
-<!-- `git cherry pick` -->
-
-
-
-<!-- --- -->
-
-<!-- # Last few words -->
-
-<!-- * Git is a standard control version system in industry AND research for version control (wheter you use it with Github or not), -->
-
-<!-- * Being proficient with Git requires to use it as much as possible: The more problems you have, the more you learn -->
-
-<!-- * Go back to the documentation as much as needed -->
-
-<!-- * By no means, Git is an alternative to a proper documented code (in R you might want to use package like `formatR`, `styleR` and document it with `roxygen`) -->
+* By no means, Git is an alternative to a proper documented code (in R you might want to use package like `formatR`, `styleR` and document it with `roxygen`)
 
 
 
