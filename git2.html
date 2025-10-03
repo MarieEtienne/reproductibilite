@@ -457,9 +457,12 @@ Marie-Pierre Etienne
 <section id="writing-a-clean-history---a-proper-way-to-merge" class="slide level2">
 <h2>Writing a clean history - a proper way to merge</h2>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Step 1: Fetch Latest History</a></li><li><a href="#tabset-5-2">Step 2: Rebase Your Branch</a></li><li><a href="#tabset-5-3">Step 3: Merge (Fast-Forward)</a></li><li><a href="#tabset-5-4">Summary</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Step 1: Fetch</a></li><li><a href="#tabset-5-2">Step 2: Rebase</a></li><li><a href="#tabset-5-3">Step 3: Merge</a></li><li><a href="#tabset-5-4">Summary</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1">
+<div class="columns">
+<div class="column" style="width:48%;">
+<p>Retrieve latest history</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a></a><span class="fu">git</span> fetch origin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -468,31 +471,856 @@ Marie-Pierre Etienne
 <li><p>Does not change your working directory</p></li>
 <li><p>Prepares you to rebase onto the latest master</p></li>
 </ul>
+</div><div class="column" style="width:48%;">
+<p>Before fetch</p>
+<div class="cell" data-fig-width="5" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="480" height="192" viewbox="0.00 0.00 386.98 179.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 175.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-175.46 382.98,-175.46 382.98,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-153" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-148.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="99.58" cy="-153" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="99.58" y="-148.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.02,-153C47.1,-153 59.96,-153 71.32,-153"></path>
+<polygon fill="black" stroke="black" points="71.62,-156.5 81.62,-153 71.62,-149.5 71.62,-156.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="180.16" cy="-126" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="180.16" y="-121.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M116.87,-147.41C127.4,-143.79 141.34,-138.99 153.37,-134.86"></path>
+<polygon fill="black" stroke="black" points="154.58,-138.15 162.9,-131.59 152.3,-131.53 154.58,-138.15"></polygon>
+</g>
+<!-- F -->
+<g id="node4" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="270.07" cy="-126" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="270.07" y="-121.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- C&#45;&gt;F -->
+<g id="edge3" class="edge">
+<title>C-&gt;F</title>
+<path fill="none" stroke="black" d="M198.11,-126C210.59,-126 227.82,-126 242.18,-126"></path>
+<polygon fill="black" stroke="black" points="242.47,-129.5 252.47,-126 242.47,-122.5 242.47,-129.5"></polygon>
+</g>
+<!-- G -->
+<g id="node5" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="360.52" cy="-72" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="360.52" y="-67.8" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- F&#45;&gt;G -->
+<g id="edge4" class="edge">
+<title>F-&gt;G</title>
+<path fill="none" stroke="black" d="M285.67,-117.08C299.21,-108.82 319.6,-96.37 335.52,-86.65"></path>
+<polygon fill="black" stroke="black" points="337.59,-89.49 344.3,-81.29 333.94,-83.52 337.59,-89.49"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node6" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="297.45,-90 242.68,-90 242.68,-54 297.45,-54 297.45,-90"></polygon>
+<text text-anchor="middle" x="270.07" y="-67.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;G -->
+<g id="edge5" class="edge">
+<title>HEAD-&gt;G</title>
+<path fill="none" stroke="black" d="M297.6,-72C308.37,-72 320.8,-72 331.69,-72"></path>
+<polygon fill="black" stroke="black" points="331.95,-75.5 341.95,-72 331.95,-68.5 331.95,-75.5"></polygon>
+</g>
+<!-- mybranch -->
+<g id="node7" class="node">
+<title>mybranch</title>
+<polygon fill="#f7a913" stroke="black" points="306.05,-36 234.09,-36 234.09,0 306.05,0 306.05,-36"></polygon>
+<text text-anchor="middle" x="270.07" y="-13.8" font-family="Times,serif" font-size="14.00">mybranch</text>
+</g>
+<!-- mybranch&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>mybranch-&gt;G</title>
+<path fill="none" stroke="black" d="M301.01,-36.28C312.18,-43.1 324.7,-50.74 335.29,-57.21"></path>
+<polygon fill="black" stroke="black" points="333.65,-60.31 344.01,-62.53 337.3,-54.33 333.65,-60.31"></polygon>
+</g>
+<!-- master -->
+<g id="node8" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="126.4,-117 72.77,-117 72.77,-81 126.4,-81 126.4,-117"></polygon>
+<text text-anchor="middle" x="99.58" y="-94.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;C -->
+<g id="edge7" class="edge">
+<title>master-&gt;C</title>
+<path fill="none" stroke="black" d="M126.31,-107.84C134.93,-110.8 144.55,-114.11 153.19,-117.08"></path>
+<polygon fill="black" stroke="black" points="152.17,-120.43 162.77,-120.37 154.45,-113.81 152.17,-120.43"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>After fetch</p>
+<div class="cell" data-fig-width="5" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="480" height="192" viewbox="0.00 0.00 405.65 260.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256.46 401.65,-256.46 401.65,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-207" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-202.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="99.58" cy="-207" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="99.58" y="-202.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.02,-207C47.1,-207 59.96,-207 71.32,-207"></path>
+<polygon fill="black" stroke="black" points="71.62,-210.5 81.62,-207 71.62,-203.5 71.62,-210.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="180.16" cy="-180" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="180.16" y="-175.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M116.87,-201.41C127.4,-197.79 141.34,-192.99 153.37,-188.86"></path>
+<polygon fill="black" stroke="black" points="154.58,-192.15 162.9,-185.59 152.3,-185.53 154.58,-192.15"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="#e3e7e8" cx="279.4" cy="-234" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="279.4" y="-229.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="#e3e7e8" d="M196.35,-188.44C211.82,-197.03 236.03,-210.47 254.15,-220.53"></path>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="252.55,-223.65 262.99,-225.44 255.95,-217.53 252.55,-223.65"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="279.4" cy="-126" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="279.4" y="-121.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- C&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>C-&gt;F</title>
+<path fill="none" stroke="black" d="M196.35,-171.56C212,-162.87 236.6,-149.21 254.79,-139.11"></path>
+<polygon fill="black" stroke="black" points="256.59,-142.12 263.63,-134.2 253.19,-136 256.59,-142.12"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="#e3e7e8" cx="379.19" cy="-207" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="379.19" y="-202.8" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="#e3e7e8" d="M297.43,-229.3C312.48,-225.14 334.65,-219.02 351.96,-214.24"></path>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="353.29,-217.51 362,-211.47 351.43,-210.76 353.29,-217.51"></polygon>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="379.19" cy="-72" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="379.19" y="-67.8" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- F&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>F-&gt;G</title>
+<path fill="none" stroke="black" d="M295.25,-117.8C310.72,-109.26 335.22,-95.73 353.58,-85.59"></path>
+<polygon fill="black" stroke="black" points="355.49,-88.53 362.55,-80.64 352.1,-82.41 355.49,-88.53"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node8" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="306.78,-90 252.02,-90 252.02,-54 306.78,-54 306.78,-90"></polygon>
+<text text-anchor="middle" x="279.4" y="-67.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;G -->
+<g id="edge7" class="edge">
+<title>HEAD-&gt;G</title>
+<path fill="none" stroke="black" d="M306.86,-72C320.34,-72 336.72,-72 350.39,-72"></path>
+<polygon fill="black" stroke="black" points="350.65,-75.5 360.65,-72 350.65,-68.5 350.65,-75.5"></polygon>
+</g>
+<!-- mybranch -->
+<g id="node9" class="node">
+<title>mybranch</title>
+<polygon fill="#f7a913" stroke="black" points="315.38,-36 243.42,-36 243.42,0 315.38,0 315.38,-36"></polygon>
+<text text-anchor="middle" x="279.4" y="-13.8" font-family="Times,serif" font-size="14.00">mybranch</text>
+</g>
+<!-- mybranch&#45;&gt;G -->
+<g id="edge8" class="edge">
+<title>mybranch-&gt;G</title>
+<path fill="none" stroke="black" d="M313.23,-36.13C326.5,-43.46 341.54,-51.76 353.8,-58.53"></path>
+<polygon fill="black" stroke="black" points="352.12,-61.6 362.56,-63.37 355.5,-55.47 352.12,-61.6"></polygon>
+</g>
+<!-- master -->
+<g id="node10" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="126.4,-171 72.77,-171 72.77,-135 126.4,-135 126.4,-171"></polygon>
+<text text-anchor="middle" x="99.58" y="-148.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;C -->
+<g id="edge9" class="edge">
+<title>master-&gt;C</title>
+<path fill="none" stroke="black" d="M126.31,-161.84C134.93,-164.8 144.55,-168.11 153.19,-171.08"></path>
+<polygon fill="black" stroke="black" points="152.17,-174.43 162.77,-174.37 154.45,-167.81 152.17,-174.43"></polygon>
+</g>
+<!-- origin_master -->
+<g id="node11" class="node">
+<title>origin_master</title>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="324.55,-198 234.25,-198 234.25,-162 324.55,-162 324.55,-198"></polygon>
+<text text-anchor="middle" x="279.4" y="-175.8" font-family="Times,serif" font-size="14.00">origin/master</text>
+</g>
+<!-- origin_master&#45;&gt;E -->
+<g id="edge10" class="edge">
+<title>origin_master-&gt;E</title>
+<path fill="none" stroke="#e3e7e8" d="M324.72,-192.24C334.2,-194.85 343.92,-197.54 352.42,-199.89"></path>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="351.52,-203.27 362.09,-202.56 353.39,-196.52 351.52,-203.27"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
 </div>
 <div id="tabset-5-2">
+<div class="columns">
+<div class="column" style="width:48%;">
 <p>Suppose you are on your feature branch:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="fu">git</span> switch my_branch_to_be_shared</span>
-<span id="cb13-2"><a></a><span class="fu">git</span> rebase origin/master </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="fu">git</span> rebase origin/master </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Re-applies your commits on top of the latest master Lets you resolve conflicts now, instead of later during merge</p>
+</div><div class="column" style="width:48%;">
+<p>Before rebase</p>
+<div class="cell" data-fig-width="5" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="480" height="192" viewbox="0.00 0.00 405.65 260.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256.46 401.65,-256.46 401.65,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-207" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-202.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="99.58" cy="-207" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="99.58" y="-202.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.02,-207C47.1,-207 59.96,-207 71.32,-207"></path>
+<polygon fill="black" stroke="black" points="71.62,-210.5 81.62,-207 71.62,-203.5 71.62,-210.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="180.16" cy="-180" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="180.16" y="-175.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M116.87,-201.41C127.4,-197.79 141.34,-192.99 153.37,-188.86"></path>
+<polygon fill="black" stroke="black" points="154.58,-192.15 162.9,-185.59 152.3,-185.53 154.58,-192.15"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="#e3e7e8" cx="279.4" cy="-234" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="279.4" y="-229.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="#e3e7e8" d="M196.35,-188.44C211.82,-197.03 236.03,-210.47 254.15,-220.53"></path>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="252.55,-223.65 262.99,-225.44 255.95,-217.53 252.55,-223.65"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="279.4" cy="-126" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="279.4" y="-121.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- C&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>C-&gt;F</title>
+<path fill="none" stroke="black" d="M196.35,-171.56C212,-162.87 236.6,-149.21 254.79,-139.11"></path>
+<polygon fill="black" stroke="black" points="256.59,-142.12 263.63,-134.2 253.19,-136 256.59,-142.12"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="#e3e7e8" cx="379.19" cy="-207" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="379.19" y="-202.8" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="#e3e7e8" d="M297.43,-229.3C312.48,-225.14 334.65,-219.02 351.96,-214.24"></path>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="353.29,-217.51 362,-211.47 351.43,-210.76 353.29,-217.51"></polygon>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="379.19" cy="-72" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="379.19" y="-67.8" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- F&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>F-&gt;G</title>
+<path fill="none" stroke="black" d="M295.25,-117.8C310.72,-109.26 335.22,-95.73 353.58,-85.59"></path>
+<polygon fill="black" stroke="black" points="355.49,-88.53 362.55,-80.64 352.1,-82.41 355.49,-88.53"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node8" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="306.78,-90 252.02,-90 252.02,-54 306.78,-54 306.78,-90"></polygon>
+<text text-anchor="middle" x="279.4" y="-67.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;G -->
+<g id="edge7" class="edge">
+<title>HEAD-&gt;G</title>
+<path fill="none" stroke="black" d="M306.86,-72C320.34,-72 336.72,-72 350.39,-72"></path>
+<polygon fill="black" stroke="black" points="350.65,-75.5 360.65,-72 350.65,-68.5 350.65,-75.5"></polygon>
+</g>
+<!-- mybranch -->
+<g id="node9" class="node">
+<title>mybranch</title>
+<polygon fill="#f7a913" stroke="black" points="315.38,-36 243.42,-36 243.42,0 315.38,0 315.38,-36"></polygon>
+<text text-anchor="middle" x="279.4" y="-13.8" font-family="Times,serif" font-size="14.00">mybranch</text>
+</g>
+<!-- mybranch&#45;&gt;G -->
+<g id="edge8" class="edge">
+<title>mybranch-&gt;G</title>
+<path fill="none" stroke="black" d="M313.23,-36.13C326.5,-43.46 341.54,-51.76 353.8,-58.53"></path>
+<polygon fill="black" stroke="black" points="352.12,-61.6 362.56,-63.37 355.5,-55.47 352.12,-61.6"></polygon>
+</g>
+<!-- master -->
+<g id="node10" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="126.4,-171 72.77,-171 72.77,-135 126.4,-135 126.4,-171"></polygon>
+<text text-anchor="middle" x="99.58" y="-148.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;C -->
+<g id="edge9" class="edge">
+<title>master-&gt;C</title>
+<path fill="none" stroke="black" d="M126.31,-161.84C134.93,-164.8 144.55,-168.11 153.19,-171.08"></path>
+<polygon fill="black" stroke="black" points="152.17,-174.43 162.77,-174.37 154.45,-167.81 152.17,-174.43"></polygon>
+</g>
+<!-- origin_master -->
+<g id="node11" class="node">
+<title>origin_master</title>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="324.55,-198 234.25,-198 234.25,-162 324.55,-162 324.55,-198"></polygon>
+<text text-anchor="middle" x="279.4" y="-175.8" font-family="Times,serif" font-size="14.00">origin/master</text>
+</g>
+<!-- origin_master&#45;&gt;E -->
+<g id="edge10" class="edge">
+<title>origin_master-&gt;E</title>
+<path fill="none" stroke="#e3e7e8" d="M324.72,-192.24C334.2,-194.85 343.92,-197.54 352.42,-199.89"></path>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="351.52,-203.27 362.09,-202.56 353.39,-196.52 351.52,-203.27"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>After rebase</p>
+<div class="cell" data-fig-width="5" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="480" height="192" viewbox="0.00 0.00 584.70 206.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 202.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-202.46 580.7,-202.46 580.7,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-180" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-175.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="99.58" cy="-180" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="99.58" y="-175.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.02,-180C47.1,-180 59.96,-180 71.32,-180"></path>
+<polygon fill="black" stroke="black" points="71.62,-183.5 81.62,-180 71.62,-176.5 71.62,-183.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="180.16" cy="-153" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="180.16" y="-148.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M116.87,-174.41C127.4,-170.79 141.34,-165.99 153.37,-161.86"></path>
+<polygon fill="black" stroke="black" points="154.58,-165.15 162.9,-158.59 152.3,-158.53 154.58,-165.15"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="#e3e7e8" cx="279.4" cy="-153" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="279.4" y="-148.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M198.1,-153C212.47,-153 233.39,-153 250.27,-153"></path>
+<polygon fill="black" stroke="black" points="250.67,-156.5 260.67,-153 250.67,-149.5 250.67,-156.5"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="#e3e7e8" cx="378.26" cy="-126" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="378.26" y="-121.8" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M297.27,-148.3C312.17,-144.14 334.14,-138.02 351.28,-133.24"></path>
+<polygon fill="black" stroke="black" points="352.53,-136.53 361.23,-130.47 350.65,-129.78 352.53,-136.53"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="467.79" cy="-126" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="467.79" y="-121.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" d="M396.14,-126C408.49,-126 425.5,-126 439.74,-126"></path>
+<polygon fill="black" stroke="black" points="439.96,-129.5 449.96,-126 439.96,-122.5 439.96,-129.5"></polygon>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="558.24" cy="-72" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="558.24" y="-67.8" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- F&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>F-&gt;G</title>
+<path fill="none" stroke="black" d="M483.39,-117.08C496.93,-108.82 517.32,-96.37 533.24,-86.65"></path>
+<polygon fill="black" stroke="black" points="535.31,-89.49 542.02,-81.29 531.66,-83.52 535.31,-89.49"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node8" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="495.17,-90 440.4,-90 440.4,-54 495.17,-54 495.17,-90"></polygon>
+<text text-anchor="middle" x="467.79" y="-67.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;G -->
+<g id="edge7" class="edge">
+<title>HEAD-&gt;G</title>
+<path fill="none" stroke="black" d="M495.33,-72C506.09,-72 518.52,-72 529.41,-72"></path>
+<polygon fill="black" stroke="black" points="529.67,-75.5 539.67,-72 529.67,-68.5 529.67,-75.5"></polygon>
+</g>
+<!-- mybranch -->
+<g id="node9" class="node">
+<title>mybranch</title>
+<polygon fill="#f7a913" stroke="black" points="503.77,-36 431.81,-36 431.81,0 503.77,0 503.77,-36"></polygon>
+<text text-anchor="middle" x="467.79" y="-13.8" font-family="Times,serif" font-size="14.00">mybranch</text>
+</g>
+<!-- mybranch&#45;&gt;G -->
+<g id="edge8" class="edge">
+<title>mybranch-&gt;G</title>
+<path fill="none" stroke="black" d="M498.73,-36.28C509.9,-43.1 522.42,-50.74 533.01,-57.21"></path>
+<polygon fill="black" stroke="black" points="531.37,-60.31 541.73,-62.53 535.02,-54.33 531.37,-60.31"></polygon>
+</g>
+<!-- master -->
+<g id="node10" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="126.4,-144 72.77,-144 72.77,-108 126.4,-108 126.4,-144"></polygon>
+<text text-anchor="middle" x="99.58" y="-121.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;C -->
+<g id="edge9" class="edge">
+<title>master-&gt;C</title>
+<path fill="none" stroke="black" d="M126.31,-134.84C134.93,-137.8 144.55,-141.11 153.19,-144.08"></path>
+<polygon fill="black" stroke="black" points="152.17,-147.43 162.77,-147.37 154.45,-140.81 152.17,-147.43"></polygon>
+</g>
+<!-- origin_master -->
+<g id="node11" class="node">
+<title>origin_master</title>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="324.55,-117 234.25,-117 234.25,-81 324.55,-81 324.55,-117"></polygon>
+<text text-anchor="middle" x="279.4" y="-94.8" font-family="Times,serif" font-size="14.00">origin/master</text>
+</g>
+<!-- origin_master&#45;&gt;E -->
+<g id="edge10" class="edge">
+<title>origin_master-&gt;E</title>
+<path fill="none" stroke="#e3e7e8" d="M324.58,-111.31C333.7,-113.86 343.02,-116.46 351.24,-118.75"></path>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="350.39,-122.14 360.96,-121.46 352.27,-115.4 350.39,-122.14"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
 </div>
 <div id="tabset-5-3">
+<div class="columns">
+<div class="column" style="width:48%;">
 <p>Once rebase was successful:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a></a><span class="fu">git</span> switch master</span>
-<span id="cb14-2"><a></a><span class="fu">git</span> merge my_branch_to_be_shared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-2"><a></a><span class="fu">git</span> merge mybranch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Since history is linear, this is a fast-forward merge</p>
 <p>No extra merge commits</p>
 <p>History stays clean and easy to read</p>
+</div><div class="column" style="width:48%;">
+<p>After switch, before merge</p>
+<div class="cell" data-fig-width="5" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="480" height="192" viewbox="0.00 0.00 586.27 179.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 175.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-175.46 582.27,-175.46 582.27,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-153" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-148.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="100.37" cy="-153" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="100.37" y="-148.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.2,-153C47.47,-153 60.63,-153 72.19,-153"></path>
+<polygon fill="black" stroke="black" points="72.23,-156.5 82.23,-153 72.23,-149.5 72.23,-156.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="181.73" cy="-99" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="181.73" y="-94.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M115.55,-143.35C127.33,-135.33 144.3,-123.78 157.97,-114.48"></path>
+<polygon fill="black" stroke="black" points="160.09,-117.27 166.39,-108.75 156.16,-111.48 160.09,-117.27"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="#e3e7e8" cx="280.97" cy="-99" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="280.97" y="-94.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M199.66,-99C214.04,-99 234.95,-99 251.83,-99"></path>
+<polygon fill="black" stroke="black" points="252.24,-102.5 262.24,-99 252.24,-95.5 252.24,-102.5"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="#e3e7e8" cx="379.83" cy="-72" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="379.83" y="-67.8" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M298.84,-94.3C313.74,-90.14 335.7,-84.02 352.85,-79.24"></path>
+<polygon fill="black" stroke="black" points="354.1,-82.53 362.79,-76.47 352.22,-75.78 354.1,-82.53"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="469.35" cy="-72" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="469.35" y="-67.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" d="M397.7,-72C410.05,-72 427.07,-72 441.31,-72"></path>
+<polygon fill="black" stroke="black" points="441.53,-75.5 451.53,-72 441.53,-68.5 441.53,-75.5"></polygon>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="559.8" cy="-45" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="559.8" y="-40.8" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- F&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>F-&gt;G</title>
+<path fill="none" stroke="black" d="M486.58,-67.05C499.3,-63.16 517.28,-57.68 532.11,-53.15"></path>
+<polygon fill="black" stroke="black" points="533.24,-56.46 541.78,-50.2 531.19,-49.77 533.24,-56.46"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node8" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="127.75,-117 72.98,-117 72.98,-81 127.75,-81 127.75,-117"></polygon>
+<text text-anchor="middle" x="100.37" y="-94.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;C -->
+<g id="edge7" class="edge">
+<title>HEAD-&gt;C</title>
+<path fill="none" stroke="black" d="M127.79,-99C135.94,-99 144.94,-99 153.16,-99"></path>
+<polygon fill="black" stroke="black" points="153.4,-102.5 163.4,-99 153.4,-95.5 153.4,-102.5"></polygon>
+</g>
+<!-- mybranch -->
+<g id="node9" class="node">
+<title>mybranch</title>
+<polygon fill="#f7a913" stroke="black" points="505.33,-36 433.37,-36 433.37,0 505.33,0 505.33,-36"></polygon>
+<text text-anchor="middle" x="469.35" y="-13.8" font-family="Times,serif" font-size="14.00">mybranch</text>
+</g>
+<!-- mybranch&#45;&gt;G -->
+<g id="edge8" class="edge">
+<title>mybranch-&gt;G</title>
+<path fill="none" stroke="black" d="M505.57,-28.75C514.47,-31.47 523.88,-34.34 532.28,-36.9"></path>
+<polygon fill="black" stroke="black" points="531.33,-40.27 541.91,-39.84 533.37,-33.58 531.33,-40.27"></polygon>
+</g>
+<!-- master -->
+<g id="node10" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="127.19,-63 73.55,-63 73.55,-27 127.19,-27 127.19,-63"></polygon>
+<text text-anchor="middle" x="100.37" y="-40.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;C -->
+<g id="edge9" class="edge">
+<title>master-&gt;C</title>
+<path fill="none" stroke="black" d="M127.35,-62.68C137.32,-69.46 148.6,-77.14 158.22,-83.68"></path>
+<polygon fill="black" stroke="black" points="156.26,-86.58 166.49,-89.31 160.19,-80.8 156.26,-86.58"></polygon>
+</g>
+<!-- origin_master -->
+<g id="node11" class="node">
+<title>origin_master</title>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="326.11,-63 235.82,-63 235.82,-27 326.11,-27 326.11,-63"></polygon>
+<text text-anchor="middle" x="280.97" y="-40.8" font-family="Times,serif" font-size="14.00">origin/master</text>
+</g>
+<!-- origin_master&#45;&gt;E -->
+<g id="edge10" class="edge">
+<title>origin_master-&gt;E</title>
+<path fill="none" stroke="#e3e7e8" d="M326.14,-57.31C335.27,-59.86 344.59,-62.46 352.81,-64.75"></path>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="351.96,-68.14 362.53,-67.46 353.84,-61.4 351.96,-68.14"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>After merge</p>
+<div class="cell" data-fig-width="5" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="480" height="192" viewbox="0.00 0.00 567.22 233.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 229.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-229.46 563.22,-229.46 563.22,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-207" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-202.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="90.84" cy="-207" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="90.84" y="-202.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.22,-207C44.9,-207 54.05,-207 62.55,-207"></path>
+<polygon fill="black" stroke="black" points="62.82,-210.5 72.82,-207 62.82,-203.5 62.82,-210.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="162.68" cy="-207" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="162.68" y="-202.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M109.1,-207C116.72,-207 125.84,-207 134.34,-207"></path>
+<polygon fill="black" stroke="black" points="134.61,-210.5 144.61,-207 134.61,-203.5 134.61,-210.5"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="#e3e7e8" cx="261.92" cy="-207" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="261.92" y="-202.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M180.61,-207C194.99,-207 215.9,-207 232.78,-207"></path>
+<polygon fill="black" stroke="black" points="233.19,-210.5 243.19,-207 233.19,-203.5 233.19,-210.5"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="#e3e7e8" cx="360.78" cy="-180" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="360.78" y="-175.8" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M279.79,-202.3C294.69,-198.14 316.65,-192.02 333.8,-187.24"></path>
+<polygon fill="black" stroke="black" points="335.05,-190.53 343.74,-184.47 333.17,-183.78 335.05,-190.53"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="450.3" cy="-180" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="450.3" y="-175.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" d="M378.65,-180C391,-180 408.02,-180 422.26,-180"></path>
+<polygon fill="black" stroke="black" points="422.48,-183.5 432.48,-180 422.48,-176.5 422.48,-183.5"></polygon>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="540.76" cy="-99" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="540.76" y="-94.8" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- F&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>F-&gt;G</title>
+<path fill="none" stroke="black" d="M464.93,-170.15C471.54,-165.2 479.51,-159 486.29,-153 498.11,-142.56 510.55,-130.09 520.45,-119.77"></path>
+<polygon fill="black" stroke="black" points="523.13,-122.03 527.47,-112.37 518.05,-117.21 523.13,-122.03"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node8" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="477.69,-144 422.92,-144 422.92,-108 477.69,-108 477.69,-144"></polygon>
+<text text-anchor="middle" x="450.3" y="-121.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;G -->
+<g id="edge7" class="edge">
+<title>HEAD-&gt;G</title>
+<path fill="none" stroke="black" d="M477.84,-117.9C489.06,-114.47 502.1,-110.49 513.31,-107.07"></path>
+<polygon fill="black" stroke="black" points="514.45,-110.39 522.99,-104.12 512.4,-103.69 514.45,-110.39"></polygon>
+</g>
+<!-- mybranch -->
+<g id="node9" class="node">
+<title>mybranch</title>
+<polygon fill="#f7a913" stroke="black" points="486.28,-90 414.32,-90 414.32,-54 486.28,-54 486.28,-90"></polygon>
+<text text-anchor="middle" x="450.3" y="-67.8" font-family="Times,serif" font-size="14.00">mybranch</text>
+</g>
+<!-- mybranch&#45;&gt;G -->
+<g id="edge8" class="edge">
+<title>mybranch-&gt;G</title>
+<path fill="none" stroke="black" d="M486.52,-82.75C495.42,-85.47 504.84,-88.34 513.23,-90.9"></path>
+<polygon fill="black" stroke="black" points="512.28,-94.27 522.86,-93.84 514.32,-87.58 512.28,-94.27"></polygon>
+</g>
+<!-- master -->
+<g id="node10" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="477.12,-36 423.48,-36 423.48,0 477.12,0 477.12,-36"></polygon>
+<text text-anchor="middle" x="450.3" y="-13.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;G -->
+<g id="edge9" class="edge">
+<title>master-&gt;G</title>
+<path fill="none" stroke="black" d="M475.73,-36.18C479.34,-39.06 482.96,-42.05 486.29,-45 498.11,-55.44 510.55,-67.91 520.45,-78.23"></path>
+<polygon fill="black" stroke="black" points="518.05,-80.79 527.47,-85.63 523.13,-75.97 518.05,-80.79"></polygon>
+</g>
+<!-- origin_master -->
+<g id="node11" class="node">
+<title>origin_master</title>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="307.07,-171 216.77,-171 216.77,-135 307.07,-135 307.07,-171"></polygon>
+<text text-anchor="middle" x="261.92" y="-148.8" font-family="Times,serif" font-size="14.00">origin/master</text>
+</g>
+<!-- origin_master&#45;&gt;E -->
+<g id="edge10" class="edge">
+<title>origin_master-&gt;E</title>
+<path fill="none" stroke="#e3e7e8" d="M307.09,-165.31C316.22,-167.86 325.54,-170.46 333.76,-172.75"></path>
+<polygon fill="#e3e7e8" stroke="#e3e7e8" points="332.91,-176.14 343.48,-175.46 334.79,-169.4 332.91,-176.14"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
 </div>
 <div id="tabset-5-4">
 <ul>
 <li><p>git fetch: update local info about remote</p></li>
-<li><p>git rebase origin/master: reapply work on top of latest master</p></li>
+<li><p>git rebase origin/master: reapply work on top of your branch</p></li>
 <li><p>git merge: integrate cleanly</p></li>
-<li><p>you can delete your branch one your work is included</p></li>
+<li><p>you can delete your branch once your work is included</p></li>
 </ul>
 </div>
 </div>
@@ -505,50 +1333,942 @@ Marie-Pierre Etienne
 </section>
 <section id="going-back-in-time-restore-version-checkout" class="slide level2">
 <h2>Going back in time : restore version – checkout</h2>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Step 1 : Go back</a></li><li><a href="#tabset-6-2">Step 2 : branch</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
 <p>To go back to a previous specific version, use the <code>checkout</code> command</p>
-<p>Open the files <code>Penguins_chapter.qmd</code> and execute</p>
+<div class="columns">
+<div class="column" style="width:48%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb15-2"><a></a><span class="fu">git</span> checkout A_specific_hash_version_number</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-2"><a></a><span class="fu">git</span> checkout C <span class="co"># c = specific hash number</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The current working version of <code>Penguins_chapter.qmd</code> is in the state of commit <code>A_specific_hash_version_number</code></p>
-<p>You can branch from this moment if you want to</p>
+</div><div class="column" style="width:48%;">
+<div class="cell" data-fig-width="4" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 440.96 125.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 121.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-121.46 436.96,-121.46 436.96,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-99" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-94.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="100.37" cy="-99" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="100.37" y="-94.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.2,-99C47.47,-99 60.63,-99 72.19,-99"></path>
+<polygon fill="black" stroke="black" points="72.23,-102.5 82.23,-99 72.23,-95.5 72.23,-102.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="181.73" cy="-72" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="181.73" y="-67.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M117.81,-93.41C128.52,-89.76 142.72,-84.93 154.92,-80.78"></path>
+<polygon fill="black" stroke="black" points="156.23,-84.03 164.57,-77.49 153.98,-77.4 156.23,-84.03"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="254.1" cy="-72" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="254.1" y="-67.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M199.76,-72C207.4,-72 216.6,-72 225.2,-72"></path>
+<polygon fill="black" stroke="black" points="225.24,-75.5 235.24,-72 225.24,-68.5 225.24,-75.5"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="335.23" cy="-72" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="335.23" y="-67.8" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M272.66,-72C282.81,-72 295.78,-72 307.2,-72"></path>
+<polygon fill="black" stroke="black" points="307.53,-75.5 317.53,-72 307.53,-68.5 307.53,-75.5"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="415.42" cy="-45" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="415.42" y="-40.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" d="M352.05,-66.54C362.65,-62.88 376.84,-57.98 389,-53.78"></path>
+<polygon fill="black" stroke="black" points="390.31,-57.03 398.62,-50.46 388.03,-50.41 390.31,-57.03"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node7" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="127.75,-63 72.98,-63 72.98,-27 127.75,-27 127.75,-63"></polygon>
+<text text-anchor="middle" x="100.37" y="-40.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;C -->
+<g id="edge6" class="edge">
+<title>HEAD-&gt;C</title>
+<path fill="none" stroke="black" d="M127.79,-53.99C136.48,-56.95 146.12,-60.23 154.77,-63.17"></path>
+<polygon fill="black" stroke="black" points="153.76,-66.52 164.35,-66.43 156.01,-59.89 153.76,-66.52"></polygon>
+</g>
+<!-- master -->
+<g id="node8" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="362.04,-36 308.41,-36 308.41,0 362.04,0 362.04,-36"></polygon>
+<text text-anchor="middle" x="335.23" y="-13.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;F -->
+<g id="edge7" class="edge">
+<title>master-&gt;F</title>
+<path fill="none" stroke="black" d="M362.26,-26.99C370.73,-29.91 380.12,-33.15 388.57,-36.07"></path>
+<polygon fill="black" stroke="black" points="387.69,-39.47 398.29,-39.43 389.98,-32.86 387.69,-39.47"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+<div id="tabset-6-2">
+<p>You can branch from this moment if you want to and start developping this new branch</p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a></a><span class="fu">git</span> switch <span class="at">-c</span> the_new_branch <span class="co"># create and switch to the branch</span></span>
+<span id="cb16-2"><a></a><span class="fu">git</span> commit ....</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The current working version of <code>Penguins_chapter.qmd</code> is in the state of commit <code>A_specific_hash_version_number</code></p>
+</div><div class="column" style="width:48%;">
+<div class="cell" data-fig-width="4" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 493.50 207.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 203.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-203.46 489.5,-203.46 489.5,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-153" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-148.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="90.84" cy="-153" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="90.84" y="-148.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.22,-153C44.9,-153 54.05,-153 62.55,-153"></path>
+<polygon fill="black" stroke="black" points="62.82,-156.5 72.82,-153 62.82,-149.5 62.82,-156.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="162.68" cy="-153" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="162.68" y="-148.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M109.1,-153C116.72,-153 125.84,-153 134.34,-153"></path>
+<polygon fill="black" stroke="black" points="134.61,-156.5 144.61,-153 134.61,-149.5 134.61,-156.5"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="270.85" cy="-181" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="270.85" y="-176.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M180.27,-157.38C196.98,-161.78 223.04,-168.65 242.75,-173.85"></path>
+<polygon fill="black" stroke="black" points="242.11,-177.3 252.67,-176.47 243.9,-170.54 242.11,-177.3"></polygon>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="270.85" cy="-126" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="270.85" y="-121.8" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- C&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>C-&gt;G</title>
+<path fill="none" stroke="black" d="M180.27,-148.78C196.98,-144.53 223.04,-137.9 242.75,-132.89"></path>
+<polygon fill="black" stroke="black" points="243.84,-136.22 252.67,-130.37 242.12,-129.44 243.84,-136.22"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="387.77" cy="-153" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="387.77" y="-148.8" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M289.3,-176.75C308.3,-172.12 338.87,-164.67 360.71,-159.35"></path>
+<polygon fill="black" stroke="black" points="361.75,-162.7 370.64,-156.93 360.09,-155.9 361.75,-162.7"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="467.96" cy="-99" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="467.96" y="-94.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" d="M402.75,-143.35C414.42,-135.28 431.28,-123.64 444.8,-114.31"></path>
+<polygon fill="black" stroke="black" points="446.86,-117.13 453.1,-108.57 442.89,-111.37 446.86,-117.13"></polygon>
+</g>
+<!-- H -->
+<g id="node8" class="node">
+<title>H</title>
+<ellipse fill="none" stroke="black" cx="387.77" cy="-99" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="387.77" y="-94.8" font-family="Times,serif" font-size="14.00">H</text>
+</g>
+<!-- G&#45;&gt;H -->
+<g id="edge7" class="edge">
+<title>G-&gt;H</title>
+<path fill="none" stroke="black" d="M289.3,-121.9C307.97,-117.51 337.83,-110.5 359.58,-105.39"></path>
+<polygon fill="black" stroke="black" points="360.59,-108.75 369.53,-103.05 358.99,-101.93 360.59,-108.75"></polygon>
+</g>
+<!-- new_b -->
+<g id="node9" class="node">
+<title>new_b</title>
+<polygon fill="#f1d763" stroke="black" points="324.87,-90 216.83,-90 216.83,-54 324.87,-54 324.87,-90"></polygon>
+<text text-anchor="middle" x="270.85" y="-67.8" font-family="Times,serif" font-size="14.00">the_new_branch</text>
+</g>
+<!-- new_b&#45;&gt;H -->
+<g id="edge8" class="edge">
+<title>new_b-&gt;H</title>
+<path fill="none" stroke="black" d="M324.94,-84.47C337.02,-87.31 349.37,-90.21 359.82,-92.67"></path>
+<polygon fill="black" stroke="black" points="359.02,-96.08 369.55,-94.96 360.62,-89.26 359.02,-96.08"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node10" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="298.23,-36 243.47,-36 243.47,0 298.23,0 298.23,-36"></polygon>
+<text text-anchor="middle" x="270.85" y="-13.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;H -->
+<g id="edge9" class="edge">
+<title>HEAD-&gt;H</title>
+<path fill="none" stroke="black" d="M298.32,-29.79C307.11,-34.13 316.78,-39.37 325.11,-45 339.86,-54.97 354.92,-68.09 366.47,-78.91"></path>
+<polygon fill="black" stroke="black" points="364.2,-81.58 373.85,-85.96 369.04,-76.52 364.2,-81.58"></polygon>
+</g>
+<!-- master -->
+<g id="node11" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="414.59,-63 360.95,-63 360.95,-27 414.59,-27 414.59,-63"></polygon>
+<text text-anchor="middle" x="387.77" y="-40.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;F -->
+<g id="edge10" class="edge">
+<title>master-&gt;F</title>
+<path fill="none" stroke="black" d="M414.81,-62.98C424.5,-69.68 435.41,-77.21 444.73,-83.65"></path>
+<polygon fill="black" stroke="black" points="442.88,-86.62 453.1,-89.42 446.86,-80.86 442.88,-86.62"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:48%;">
 <p>Go back to the latest version on master by</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a></a><span class="fu">git</span> checkout master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a></a><span class="fu">git</span> switch master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Everything is back to normal!</p>
-<p><strong>That’s the Git Magic</strong></p>
-</section>
-<section id="to-suppress-a-local-commit-not-present-on-the-remote-repo" class="slide level2">
-<h2>To suppress a local commit (not present on the remote repo)</h2>
-<ul>
-<li>Remove the file <code>Penguins_chapter.qmd</code>, and commit this change</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb17-2"><a></a><span class="fu">git</span> reset <span class="at">--hard</span> The_previous_commit_number</span>
-<span id="cb17-3"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:48%;">
+<div class="cell" data-fig-width="4" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 495.06 207.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 203.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-203.46 491.06,-203.46 491.06,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-153" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-148.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="90.84" cy="-153" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="90.84" y="-148.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.22,-153C44.9,-153 54.05,-153 62.55,-153"></path>
+<polygon fill="black" stroke="black" points="62.82,-156.5 72.82,-153 62.82,-149.5 62.82,-156.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="162.68" cy="-153" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="162.68" y="-148.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M109.1,-153C116.72,-153 125.84,-153 134.34,-153"></path>
+<polygon fill="black" stroke="black" points="134.61,-156.5 144.61,-153 134.61,-149.5 134.61,-156.5"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="270.85" cy="-181" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="270.85" y="-176.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M180.27,-157.38C196.98,-161.78 223.04,-168.65 242.75,-173.85"></path>
+<polygon fill="black" stroke="black" points="242.11,-177.3 252.67,-176.47 243.9,-170.54 242.11,-177.3"></polygon>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="270.85" cy="-126" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="270.85" y="-121.8" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- C&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>C-&gt;G</title>
+<path fill="none" stroke="black" d="M180.27,-148.78C196.98,-144.53 223.04,-137.9 242.75,-132.89"></path>
+<polygon fill="black" stroke="black" points="243.84,-136.22 252.67,-130.37 242.12,-129.44 243.84,-136.22"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="388.55" cy="-181" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="388.55" y="-176.8" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M289.42,-181C308.44,-181 338.98,-181 360.94,-181"></path>
+<polygon fill="black" stroke="black" points="360.94,-184.5 370.94,-181 360.94,-177.5 360.94,-184.5"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="469.53" cy="-72" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="469.53" y="-67.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" d="M401.64,-169.17C406.33,-164.33 411.61,-158.57 415.99,-153 430.36,-134.71 444.59,-112.45 454.61,-95.9"></path>
+<polygon fill="black" stroke="black" points="457.87,-97.26 459.99,-86.88 451.86,-93.68 457.87,-97.26"></polygon>
+</g>
+<!-- H -->
+<g id="node8" class="node">
+<title>H</title>
+<ellipse fill="none" stroke="black" cx="388.55" cy="-126" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="388.55" y="-121.8" font-family="Times,serif" font-size="14.00">H</text>
+</g>
+<!-- G&#45;&gt;H -->
+<g id="edge7" class="edge">
+<title>G-&gt;H</title>
+<path fill="none" stroke="black" d="M289.42,-126C308.11,-126 337.93,-126 359.8,-126"></path>
+<polygon fill="black" stroke="black" points="359.81,-129.5 369.81,-126 359.81,-122.5 359.81,-129.5"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node9" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="415.93,-90 361.17,-90 361.17,-54 415.93,-54 415.93,-90"></polygon>
+<text text-anchor="middle" x="388.55" y="-67.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;F -->
+<g id="edge8" class="edge">
+<title>HEAD-&gt;F</title>
+<path fill="none" stroke="black" d="M416.29,-72C424.5,-72 433.54,-72 441.76,-72"></path>
+<polygon fill="black" stroke="black" points="441.95,-75.5 451.95,-72 441.95,-68.5 441.95,-75.5"></polygon>
+</g>
+<!-- new_b -->
+<g id="node10" class="node">
+<title>new_b</title>
+<polygon fill="#f1d763" stroke="black" points="324.87,-90 216.83,-90 216.83,-54 324.87,-54 324.87,-90"></polygon>
+<text text-anchor="middle" x="270.85" y="-67.8" font-family="Times,serif" font-size="14.00">the_new_branch</text>
+</g>
+<!-- new_b&#45;&gt;H -->
+<g id="edge9" class="edge">
+<title>new_b-&gt;H</title>
+<path fill="none" stroke="black" d="M310.7,-90.13C327.72,-98.07 347.2,-107.17 362.29,-114.21"></path>
+<polygon fill="black" stroke="black" points="360.97,-117.45 371.51,-118.51 363.93,-111.11 360.97,-117.45"></polygon>
+</g>
+<!-- master -->
+<g id="node11" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="415.37,-36 361.73,-36 361.73,0 415.37,0 415.37,-36"></polygon>
+<text text-anchor="middle" x="388.55" y="-13.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;F -->
+<g id="edge10" class="edge">
+<title>master-&gt;F</title>
+<path fill="none" stroke="black" d="M415.41,-35.68C425.23,-42.39 436.33,-49.98 445.83,-56.48"></path>
+<polygon fill="black" stroke="black" points="444.13,-59.56 454.36,-62.31 448.08,-53.78 444.13,-59.56"></polygon>
+</g>
+</g>
+</svg>
 </div>
-<div class="fragment">
-<p>Be very very very careful, it is a destructive process. All information regarding your previous commit is lost.</p>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</section>
+<section id="removing-a-local-commit-not-present-on-the-remote-repo" class="slide level2">
+<h2>Removing a local commit (not present on the remote repo)</h2>
+<p>The purpose of reset function</p>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">The git reset command</a></li><li><a href="#tabset-7-2">Example</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<div class="columns">
+<div class="column" style="width:48%;">
+<p>To remove all history, going back in commit number G (remove definitely commit H and I)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb18-2"><a></a><span class="fu">git</span> reset <span class="at">--hard</span> G</span>
+<span id="cb18-3"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span class="care">Be very very very careful, it is a destructive process. All information regarding your previous commit is lost.</span></p>
+</div><div class="column" style="width:48%;">
+<p>Before reset</p>
+<div class="cell" data-fig-width="4" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 456.89 259.54" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 255.54)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-255.54 452.89,-255.54 452.89,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-179" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-174.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="90.84" cy="-179" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="90.84" y="-174.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.22,-179C44.9,-179 54.05,-179 62.55,-179"></path>
+<polygon fill="black" stroke="black" points="62.82,-182.5 72.82,-179 62.82,-175.5 62.82,-182.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="162.68" cy="-179" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="162.68" y="-174.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M109.1,-179C116.72,-179 125.84,-179 134.34,-179"></path>
+<polygon fill="black" stroke="black" points="134.61,-182.5 144.61,-179 134.61,-175.5 134.61,-182.5"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="235.05" cy="-220" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="235.05" y="-215.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M178.6,-187.7C187.71,-193 199.58,-199.91 209.99,-205.98"></path>
+<polygon fill="black" stroke="black" points="208.26,-209.02 218.66,-211.03 211.79,-202.98 208.26,-209.02"></polygon>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="235.05" cy="-152" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="235.05" y="-147.8" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- C&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>C-&gt;G</title>
+<path fill="none" stroke="black" d="M179.65,-172.87C188.07,-169.64 198.62,-165.59 208.18,-161.92"></path>
+<polygon fill="black" stroke="black" points="209.58,-165.14 217.66,-158.29 207.07,-158.6 209.58,-165.14"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="333.67" cy="-234" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="333.67" y="-229.8" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M253.77,-222.57C268.34,-224.68 289.21,-227.7 305.83,-230.11"></path>
+<polygon fill="black" stroke="black" points="305.63,-233.62 316.03,-231.59 306.63,-226.69 305.63,-233.62"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="431.35" cy="-207" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="431.35" y="-202.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" d="M350.9,-229.42C365.56,-225.28 387.38,-219.12 404.45,-214.31"></path>
+<polygon fill="black" stroke="black" points="405.69,-217.6 414.36,-211.51 403.78,-210.86 405.69,-217.6"></polygon>
+</g>
+<!-- H -->
+<g id="node8" class="node">
+<title>H</title>
+<ellipse fill="none" stroke="black" cx="333.67" cy="-126" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="333.67" y="-121.8" font-family="Times,serif" font-size="14.00">H</text>
+</g>
+<!-- G&#45;&gt;H -->
+<g id="edge7" class="edge">
+<title>G-&gt;H</title>
+<path fill="none" stroke="black" d="M253.33,-147.35C267.89,-143.43 288.98,-137.76 305.75,-133.24"></path>
+<polygon fill="black" stroke="black" points="306.8,-136.59 315.54,-130.61 304.98,-129.83 306.8,-136.59"></polygon>
+</g>
+<!-- I -->
+<g id="node9" class="node">
+<title>I</title>
+<ellipse fill="none" stroke="black" cx="431.35" cy="-72" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="431.35" y="-67.8" font-family="Times,serif" font-size="14.00">I</text>
+</g>
+<!-- H&#45;&gt;I -->
+<g id="edge8" class="edge">
+<title>H-&gt;I</title>
+<path fill="none" stroke="black" d="M350.04,-117.32C365.28,-108.72 388.85,-95.42 406.52,-85.45"></path>
+<polygon fill="black" stroke="black" points="408.66,-88.26 415.64,-80.3 405.21,-82.17 408.66,-88.26"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node10" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="361.05,-90 306.28,-90 306.28,-54 361.05,-54 361.05,-90"></polygon>
+<text text-anchor="middle" x="333.67" y="-67.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;I -->
+<g id="edge9" class="edge">
+<title>HEAD-&gt;I</title>
+<path fill="none" stroke="black" d="M361.07,-72C374.2,-72 390.06,-72 403.29,-72"></path>
+<polygon fill="black" stroke="black" points="403.66,-75.5 413.66,-72 403.66,-68.5 403.66,-75.5"></polygon>
+</g>
+<!-- new_b -->
+<g id="node11" class="node">
+<title>new_b</title>
+<polygon fill="#f1d763" stroke="black" points="377.96,-36 289.37,-36 289.37,0 377.96,0 377.96,-36"></polygon>
+<text text-anchor="middle" x="333.67" y="-13.8" font-family="Times,serif" font-size="14.00">local_branch</text>
+</g>
+<!-- new_b&#45;&gt;I -->
+<g id="edge10" class="edge">
+<title>new_b-&gt;I</title>
+<path fill="none" stroke="black" d="M366.79,-36.13C379.9,-43.53 394.78,-51.93 406.85,-58.74"></path>
+<polygon fill="black" stroke="black" points="405.4,-61.94 415.83,-63.81 408.84,-55.84 405.4,-61.94"></polygon>
+</g>
+<!-- master -->
+<g id="node12" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="360.48,-198 306.85,-198 306.85,-162 360.48,-162 360.48,-198"></polygon>
+<text text-anchor="middle" x="333.67" y="-175.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;F -->
+<g id="edge11" class="edge">
+<title>master-&gt;F</title>
+<path fill="none" stroke="black" d="M360.56,-187.31C374.23,-191.16 390.96,-195.88 404.61,-199.74"></path>
+<polygon fill="black" stroke="black" points="403.77,-203.14 414.34,-202.48 405.67,-196.4 403.77,-203.14"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>After reset</p>
+<div class="cell" data-fig-width="4" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 474.37 152.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 148.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-148.46 470.37,-148.46 470.37,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-126" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-121.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="90.84" cy="-126" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="90.84" y="-121.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.22,-126C44.9,-126 54.05,-126 62.55,-126"></path>
+<polygon fill="black" stroke="black" points="62.82,-129.5 72.82,-126 62.82,-122.5 62.82,-129.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="188.91" cy="-126" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="188.91" y="-121.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M109.02,-126C123.36,-126 144.07,-126 160.67,-126"></path>
+<polygon fill="black" stroke="black" points="160.88,-129.5 170.88,-126 160.88,-122.5 160.88,-129.5"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="287.52" cy="-126" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="287.52" y="-121.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M207.18,-126C221.43,-126 241.92,-126 258.51,-126"></path>
+<polygon fill="black" stroke="black" points="258.74,-129.5 268.74,-126 258.74,-122.5 258.74,-129.5"></polygon>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="287.52" cy="-71" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="287.52" y="-66.8" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- C&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>C-&gt;G</title>
+<path fill="none" stroke="black" d="M205,-117.41C220.37,-108.66 244.42,-94.96 262.43,-84.72"></path>
+<polygon fill="black" stroke="black" points="264.25,-87.7 271.21,-79.71 260.79,-81.62 264.25,-87.7"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="368.64" cy="-126" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="368.64" y="-121.8" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M306.08,-126C316.22,-126 329.19,-126 340.61,-126"></path>
+<polygon fill="black" stroke="black" points="340.94,-129.5 350.94,-126 340.94,-122.5 340.94,-129.5"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="448.83" cy="-99" rx="17.57" ry="17.57"></ellipse>
+<text text-anchor="middle" x="448.83" y="-94.8" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" d="M385.46,-120.54C396.06,-116.88 410.25,-111.98 422.41,-107.78"></path>
+<polygon fill="black" stroke="black" points="423.72,-111.03 432.03,-104.46 421.44,-104.41 423.72,-111.03"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node8" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="216.29,-90 161.52,-90 161.52,-54 216.29,-54 216.29,-90"></polygon>
+<text text-anchor="middle" x="188.91" y="-67.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;G -->
+<g id="edge7" class="edge">
+<title>HEAD-&gt;G</title>
+<path fill="none" stroke="black" d="M216.31,-71.73C229.53,-71.59 245.54,-71.42 258.92,-71.29"></path>
+<polygon fill="black" stroke="black" points="259.03,-74.78 268.99,-71.18 258.96,-67.79 259.03,-74.78"></polygon>
+</g>
+<!-- new_b -->
+<g id="node9" class="node">
+<title>new_b</title>
+<polygon fill="#f1d763" stroke="black" points="233.2,-36 144.61,-36 144.61,0 233.2,0 233.2,-36"></polygon>
+<text text-anchor="middle" x="188.91" y="-13.8" font-family="Times,serif" font-size="14.00">local_branch</text>
+</g>
+<!-- new_b&#45;&gt;G -->
+<g id="edge8" class="edge">
+<title>new_b-&gt;G</title>
+<path fill="none" stroke="black" d="M222.89,-36.09C235.74,-43.14 250.21,-51.08 262.1,-57.6"></path>
+<polygon fill="black" stroke="black" points="260.55,-60.74 271,-62.49 263.91,-54.61 260.55,-60.74"></polygon>
+</g>
+<!-- master -->
+<g id="node10" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="395.46,-90 341.82,-90 341.82,-54 395.46,-54 395.46,-90"></polygon>
+<text text-anchor="middle" x="368.64" y="-67.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;F -->
+<g id="edge9" class="edge">
+<title>master-&gt;F</title>
+<path fill="none" stroke="black" d="M395.68,-80.99C404.14,-83.91 413.53,-87.15 421.98,-90.07"></path>
+<polygon fill="black" stroke="black" points="421.11,-93.47 431.7,-93.43 423.39,-86.86 421.11,-93.47"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
 <p>It’s a very dangerous way of living with Git, an unfortunate removal of a commit present on the remote server can break the commit trees for all your coworkers and you won’t have friends anymore.</p>
+</div>
+<div id="tabset-7-2">
+<ul>
+<li><p>Remove the file <code>Penguins_chapter.qmd</code>, and commit this change</p></li>
+<li><p>List the contents of your directory</p></li>
+<li><p>Go back one commit in time using reset</p></li>
+<li><p>List the contents of your directory</p></li>
+</ul>
+</div>
+</div>
 </div>
 </section>
 <section id="how-to-suppress-a-commit-shared-on-the-remote-repo" class="slide level2">
 <h2>How to suppress a commit shared on the remote repo</h2>
-<ul>
-<li>Remove the file <code>Penguins_chapter.qmd</code> and commit this modification.</li>
-</ul>
-<p>You can “suppress” this commit by applying the opposit! That’s what you do by</p>
+<p>You can’t destroy common history, you have to update it</p>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">The git revert command</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<div class="columns">
+<div class="column" style="width:48%;">
+<p>You can “suppress” this commit by applying the opposit! Let’s we want to remove change in the project made in commit <span class="math inline">\(B\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
-<span id="cb18-2"><a></a><span class="fu">git</span> revert commit_number_to_revert</span>
-<span id="cb18-3"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span>
+<span id="cb19-2"><a></a><span class="fu">git</span> revert B</span>
+<span id="cb19-3"><a></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><span class="care">Only th change made to come from A to B are reversed</span>. Of course it might produce conflicts you have to solve.</p>
 <p>This becomes more difficult with dirty merge commits, so try to keep a clean history</p>
-</section></section>
-<section>
+</div><div class="column" style="width:48%;">
+<p>Before reset</p>
+<div class="cell" data-fig-width="4" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 280.57 152.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 148.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-148.46 276.57,-148.46 276.57,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-126" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-121.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="90.84" cy="-126" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="90.84" y="-121.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.22,-126C44.9,-126 54.05,-126 62.55,-126"></path>
+<polygon fill="black" stroke="black" points="62.82,-129.5 72.82,-126 62.82,-122.5 62.82,-129.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="172.2" cy="-126" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="172.2" y="-121.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M109.06,-126C119.25,-126 132.39,-126 143.96,-126"></path>
+<polygon fill="black" stroke="black" points="144.01,-129.5 154.01,-126 144.01,-122.5 144.01,-129.5"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="254.1" cy="-72" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="254.1" y="-67.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M187.49,-116.35C199.27,-108.38 216.22,-96.93 229.94,-87.66"></path>
+<polygon fill="black" stroke="black" points="232.08,-90.44 238.4,-81.94 228.16,-84.64 232.08,-90.44"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node5" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="199.58,-90 144.82,-90 144.82,-54 199.58,-54 199.58,-90"></polygon>
+<text text-anchor="middle" x="172.2" y="-67.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;D -->
+<g id="edge4" class="edge">
+<title>HEAD-&gt;D</title>
+<path fill="none" stroke="black" d="M199.81,-72C207.89,-72 216.79,-72 224.97,-72"></path>
+<polygon fill="black" stroke="black" points="225.17,-75.5 235.17,-72 225.17,-68.5 225.17,-75.5"></polygon>
+</g>
+<!-- master -->
+<g id="node6" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="199.02,-36 145.38,-36 145.38,0 199.02,0 199.02,-36"></polygon>
+<text text-anchor="middle" x="172.2" y="-13.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;D -->
+<g id="edge5" class="edge">
+<title>master-&gt;D</title>
+<path fill="none" stroke="black" d="M198.92,-35.38C208.84,-42.09 220.11,-49.7 229.79,-56.24"></path>
+<polygon fill="black" stroke="black" points="227.9,-59.19 238.15,-61.89 231.82,-53.39 227.9,-59.19"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>After revert</p>
+<div class="cell" data-fig-width="4" data-fig-height="2" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="384" height="192" viewbox="0.00 0.00 357.90 152.46" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 148.46)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-148.46 353.9,-148.46 353.9,4 -4,4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="18.46" cy="-126" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="18.46" y="-121.8" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="90.84" cy="-126" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="90.84" y="-121.8" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M37.22,-126C44.9,-126 54.05,-126 62.55,-126"></path>
+<polygon fill="black" stroke="black" points="62.82,-129.5 72.82,-126 62.82,-122.5 62.82,-129.5"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="162.68" cy="-126" rx="17.83" ry="17.83"></ellipse>
+<text text-anchor="middle" x="162.68" y="-121.8" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M109.1,-126C116.72,-126 125.84,-126 134.34,-126"></path>
+<polygon fill="black" stroke="black" points="134.61,-129.5 144.61,-126 134.61,-122.5 134.61,-129.5"></polygon>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="244.03" cy="-126" rx="18.43" ry="18.43"></ellipse>
+<text text-anchor="middle" x="244.03" y="-121.8" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M180.89,-126C190.84,-126 203.6,-126 214.97,-126"></path>
+<polygon fill="black" stroke="black" points="215.3,-129.5 225.3,-126 215.3,-122.5 215.3,-129.5"></polygon>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="328.69" cy="-72" rx="21.43" ry="21.43"></ellipse>
+<text text-anchor="middle" x="328.69" y="-67.8" font-family="Times,serif" font-size="14.00">-B</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M259.81,-116.35C271.47,-108.73 288.01,-97.92 301.84,-88.88"></path>
+<polygon fill="black" stroke="black" points="304.01,-91.65 310.47,-83.25 300.18,-85.79 304.01,-91.65"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node6" class="node">
+<title>HEAD</title>
+<polygon fill="#c94326" stroke="black" points="271.42,-90 216.65,-90 216.65,-54 271.42,-54 271.42,-90"></polygon>
+<text text-anchor="middle" x="244.03" y="-67.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;E -->
+<g id="edge5" class="edge">
+<title>HEAD-&gt;E</title>
+<path fill="none" stroke="black" d="M271.64,-72C279.8,-72 288.85,-72 297.25,-72"></path>
+<polygon fill="black" stroke="black" points="297.42,-75.5 307.42,-72 297.42,-68.5 297.42,-75.5"></polygon>
+</g>
+<!-- master -->
+<g id="node7" class="node">
+<title>master</title>
+<polygon fill="#1f908e" stroke="black" points="270.85,-36 217.22,-36 217.22,0 270.85,0 270.85,-36"></polygon>
+<text text-anchor="middle" x="244.03" y="-13.8" font-family="Times,serif" font-size="14.00">master</text>
+</g>
+<!-- master&#45;&gt;E -->
+<g id="edge6" class="edge">
+<title>master-&gt;E</title>
+<path fill="none" stroke="black" d="M270.73,-34.79C280.6,-41.24 291.86,-48.6 301.76,-55.06"></path>
+<polygon fill="black" stroke="black" points="300.09,-58.15 310.37,-60.69 303.92,-52.29 300.09,-58.15"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
 <section id="conclusion" class="title-slide slide level1 center">
 <h1>Conclusion</h1>
 
@@ -596,6 +2316,11 @@ Marie-Pierre Etienne
 <!-- ``` -->
 
 
+</section>
+
+</div>
+</div>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
