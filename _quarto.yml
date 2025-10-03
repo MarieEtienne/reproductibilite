@@ -1,7 +1,5 @@
 project:
   type: website
-    html:
-    theme: theme.scss
 
 website:
   navbar:
@@ -16,19 +14,14 @@ website:
         text: Basics in git, working alone
       - href: git2.qmd
         text: Working collaboratively
-
     right:
       - href: https://github.com/MarieEtienne/stats-reminders
         text: Stats Reminders
        
-
 format:
   html:
     theme: flatly
     linkcolor: "#c0392b"
     fontcolor: "#057174"
-    css: theme.scss
+    css: theme.css
     toc: true
-
-
-    
