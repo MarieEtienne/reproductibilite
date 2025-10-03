@@ -384,7 +384,12 @@ git merge test_branch2 #merging the commits of test_branch2 in the branch you ar
 
 ::: panel-tabset
 
-### Step 1: Fetch Latest History
+### Step 1: Fetch 
+
+:::: columns
+::::: {.column width="48%"}
+
+Retrieve latest history
 
 ```{bash}
 #| echo: true
@@ -398,30 +403,189 @@ git fetch origin
 
 * Prepares you to rebase onto the latest master
 
-### Step 2: Rebase Your Branch
+:::::
+
+::::: {.column width="48%"}
+
+Before fetch
+
+```{dot}
+//| fig-width: 5
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2];
+  edge [arrowhead=normal];
+  
+  A ->  B -> C;
+  C -> F -> G ;
+  HEAD -> G;
+  mybranch -> G;
+  master -> C;
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  F [label="F"];
+  G [label="G"];
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  mybranch [shape=box, label="mybranch", fillcolor="#F7A913", style=filled];
+  master [shape=box, fillcolor="#1F908E", label="master",  style=filled];
+  
+}
+
+```
+
+After fetch
+
+
+```{dot}
+//| fig-width: 5
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2];
+  edge [arrowhead=normal];
+  
+  A ->  B -> C;
+  C -> D -> E [color="#E3E7E8"] ;
+  C -> F -> G ;
+  HEAD -> G;
+  mybranch -> G;
+  master -> C;
+  origin_master -> E [color="#E3E7E8"];
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D", color="#E3E7E8"];
+  E [label="E", color="#E3E7E8"];
+  F [label="F"];
+  G [label="G"];
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  mybranch [shape=box, label="mybranch", fillcolor="#F7A913", style=filled];
+  master [shape=box, fillcolor="#1F908E", label="master",  style=filled];
+  origin_master [shape=box, label="origin/master",  fillcolor="#E3E7E8", color="#E3E7E8", style=filled ];
+  
+}
+
+```
+:::::
+
+::::
+
+### Step 2: Rebase 
+
+:::: columns
+
+::::: {.column width="48%"}
 
 Suppose you are on your feature branch:
 
 ```{bash}
 #| echo: true
 #| eval: false
-git switch my_branch_to_be_shared
 git rebase origin/master 
 ```
 
 Re-applies your commits on top of the latest master
 Lets you resolve conflicts now, instead of later during merge
 
+:::::
 
-### Step 3: Merge (Fast-Forward)
+::::: {.column width="48%"}
 
+
+
+Before rebase
+
+```{dot}
+//| fig-width: 5
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2];
+  edge [arrowhead=normal];
+  
+  A ->  B -> C;
+  C -> D -> E [color="#E3E7E8"] ;
+  C -> F -> G ;
+  HEAD -> G;
+  mybranch -> G;
+  master -> C;
+  origin_master -> E [color="#E3E7E8"];
+  
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D", color="#E3E7E8"];
+  E [label="E", color="#E3E7E8"];
+  F [label="F"];
+  G [label="G"];
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  mybranch [shape=box, label="mybranch", fillcolor="#F7A913", style=filled];
+  master [shape=box, fillcolor="#1F908E", label="master",  style=filled];
+  origin_master [shape=box, label="origin/master",  fillcolor="#E3E7E8", color="#E3E7E8", style=filled ];
+  
+}
+
+```
+
+After rebase
+
+```{dot}
+//| fig-width: 5
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2];
+  edge [arrowhead=normal];
+  
+  A ->  B -> C;
+  C -> D -> E ;
+  E -> F -> G ;
+  HEAD -> G;
+  mybranch -> G;
+  master -> C;
+  origin_master -> E [color="#E3E7E8"];
+  
+
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D", color="#E3E7E8"];
+  E [label="E", color="#E3E7E8"];
+  F [label="F"];
+  G [label="G"];
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  mybranch [shape=box, label="mybranch", fillcolor="#F7A913", style=filled];
+  master [shape=box, fillcolor="#1F908E", label="master",  style=filled];
+  origin_master [shape=box, label="origin/master",  fillcolor="#E3E7E8", color="#E3E7E8", style=filled ];
+  
+}
+
+```
+:::::
+
+::::
+### Step 3: Merge 
+
+:::: columns
+
+::::: {.column width="48%"}
 Once rebase was successful:
 
 ```{bash}
 #| echo: true
 #| eval: false
 git switch master
-git merge my_branch_to_be_shared
+git merge mybranch
 ```
 
 Since history is linear, this is a fast-forward merge
@@ -430,15 +594,99 @@ No extra merge commits
 
 History stays clean and easy to read
 
+:::::
+
+::::: {.column width="48%"}
+
+
+After switch, before merge
+
+```{dot}
+//| fig-width: 5
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2];
+  edge [arrowhead=normal];
+  
+  A ->  B -> C;
+  C -> D -> E ;
+  E -> F -> G ;
+  HEAD -> C;
+  mybranch -> G;
+  master -> C;
+  origin_master -> E [color="#E3E7E8"];
+  
+
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D", color="#E3E7E8"];
+  E [label="E", color="#E3E7E8"];
+  F [label="F"];
+  G [label="G"];
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  mybranch [shape=box, label="mybranch", fillcolor="#F7A913", style=filled];
+  master [shape=box, fillcolor="#1F908E", label="master",  style=filled];
+  origin_master [shape=box, label="origin/master",  fillcolor="#E3E7E8", color="#E3E7E8", style=filled ];
+  
+}
+
+```
+
+
+
+After merge 
+
+```{dot}
+//| fig-width: 5
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2];
+  edge [arrowhead=normal];
+  
+  A ->  B -> C;
+  C -> D -> E ;
+  E -> F -> G ;
+  HEAD -> G;
+  mybranch -> G;
+  master -> G;
+  origin_master -> E [color="#E3E7E8"];
+  
+
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D", color="#E3E7E8"];
+  E [label="E", color="#E3E7E8"];
+  F [label="F"];
+  G [label="G"];
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  mybranch [shape=box, label="mybranch", fillcolor="#F7A913", style=filled];
+  master [shape=box, fillcolor="#1F908E", label="master",  style=filled];
+  origin_master [shape=box, label="origin/master",  fillcolor="#E3E7E8", color="#E3E7E8", style=filled ];
+  
+}
+
+```
+
+:::::
+
+::::
 ### Summary
 
 * git fetch: update local info about remote
 
-* git rebase origin/master: reapply work on top of latest master
+* git rebase origin/master: reapply work on top of your branch
 
 * git merge: integrate cleanly
     
-* you can delete your branch one your work is included
+* you can delete your branch once your work is included
   
 :::
 
@@ -447,71 +695,374 @@ History stays clean and easy to read
 
 ## Going back in time : restore  version -- checkout 
 
+::: panel-tabset
+
+### Step 1 : Go back 
+
 To go back to a previous specific version, use the `checkout`  command
 
-Open the files `Penguins_chapter.qmd` and execute
+:::: columns
+::::: {.column width="48%"}
 
 ```{bash git_checkout}
 #| echo: true
 #| eval: false
 git log --oneline
-git checkout A_specific_hash_version_number
+git checkout C # c = specific hash number
 ```
 
 The current working version of  `Penguins_chapter.qmd` is in the state of commit `A_specific_hash_version_number`
 
+:::::
 
-You can branch from this moment if you want to 
+::::: {.column width="48%"}
 
-Go back to the latest version on master by
+```{dot}
+//| fig-width: 4
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2];
+  edge [arrowhead=normal];
+  
+  A -> B -> C -> D -> E -> F;
+  HEAD  -> C;
+  master -> F;
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D"];
+  E [label="E"];
+  F [label="F"];
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  master [shape=box,fillcolor="#1F908E", style=filled ];
+  
+}
+```
 
+:::::
+
+::::
+
+### Step 2 : branch
+
+You can branch from this moment if you want to and start developping this new branch
+
+
+
+:::: columns
+::::: {.column width="48%"}
 
 ```{bash git_checkout2}
 #| echo: true
 #| eval: false
-git checkout master
+git switch -c the_new_branch # create and switch to the branch
+git commit ....
 ```
+
+The current working version of  `Penguins_chapter.qmd` is in the state of commit `A_specific_hash_version_number`
+
+:::::
+
+::::: {.column width="48%"}
+
+```{dot}
+//| fig-width: 4
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2, colorscheme=oranges9];
+  edge [arrowhead=normal];
+  
+  A -> B -> C;
+  C -> D -> E -> F;
+  C -> G -> H
+  new_b  -> H;
+  HEAD  -> H;
+  master -> F;
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D"];
+  E [label="E"];
+  F [label="F"];
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  master [shape=box,fillcolor="#1F908E", style=filled ];
+  new_b  [shape=box,fillcolor="#F1D763", style=filled, label="the_new_branch"];
+
+}
+```
+
+:::::
+
+::::
+
+
+
+
+:::: columns
+::::: {.column width="48%"}
+Go back to the latest version on master by
+
+
+```{bash git_checkout3}
+#| echo: true
+#| eval: false
+git switch master
+```
+
 
 Everything is back to normal!
 
+:::::
+::::: {.column width="48%"}
 
-**That's the Git Magic**
+```{dot}
+//| fig-width: 4
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2, colorscheme=oranges9];
+  edge [arrowhead=normal];
+  
+  A -> B -> C;
+  C -> D -> E -> F;
+  C -> G -> H
+  HEAD  -> F;
+  new_b  -> H;
+  master -> F;
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D"];
+  E [label="E"];
+  F [label="F"];
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  master [shape=box,fillcolor="#1F908E", style=filled ];
+  new_b  [shape=box,fillcolor="#F1D763", style=filled, label="the_new_branch"];
+
+}
+```
+
+:::::
+
+::::
+
+:::
 
 
-## To suppress a local commit (not present on the remote repo)
 
-* Remove the file `Penguins_chapter.qmd`, and commit this change
+## Removing a local commit (not present on the remote repo)
+
+The purpose of reset function
+
+::: panel-tabset
+
+### The git reset command
+
+
+:::: columns
+::::: {.column width="48%"}
+
+To remove all history, going back in commit number G (remove definitely commit H and I) 
 
 ```{bash git_checkout_suppress}
 #| echo: true
 #| eval: false
 git log --oneline
-git reset --hard The_previous_commit_number
+git reset --hard G
 git log --oneline
 ```
 
-. . .
+[Be very very very careful, it is a destructive process. All information regarding your previous commit is lost.]{.care}
 
-Be very very very careful, it is a destructive process. All information regarding your previous commit is lost.
+:::::
+
+::::: {.column width="48%"}
+
+Before reset 
+
+```{dot}
+//| fig-width: 4
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2, colorscheme=oranges9];
+  edge [arrowhead=normal];
+  
+  A -> B -> C;
+  C -> D -> E -> F;
+  C -> G -> H -> I
+  HEAD  -> I;
+  new_b  -> I;
+  master -> F;
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D"];
+  E [label="E"];
+  F [label="F"];
+  G [label="G"];
+  H [label="H"];
+  I [label="I"];
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  master [shape=box,fillcolor="#1F908E", style=filled ];
+  new_b  [shape=box,fillcolor="#F1D763", style=filled, label="local_branch"];
+
+}
+```
+
+After reset 
+
+```{dot}
+//| fig-width: 4
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2, colorscheme=oranges9];
+  edge [arrowhead=normal];
+  
+  A -> B -> C;
+  C -> D -> E -> F;
+  C -> G 
+  HEAD  -> G;
+  new_b  -> G;
+  master -> F;
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D"];
+  E [label="E"];
+  F [label="F"];
+  G [label="G"];
+
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  master [shape=box,fillcolor="#1F908E", style=filled ];
+  new_b  [shape=box,fillcolor="#F1D763", style=filled, label="local_branch"];
+
+}
+```
+:::::
+
+::::
+
 
 It's a very dangerous way of living with Git, an unfortunate removal of a commit present on the remote server can break the commit trees for all your coworkers and you won't have friends anymore.
 
 
+
+
+### Example
+
+
+* Remove the file `Penguins_chapter.qmd`, and commit this change
+
+* List the contents of your directory
+
+* Go back one commit in time using reset
+
+* List the contents of your directory
+
+:::
+
 ## How to suppress a commit shared on the remote repo
 
-* Remove the file  `Penguins_chapter.qmd` and commit this modification.
+You can't destroy common history, you have to update it 
 
-You can "suppress" this commit by applying the opposit! That's what you do by
+::: panel-tabset
+
+### The git revert command
+
+
+
+:::: columns
+::::: {.column width="48%"}
+
+
+You can "suppress" this commit by applying the opposit! Let's we want to remove change in the project made in commit $B$ 
 
 ```{bash git_suppress2}
 #| echo: true
 #| eval: false
 git log --oneline
-git revert commit_number_to_revert
+git revert B
 git log --oneline
 ```
 
+[Only th change made to come from A to B are reversed]{.care}. Of course it might produce conflicts you have to solve.
+
 This becomes more difficult with dirty merge commits, so try to keep a clean history
+
+
+:::::
+
+::::: {.column width="48%"}
+
+Before reset 
+
+```{dot}
+//| fig-width: 4
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2, colorscheme=oranges9];
+  edge [arrowhead=normal];
+  
+  A -> B -> C -> D;
+  HEAD  -> D;
+  master -> D;
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D"];
+
+  
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  master [shape=box,fillcolor="#1F908E", style=filled ];
+
+}
+```
+
+After revert 
+
+```{dot}
+//| fig-width: 4
+//| fig-height: 2
+digraph {
+  rankdir=LR;
+  node [shape=circle, width=0.2, colorscheme=oranges9];
+  edge [arrowhead=normal];
+  
+  A -> B -> C -> D -> E;
+  HEAD  -> E;
+  master -> E;
+  
+  A [label="A"];
+  B [label="B"];
+  C [label="C"];
+  D [label="D"];
+  E [label="-B"];
+
+  HEAD [shape=box, label="HEAD", fillcolor="#C94326", style=filled];
+  master [shape=box,fillcolor="#1F908E", style=filled ];
+
+}
+```
+:::::
+
+::::
+
 
 
 

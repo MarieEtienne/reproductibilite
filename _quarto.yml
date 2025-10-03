@@ -1,5 +1,7 @@
 project:
   type: website
+    html:
+    theme: theme.scss
 
 website:
   navbar:
@@ -25,7 +27,7 @@ format:
     theme: flatly
     linkcolor: "#c0392b"
     fontcolor: "#057174"
-    css: mpe_pres_revealjs.css
+    css: theme.scss
     toc: true
 
 
