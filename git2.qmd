@@ -1063,6 +1063,7 @@ digraph {
 
 ::::
 
+:::
 
 
 
@@ -1098,28 +1099,20 @@ digraph {
 
 
 
-<!-- --- -->
+## Some help other than Claude.ai and ChatGPT
 
-<!-- # Some help other than Claude.ai and ChatGPT -->
+### Resources
 
-<!-- ## Resources -->
+* [The Git Book](https://git-scm.com/book/en/v2)
+* [Atlassian tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control)
 
-<!-- * [The Git Book](https://git-scm.com/book/en/v2) -->
-<!-- * [Atlassian tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control) -->
+### Cheat sheet
 
-<!-- ## Cheat sheet -->
-
-<!-- [Git Cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf) -->
+[Git Cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
 
-<!-- ## Tobe used as a Sandbox -->
+### To be used as a Sandbox
 
-<!-- [Learning Git Demo](https://learngitbranching.js.org/?locale=fr_FR&NODEMO=) -->
+[Learning Git Demo](https://learngitbranching.js.org/?locale=fr_FR&NODEMO=)
 
-
-<!-- ## Références -->
-
-<!-- ```{r refs, echo=FALSE, results="asis", eval = TRUE, cache = FALSE} -->
-<!-- PrintBibliography(myBib) -->
-<!-- ``` -->
 
