@@ -67,7 +67,7 @@
     "href": "quarto.html#what-is-a-markup-language",
     "title": "Quarto",
     "section": "What is a markup language?",
-    "text": "What is a markup language?\n\nSeparates content from formatting (vs. Word’s WYSIWYG)\nMarkdown syntax crash course: headers, lists, bold/italic, links, code spans\nWhy it matters for reproducibility: plain text = diffable =\n\ndiff quarto.qmd quartobis.qmd\n\ngit-friendly"
+    "text": "What is a markup language?\n\nSeparates content from formatting (vs. Word’s WYSIWYG)\nMarkdown syntax crash course: headers, lists, bold/italic, links, code spans\nWhy it matters for reproducibility: plain text = diffable\n\ndiff quarto.qmd quartobis.qmd\n\ngit-friendly"
   },
   {
     "objectID": "quarto.html#installing-quarto-cli",
@@ -102,7 +102,7 @@
     "href": "quarto.html#exercise",
     "title": "Quarto",
     "section": "Exercise",
-    "text": "Exercise\n\nDownload Penguins_chapter.qmd Penguins_chapter.qmd` for (Penguins_chapter.qmd)\nAdd/edit the YAML header (title, author, date)\nRender it, check the output"
+    "text": "Exercise\n\nDownload Penguins_chapter.qmd\nAdd/edit the YAML header (title, author, date)\nRender it, check the output"
   },
   {
     "objectID": "quarto.html#code-chunks",
@@ -116,14 +116,14 @@
     "href": "quarto.html#figures-generated",
     "title": "Quarto",
     "section": "Figures — generated",
-    "text": "Figures — generated"
+    "text": "Figures — generated\n\n\nFigure 1: Caption"
   },
   {
     "objectID": "quarto.html#figures-external",
     "href": "quarto.html#figures-external",
     "title": "Quarto",
     "section": "Figures — external",
-    "text": "Figures — external\n![Caption](path/to/image.png){#fig-external}"
+    "text": "Figures — external\n![Caption2](https://github.com/MarieEtienne/OCR_TP/blob/main/images/6123849122_b66af201ea_c.jpg){#fig-external}"
   },
   {
     "objectID": "quarto.html#equations",
@@ -137,7 +137,7 @@
     "href": "quarto.html#exercise-1",
     "title": "Quarto",
     "section": "Exercise",
-    "text": "Exercise\n\nIn Penguins_chapter.qmd: add one generated figure and one equation, each with a label"
+    "text": "Exercise\n\nIn Penguins_chapter.qmd: add one generated figure and one equation, each with a label and refers to these same figure and equation in the text."
   },
   {
     "objectID": "quarto.html#referencing-figures-and-equations",
@@ -179,7 +179,7 @@
     "href": "quarto.html#why-a-website",
     "title": "Quarto",
     "section": "Why a website?",
-    "text": "Why a website?\n\nA collection of .qmd files → one navigable site\nThis is exactly how stats-reminders (your final project) is built\nAlso how this very course site is built"
+    "text": "Why a website?\n\nA collection of .qmd files → one navigable site\nThis is exactly how OCR_TP (your final project) and “reproductibilite” (this courseà) are built"
   },
   {
     "objectID": "quarto.html#the-_quarto.yml-file",
@@ -196,18 +196,11 @@
     "text": "Minimal website structure\n\nindex.qmd → home page\none .qmd per page/chapter\n_quarto.yml → glue holding them together\nRender whole site: quarto render (not just one file)"
   },
   {
-    "objectID": "quarto.html#exercise-4",
-    "href": "quarto.html#exercise-4",
+    "objectID": "quarto.html#be-careful-with-visual-mode",
+    "href": "quarto.html#be-careful-with-visual-mode",
     "title": "Quarto",
-    "section": "Exercise",
-    "text": "Exercise\n\nIn your local clone of stats-reminders, open _quarto.yml\nFind where Penguins_chapter.qmd is listed in the navbar menu\nAdd a dummy entry pointing to a new page, create that empty .qmd, render the site locally\n(Preview) quarto preview — live reload while editing"
-  },
-  {
-    "objectID": "quarto.html#publishing-teaser",
-    "href": "quarto.html#publishing-teaser",
-    "title": "Quarto",
-    "section": "Publishing (teaser)",
-    "text": "Publishing (teaser)\n\nquarto publish gh-pages → what happens next session with git2 (push, PR, collective site grows)"
+    "section": "Be careful with Visual mode",
+    "text": "Be careful with Visual mode\nCheck the yaml header and focus on canonical: true in the editor section."
   },
   {
     "objectID": "setup.html#create-a-github-account",

@@ -229,7 +229,7 @@ Marie-Pierre Etienne
 <ul>
 <li>Separates content from formatting (vs.&nbsp;Word’s WYSIWYG)</li>
 <li>Markdown syntax crash course: headers, lists, bold/italic, links, code spans</li>
-<li>Why it matters for reproducibility: plain text = diffable =</li>
+<li>Why it matters for reproducibility: plain text = diffable</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="fu">diff</span> quarto.qmd quartobis.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
@@ -285,7 +285,7 @@ Marie-Pierre Etienne
 <section id="exercise" class="slide level2">
 <h2>Exercise</h2>
 <ul>
-<li>Download <a href="Penguins_chapter.qmd">Penguins_chapter.qmd</a> Penguins_chapter.qmd` for (Penguins_chapter.qmd)</li>
+<li>Download <a href="https://raw.githubusercontent.com/MarieEtienne/OCR_TP/refs/heads/main/Penguins_chapter.qmd">Penguins_chapter.qmd</a></li>
 <li>Add/edit the YAML header (title, author, date)</li>
 <li>Render it, check the output</li>
 </ul>
@@ -310,10 +310,13 @@ Marie-Pierre Etienne
 </section>
 <section id="figures-generated" class="slide level2">
 <h2>Figures — generated</h2>
-</section>
+
+<img data-src="quarto_files/figure-revealjs/fig-example-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-example"><p class="caption">
+Figure&nbsp;1: Caption
+</p></section>
 <section id="figures-external" class="slide level2">
 <h2>Figures — external</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="al">![Caption](path/to/image.png)</span>{#fig-external}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="al">![Caption2](https://github.com/MarieEtienne/OCR_TP/blob/main/images/6123849122_b66af201ea_c.jpg)</span>{#fig-external}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="equations" class="slide level2">
 <h2>Equations</h2>
@@ -326,7 +329,7 @@ Marie-Pierre Etienne
 <section id="exercise-1" class="slide level2">
 <h2>Exercise</h2>
 <ul>
-<li>In <code>Penguins_chapter.qmd</code>: add one generated figure and one equation, each with a label</li>
+<li>In <code>Penguins_chapter.qmd</code>: add one generated figure and one equation, each with a label and refers to these same figure and equation in the text.</li>
 </ul>
 </section></section>
 <section>
@@ -382,8 +385,7 @@ Marie-Pierre Etienne
 <h2>Why a website?</h2>
 <ul>
 <li>A collection of <code>.qmd</code> files → one navigable site</li>
-<li>This is exactly how <code>stats-reminders</code> (your final project) is built</li>
-<li>Also how this very course site is built</li>
+<li>This is exactly how <code>OCR_TP</code> (your final project) and “reproductibilite” (this courseà) are built</li>
 </ul>
 </section>
 <section id="the-_quarto.yml-file" class="slide level2">
@@ -415,24 +417,21 @@ Marie-Pierre Etienne
 <li>Render whole site: <code>quarto render</code> (not just one file)</li>
 </ul>
 </section>
-<section id="exercise-4" class="slide level2">
-<h2>Exercise</h2>
-<ul>
-<li>In your local clone of <code>stats-reminders</code>, open <code>_quarto.yml</code></li>
-<li>Find where <code>Penguins_chapter.qmd</code> is listed in the navbar menu</li>
-<li>Add a dummy entry pointing to a new page, create that empty <code>.qmd</code>, render the site locally</li>
-<li>(Preview) <code>quarto preview</code> — live reload while editing</li>
-</ul>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="warnings" class="title-slide slide level1 center">
+<h1>Warnings</h1>
+
 </section>
-<section id="publishing-teaser" class="slide level2">
-<h2>Publishing (teaser)</h2>
-<ul>
-<li><code>quarto publish gh-pages</code> → what happens next session with <code>git2</code> (push, PR, collective site grows)</li>
-</ul>
+<section id="be-careful-with-visual-mode" class="slide level2">
+<h2>Be careful with Visual mode</h2>
+<p>Check the yaml header and focus on canonical: true in the editor section.</p>
 </section></section>
 <section id="quarto-basics-complete" class="title-slide slide level1 center">
 <h1>✅ Quarto basics complete</h1>
-<p><span class="care">You can now write a reproducible <code>.qmd</code> combining text, code, figures, equations and citations — and turn a set of <code>.qmd</code> files into a website, ready for the final assignment.</span></p>
+<p><span class="care">You can now write a reproducible <code>.qmd</code> combining text, code, figures, equations and citations — and turn a set of <code>.qmd</code> files into a website, ready for the final assignment.</span> as soon as you will masterize the git concepts.</p>
 
 
 </section>
