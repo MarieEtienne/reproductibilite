@@ -1,430 +1,80 @@
 [
   {
-    "objectID": "introduction.html#motivations",
-    "href": "introduction.html#motivations",
-    "title": "Reproducible science - motivation and basic tools",
-    "section": "Motivations",
-    "text": "Motivations\nReproducible science\nIn their paper, Alston and Rick (2021) address the question of science reproducibility in ecology.\nThe key aspects\nIt’s a growing trend: more and more journals require some elements of reproducibility."
+    "objectID": "linux_survival_kit.html#why-a-terminal",
+    "href": "linux_survival_kit.html#why-a-terminal",
+    "title": "Linux survival kit",
+    "section": "Why a terminal?",
+    "text": "Why a terminal?\n\ngit, quarto, gh — all live in the command line first\nGUI tools (RStudio, GitHub Desktop) are wrappers around the same commands\nSame syntax everywhere: Git Bash (Windows), Terminal (Mac), Terminal (Linux)\nYou only need a handful of commands to be comfortable"
   },
   {
-    "objectID": "introduction.html#motivations-1",
-    "href": "introduction.html#motivations-1",
-    "title": "Reproducible science - motivation and basic tools",
-    "section": "Motivations",
-    "text": "Motivations\nPractically\nWhere is the correct version of the report?"
+    "objectID": "linux_survival_kit.html#which-terminal-to-open",
+    "href": "linux_survival_kit.html#which-terminal-to-open",
+    "title": "Linux survival kit",
+    "section": "Which terminal to open",
+    "text": "Which terminal to open\n\nWindows → Git Bash (installed with Git for Windows)\nMac → Terminal.app (or iTerm2)\nLinux → your usual Terminal\nAll three understand the exact same commands shown here"
   },
   {
-    "objectID": "introduction.html#motivations-2",
-    "href": "introduction.html#motivations-2",
-    "title": "Reproducible science - motivation and basic tools",
-    "section": "Motivations",
-    "text": "Motivations\nPractically\nAn explanation in images: vidéo by Ignasi Bartomeus."
+    "objectID": "linux_survival_kit.html#pwd-print-working-directory",
+    "href": "linux_survival_kit.html#pwd-print-working-directory",
+    "title": "Linux survival kit",
+    "section": "pwd — print working directory",
+    "text": "pwd — print working directory\npwd\n\nShows the full path of the folder you’re currently “in”\nFirst reflex when you’re lost"
   },
   {
-    "objectID": "introduction.html#course-objective",
-    "href": "introduction.html#course-objective",
-    "title": "Reproducible science - motivation and basic tools",
-    "section": "Course objective",
-    "text": "Course objective\nIntroducing tools to facilitate step 2."
+    "objectID": "linux_survival_kit.html#ls-list-contents",
+    "href": "linux_survival_kit.html#ls-list-contents",
+    "title": "Linux survival kit",
+    "section": "ls — list contents",
+    "text": "ls — list contents\nls\n\nLists files and folders in the current directory\n\nls -alh\n\n-a → show hidden files too (names starting with ., e.g. .git)\n-l → long format: permissions, size, date\n-h → human-readable sizes (K, M, G instead of raw bytes)"
   },
   {
-    "objectID": "introduction.html#overview",
-    "href": "introduction.html#overview",
-    "title": "Reproducible science - motivation and basic tools",
-    "section": "Overview",
-    "text": "Overview\nAround the code\nRmarkdown, Jupyter notebooks, Quarto to bring together code, results, and analysis. - vignettes in R packages\n- R help pages\n- some scientific papers (Computo asks for Jupyter/Quarto submissions)\n- dashboards …\nCode / paper writing\n\ngit for\n\nkeeping track of different versions of code\n\ncollective work\n\nreviewing and improving code quality"
+    "objectID": "linux_survival_kit.html#cd-change-directory",
+    "href": "linux_survival_kit.html#cd-change-directory",
+    "title": "Linux survival kit",
+    "section": "cd — change directory",
+    "text": "cd — change directory\ncd stats-reminders\n\nMove into a subfolder (relative path)\n\ncd ..\n\nMove up one level (to the parent folder)\n\ncd ~\n\nJump straight to your home folder, from anywhere\n\ncd /\n\nJump to the root of the filesystem"
   },
   {
-    "objectID": "introduction.html#overview-1",
-    "href": "introduction.html#overview-1",
-    "title": "Reproducible science - motivation and basic tools",
-    "section": "Overview",
-    "text": "Overview\nControlling software versions\nReproducibility also relies on stabilizing programming/library versions.\nThe container system Docker allows freezing a working software environment."
+    "objectID": "linux_survival_kit.html#relative-vs-absolute-paths",
+    "href": "linux_survival_kit.html#relative-vs-absolute-paths",
+    "title": "Linux survival kit",
+    "section": "Relative vs absolute paths",
+    "text": "Relative vs absolute paths\n\nRelative: cd stats-reminders → depends on where you currently are\nAbsolute: cd /home/metienne/git/stats-reminders → always the same place, no matter where you start\nOn Windows Git Bash: C:\\Users\\... becomes /c/Users/..."
   },
   {
-    "objectID": "introduction.html#the-winning-trio-of-reproducible-research-with-r",
-    "href": "introduction.html#the-winning-trio-of-reproducible-research-with-r",
-    "title": "Reproducible science - motivation and basic tools",
-    "section": "The winning trio of reproducible research with R",
-    "text": "The winning trio of reproducible research with R\n\nQuarto markup language\n\ngit code versionning\nDocker Controlling software version (last 2 sessions with Theo Fabien)\n\n\n\n\n\nAlston, Jesse M, and Jessica A Rick. 2021. “A Beginner’s Guide to Conducting Reproducible Research.” Bulletin of the Ecological Society of America 102 (2): 1–14."
+    "objectID": "linux_survival_kit.html#tab-completion-your-best-friend",
+    "href": "linux_survival_kit.html#tab-completion-your-best-friend",
+    "title": "Linux survival kit",
+    "section": "Tab completion — your best friend",
+    "text": "Tab completion — your best friend\n\nStart typing a folder/file name, hit Tab\nAutocompletes if unambiguous, or shows options on double-Tab\nAvoids typos, saves time — use it constantly"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "OCR – Online Collaborative Resources",
-    "section": "",
-    "text": "Welcome\nThe course OCR (Online Collaborative Resources) introduces tools and practices for reproducible and collaborative science.\nIt is designed for students who want to learn how to:\n\nOrganize their work for transparency and reproducibility\n\nUse version control systems such as Git\n\nCollaborate effectively on shared projects\n\nDocument analyses and results in a reproducible way\n\n\n\n\nCourse content\nDuring this course, you will explore:\n\nIntroduction\nWhy reproducibility and collaboration matter in science, and the main challenges researchers face.\nSetting up your framework\nInstalling and configuring the software environment (Git, Quarto, etc.).\nGit basics (working alone)\nUnderstanding repositories, commits, and tracking changes in your own projects.\nWorking collaboratively\nUsing branches, pull requests, and collaborative workflows on shared repositories.\nFinal assignment\nApplying what you learned in a collaborative project.\n\n\n\n\nFinal Assignment\nThe final project of this course is to collaboratively produce a set of well documented dataset.\n\nEach student will produce a basic description of a dataset and provide ideas of what statistical method could be used to explore this dataset.\n\nNotes will be written in Quarto (.qmd) files inside a shared repository.\n\nYou will practice quarto to produce generated figures, and cite bibliography.\n\nYou will practice Git collaboration by creating branches, making commits, and opening pull requests.\n\nYou will have to be careful as your production should not impact the work produced by others\nAt the end, all contributions will be merged into a collective resource: a mini-encyclopedia of nice ecological datasets to illustrate statistical concept .\n\nThis project will allow you to experience real-world collaborative workflows.\n\n\n\nHow to use this website\nUse the top menu to navigate through the course:\n\nIntroduction – motivations and context\n\nQuarto – a brief presentation of quarto to mix up codes and text\n\nSet up your Git framework – installing Git tools\n\nBasics in Git, working alone – first steps with Git\n\nWorking collaboratively – branches, merges, pull requests\n\nFinal assignment – description of the project and instructions\n\nStats Reminders – where all student contributions will appear"
+    "objectID": "linux_survival_kit.html#mkdir-make-directory",
+    "href": "linux_survival_kit.html#mkdir-make-directory",
+    "title": "Linux survival kit",
+    "section": "mkdir — make directory",
+    "text": "mkdir — make directory\nmkdir new_folder\n\nCreates a new empty folder in the current location"
   },
   {
-    "objectID": "quarto.html#why-quarto",
-    "href": "quarto.html#why-quarto",
-    "title": "Quarto",
-    "section": "Why Quarto?",
-    "text": "Why Quarto?\n\nBridge towards the “winning trio” mentioned in the intro: Quarto, git, Docker\nOne source (.qmd) → many outputs: HTML report, PDF, slides, website\nQuarto is the successor of Rmarkdown, language-agnostic (R, Python, Julia, Observable)\nPreview: this very course website is built with Quarto"
+    "objectID": "linux_survival_kit.html#rm-remove",
+    "href": "linux_survival_kit.html#rm-remove",
+    "title": "Linux survival kit",
+    "section": "rm — remove",
+    "text": "rm — remove\nrm file.txt\n\nDeletes a file — no trash, no undo\n\nrm -r folder_name\n\n-r (recursive) → needed to delete a folder and its contents\n\nrm -ri folder_name\n\n-i → asks for confirmation before each deletion (safer while learning)\n\n\nThere is no “Recycle Bin” in the terminal. Double-check the path before hitting Enter, especially with rm -r."
   },
   {
-    "objectID": "quarto.html#what-is-a-markup-language",
-    "href": "quarto.html#what-is-a-markup-language",
-    "title": "Quarto",
-    "section": "What is a markup language?",
-    "text": "What is a markup language?\n\nSeparates content from formatting (vs. Word’s WYSIWYG)\nMarkdown syntax crash course: headers, lists, bold/italic, links, code spans\nWhy it matters for reproducibility: plain text = diffable\n\ndiff quarto.qmd quartobis.qmd\n\ngit-friendly"
+    "objectID": "linux_survival_kit.html#summary",
+    "href": "linux_survival_kit.html#summary",
+    "title": "Linux survival kit",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nCommand\nWhat it does\n\n\n\n\npwd\nwhere am I?\n\n\nls\nwhat’s here?\n\n\nls -alh\nwhat’s here, in detail, including hidden files\n\n\ncd folder\ngo into folder\n\n\ncd ..\ngo up one level\n\n\ncd ~\ngo home\n\n\nmkdir folder\ncreate folder\n\n\nrm file\ndelete file\n\n\nrm -r folder\ndelete folder and its contents"
   },
   {
-    "objectID": "quarto.html#installing-quarto-cli",
-    "href": "quarto.html#installing-quarto-cli",
-    "title": "Quarto",
-    "section": "Installing Quarto CLI",
-    "text": "Installing Quarto CLI\n\nDownload from https://quarto.org (mac/win/linux)\nCheck installation:\n\nquarto check\n\nwhat quarto check tells you (R/Python/Jupyter engines found)"
-  },
-  {
-    "objectID": "quarto.html#quarto-in-rstudio",
-    "href": "quarto.html#quarto-in-rstudio",
-    "title": "Quarto",
-    "section": "Quarto in RStudio",
-    "text": "Quarto in RStudio\n\nBuilt in since RStudio 2022.07 — no extra install\nNew File &gt; Quarto Document\nSource vs Visual editor (mention the diffing issue with Visual editor — link with git1)"
-  },
-  {
-    "objectID": "quarto.html#the-three-ingredients",
-    "href": "quarto.html#the-three-ingredients",
-    "title": "Quarto",
-    "section": "The three ingredients",
-    "text": "The three ingredients\n\nYAML header\nMarkdown text\nCode chunks"
-  },
-  {
-    "objectID": "quarto.html#minimal-yaml",
-    "href": "quarto.html#minimal-yaml",
-    "title": "Quarto",
-    "section": "Minimal YAML",
-    "text": "Minimal YAML\ntitle: \"My report\"\nauthor: \"Your name\"\nformat: html\n\nRender: quarto render mydoc.qmd or the Render button"
-  },
-  {
-    "objectID": "quarto.html#exercise",
-    "href": "quarto.html#exercise",
-    "title": "Quarto",
+    "objectID": "linux_survival_kit.html#exercise",
+    "href": "linux_survival_kit.html#exercise",
+    "title": "Linux survival kit",
     "section": "Exercise",
-    "text": "Exercise\n\nDownload Penguins_chapter.qmd\nAdd/edit the YAML header (title, author, date)\nRender it, check the output"
-  },
-  {
-    "objectID": "quarto.html#code-chunks",
-    "href": "quarto.html#code-chunks",
-    "title": "Quarto",
-    "section": "Code chunks",
-    "text": "Code chunks\n\n1 + 1\n\n[1] 2\n\n\n\nchunk options: echo, eval, warning, message\nalways set as #| lines at the top of the chunk (native Quarto syntax — not the old inline {r, echo=TRUE} Rmarkdown style)"
-  },
-  {
-    "objectID": "quarto.html#figures-generated",
-    "href": "quarto.html#figures-generated",
-    "title": "Quarto",
-    "section": "Figures — generated",
-    "text": "Figures — generated\n\n\nFigure 1: Caption"
-  },
-  {
-    "objectID": "quarto.html#figures-external",
-    "href": "quarto.html#figures-external",
-    "title": "Quarto",
-    "section": "Figures — external",
-    "text": "Figures — external\n![Caption2](https://github.com/MarieEtienne/OCR_TP/blob/main/images/6123849122_b66af201ea_c.jpg){#fig-external}"
-  },
-  {
-    "objectID": "quarto.html#equations",
-    "href": "quarto.html#equations",
-    "title": "Quarto",
-    "section": "Equations",
-    "text": "Equations\n\nInline: $\\bar{x}$\nDisplay:\n\n\\[\\hat\\mu = \\frac{1}{n}\\sum x_i \\qquad(1)\\]"
-  },
-  {
-    "objectID": "quarto.html#exercise-1",
-    "href": "quarto.html#exercise-1",
-    "title": "Quarto",
-    "section": "Exercise",
-    "text": "Exercise\n\nIn Penguins_chapter.qmd: add one generated figure and one equation, each with a label and refers to these same figure and equation in the text."
-  },
-  {
-    "objectID": "quarto.html#referencing-figures-and-equations",
-    "href": "quarto.html#referencing-figures-and-equations",
-    "title": "Quarto",
-    "section": "Referencing figures and equations",
-    "text": "Referencing figures and equations\n\n@fig-example, @eq-mean → auto-numbered, clickable\nWhy this matters more than manual “see Figure 2” (renumbering-proof)"
-  },
-  {
-    "objectID": "quarto.html#exercise-2",
-    "href": "quarto.html#exercise-2",
-    "title": "Quarto",
-    "section": "Exercise",
-    "text": "Exercise\n\nReference the figure and equation you just created in a sentence"
-  },
-  {
-    "objectID": "quarto.html#bibliography-file",
-    "href": "quarto.html#bibliography-file",
-    "title": "Quarto",
-    "section": "Bibliography file",
-    "text": "Bibliography file\n\n.bib file, referenced in YAML: bibliography: references.bib\nCiting: [@alston2021beginner] (already used in introduction.qmd — nice callback)\ncsl: for citation style"
-  },
-  {
-    "objectID": "quarto.html#where-do-references-come-from",
-    "href": "quarto.html#where-do-references-come-from",
-    "title": "Quarto",
-    "section": "Where do references come from?",
-    "text": "Where do references come from?\n\nZotero + Better BibTeX plugin → auto-export .bib\nOr hand-written entries"
-  },
-  {
-    "objectID": "quarto.html#exercise-3",
-    "href": "quarto.html#exercise-3",
-    "title": "Quarto",
-    "section": "Exercise",
-    "text": "Exercise\n\nAdd a bibliography entry, cite it in Penguins_chapter.qmd, render, check the References section appears"
-  },
-  {
-    "objectID": "quarto.html#why-a-website",
-    "href": "quarto.html#why-a-website",
-    "title": "Quarto",
-    "section": "Why a website?",
-    "text": "Why a website?\n\nA collection of .qmd files → one navigable site\nThis is exactly how OCR_TP (your final project) and “reproductibilite” (this courseà) are built"
-  },
-  {
-    "objectID": "quarto.html#the-_quarto.yml-file",
-    "href": "quarto.html#the-_quarto.yml-file",
-    "title": "Quarto",
-    "section": "The _quarto.yml file",
-    "text": "The _quarto.yml file\n\nProject-level config, sits next to your .qmd files\n\nproject:\n  type: website\n\nwebsite:\n  title: \"My site\"\n  navbar:\n    left:\n      - text: Home\n        href: index.qmd\n      - text: Chapter 1\n        href: chapter1.qmd\n\nControls: page order, navbar, sidebar, site-wide title"
-  },
-  {
-    "objectID": "quarto.html#minimal-website-structure",
-    "href": "quarto.html#minimal-website-structure",
-    "title": "Quarto",
-    "section": "Minimal website structure",
-    "text": "Minimal website structure\n\nindex.qmd → home page\none .qmd per page/chapter\n_quarto.yml → glue holding them together\nRender whole site: quarto render (not just one file)"
-  },
-  {
-    "objectID": "quarto.html#be-careful-with-visual-mode",
-    "href": "quarto.html#be-careful-with-visual-mode",
-    "title": "Quarto",
-    "section": "Be careful with Visual mode",
-    "text": "Be careful with Visual mode\nCheck the yaml header and focus on canonical: true in the editor section."
-  },
-  {
-    "objectID": "setup.html#create-a-github-account",
-    "href": "setup.html#create-a-github-account",
-    "title": "Set up your framework",
-    "section": "1. Create a GitHub Account",
-    "text": "1. Create a GitHub Account\n\nGo to https://github.com\n\nClick Sign up\n\nChoose a username, email, and password\n\nVerify your account by email\n\n(Optional) Install GitHub Desktop if you prefer a GUI"
-  },
-  {
-    "objectID": "setup.html#install-git-linux",
-    "href": "setup.html#install-git-linux",
-    "title": "Set up your framework",
-    "section": "2. Install Git (Linux)",
-    "text": "2. Install Git (Linux)\nOn most Linux distributions, Git is available from the package manager.\n\nOn Debian/Ubuntu:\n\nCheck if Git is available if not\nsudo apt update\nsudo apt install git"
-  },
-  {
-    "objectID": "setup.html#install-git-macos",
-    "href": "setup.html#install-git-macos",
-    "title": "Set up your framework",
-    "section": "2. Install Git (macOS)",
-    "text": "2. Install Git (macOS)\nCheck if Git is available if not\nbrew install git\nCheck installation with:\ngit --version"
-  },
-  {
-    "objectID": "setup.html#install-git-windows",
-    "href": "setup.html#install-git-windows",
-    "title": "Set up your framework",
-    "section": "2. Install Git (Windows)",
-    "text": "2. Install Git (Windows)\nWindows users should install Git for Windows, which includes Git Bash.\n\nDownload from https://git-scm.com/download/win\nRun the installer and keep the default options\nAfter installation, open Git Bash from the Start menu\nVerify installation:\n\ngit --version"
-  },
-  {
-    "objectID": "setup.html#generate-an-ssh-key-linux-macos",
-    "href": "setup.html#generate-an-ssh-key-linux-macos",
-    "title": "Set up your framework",
-    "section": "3. Generate an SSH key (Linux & macOS)",
-    "text": "3. Generate an SSH key (Linux & macOS)\nOpen a terminal and type:\n# create a new ssh key RSA (2048 bits) with no passphrase\nssh-keygen -t rsa -b 2048 -C \"your_email@example.com\"\n\n# press enter to accept default file location (~/.ssh/id_rsa)\n# press enter to use am empty passphrase"
-  },
-  {
-    "objectID": "setup.html#generate-an-ssh-key-windows-git-bash",
-    "href": "setup.html#generate-an-ssh-key-windows-git-bash",
-    "title": "Set up your framework",
-    "section": "3. Generate an SSH key (Windows, Git Bash)",
-    "text": "3. Generate an SSH key (Windows, Git Bash)\n\nOpen Git Bash\nRun:\n\n# create a new ssh key RSA (2048 bits) with no passphrase\nssh-keygen -t rsa -b 2048 -C \"your_email@example.com\"\n\n# press enter to accept default file location (~/.ssh/id_rsa)\n# press enter to use am empty passphrase \n\nKeys are saved by default in:\n\nC:\\Users\\&lt;YourUser&gt;\\.ssh\\id_rsa"
-  },
-  {
-    "objectID": "setup.html#add-the-ssh-key-to-github",
-    "href": "setup.html#add-the-ssh-key-to-github",
-    "title": "Set up your framework",
-    "section": "4. Add the SSH key to GitHub",
-    "text": "4. Add the SSH key to GitHub\n\nCopy the public key:\n\ncat ~/.ssh/id_rsa.pub\n(or open id_rsa.pub in a text editor on Windows)\n\nGo to GitHub → Settings → SSH and GPG keys\nClick New SSH key\nPaste the key, give it a name (e.g. My laptop), save"
-  },
-  {
-    "objectID": "setup.html#test-the-connection",
-    "href": "setup.html#test-the-connection",
-    "title": "Set up your framework",
-    "section": "5. Test the connection",
-    "text": "5. Test the connection\nRun:\nssh -T git@github.com\nIf successful, you’ll see:\nHi username! You've successfully authenticated, but GitHub does not provide shell access."
-  },
-  {
-    "objectID": "setup.html#configuration",
-    "href": "setup.html#configuration",
-    "title": "Set up your framework",
-    "section": "6. Configuration",
-    "text": "6. Configuration\nThe purpose of Git is to keep tracks of different versions of a project and their authors.\nTo do so, you need to be authenticated. Before using, specify your name\nThe first use after installation\n\ngit config --global user.email \"your email\"\ngit config --global user.name \"your name\"`\ngit config -l # check"
-  },
-  {
-    "objectID": "git1.html#what-is-it",
-    "href": "git1.html#what-is-it",
-    "title": "Basics in git, working alone",
-    "section": "What is it?",
-    "text": "What is it?\n\nDeveloped by Linus Torvalds: “I’m an egotistical bastard, and I name all my projects after myself. First Linux, now git.”\n\n\n\nGit is a version control system (the most widely used today).\nIt allows tracking all changes made to code since its creation.\nGit is incredibly efficient."
-  },
-  {
-    "objectID": "git1.html#cloning-an-existing-reprository",
-    "href": "git1.html#cloning-an-existing-reprository",
-    "title": "Basics in git, working alone",
-    "section": "Cloning an existing reprository",
-    "text": "Cloning an existing reprository\nThis means copy locally on your computer the content of a repository which means\n\ncopy the actual code and text contents\ncopy the history of all changes\n\nBefore using Git, we need basic bash commands"
-  },
-  {
-    "objectID": "git1.html#first-element---navigating-using-bash-command",
-    "href": "git1.html#first-element---navigating-using-bash-command",
-    "title": "Basics in git, working alone",
-    "section": "First element - navigating using bash command",
-    "text": "First element - navigating using bash command\nNavigating Directories in the Terminal / Git Bash\n\nChecking where you are\n\n\n$ pwd\n/home/marie/projects\n\n\nListing files\n\n\nls -l #→ long listing\nls -a #→ include hidden files\n\n\nMoving between directories\n\n\n\n\nAction\nLinux/macOS/Git Bash\nWindows Command Prompt\n\n\n\n\nGo to a directory\ncd folder_name\ncd folder_name\n\n\nGo up one level\ncd ..\ncd ..\n\n\nGo to home\ncd ~\ncd %USERPROFILE%\n\n\nAbsolute path\ncd /path/to/folder\ncd C:\\path\\to\\folder"
-  },
-  {
-    "objectID": "git1.html#first-element---navigating-using-bash-command-1",
-    "href": "git1.html#first-element---navigating-using-bash-command-1",
-    "title": "Basics in git, working alone",
-    "section": "First element - navigating using bash command",
-    "text": "First element - navigating using bash command\n\nCreate a directory\n\n\nmkdir my_git_dir\n\n\nRemoving files or directory\n\n\nrm my_file\nrmdir my_dir #remove an empty dir\nrm -rf my_dir #remove a directeory and everything inside ! Careful\n\n\nQuick tips\n\nUse Tab for autocomplete paths and filenames.\nPaths on Git Bash use /, even on Windows (/c/Users/...)."
-  },
-  {
-    "objectID": "git1.html#exercise",
-    "href": "git1.html#exercise",
-    "title": "Basics in git, working alone",
-    "section": "Exercise",
-    "text": "Exercise\n\nGo to your home directory (/home/loginin Linux, probably somethin like C:/Users/yourusername in Windows)\nCreate a directory named git, where you will store all your git projects\nJump within this directory\nlist the files contained in this directory\nCreate a test_dir directory\nJump outside the git directory\nRemove the git directory and everything it contains\nCreate a directory named git, where you will store all your git projects"
-  },
-  {
-    "objectID": "git1.html#cloning-an-existing-reprository-1",
-    "href": "git1.html#cloning-an-existing-reprository-1",
-    "title": "Basics in git, working alone",
-    "section": "Cloning an existing reprository",
-    "text": "Cloning an existing reprository\nGo to your git Directory and write\n\ngit clone git@github.com:MarieEtienne/stats-reminders.git\n\nWhat is happening ?\n\nls\ncd stats-reminders\nls\n\nWhere to find this magical address to clone\nNavigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address."
-  },
-  {
-    "objectID": "git1.html#reviewing-the-code-development",
-    "href": "git1.html#reviewing-the-code-development",
-    "title": "Basics in git, working alone",
-    "section": "Reviewing the code development",
-    "text": "Reviewing the code development\n\ngit log\ngit log --oneline\ngitk"
-  },
-  {
-    "objectID": "git1.html#forking-an-existing-repository",
-    "href": "git1.html#forking-an-existing-repository",
-    "title": "Basics in git, working alone",
-    "section": "Forking an existing repository",
-    "text": "Forking an existing repository\nWhat is forking?\nForking creates your own copy of someone else’s repository in your GitHub account. This lets you experiment with changes without affecting the original project. How to fork a repo:\nHow\nNavigate to the repository you want to fork on GitHub Click the “Fork” button in the top-right corner of the repository page Choose where to fork it - usually to your personal account Wait a moment - GitHub will create the copy in your account\nWhat happens next:\nYou’ll have a complete copy of the repo in your GitHub account You can clone this forked version to your local machine using git clone Make changes, commit them, and push back to your fork If you want to contribute back to the original project, you can create a pull request\nKey points\nYour fork is independent of the original repo You have full control over your forked version The original repo remains unchanged unless you submit a pull request that gets accepted You can sync your fork with the original repo later if it gets updated\nThis workflow is essential for contributing to open-source projects or collaborating on code when you don’t have direct write access to the original repository."
-  },
-  {
-    "objectID": "git1.html#exercise-1",
-    "href": "git1.html#exercise-1",
-    "title": "Basics in git, working alone",
-    "section": "Exercise",
-    "text": "Exercise\n\nRemove the stats-reminder directory and its content\nFork https://github.com/MarieEtienne/stats-reminders on your personnal GitHub account\nclone your version of stats-reminder\nShow the history of this file"
-  },
-  {
-    "objectID": "git1.html#your-first-commit",
-    "href": "git1.html#your-first-commit",
-    "title": "Basics in git, working alone",
-    "section": "Your first commit",
-    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\n\ngit status # project status\ngit diff\n\n\n\n\nType the command git add penguins.Rmd, then repeat the previous commands.\nType the command git commit -m \"Added an author\", and once again check the project status.\nCheck the project on Github\nType the command git push\", and once again check the project on Github"
-  },
-  {
-    "objectID": "git2.html#commit-tree",
-    "href": "git2.html#commit-tree",
-    "title": "Git : Working collaboratively",
-    "section": "Commit tree",
-    "text": "Commit tree\n\nGraphical representationExercise\n\n\n\n\n\nWrite the commit tree of MarieEtienne/stats-reminder repo with the actual commit number\n\ngit clone .... ## cloning the repo\ngit ...  ## print history\n\nRemark: To show only the last 3 commits you can use\n\ngit log -n 3"
-  },
-  {
-    "objectID": "git2.html#a-first-commit",
-    "href": "git2.html#a-first-commit",
-    "title": "Git : Working collaboratively",
-    "section": "A first commit",
-    "text": "A first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\ngit status # project status\ngit diff\n\n\nType the command git add Penguins_chapter.qmd, then repeat the previous commands.\nType the command git commit -m \"Change title\", and once again check the project status.\nDraw the commit tree."
-  },
-  {
-    "objectID": "git2.html#process-overview",
-    "href": "git2.html#process-overview",
-    "title": "Git : Working collaboratively",
-    "section": "Process overview",
-    "text": "Process overview\n\nThe snapshot analogy\n\nIn the working directory, let’s try different poses (the version of the project in the working directory)\nWhen satisfied by the pose of one guy, ask him stop moving (Staging area)\nWhen satisfied with the whole scene, take the photo (Commit in the local repo)"
-  },
-  {
-    "objectID": "git2.html#share-your-progress-with-your-co-workers",
-    "href": "git2.html#share-your-progress-with-your-co-workers",
-    "title": "Git : Working collaboratively",
-    "section": "Share your progress with your co workers",
-    "text": "Share your progress with your co workers\nThe current version of the project is indeed recorded in the version control system, but you are the only ones who know it.\nYou may want to share these changes to the remote repository from which we started.\n\nTo view the differences with the remote repository, use git diff origin/master.\nTo send our changes, , use git push.\n\n\nGraphicallyTheoretically after the pushProcess overviewBut\n\n\n\n\n\n\n\n\n\n\n\n\nMost of view receive errors message like\n\n\nTo github.com:MarieEtienne/stats-reminders.git\n ! [rejected]        master -&gt; master (fetch first)\nerror: failed to push some refs to 'github.com:MarieEtienne/stats-reminders.git'\nhint: Updates were rejected because the remote contains work that you do not\nhint: have locally. This is usually caused by another repository pushing to\nhint: the same ref. If you want to integrate the remote changes, use\nhint: 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n\n, why ?\n\nDraw the commit tree."
-  },
-  {
-    "objectID": "git2.html#share-your-progress-with-your-co-workers-1",
-    "href": "git2.html#share-your-progress-with-your-co-workers-1",
-    "title": "Git : Working collaboratively",
-    "section": "Share your progress with your co workers",
-    "text": "Share your progress with your co workers\n\nGraphicallyThe theorySolvingPractically (easy but dirty)ExampleProcess overview\n\n\n\n\n\n\nBe sure that all your changes have been committed\nwhen works are diverged, you can have different attitudes. We go for the simple one for now and we need to specify this config for git\n\n\ngit config pull.rebase false\n\n\nRetrieve the last version of the project on the server: git pull origin master\nThis might highlights conflicts: In case of conflict, you receive a very nasty message.\n\n\nAuto-merging README.md\nCONFLICT (content): Merge conflict in README.md\nAutomatic merge failed; fix conflicts and then commit the result.\n\n\nShare the merged version on the server\n\n\n\n\nSolving conflicts implies choosing and You must resolve the conflict\n\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nIt will also served as sandbox during the lectures. Therefore the git history might be a bit fuzy.\n\n=======\nIt will be used as sandbox during the lectures. Don't be scared by the messy git tree!\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; dfdf5995ade6e47899531a99e5947e719da86020\n\nPortion between &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD and ======= is your local version, while part between =======and &gt;&gt;&gt;&gt;&gt;&gt;&gt; dfdf5995ade6e47899531a99e5947e719da86020 is the version available at commit with hash dfdf5995ade6e47899531a99e5947e719da86020.\n\n\n\ngit pull origin master # retrieve the laste version on the server and try to merge with yours\ngit status # see the conflicted files\n## revise each conflicted file to remove conflicts\ngit add any files with solved conflicts\ngit commit -m \"Merge conflicts solved\"\ngit push\n\nProblem: the merge commit is not very readable in the development process. But one step at a time\n\n\n\nChange someting in your local version of Penguins_chapter.qmd,\ngit add, commit, pull …..\nSolve conflicts\n`git push’\n\nProblem: Too much time spent at solving conflicts. We need another to minimize conflilcts\n\n\n\n\n\nT1 \nT2 \n\nT3 \n\nAssociate trees with actions"
-  },
-  {
-    "objectID": "git2.html#one-branch-for-one-task",
-    "href": "git2.html#one-branch-for-one-task",
-    "title": "Git : Working collaboratively",
-    "section": "One branch for one task",
-    "text": "One branch for one task\nGoal minimising conflicts\nWorking in parralel and merging from time to time\n\nGraphicallyCreateShareMergeExercise - 1Exercise - 2\n\n\n\n\nWorking in parallel:\n\n\nMerging test within master: \n\n\n\nCreat a local branch and navigating between different branches\n\ngit branch mpe_test_branch # create a branch\ngit branch -a # list the branch and indicates on which you are sitting\ngit switch  mpe_test_branch # switch/jump on mpe_test_branch\ngit branch -a \ngit switch master\ngit branch -d mpe_test_branch # deletes the branch\n\n\n\n\nCreate your own branch and make some changes, add and commit them and now trying to push\n\n\ngit push origin YOUR_BRANCH_NAME\ngit switch master #go back on the master branch\ngit branch -a #list all the branchs and show on which you are sitting\n\nGo on Github and look !\n\n\n\nCreate a second test branch test_branch2 and make some changes\nWe want to incorprate change make in test_branch2 in your personnal branch\n\n\ngit switch YOUR_BRANCH_NAME\ngit merge test_branch2 #merging the commits of test_branch2 in the branch you are sitting\n## look at your files\n\n\n\n\nCreates your own test_branch from the master branch and go on this branch\nRemove Penguins_chapter.qmd from the versioning system git rm Penguins_chapter.qmd\nlist the content your directory\nCommit your changes in your branch\nSwitch to the master branch\nList the contents of your directory\nDelete your test_branch git branch -d NAME_OF_YOUR_BRANCH\n\n\n\n\nCreate a branch and switch to this branch\nCreate a qmd file, name `Row_id.qmd”, id being the order of your row, 1 is the closes to the board.\nWork by team, (a team = a row), to crate and solve conflicts"
-  },
-  {
-    "objectID": "git2.html#writing-a-clean-history---a-proper-way-to-merge",
-    "href": "git2.html#writing-a-clean-history---a-proper-way-to-merge",
-    "title": "Git : Working collaboratively",
-    "section": "Writing a clean history - a proper way to merge",
-    "text": "Writing a clean history - a proper way to merge\n\nStep 1: FetchStep 2: RebaseStep 3: MergeSummary\n\n\n\n\nRetrieve latest history\n\ngit fetch origin\n\n\nUpdates your local references to remote branches\nDoes not change your working directory\nPrepares you to rebase onto the latest master\n\n\nBefore fetch\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nF\n\nF\n\n\n\nC-&gt;F\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;C\n\n\n\n\n\n\n\n\n\n\nAfter fetch\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nF\n\nF\n\n\n\nC-&gt;F\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;C\n\n\n\n\n\norigin_master\n\norigin/master\n\n\n\norigin_master-&gt;E\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSuppose you are on your feature branch:\n\ngit rebase origin/master \n\nRe-applies your commits on top of the latest master Lets you resolve conflicts now, instead of later during merge\n\nBefore rebase\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nF\n\nF\n\n\n\nC-&gt;F\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;C\n\n\n\n\n\norigin_master\n\norigin/master\n\n\n\norigin_master-&gt;E\n\n\n\n\n\n\n\n\n\n\nAfter rebase\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;C\n\n\n\n\n\norigin_master\n\norigin/master\n\n\n\norigin_master-&gt;E\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOnce rebase was successful:\n\ngit switch master\ngit merge mybranch\n\nSince history is linear, this is a fast-forward merge\nNo extra merge commits\nHistory stays clean and easy to read\n\nAfter switch, before merge\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;C\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;C\n\n\n\n\n\norigin_master\n\norigin/master\n\n\n\norigin_master-&gt;E\n\n\n\n\n\n\n\n\n\n\nAfter merge\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;G\n\n\n\n\n\norigin_master\n\norigin/master\n\n\n\norigin_master-&gt;E\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngit fetch: update local info about remote\ngit rebase origin/master: reapply work on top of your branch\ngit merge: integrate cleanly\nyou can delete your branch once your work is included"
-  },
-  {
-    "objectID": "git2.html#going-back-in-time-restore-version-checkout",
-    "href": "git2.html#going-back-in-time-restore-version-checkout",
-    "title": "Git : Working collaboratively",
-    "section": "Going back in time : restore version – checkout",
-    "text": "Going back in time : restore version – checkout\n\nStep 1 : Go backStep 2 : branch\n\n\nTo go back to a previous specific version, use the checkout command\n\n\n\ngit log --oneline\ngit checkout C # c = specific hash number\n\nThe current working version of Penguins_chapter.qmd is in the state of commit A_specific_hash_version_number\n\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;C\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;F\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou can branch from this moment if you want to and start developping this new branch\n\n\n\ngit switch -c the_new_branch # create and switch to the branch\ngit commit ....\n\nThe current working version of Penguins_chapter.qmd is in the state of commit A_specific_hash_version_number\n\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nG\n\nG\n\n\n\nC-&gt;G\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nH\n\nH\n\n\n\nG-&gt;H\n\n\n\n\n\nnew_b\n\nthe_new_branch\n\n\n\nnew_b-&gt;H\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;H\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;F\n\n\n\n\n\n\n\n\n\n\n\n\n\nGo back to the latest version on master by\n\ngit switch master\n\nEverything is back to normal!\n\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nG\n\nG\n\n\n\nC-&gt;G\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nH\n\nH\n\n\n\nG-&gt;H\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;F\n\n\n\n\n\nnew_b\n\nthe_new_branch\n\n\n\nnew_b-&gt;H\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;F"
-  },
-  {
-    "objectID": "git2.html#removing-a-local-commit-not-present-on-the-remote-repo",
-    "href": "git2.html#removing-a-local-commit-not-present-on-the-remote-repo",
-    "title": "Git : Working collaboratively",
-    "section": "Removing a local commit (not present on the remote repo)",
-    "text": "Removing a local commit (not present on the remote repo)\nThe purpose of reset function\n\nThe git reset commandExample\n\n\n\n\nTo remove all history, going back in commit number G (remove definitely commit H and I)\n\ngit log --oneline\ngit reset --hard G\ngit log --oneline\n\nBe very very very careful, it is a destructive process. All information regarding your previous commit is lost.\n\nBefore reset\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nG\n\nG\n\n\n\nC-&gt;G\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nH\n\nH\n\n\n\nG-&gt;H\n\n\n\n\n\nI\n\nI\n\n\n\nH-&gt;I\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;I\n\n\n\n\n\nnew_b\n\nlocal_branch\n\n\n\nnew_b-&gt;I\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;F\n\n\n\n\n\n\n\n\n\n\nAfter reset\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nG\n\nG\n\n\n\nC-&gt;G\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nnew_b\n\nlocal_branch\n\n\n\nnew_b-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;F\n\n\n\n\n\n\n\n\n\n\n\nIt’s a very dangerous way of living with Git, an unfortunate removal of a commit present on the remote server can break the commit trees for all your coworkers and you won’t have friends anymore.\n\n\n\nRemove the file Penguins_chapter.qmd, and commit this change\nList the contents of your directory\nGo back one commit in time using reset\nList the contents of your directory"
-  },
-  {
-    "objectID": "git2.html#how-to-suppress-a-commit-shared-on-the-remote-repo",
-    "href": "git2.html#how-to-suppress-a-commit-shared-on-the-remote-repo",
-    "title": "Git : Working collaboratively",
-    "section": "How to suppress a commit shared on the remote repo",
-    "text": "How to suppress a commit shared on the remote repo\nYou can’t destroy common history, you have to update it\n\nThe git revert command\n\n\n\n\nYou can “suppress” this commit by applying the opposit! Let’s we want to remove change in the project made in commit \\(B\\)\n\ngit log --oneline\ngit revert B\ngit log --oneline\n\nOnly th change made to come from A to B are reversed. Of course it might produce conflicts you have to solve.\nThis becomes more difficult with dirty merge commits, so try to keep a clean history\n\nBefore reset\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;D\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;D\n\n\n\n\n\n\n\n\n\n\nAfter revert\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nE\n\n-B\n\n\n\nD-&gt;E\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;E\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;E"
-  },
-  {
-    "objectID": "git2.html#last-few-words",
-    "href": "git2.html#last-few-words",
-    "title": "Git : Working collaboratively",
-    "section": "Last few words",
-    "text": "Last few words\n\nGit is a standard control version system in industry AND research for version control (whether you use it with Github or not),\nBeing proficient with Git requires to use it as much as possible: The more problems you have, the more you learn\nGo back to the documentation as much as needed\nBy no means, Git is an alternative to a proper documented code (in R you might want to use package like formatR, styleR and document it with roxygen)"
-  },
-  {
-    "objectID": "git2.html#evaluation",
-    "href": "git2.html#evaluation",
-    "title": "Git : Working collaboratively",
-    "section": "Evaluation",
-    "text": "Evaluation\n\nA short quizz on November 5th, to check your understanding of git behaviours command, errors and message. It could be explaining in words the development of a project by looking at a project history, explaining the actions to be taken according to one mean git message, explaining the purpose of one command. No need to learn commands, regulard practice before this date should be enough.\nStats reminder project\n\nI will be looking at the qality of the commits\nThe use of PR\nRespect the checks\nReview Other’s work\n\nFor next session: 3 teams\n\nthe linear model team\nthe factorial analysis team\nThe Differential equation team\n\nWithin each team, 3 specific mthods within the gen,eral team, illusrated by an ecological example."
-  },
-  {
-    "objectID": "git2.html#some-help-other-than-claude.ai-and-chatgpt",
-    "href": "git2.html#some-help-other-than-claude.ai-and-chatgpt",
-    "title": "Git : Working collaboratively",
-    "section": "Some help other than Claude.ai and ChatGPT",
-    "text": "Some help other than Claude.ai and ChatGPT\nResources\n\nThe Git Book\nAtlassian tutorial\n\nCheat sheet\nGit Cheat sheet\nTo be used as a Sandbox\nLearning Git Demo"
+    "text": "Exercise\n\nOpen your terminal (Git Bash / Terminal)\npwd — where are you?\ncd to your git folder (create it with mkdir if it doesn’t exist yet)\nls -alh — do you see a hidden .git folder in any of your cloned repos?\nPractice going up and down with cd .. and cd repo_name"
   },
   {
     "objectID": "quartobis.html#why-quarto",
@@ -579,5 +229,432 @@
     "title": "Quarto",
     "section": "Publishing (teaser)",
     "text": "Publishing (teaser)\n\nquarto publish gh-pages → what happens next session with git2 (push, PR, collective site grows)"
+  },
+  {
+    "objectID": "git2.html#commit-tree",
+    "href": "git2.html#commit-tree",
+    "title": "Git : Working collaboratively",
+    "section": "Commit tree",
+    "text": "Commit tree\n\nGraphical representationExercise\n\n\n\n\n\nWrite the commit tree of MarieEtienne/stats-reminder repo with the actual commit number\n\ngit clone .... ## cloning the repo\ngit ...  ## print history\n\nRemark: To show only the last 3 commits you can use\n\ngit log -n 3"
+  },
+  {
+    "objectID": "git2.html#a-first-commit",
+    "href": "git2.html#a-first-commit",
+    "title": "Git : Working collaboratively",
+    "section": "A first commit",
+    "text": "A first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\ngit status # project status\ngit diff\n\n\nType the command git add Penguins_chapter.qmd, then repeat the previous commands.\nType the command git commit -m \"Change title\", and once again check the project status.\nDraw the commit tree."
+  },
+  {
+    "objectID": "git2.html#process-overview",
+    "href": "git2.html#process-overview",
+    "title": "Git : Working collaboratively",
+    "section": "Process overview",
+    "text": "Process overview\n\nThe snapshot analogy\n\nIn the working directory, let’s try different poses (the version of the project in the working directory)\nWhen satisfied by the pose of one guy, ask him stop moving (Staging area)\nWhen satisfied with the whole scene, take the photo (Commit in the local repo)"
+  },
+  {
+    "objectID": "git2.html#share-your-progress-with-your-co-workers",
+    "href": "git2.html#share-your-progress-with-your-co-workers",
+    "title": "Git : Working collaboratively",
+    "section": "Share your progress with your co workers",
+    "text": "Share your progress with your co workers\nThe current version of the project is indeed recorded in the version control system, but you are the only ones who know it.\nYou may want to share these changes to the remote repository from which we started.\n\nTo view the differences with the remote repository, use git diff origin/master.\nTo send our changes, , use git push.\n\n\nGraphicallyTheoretically after the pushProcess overviewBut\n\n\n\n\n\n\n\n\n\n\n\n\nMost of view receive errors message like\n\n\nTo github.com:MarieEtienne/stats-reminders.git\n ! [rejected]        master -&gt; master (fetch first)\nerror: failed to push some refs to 'github.com:MarieEtienne/stats-reminders.git'\nhint: Updates were rejected because the remote contains work that you do not\nhint: have locally. This is usually caused by another repository pushing to\nhint: the same ref. If you want to integrate the remote changes, use\nhint: 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n\n, why ?\n\nDraw the commit tree."
+  },
+  {
+    "objectID": "git2.html#share-your-progress-with-your-co-workers-1",
+    "href": "git2.html#share-your-progress-with-your-co-workers-1",
+    "title": "Git : Working collaboratively",
+    "section": "Share your progress with your co workers",
+    "text": "Share your progress with your co workers\n\nGraphicallyThe theorySolvingPractically (easy but dirty)ExampleProcess overview\n\n\n\n\n\n\nBe sure that all your changes have been committed\nwhen works are diverged, you can have different attitudes. We go for the simple one for now and we need to specify this config for git\n\n\ngit config pull.rebase false\n\n\nRetrieve the last version of the project on the server: git pull origin master\nThis might highlights conflicts: In case of conflict, you receive a very nasty message.\n\n\nAuto-merging README.md\nCONFLICT (content): Merge conflict in README.md\nAutomatic merge failed; fix conflicts and then commit the result.\n\n\nShare the merged version on the server\n\n\n\n\nSolving conflicts implies choosing and You must resolve the conflict\n\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nIt will also served as sandbox during the lectures. Therefore the git history might be a bit fuzy.\n\n=======\nIt will be used as sandbox during the lectures. Don't be scared by the messy git tree!\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; dfdf5995ade6e47899531a99e5947e719da86020\n\nPortion between &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD and ======= is your local version, while part between =======and &gt;&gt;&gt;&gt;&gt;&gt;&gt; dfdf5995ade6e47899531a99e5947e719da86020 is the version available at commit with hash dfdf5995ade6e47899531a99e5947e719da86020.\n\n\n\ngit pull origin master # retrieve the laste version on the server and try to merge with yours\ngit status # see the conflicted files\n## revise each conflicted file to remove conflicts\ngit add any files with solved conflicts\ngit commit -m \"Merge conflicts solved\"\ngit push\n\nProblem: the merge commit is not very readable in the development process. But one step at a time\n\n\n\nChange someting in your local version of Penguins_chapter.qmd,\ngit add, commit, pull …..\nSolve conflicts\n`git push’\n\nProblem: Too much time spent at solving conflicts. We need another to minimize conflilcts\n\n\n\n\n\nT1 \nT2 \n\nT3 \n\nAssociate trees with actions"
+  },
+  {
+    "objectID": "git2.html#one-branch-for-one-task",
+    "href": "git2.html#one-branch-for-one-task",
+    "title": "Git : Working collaboratively",
+    "section": "One branch for one task",
+    "text": "One branch for one task\nGoal minimising conflicts\nWorking in parralel and merging from time to time\n\nGraphicallyCreateShareMergeExercise - 1Exercise - 2\n\n\n\n\nWorking in parallel:\n\n\nMerging test within master: \n\n\n\nCreat a local branch and navigating between different branches\n\ngit branch mpe_test_branch # create a branch\ngit branch -a # list the branch and indicates on which you are sitting\ngit switch  mpe_test_branch # switch/jump on mpe_test_branch\ngit branch -a \ngit switch master\ngit branch -d mpe_test_branch # deletes the branch\n\n\n\n\nCreate your own branch and make some changes, add and commit them and now trying to push\n\n\ngit push origin YOUR_BRANCH_NAME\ngit switch master #go back on the master branch\ngit branch -a #list all the branchs and show on which you are sitting\n\nGo on Github and look !\n\n\n\nCreate a second test branch test_branch2 and make some changes\nWe want to incorprate change make in test_branch2 in your personnal branch\n\n\ngit switch YOUR_BRANCH_NAME\ngit merge test_branch2 #merging the commits of test_branch2 in the branch you are sitting\n## look at your files\n\n\n\n\nCreates your own test_branch from the master branch and go on this branch\nRemove Penguins_chapter.qmd from the versioning system git rm Penguins_chapter.qmd\nlist the content your directory\nCommit your changes in your branch\nSwitch to the master branch\nList the contents of your directory\nDelete your test_branch git branch -d NAME_OF_YOUR_BRANCH\n\n\n\n\nCreate a branch and switch to this branch\nCreate a qmd file, name `Row_id.qmd”, id being the order of your row, 1 is the closes to the board.\nWork by team, (a team = a row), to crate and solve conflicts"
+  },
+  {
+    "objectID": "git2.html#writing-a-clean-history---a-proper-way-to-merge",
+    "href": "git2.html#writing-a-clean-history---a-proper-way-to-merge",
+    "title": "Git : Working collaboratively",
+    "section": "Writing a clean history - a proper way to merge",
+    "text": "Writing a clean history - a proper way to merge\n\nStep 1: FetchStep 2: RebaseStep 3: MergeSummary\n\n\n\n\nRetrieve latest history\n\ngit fetch origin\n\n\nUpdates your local references to remote branches\nDoes not change your working directory\nPrepares you to rebase onto the latest master\n\n\nBefore fetch\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nF\n\nF\n\n\n\nC-&gt;F\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;C\n\n\n\n\n\n\n\n\n\n\nAfter fetch\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nF\n\nF\n\n\n\nC-&gt;F\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;C\n\n\n\n\n\norigin_master\n\norigin/master\n\n\n\norigin_master-&gt;E\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSuppose you are on your feature branch:\n\ngit rebase origin/master \n\nRe-applies your commits on top of the latest master Lets you resolve conflicts now, instead of later during merge\n\nBefore rebase\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nF\n\nF\n\n\n\nC-&gt;F\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;C\n\n\n\n\n\norigin_master\n\norigin/master\n\n\n\norigin_master-&gt;E\n\n\n\n\n\n\n\n\n\n\nAfter rebase\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;C\n\n\n\n\n\norigin_master\n\norigin/master\n\n\n\norigin_master-&gt;E\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOnce rebase was successful:\n\ngit switch master\ngit merge mybranch\n\nSince history is linear, this is a fast-forward merge\nNo extra merge commits\nHistory stays clean and easy to read\n\nAfter switch, before merge\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;C\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;C\n\n\n\n\n\norigin_master\n\norigin/master\n\n\n\norigin_master-&gt;E\n\n\n\n\n\n\n\n\n\n\nAfter merge\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nG\n\nG\n\n\n\nF-&gt;G\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nmybranch\n\nmybranch\n\n\n\nmybranch-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;G\n\n\n\n\n\norigin_master\n\norigin/master\n\n\n\norigin_master-&gt;E\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngit fetch: update local info about remote\ngit rebase origin/master: reapply work on top of your branch\ngit merge: integrate cleanly\nyou can delete your branch once your work is included"
+  },
+  {
+    "objectID": "git2.html#going-back-in-time-restore-version-checkout",
+    "href": "git2.html#going-back-in-time-restore-version-checkout",
+    "title": "Git : Working collaboratively",
+    "section": "Going back in time : restore version – checkout",
+    "text": "Going back in time : restore version – checkout\n\nStep 1 : Go backStep 2 : branch\n\n\nTo go back to a previous specific version, use the checkout command\n\n\n\ngit log --oneline\ngit checkout C # c = specific hash number\n\nThe current working version of Penguins_chapter.qmd is in the state of commit A_specific_hash_version_number\n\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;C\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;F\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou can branch from this moment if you want to and start developping this new branch\n\n\n\ngit switch -c the_new_branch # create and switch to the branch\ngit commit ....\n\nThe current working version of Penguins_chapter.qmd is in the state of commit A_specific_hash_version_number\n\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nG\n\nG\n\n\n\nC-&gt;G\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nH\n\nH\n\n\n\nG-&gt;H\n\n\n\n\n\nnew_b\n\nthe_new_branch\n\n\n\nnew_b-&gt;H\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;H\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;F\n\n\n\n\n\n\n\n\n\n\n\n\n\nGo back to the latest version on master by\n\ngit switch master\n\nEverything is back to normal!\n\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nG\n\nG\n\n\n\nC-&gt;G\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nH\n\nH\n\n\n\nG-&gt;H\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;F\n\n\n\n\n\nnew_b\n\nthe_new_branch\n\n\n\nnew_b-&gt;H\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;F"
+  },
+  {
+    "objectID": "git2.html#removing-a-local-commit-not-present-on-the-remote-repo",
+    "href": "git2.html#removing-a-local-commit-not-present-on-the-remote-repo",
+    "title": "Git : Working collaboratively",
+    "section": "Removing a local commit (not present on the remote repo)",
+    "text": "Removing a local commit (not present on the remote repo)\nThe purpose of reset function\n\nThe git reset commandExample\n\n\n\n\nTo remove all history, going back in commit number G (remove definitely commit H and I)\n\ngit log --oneline\ngit reset --hard G\ngit log --oneline\n\nBe very very very careful, it is a destructive process. All information regarding your previous commit is lost.\n\nBefore reset\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nG\n\nG\n\n\n\nC-&gt;G\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nH\n\nH\n\n\n\nG-&gt;H\n\n\n\n\n\nI\n\nI\n\n\n\nH-&gt;I\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;I\n\n\n\n\n\nnew_b\n\nlocal_branch\n\n\n\nnew_b-&gt;I\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;F\n\n\n\n\n\n\n\n\n\n\nAfter reset\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nG\n\nG\n\n\n\nC-&gt;G\n\n\n\n\n\nE\n\nE\n\n\n\nD-&gt;E\n\n\n\n\n\nF\n\nF\n\n\n\nE-&gt;F\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;G\n\n\n\n\n\nnew_b\n\nlocal_branch\n\n\n\nnew_b-&gt;G\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;F\n\n\n\n\n\n\n\n\n\n\n\nIt’s a very dangerous way of living with Git, an unfortunate removal of a commit present on the remote server can break the commit trees for all your coworkers and you won’t have friends anymore.\n\n\n\nRemove the file Penguins_chapter.qmd, and commit this change\nList the contents of your directory\nGo back one commit in time using reset\nList the contents of your directory"
+  },
+  {
+    "objectID": "git2.html#how-to-suppress-a-commit-shared-on-the-remote-repo",
+    "href": "git2.html#how-to-suppress-a-commit-shared-on-the-remote-repo",
+    "title": "Git : Working collaboratively",
+    "section": "How to suppress a commit shared on the remote repo",
+    "text": "How to suppress a commit shared on the remote repo\nYou can’t destroy common history, you have to update it\n\nThe git revert command\n\n\n\n\nYou can “suppress” this commit by applying the opposit! Let’s we want to remove change in the project made in commit \\(B\\)\n\ngit log --oneline\ngit revert B\ngit log --oneline\n\nOnly th change made to come from A to B are reversed. Of course it might produce conflicts you have to solve.\nThis becomes more difficult with dirty merge commits, so try to keep a clean history\n\nBefore reset\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;D\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;D\n\n\n\n\n\n\n\n\n\n\nAfter revert\n\n\n\n\n\n\n\n\n\n\nA\n\nA\n\n\n\nB\n\nB\n\n\n\nA-&gt;B\n\n\n\n\n\nC\n\nC\n\n\n\nB-&gt;C\n\n\n\n\n\nD\n\nD\n\n\n\nC-&gt;D\n\n\n\n\n\nE\n\n-B\n\n\n\nD-&gt;E\n\n\n\n\n\nHEAD\n\nHEAD\n\n\n\nHEAD-&gt;E\n\n\n\n\n\nmaster\n\nmaster\n\n\n\nmaster-&gt;E"
+  },
+  {
+    "objectID": "git2.html#last-few-words",
+    "href": "git2.html#last-few-words",
+    "title": "Git : Working collaboratively",
+    "section": "Last few words",
+    "text": "Last few words\n\nGit is a standard control version system in industry AND research for version control (whether you use it with Github or not),\nBeing proficient with Git requires to use it as much as possible: The more problems you have, the more you learn\nGo back to the documentation as much as needed\nBy no means, Git is an alternative to a proper documented code (in R you might want to use package like formatR, styleR and document it with roxygen)"
+  },
+  {
+    "objectID": "git2.html#evaluation",
+    "href": "git2.html#evaluation",
+    "title": "Git : Working collaboratively",
+    "section": "Evaluation",
+    "text": "Evaluation\n\nA short quizz on November 5th, to check your understanding of git behaviours command, errors and message. It could be explaining in words the development of a project by looking at a project history, explaining the actions to be taken according to one mean git message, explaining the purpose of one command. No need to learn commands, regulard practice before this date should be enough.\nStats reminder project\n\nI will be looking at the qality of the commits\nThe use of PR\nRespect the checks\nReview Other’s work\n\nFor next session: 3 teams\n\nthe linear model team\nthe factorial analysis team\nThe Differential equation team\n\nWithin each team, 3 specific mthods within the gen,eral team, illusrated by an ecological example."
+  },
+  {
+    "objectID": "git2.html#some-help-other-than-claude.ai-and-chatgpt",
+    "href": "git2.html#some-help-other-than-claude.ai-and-chatgpt",
+    "title": "Git : Working collaboratively",
+    "section": "Some help other than Claude.ai and ChatGPT",
+    "text": "Some help other than Claude.ai and ChatGPT\nResources\n\nThe Git Book\nAtlassian tutorial\n\nCheat sheet\nGit Cheat sheet\nTo be used as a Sandbox\nLearning Git Demo"
+  },
+  {
+    "objectID": "git1.html#what-is-it",
+    "href": "git1.html#what-is-it",
+    "title": "Basics in git, working alone",
+    "section": "What is it?",
+    "text": "What is it?\n\nDeveloped by Linus Torvalds: “I’m an egotistical bastard, and I name all my projects after myself. First Linux, now git.”\n\n\n\nGit is a version control system (the most widely used today).\nIt allows tracking all changes made to code since its creation.\nGit is incredibly efficient."
+  },
+  {
+    "objectID": "git1.html#cloning-an-existing-reprository",
+    "href": "git1.html#cloning-an-existing-reprository",
+    "title": "Basics in git, working alone",
+    "section": "Cloning an existing reprository",
+    "text": "Cloning an existing reprository\nThis means copy locally on your computer the content of a repository which means\n\ncopy the actual code and text contents\ncopy the history of all changes\n\nBefore using Git, we need basic bash commands"
+  },
+  {
+    "objectID": "git1.html#first-element---navigating-using-bash-command",
+    "href": "git1.html#first-element---navigating-using-bash-command",
+    "title": "Basics in git, working alone",
+    "section": "First element - navigating using bash command",
+    "text": "First element - navigating using bash command\nNavigating Directories in the Terminal / Git Bash\n\nChecking where you are\n\n\n$ pwd\n/home/marie/projects\n\n\nListing files\n\n\nls -l #→ long listing\nls -a #→ include hidden files\n\n\nMoving between directories\n\n\n\n\nAction\nLinux/macOS/Git Bash\nWindows Command Prompt\n\n\n\n\nGo to a directory\ncd folder_name\ncd folder_name\n\n\nGo up one level\ncd ..\ncd ..\n\n\nGo to home\ncd ~\ncd %USERPROFILE%\n\n\nAbsolute path\ncd /path/to/folder\ncd C:\\path\\to\\folder"
+  },
+  {
+    "objectID": "git1.html#first-element---navigating-using-bash-command-1",
+    "href": "git1.html#first-element---navigating-using-bash-command-1",
+    "title": "Basics in git, working alone",
+    "section": "First element - navigating using bash command",
+    "text": "First element - navigating using bash command\n\nCreate a directory\n\n\nmkdir my_git_dir\n\n\nRemoving files or directory\n\n\nrm my_file\nrmdir my_dir #remove an empty dir\nrm -rf my_dir #remove a directeory and everything inside ! Careful\n\n\nQuick tips\n\nUse Tab for autocomplete paths and filenames.\nPaths on Git Bash use /, even on Windows (/c/Users/...)."
+  },
+  {
+    "objectID": "git1.html#exercise",
+    "href": "git1.html#exercise",
+    "title": "Basics in git, working alone",
+    "section": "Exercise",
+    "text": "Exercise\n\nGo to your home directory (/home/loginin Linux, probably somethin like C:/Users/yourusername in Windows)\nCreate a directory named git, where you will store all your git projects\nJump within this directory\nlist the files contained in this directory\nCreate a test_dir directory\nJump outside the git directory\nRemove the git directory and everything it contains\nCreate a directory named git, where you will store all your git projects"
+  },
+  {
+    "objectID": "git1.html#cloning-an-existing-reprository-1",
+    "href": "git1.html#cloning-an-existing-reprository-1",
+    "title": "Basics in git, working alone",
+    "section": "Cloning an existing reprository",
+    "text": "Cloning an existing reprository\nGo to your git Directory and write\n\ngit clone git@github.com:MarieEtienne/stats-reminders.git\n\nWhat is happening ?\n\nls\ncd stats-reminders\nls\n\nWhere to find this magical address to clone\nNavigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address."
+  },
+  {
+    "objectID": "git1.html#reviewing-the-code-development",
+    "href": "git1.html#reviewing-the-code-development",
+    "title": "Basics in git, working alone",
+    "section": "Reviewing the code development",
+    "text": "Reviewing the code development\n\ngit log\ngit log --oneline\ngitk"
+  },
+  {
+    "objectID": "git1.html#forking-an-existing-repository",
+    "href": "git1.html#forking-an-existing-repository",
+    "title": "Basics in git, working alone",
+    "section": "Forking an existing repository",
+    "text": "Forking an existing repository\nWhat is forking?\nForking creates your own copy of someone else’s repository in your GitHub account. This lets you experiment with changes without affecting the original project. How to fork a repo:\nHow\nNavigate to the repository you want to fork on GitHub Click the “Fork” button in the top-right corner of the repository page Choose where to fork it - usually to your personal account Wait a moment - GitHub will create the copy in your account\nWhat happens next:\nYou’ll have a complete copy of the repo in your GitHub account You can clone this forked version to your local machine using git clone Make changes, commit them, and push back to your fork If you want to contribute back to the original project, you can create a pull request\nKey points\nYour fork is independent of the original repo You have full control over your forked version The original repo remains unchanged unless you submit a pull request that gets accepted You can sync your fork with the original repo later if it gets updated\nThis workflow is essential for contributing to open-source projects or collaborating on code when you don’t have direct write access to the original repository."
+  },
+  {
+    "objectID": "git1.html#exercise-1",
+    "href": "git1.html#exercise-1",
+    "title": "Basics in git, working alone",
+    "section": "Exercise",
+    "text": "Exercise\n\nRemove the stats-reminder directory and its content\nFork https://github.com/MarieEtienne/stats-reminders on your personnal GitHub account\nclone your version of stats-reminder\nShow the history of this file"
+  },
+  {
+    "objectID": "git1.html#your-first-commit",
+    "href": "git1.html#your-first-commit",
+    "title": "Basics in git, working alone",
+    "section": "Your first commit",
+    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\n\ngit status # project status\ngit diff\n\n\n\n\nType the command git add penguins.Rmd, then repeat the previous commands.\nType the command git commit -m \"Added an author\", and once again check the project status.\nCheck the project on Github\nType the command git push\", and once again check the project on Github"
+  },
+  {
+    "objectID": "setup.html#create-a-github-account",
+    "href": "setup.html#create-a-github-account",
+    "title": "Set up your framework",
+    "section": "1. Create a GitHub Account",
+    "text": "1. Create a GitHub Account\n\nGo to https://github.com\n\nClick Sign up\n\nChoose a username, email, and password\n\nVerify your account by email\n\n(Optional) Install GitHub Desktop if you prefer a GUI"
+  },
+  {
+    "objectID": "setup.html#install-git-linux",
+    "href": "setup.html#install-git-linux",
+    "title": "Set up your framework",
+    "section": "2. Install Git (Linux)",
+    "text": "2. Install Git (Linux)\nOn most Linux distributions, Git is available from the package manager.\n\nOn Debian/Ubuntu:\n\nCheck if Git is available if not\nsudo apt update\nsudo apt install git"
+  },
+  {
+    "objectID": "setup.html#install-git-macos",
+    "href": "setup.html#install-git-macos",
+    "title": "Set up your framework",
+    "section": "2. Install Git (macOS)",
+    "text": "2. Install Git (macOS)\nCheck if Git is available if not\nbrew install git\nCheck installation with:\ngit --version"
+  },
+  {
+    "objectID": "setup.html#install-git-windows",
+    "href": "setup.html#install-git-windows",
+    "title": "Set up your framework",
+    "section": "2. Install Git (Windows)",
+    "text": "2. Install Git (Windows)\nWindows users should install Git for Windows, which includes Git Bash.\n\nDownload from https://git-scm.com/download/win\nRun the installer and keep the default options\nAfter installation, open Git Bash from the Start menu\nVerify installation:\n\ngit --version"
+  },
+  {
+    "objectID": "setup.html#generate-an-ssh-key-linux-macos",
+    "href": "setup.html#generate-an-ssh-key-linux-macos",
+    "title": "Set up your framework",
+    "section": "3. Generate an SSH key (Linux & macOS)",
+    "text": "3. Generate an SSH key (Linux & macOS)\nOpen a terminal and type:\n# create a new ssh key RSA (2048 bits) with no passphrase\nssh-keygen -t rsa -b 2048 -C \"your_email@example.com\"\n\n# press enter to accept default file location (~/.ssh/id_rsa)\n# press enter to use am empty passphrase"
+  },
+  {
+    "objectID": "setup.html#generate-an-ssh-key-windows-git-bash",
+    "href": "setup.html#generate-an-ssh-key-windows-git-bash",
+    "title": "Set up your framework",
+    "section": "3. Generate an SSH key (Windows, Git Bash)",
+    "text": "3. Generate an SSH key (Windows, Git Bash)\n\nOpen Git Bash\nRun:\n\n# create a new ssh key RSA (2048 bits) with no passphrase\nssh-keygen -t rsa -b 2048 -C \"your_email@example.com\"\n\n# press enter to accept default file location (~/.ssh/id_rsa)\n# press enter to use am empty passphrase \n\nKeys are saved by default in:\n\nC:\\Users\\&lt;YourUser&gt;\\.ssh\\id_rsa"
+  },
+  {
+    "objectID": "setup.html#add-the-ssh-key-to-github",
+    "href": "setup.html#add-the-ssh-key-to-github",
+    "title": "Set up your framework",
+    "section": "4. Add the SSH key to GitHub",
+    "text": "4. Add the SSH key to GitHub\n\nCopy the public key:\n\ncat ~/.ssh/id_rsa.pub\n(or open id_rsa.pub in a text editor on Windows)\n\nGo to GitHub → Settings → SSH and GPG keys\nClick New SSH key\nPaste the key, give it a name (e.g. My laptop), save"
+  },
+  {
+    "objectID": "setup.html#test-the-connection",
+    "href": "setup.html#test-the-connection",
+    "title": "Set up your framework",
+    "section": "5. Test the connection",
+    "text": "5. Test the connection\nRun:\nssh -T git@github.com\nIf successful, you’ll see:\nHi username! You've successfully authenticated, but GitHub does not provide shell access."
+  },
+  {
+    "objectID": "setup.html#configuration",
+    "href": "setup.html#configuration",
+    "title": "Set up your framework",
+    "section": "6. Configuration",
+    "text": "6. Configuration\nThe purpose of Git is to keep tracks of different versions of a project and their authors.\nTo do so, you need to be authenticated. Before using, specify your name\nThe first use after installation\n\ngit config --global user.email \"your email\"\ngit config --global user.name \"your name\"`\ngit config -l # check"
+  },
+  {
+    "objectID": "quarto.html#why-quarto",
+    "href": "quarto.html#why-quarto",
+    "title": "Quarto",
+    "section": "Why Quarto?",
+    "text": "Why Quarto?\n\nBridge towards the “winning trio” mentioned in the intro: Quarto, git, Docker\nOne source (.qmd) → many outputs: HTML report, PDF, slides, website\nQuarto is the successor of Rmarkdown, language-agnostic (R, Python, Julia, Observable)\nPreview: this very course website is built with Quarto"
+  },
+  {
+    "objectID": "quarto.html#what-is-a-markup-language",
+    "href": "quarto.html#what-is-a-markup-language",
+    "title": "Quarto",
+    "section": "What is a markup language?",
+    "text": "What is a markup language?\n\nSeparates content from formatting (vs. Word’s WYSIWYG)\nMarkdown syntax crash course: headers, lists, bold/italic, links, code spans\nWhy it matters for reproducibility: plain text = diffable\n\ndiff quarto.qmd quartobis.qmd\n\ngit-friendly"
+  },
+  {
+    "objectID": "quarto.html#installing-quarto-cli",
+    "href": "quarto.html#installing-quarto-cli",
+    "title": "Quarto",
+    "section": "Installing Quarto CLI",
+    "text": "Installing Quarto CLI\n\nDownload from https://quarto.org (mac/win/linux)\nCheck installation:\n\nquarto check\n\nwhat quarto check tells you (R/Python/Jupyter engines found)"
+  },
+  {
+    "objectID": "quarto.html#quarto-in-rstudio",
+    "href": "quarto.html#quarto-in-rstudio",
+    "title": "Quarto",
+    "section": "Quarto in RStudio",
+    "text": "Quarto in RStudio\n\nBuilt in since RStudio 2022.07 — no extra install\nNew File &gt; Quarto Document\nSource vs Visual editor (mention the diffing issue with Visual editor — link with git1)"
+  },
+  {
+    "objectID": "quarto.html#the-three-ingredients",
+    "href": "quarto.html#the-three-ingredients",
+    "title": "Quarto",
+    "section": "The three ingredients",
+    "text": "The three ingredients\n\nYAML header\nMarkdown text\nCode chunks"
+  },
+  {
+    "objectID": "quarto.html#minimal-yaml",
+    "href": "quarto.html#minimal-yaml",
+    "title": "Quarto",
+    "section": "Minimal YAML",
+    "text": "Minimal YAML\ntitle: \"My report\"\nauthor: \"Your name\"\nformat: html\n\nRender: quarto render mydoc.qmd or the Render button"
+  },
+  {
+    "objectID": "quarto.html#exercise",
+    "href": "quarto.html#exercise",
+    "title": "Quarto",
+    "section": "Exercise",
+    "text": "Exercise\n\nDownload Penguins_chapter.qmd\nAdd/edit the YAML header (title, author, date)\nRender it, check the output"
+  },
+  {
+    "objectID": "quarto.html#code-chunks",
+    "href": "quarto.html#code-chunks",
+    "title": "Quarto",
+    "section": "Code chunks",
+    "text": "Code chunks\n\n1 + 1\n\n[1] 2\n\n\n\nchunk options: echo, eval, warning, message\nalways set as #| lines at the top of the chunk (native Quarto syntax — not the old inline {r, echo=TRUE} Rmarkdown style)"
+  },
+  {
+    "objectID": "quarto.html#figures-generated",
+    "href": "quarto.html#figures-generated",
+    "title": "Quarto",
+    "section": "Figures — generated",
+    "text": "Figures — generated\n\n\nFigure 1: Caption"
+  },
+  {
+    "objectID": "quarto.html#figures-external",
+    "href": "quarto.html#figures-external",
+    "title": "Quarto",
+    "section": "Figures — external",
+    "text": "Figures — external\n![Caption2](https://github.com/MarieEtienne/OCR_TP/blob/main/images/6123849122_b66af201ea_c.jpg){#fig-external}"
+  },
+  {
+    "objectID": "quarto.html#equations",
+    "href": "quarto.html#equations",
+    "title": "Quarto",
+    "section": "Equations",
+    "text": "Equations\n\nInline: $\\bar{x}$\nDisplay:\n\n\\[\\hat\\mu = \\frac{1}{n}\\sum x_i \\qquad(1)\\]"
+  },
+  {
+    "objectID": "quarto.html#exercise-1",
+    "href": "quarto.html#exercise-1",
+    "title": "Quarto",
+    "section": "Exercise",
+    "text": "Exercise\n\nIn Penguins_chapter.qmd: add one generated figure and one equation, each with a label and refers to these same figure and equation in the text."
+  },
+  {
+    "objectID": "quarto.html#referencing-figures-and-equations",
+    "href": "quarto.html#referencing-figures-and-equations",
+    "title": "Quarto",
+    "section": "Referencing figures and equations",
+    "text": "Referencing figures and equations\n\n@fig-example, @eq-mean → auto-numbered, clickable\nWhy this matters more than manual “see Figure 2” (renumbering-proof)"
+  },
+  {
+    "objectID": "quarto.html#exercise-2",
+    "href": "quarto.html#exercise-2",
+    "title": "Quarto",
+    "section": "Exercise",
+    "text": "Exercise\n\nReference the figure and equation you just created in a sentence"
+  },
+  {
+    "objectID": "quarto.html#bibliography-file",
+    "href": "quarto.html#bibliography-file",
+    "title": "Quarto",
+    "section": "Bibliography file",
+    "text": "Bibliography file\n\n.bib file, referenced in YAML: bibliography: references.bib\nCiting: [@alston2021beginner] (already used in introduction.qmd — nice callback)\ncsl: for citation style"
+  },
+  {
+    "objectID": "quarto.html#where-do-references-come-from",
+    "href": "quarto.html#where-do-references-come-from",
+    "title": "Quarto",
+    "section": "Where do references come from?",
+    "text": "Where do references come from?\n\nZotero + Better BibTeX plugin → auto-export .bib\nOr hand-written entries"
+  },
+  {
+    "objectID": "quarto.html#exercise-3",
+    "href": "quarto.html#exercise-3",
+    "title": "Quarto",
+    "section": "Exercise",
+    "text": "Exercise\n\nAdd a bibliography entry, cite it in Penguins_chapter.qmd, render, check the References section appears"
+  },
+  {
+    "objectID": "quarto.html#why-a-website",
+    "href": "quarto.html#why-a-website",
+    "title": "Quarto",
+    "section": "Why a website?",
+    "text": "Why a website?\n\nA collection of .qmd files → one navigable site\nThis is exactly how OCR_TP (your final project) and “reproductibilite” (this courseà) are built"
+  },
+  {
+    "objectID": "quarto.html#the-_quarto.yml-file",
+    "href": "quarto.html#the-_quarto.yml-file",
+    "title": "Quarto",
+    "section": "The _quarto.yml file",
+    "text": "The _quarto.yml file\n\nProject-level config, sits next to your .qmd files\n\nproject:\n  type: website\n\nwebsite:\n  title: \"My site\"\n  navbar:\n    left:\n      - text: Home\n        href: index.qmd\n      - text: Chapter 1\n        href: chapter1.qmd\n\nControls: page order, navbar, sidebar, site-wide title"
+  },
+  {
+    "objectID": "quarto.html#minimal-website-structure",
+    "href": "quarto.html#minimal-website-structure",
+    "title": "Quarto",
+    "section": "Minimal website structure",
+    "text": "Minimal website structure\n\nindex.qmd → home page\none .qmd per page/chapter\n_quarto.yml → glue holding them together\nRender whole site: quarto render (not just one file)"
+  },
+  {
+    "objectID": "quarto.html#be-careful-with-visual-mode",
+    "href": "quarto.html#be-careful-with-visual-mode",
+    "title": "Quarto",
+    "section": "Be careful with Visual mode",
+    "text": "Be careful with Visual mode\nCheck the yaml header and focus on canonical: true in the editor section."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OCR – Online Collaborative Resources",
+    "section": "",
+    "text": "Welcome\nThe course OCR (Online Collaborative Resources) introduces tools and practices for reproducible and collaborative science.\nIt is designed for students who want to learn how to:\n\nOrganize their work for transparency and reproducibility\n\nUse version control systems such as Git\n\nCollaborate effectively on shared projects\n\nDocument analyses and results in a reproducible way\n\n\n\n\nCourse content\nDuring this course, you will explore:\n\nIntroduction\nWhy reproducibility and collaboration matter in science, and the main challenges researchers face.\nSetting up your framework\nInstalling and configuring the software environment (Git, Quarto, etc.).\nGit basics (working alone)\nUnderstanding repositories, commits, and tracking changes in your own projects.\nWorking collaboratively\nUsing branches, pull requests, and collaborative workflows on shared repositories.\nFinal assignment\nApplying what you learned in a collaborative project.\n\n\n\n\nFinal Assignment\nThe final project of this course is to collaboratively produce a set of well documented dataset.\n\nEach student will produce a basic description of a dataset and provide ideas of what statistical method could be used to explore this dataset.\n\nNotes will be written in Quarto (.qmd) files inside a shared repository.\n\nYou will practice quarto to produce generated figures, and cite bibliography.\n\nYou will practice Git collaboration by creating branches, making commits, and opening pull requests.\n\nYou will have to be careful as your production should not impact the work produced by others\nAt the end, all contributions will be merged into a collective resource: a mini-encyclopedia of nice ecological datasets to illustrate statistical concept .\n\nThis project will allow you to experience real-world collaborative workflows.\n\n\n\nHow to use this website\nUse the top menu to navigate through the course:\n\nIntroduction – motivations and context\n\nQuarto – a brief presentation of quarto to mix up codes and text\n\nSet up your Git framework – installing Git tools\n\nBasics in Git, working alone – first steps with Git\n\nWorking collaboratively – branches, merges, pull requests\n\nFinal assignment – description of the project and instructions\n\nStats Reminders – where all student contributions will appear"
+  },
+  {
+    "objectID": "introduction.html#motivations",
+    "href": "introduction.html#motivations",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Motivations",
+    "text": "Motivations\nReproducible science\nIn their paper, Alston and Rick (2021) address the question of science reproducibility in ecology.\nThe key aspects\nIt’s a growing trend: more and more journals require some elements of reproducibility."
+  },
+  {
+    "objectID": "introduction.html#motivations-1",
+    "href": "introduction.html#motivations-1",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Motivations",
+    "text": "Motivations\nPractically\nWhere is the correct version of the report?"
+  },
+  {
+    "objectID": "introduction.html#motivations-2",
+    "href": "introduction.html#motivations-2",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Motivations",
+    "text": "Motivations\nPractically\nAn explanation in images: vidéo by Ignasi Bartomeus."
+  },
+  {
+    "objectID": "introduction.html#course-objective",
+    "href": "introduction.html#course-objective",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Course objective",
+    "text": "Course objective\nIntroducing tools to facilitate step 2."
+  },
+  {
+    "objectID": "introduction.html#overview",
+    "href": "introduction.html#overview",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Overview",
+    "text": "Overview\nAround the code\nRmarkdown, Jupyter notebooks, Quarto to bring together code, results, and analysis. - vignettes in R packages\n- R help pages\n- some scientific papers (Computo asks for Jupyter/Quarto submissions)\n- dashboards …\nCode / paper writing\n\ngit for\n\nkeeping track of different versions of code\n\ncollective work\n\nreviewing and improving code quality"
+  },
+  {
+    "objectID": "introduction.html#overview-1",
+    "href": "introduction.html#overview-1",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "Overview",
+    "text": "Overview\nControlling software versions\nReproducibility also relies on stabilizing programming/library versions.\nThe container system Docker allows freezing a working software environment."
+  },
+  {
+    "objectID": "introduction.html#the-winning-trio-of-reproducible-research-with-r",
+    "href": "introduction.html#the-winning-trio-of-reproducible-research-with-r",
+    "title": "Reproducible science - motivation and basic tools",
+    "section": "The winning trio of reproducible research with R",
+    "text": "The winning trio of reproducible research with R\n\nQuarto markup language\n\ngit code versionning\nDocker Controlling software version (last 2 sessions with Theo Fabien)\n\n\n\n\n\nAlston, Jesse M, and Jessica A Rick. 2021. “A Beginner’s Guide to Conducting Reproducible Research.” Bulletin of the Ecological Society of America 102 (2): 1–14."
   }
 ]
