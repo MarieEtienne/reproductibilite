@@ -3,14 +3,16 @@ title: "Reproducible science - motivation and basic tools"
 author: Marie-Pierre Etienne
 date: '2024/07/24 (updated: `r Sys.Date()`)'
 institute: https://github.com/MarieEtienne/reproductibilite
-execute: 
+bibliography: OCR.bib
+execute:
   freeze: false
-editor: 
-  markdown: 
+editor:
+  markdown:
     wrap: 72
+    canonical: true
 css: mpe_pres_revealjs.css
 format:
-  revealjs: 
+  revealjs:
     theme: [default, custom.scss]
     width: 1050
     margin: 0.05
@@ -20,88 +22,69 @@ format:
       useTextContentForMissingTitles: false
 ---
 
-
-
-```{r setup, include = FALSE,  eval = TRUE}
-library(RefManageR)
-BibOptions(check.entries = FALSE,
-           bib.style = "authoryear",
-           cite.style = "alphabetic",
-           style = "markdown",
-           hyperlink = FALSE,
-           dashed = FALSE)
-myBib <- ReadBib('OCR.bib', check = FALSE)
-```
-
-
-
-## Motivations 
+## Motivations
 
 ### Reproducible science
 
-In their [paper](resources/bes2.1801.pdf) @alston2021beginner address the question of science reproducibility in ecology.  
+In their [paper](resources/bes2.1801.pdf), @alston2021beginner address
+the question of science reproducibility in ecology.
 
-The [key aspects](resources/bes2.1801_crop.pdf)  
+The [key aspects](resources/bes2.1801_crop.pdf)
 
-It’s a growing trend: more and more journals require some elements of reproducibility.
+It’s a growing trend: more and more journals require some elements of
+reproducibility.
 
-
-
-## Motivations 
+## Motivations
 
 ### Practically
 
 Where is the correct version of the report?
 
+![](resources/figs/rapports.png){width="600" height="450"}
 
-![](resources/figs/rapports.png){width=450 height=300}
-
-
-
-## Motivations 
+## Motivations
 
 ### Practically
 
-An explanation in images: [vidéo](https://youtu.be/s3JldKoA0zw) by [Ignasi Bartomeus](https://bartomeuslab.com/).
-
+An explanation in images: [vidéo](https://youtu.be/s3JldKoA0zw) by
+[Ignasi Bartomeus](https://bartomeuslab.com/).
 
 ## Course objective
 
 [Introducing tools to facilitate step 2.]{.h1}
 
+## Overview
 
-## Overview 
+### Around the code
+
+[[Rmarkdown](https://rmarkdown.rstudio.com/)]{.care}, [[Jupyter
+notebooks](https://jupyter.org/)]{.care},
+[[Quarto](https://quarto.org/)]{.care} to bring together code, results,
+and analysis. - vignettes in R packages\
+- R help pages\
+- some scientific papers ([Computo](https://computo.sfds.asso.fr/) asks
+for Jupyter/Quarto submissions)\
+- dashboards …
 
 ### Code / paper writing
 
 - [[git](https://git-scm.com/)]{.care} for
-  - keeping track of different versions of code  
-  - collective work  
-  - reviewing and improving code quality  
+  - keeping track of different versions of code\
+  - collective work\
+  - reviewing and improving code quality
 
-### Around the code
-
-- [[Rmarkdown](https://rmarkdown.rstudio.com/)]{.care}, [[Jupyter notebooks](https://jupyter.org/)]{.care},  [[Quarto](https://quarto.org/)]{.care} to bring together code, results, and analysis.  
-  - vignettes in R packages  
-  - R help pages  
-  - some scientific papers ([Computo](https://computo.sfds.asso.fr/) asks for Jupyter/Quarto submissions)  
-  - dashboards …
-
-## Overview 
-
+## Overview
 
 ### Controlling software versions
 
-Reproducibility also relies on stabilizing programming/library versions.  
+Reproducibility also relies on stabilizing programming/library versions.
 
-The container system [[Docker](https://www.docker.com/)]{.care} allows freezing a working software environment.
-
+The container system [[Docker](https://www.docker.com/)]{.care} allows
+freezing a working software environment.
 
 ## The winning trio of reproducible research with R
 
-- [git]{.care}  code versionning 
-- [Rmarkdown]{.care} markup language  
-- [Docker]{.care}  Controlling software version (last 2 sessions with Theo Fabien)
-
-
-
+- [Quarto]{.care} markup language\
+- [git]{.care} code versionning
+- [Docker]{.care} Controlling software version (last 2 sessions with
+  Theo Fabien)

@@ -1,0 +1,258 @@
+---
+title: "Quarto"
+author: Marie-Pierre Etienne
+date: '2026/09/01 (updated: `r Sys.Date()`)'
+institute: https://github.com/MarieEtienne/reproductibilite
+execute:
+  freeze: false
+editor:
+  markdown:
+    wrap: 72
+    canonical: true
+css: mpe_pres_revealjs.css
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    width: 1050
+    margin: 0.05
+    slide-number: true
+    show-slide-number: print
+    menu:
+      useTextContentForMissingTitles: false
+---
+
+# Quarto
+
+------------------------------------------------------------------------
+
+## Why Quarto?
+
+- Bridge towards the "winning trio" mentioned in the intro: Quarto, git,
+  Docker
+- One source (`.qmd`) → many outputs: HTML report, PDF, slides, website
+- Quarto is the successor of Rmarkdown, language-agnostic (R, Python,
+  Julia, Observable)
+- Preview: this very course website is built with Quarto
+
+------------------------------------------------------------------------
+
+## What is a markup language?
+
+- Separates content from formatting (vs. Word's WYSIWYG)
+- Markdown syntax crash course: headers, lists, bold/italic, links, code
+  spans
+- Why it matters for reproducibility: plain text = diffable
+
+``` bash
+diff quarto.qmd quartobis.qmd
+```
+
+- git-friendly
+
+# Installation
+
+------------------------------------------------------------------------
+
+## Installing Quarto CLI
+
+1.  Download from <https://quarto.org> (mac/win/linux)
+2.  Check installation:
+
+``` bash
+quarto check
+```
+
+- what `quarto check` tells you (R/Python/Jupyter engines found)
+
+------------------------------------------------------------------------
+
+## Quarto in RStudio
+
+- Built in since RStudio 2022.07 — no extra install
+- New File \> Quarto Document
+- Source vs Visual editor (mention the diffing issue with Visual editor
+  — link with `git1`)
+
+# Anatomy of a .qmd file
+
+------------------------------------------------------------------------
+
+## The three ingredients
+
+- YAML header
+- Markdown text
+- Code chunks
+
+------------------------------------------------------------------------
+
+## Minimal YAML
+
+``` yaml
+title: "My report"
+author: "Your name"
+format: html
+```
+
+- Render: `quarto render mydoc.qmd` or the Render button
+
+------------------------------------------------------------------------
+
+## Exercise
+
+- Download
+  [Penguins_chapter.qmd](https://raw.githubusercontent.com/MarieEtienne/OCR_TP/refs/heads/main/Penguins_chapter.qmd)
+- Add/edit the YAML header (title, author, date)
+- Render it, check the output
+
+# Rich content
+
+------------------------------------------------------------------------
+
+## Code chunks
+
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+1 + 1
+```
+
+- chunk options: `echo`, `eval`, `warning`, `message`
+- always set as `#|` lines at the top of the chunk (native Quarto syntax
+  — not the old inline `{r, echo=TRUE}` Rmarkdown style)
+
+------------------------------------------------------------------------
+
+## Figures — generated
+
+```{r}
+#| label: fig-example
+#| fig-cap: "Caption"
+#| eval: true
+library(ggplot2)
+penguins_dta <- read.table('https://raw.githubusercontent.com/MarieEtienne/OCR_TP/refs/heads/main/penguins_raw.csv',
+                           header=TRUE, sep = ',')
+penguins_dta |> ggplot() + 
+  aes(x=Body.Mass..g., y= Flipper.Length..mm.) + 
+  geom_point()
+```
+
+## Figures — external
+
+``` markdown
+![Caption2](https://github.com/MarieEtienne/OCR_TP/blob/main/images/6123849122_b66af201ea_c.jpg){#fig-external}
+```
+
+------------------------------------------------------------------------
+
+## Equations
+
+- Inline: `$\bar{x}$`
+- Display:
+
+$$\hat\mu = \frac{1}{n}\sum x_i$$ {#eq-mean}
+
+------------------------------------------------------------------------
+
+## Exercise
+
+- In `Penguins_chapter.qmd`: add one generated figure and one equation,
+  each with a label and refers to these same figure and equation in the
+  text.
+
+# Cross-references
+
+------------------------------------------------------------------------
+
+## Referencing figures and equations
+
+- `@fig-example`, `@eq-mean` → auto-numbered, clickable
+- Why this matters more than manual "see Figure 2" (renumbering-proof)
+
+------------------------------------------------------------------------
+
+## Exercise
+
+- Reference the figure and equation you just created in a sentence
+
+# Managing a bibliography
+
+------------------------------------------------------------------------
+
+## Bibliography file
+
+- `.bib` file, referenced in YAML: `bibliography: references.bib`
+- Citing: `[@alston2021beginner]` (already used in `introduction.qmd` —
+  nice callback)
+- `csl:` for citation style
+
+------------------------------------------------------------------------
+
+## Where do references come from?
+
+- Zotero + Better BibTeX plugin → auto-export `.bib`
+- Or hand-written entries
+
+------------------------------------------------------------------------
+
+## Exercise
+
+- Add a bibliography entry, cite it in `Penguins_chapter.qmd`, render,
+  check the References section appears
+
+# From a document to a website
+
+------------------------------------------------------------------------
+
+## Why a website?
+
+- A collection of `.qmd` files → one navigable site
+- This is exactly how `OCR_TP` (your final project) and
+  "reproductibilite" (this courseà) are built
+
+------------------------------------------------------------------------
+
+## The \_quarto.yml file
+
+- Project-level config, sits next to your `.qmd` files
+
+``` yaml
+project:
+  type: website
+
+website:
+  title: "My site"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Chapter 1
+        href: chapter1.qmd
+```
+
+- Controls: page order, navbar, sidebar, site-wide title
+
+------------------------------------------------------------------------
+
+## Minimal website structure
+
+- `index.qmd` → home page
+- one `.qmd` per page/chapter
+- `_quarto.yml` → glue holding them together
+- Render whole site: `quarto render` (not just one file)
+
+------------------------------------------------------------------------
+
+# Warnings
+
+## Be careful with Visual mode
+
+Check the yaml header and focus on canonical: true in the editor
+section.
+
+# ✅ Quarto basics complete
+
+[You can now write a reproducible `.qmd` combining text, code, figures,
+equations and citations — and turn a set of `.qmd` files into a website,
+ready for the final assignment.]{.care} as soon as you will masterize
+the git concepts.

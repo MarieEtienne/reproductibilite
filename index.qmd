@@ -4,6 +4,10 @@ author: Marie-Pierre Etienne
 institute: https://github.com/MarieEtienne/reproductibilite
 format: html
 toc: true
+editor:
+  markdown:
+    wrap: 72
+    canonical: true
 date: last-modified
 date-format: "[Last Updated on] MMM D, YYYY"
 execute: 
@@ -12,60 +16,77 @@ execute:
 
 # Welcome
 
-The course **OCR (Online Collaborative Resources)** introduces tools and practices for **reproducible and collaborative science**.  
-It is designed for students who want to learn how to:  
+The course **OCR (Online Collaborative Resources)** introduces tools and
+practices for **reproducible and collaborative science**.\
+It is designed for students who want to learn how to:
 
-- Organize their work for transparency and reproducibility  
-- Use version control systems such as **Git**  
-- Collaborate effectively on shared projects  
-- Document analyses and results in a reproducible way  
+- Organize their work for transparency and reproducibility\
+- Use version control systems such as **Git**\
+- Collaborate effectively on shared projects\
+- Document analyses and results in a reproducible way
 
----
+------------------------------------------------------------------------
 
 # Course content
 
 During this course, you will explore:
 
-1. **Introduction**  
-   Why reproducibility and collaboration matter in science, and the main challenges researchers face.  
+1.  **Introduction**\
+    Why reproducibility and collaboration matter in science, and the
+    main challenges researchers face.
 
-2. **Setting up your framework**  
-   Installing and configuring the software environment (Git, Quarto, etc.).  
+2.  **Setting up your framework**\
+    Installing and configuring the software environment (Git, Quarto,
+    etc.).
 
-3. **Git basics (working alone)**  
-   Understanding repositories, commits, and tracking changes in your own projects.  
+3.  **Git basics (working alone)**\
+    Understanding repositories, commits, and tracking changes in your
+    own projects.
 
-4. **Working collaboratively**  
-   Using branches, pull requests, and collaborative workflows on shared repositories.  
+4.  **Working collaboratively**\
+    Using branches, pull requests, and collaborative workflows on shared
+    repositories.
 
-5. **Final assignment**  
-   Applying what you learned in a collaborative project.
+5.  **Final assignment**\
+    Applying what you learned in a collaborative project.
 
----
+------------------------------------------------------------------------
 
 # Final Assignment
 
-The final project of this course is to **collaboratively produce a set of reminders about basic statistical concepts**.  
+The final project of this course is to **collaboratively produce a set
+of well documented dataset**.
 
-- Each student will write a short note (max 1 page) on a chosen concept (e.g., mean, variance, regression, probability).  
-- Notes will be written in **Quarto (`.qmd`) files** inside a shared repository.  
-- You will practice **Git collaboration** by creating branches, making commits, and opening pull requests.  
-- You are also requested to review others' production and provide useful comments, accet or not pull requests
-- At the end, all contributions will be merged into a **collective resource: a mini-encyclopedia of statistics reminders**.  
+- Each student will produce a basic description of a dataset and provide
+  ideas of what statistical method could be used to explore this
+  dataset.\
+- Notes will be written in **Quarto (`.qmd`) files** inside a shared
+  repository.\
+- You will practice **quarto** to produce generated figures, and cite
+  bibliography.\
+- You will practice **Git collaboration** by creating branches, making
+  commits, and opening pull requests.\
+- You will have to be careful as your production should not impact the
+  work produced by others
+- At the end, all contributions will be merged into a **collective
+  resource: a mini-encyclopedia of nice ecological datasets to
+  illustrate statistical concept** .
 
-This project will allow you to **experience real-world collaborative workflows** while reinforcing key concepts in statistics.  
+This project will allow you to **experience real-world collaborative
+workflows**.
 
----
+------------------------------------------------------------------------
 
 # How to use this website
 
-Use the top menu to navigate through the course:  
+Use the top menu to navigate through the course:
 
-- **Introduction** – motivations and context  
-- **Set up your framework** – installing tools  
-- **Basics in git, working alone** – first steps with Git  
-- **Working collaboratively** – branches, merges, pull requests  
-- **Final assignment** – description of the project and instructions  
-- **Stats Reminders** – where all student contributions will appear  
+- **Introduction** – motivations and context\
+- **Quarto** – a brief presentation of quarto to mix up codes and text\
+- **Set up your Git framework** – installing Git tools\
+- **Basics in Git, working alone** – first steps with Git\
+- **Working collaboratively** – branches, merges, pull requests\
+- **Final assignment** – description of the project and instructions\
+- **Stats Reminders** – where all student contributions will appear
 
----
+------------------------------------------------------------------------
