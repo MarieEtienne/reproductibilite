@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Marie-Pierre Etienne">
-  <meta name="dcterms.date" content="2024-07-24">
-  <title>Reproducible science - motivation and basic tools</title>
+  <meta name="dcterms.date" content="2026-09-01">
+  <title>Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,27 +29,73 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
     }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-e0c7ac129122cc7fb151e4cf0ee867a5.css">
   <link rel="stylesheet" href="mpe_pres_revealjs.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -149,7 +195,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Reproducible science - motivation and basic tools</h1>
+  <h1 class="title">Quarto</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -162,70 +208,229 @@ Marie-Pierre Etienne
     </div>
 </div>
 
-  <p class="date">2024-07-24</p>
+  <p class="date">2026-09-01</p>
 </section>
-<section id="motivations" class="slide level2">
-<h2>Motivations</h2>
-<h3 id="reproducible-science">Reproducible science</h3>
-<p>In their <a href="resources/bes2.1801.pdf">paper</a>, <span class="citation" data-cites="alston2021beginner">Alston and Rick (<a href="#/the-winning-trio-of-reproducible-research-with-r" role="doc-biblioref" onclick="">2021</a>)</span> address the question of science reproducibility in ecology.</p>
-<p>The <a href="resources/bes2.1801_crop.pdf">key aspects</a></p>
-<p>It’s a growing trend: more and more journals require some elements of reproducibility.</p>
+<section>
+<section id="quarto" class="title-slide slide level1 center">
+<h1>Quarto</h1>
+
 </section>
-<section id="motivations-1" class="slide level2">
-<h2>Motivations</h2>
-<h3 id="practically">Practically</h3>
-<p>Where is the correct version of the report?</p>
-<p><img data-src="resources/figs/rapports.png" width="600" height="450"></p>
-</section>
-<section id="motivations-2" class="slide level2">
-<h2>Motivations</h2>
-<h3 id="practically-1">Practically</h3>
-<p>An explanation in images: <a href="https://youtu.be/s3JldKoA0zw">vidéo</a> by <a href="https://bartomeuslab.com/">Ignasi Bartomeus</a>.</p>
-</section>
-<section id="course-objective" class="slide level2">
-<h2>Course objective</h2>
-<p><span class="h1">Introducing tools to facilitate step 2.</span></p>
-</section>
-<section id="overview" class="slide level2">
-<h2>Overview</h2>
-<h3 id="around-the-code">Around the code</h3>
-<p><span class="care"><a href="https://rmarkdown.rstudio.com/">Rmarkdown</a></span>, <span class="care"><a href="https://jupyter.org/">Jupyter notebooks</a></span>, <span class="care"><a href="https://quarto.org/">Quarto</a></span> to bring together code, results, and analysis. - vignettes in R packages<br>
-- R help pages<br>
-- some scientific papers (<a href="https://computo.sfds.asso.fr/">Computo</a> asks for Jupyter/Quarto submissions)<br>
-- dashboards …</p>
-<h3 id="code-paper-writing">Code / paper writing</h3>
+<section id="why-quarto" class="slide level2">
+<h2>Why Quarto?</h2>
 <ul>
-<li><span class="care"><a href="https://git-scm.com/">git</a></span> for
-<ul>
-<li>keeping track of different versions of code<br>
-</li>
-<li>collective work<br>
-</li>
-<li>reviewing and improving code quality</li>
-</ul></li>
+<li>Bridge towards the “winning trio” mentioned in the intro: git, Rmarkdown / Quarto, Docker</li>
+<li>One source (<code>.qmd</code>) → many outputs: HTML report, PDF, slides, website</li>
+<li>Quarto is the successor of Rmarkdown, language-agnostic (R, Python, Julia, Observable)</li>
+<li>Preview: this very course website is built with Quarto</li>
 </ul>
 </section>
-<section id="overview-1" class="slide level2">
-<h2>Overview</h2>
-<h3 id="controlling-software-versions">Controlling software versions</h3>
-<p>Reproducibility also relies on stabilizing programming/library versions.</p>
-<p>The container system <span class="care"><a href="https://www.docker.com/">Docker</a></span> allows freezing a working software environment.</p>
-</section>
-<section id="the-winning-trio-of-reproducible-research-with-r" class="slide level2 smaller scrollable">
-<h2>The winning trio of reproducible research with R</h2>
+<section id="what-is-a-markup-language" class="slide level2">
+<h2>What is a markup language?</h2>
 <ul>
-<li><span class="care">Quarto</span> markup language<br>
-</li>
-<li><span class="care">git</span> code versionning</li>
-<li><span class="care">Docker</span> Controlling software version (last 2 sessions with Theo Fabien)</li>
+<li>Separates content from formatting (vs.&nbsp;Word’s WYSIWYG)</li>
+<li>Markdown syntax crash course: headers, lists, bold/italic, links, code spans</li>
+<li>Why it matters for reproducibility: plain text = diffable = git-friendly</li>
 </ul>
+</section></section>
+<section>
+<section id="installation" class="title-slide slide level1 center">
+<h1>Installation</h1>
 
+</section>
+<section id="installing-quarto-cli" class="slide level2">
+<h2>Installing Quarto CLI</h2>
+<ol type="1">
+<li>Download from <a href="https://quarto.org" class="uri">https://quarto.org</a> (mac/win/linux)</li>
+<li>Check installation:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>what <code>quarto check</code> tells you (R/Python/Jupyter engines found)</li>
+</ul>
+</section>
+<section id="quarto-in-rstudio" class="slide level2">
+<h2>Quarto in RStudio</h2>
+<ul>
+<li>Built in since RStudio 2022.07 — no extra install</li>
+<li>New File &gt; Quarto Document</li>
+<li>Source vs Visual editor (mention the diffing issue with Visual editor — link with <code>git1</code>)</li>
+</ul>
+</section></section>
+<section>
+<section id="anatomy-of-a-.qmd-file" class="title-slide slide level1 center">
+<h1>Anatomy of a .qmd file</h1>
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-alston2021beginner" class="csl-entry" role="listitem">
-Alston, Jesse M, and Jessica A Rick. 2021. <span>“A Beginner’s Guide to Conducting Reproducible Research.”</span> <em>Bulletin of the Ecological Society of America</em> 102 (2): 1–14.
+</section>
+<section id="the-three-ingredients" class="slide level2">
+<h2>The three ingredients</h2>
+<ul>
+<li>YAML header</li>
+<li>Markdown text</li>
+<li>Code chunks</li>
+</ul>
+</section>
+<section id="minimal-yaml" class="slide level2">
+<h2>Minimal YAML</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My report"</span></span>
+<span id="cb2-2"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your name"</span></span>
+<span id="cb2-3"><a></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Render: <code>quarto render mydoc.qmd</code> or the Render button</li>
+</ul>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li>Download <a href="Penguins_chapter.qmd">Penguins_chapter.qmd</a> Penguins_chapter.qmd` for (Penguins_chapter.qmd)</li>
+<li>Add/edit the YAML header (title, author, date)</li>
+<li>Render it, check the output</li>
+</ul>
+</section></section>
+<section>
+<section id="rich-content" class="title-slide slide level1 center">
+<h1>Rich content</h1>
+
+</section>
+<section id="code-chunks" class="slide level2">
+<h2>Code chunks</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
 </div>
 </div>
+<ul>
+<li>chunk options: <code>echo</code>, <code>eval</code>, <code>warning</code>, <code>message</code></li>
+<li>always set as <code>#|</code> lines at the top of the chunk (native Quarto syntax — not the old inline <code>{r, echo=TRUE}</code> Rmarkdown style)</li>
+</ul>
+</section>
+<section id="figures-generated" class="slide level2">
+<h2>Figures — generated</h2>
+</section>
+<section id="figures-external" class="slide level2">
+<h2>Figures — external</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a></a><span class="al">![Caption](path/to/image.png)</span>{#fig-external}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="equations" class="slide level2">
+<h2>Equations</h2>
+<ul>
+<li>Inline: <code>$\bar{x}$</code></li>
+<li>Display:</li>
+</ul>
+<p><span id="eq-mean"><span class="math display">\[\hat\mu = \frac{1}{n}\sum x_i \qquad(1)\]</span></span></p>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li>In <code>Penguins_chapter.qmd</code>: add one generated figure and one equation, each with a label</li>
+</ul>
+</section></section>
+<section>
+<section id="cross-references" class="title-slide slide level1 center">
+<h1>Cross-references</h1>
+
+</section>
+<section id="referencing-figures-and-equations" class="slide level2">
+<h2>Referencing figures and equations</h2>
+<ul>
+<li><code>@fig-example</code>, <code>@eq-mean</code> → auto-numbered, clickable</li>
+<li>Why this matters more than manual “see Figure 2” (renumbering-proof)</li>
+</ul>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li>Reference the figure and equation you just created in a sentence</li>
+</ul>
+</section></section>
+<section>
+<section id="managing-a-bibliography" class="title-slide slide level1 center">
+<h1>Managing a bibliography</h1>
+
+</section>
+<section id="bibliography-file" class="slide level2">
+<h2>Bibliography file</h2>
+<ul>
+<li><code>.bib</code> file, referenced in YAML: <code>bibliography: references.bib</code></li>
+<li>Citing: <code>[@alston2021beginner]</code> (already used in <code>introduction.qmd</code> — nice callback)</li>
+<li><code>csl:</code> for citation style</li>
+</ul>
+</section>
+<section id="where-do-references-come-from" class="slide level2">
+<h2>Where do references come from?</h2>
+<ul>
+<li>Zotero + Better BibTeX plugin → auto-export <code>.bib</code></li>
+<li>Or hand-written entries</li>
+</ul>
+</section>
+<section id="exercise-3" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li>Add a bibliography entry, cite it in <code>Penguins_chapter.qmd</code>, render, check the References section appears</li>
+</ul>
+</section></section>
+<section>
+<section id="from-a-document-to-a-website" class="title-slide slide level1 center">
+<h1>From a document to a website</h1>
+
+</section>
+<section id="why-a-website" class="slide level2">
+<h2>Why a website?</h2>
+<ul>
+<li>A collection of <code>.qmd</code> files → one navigable site</li>
+<li>This is exactly how <code>stats-reminders</code> (your final project) is built</li>
+<li>Also how this very course site is built</li>
+</ul>
+</section>
+<section id="the-_quarto.yml-file" class="slide level2">
+<h2>The _quarto.yml file</h2>
+<ul>
+<li>Project-level config, sits next to your <code>.qmd</code> files</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb6-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb6-5"><a></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My site"</span></span>
+<span id="cb6-6"><a></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb6-7"><a></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb6-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb6-9"><a></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb6-10"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Chapter 1</span></span>
+<span id="cb6-11"><a></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> chapter1.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Controls: page order, navbar, sidebar, site-wide title</li>
+</ul>
+</section>
+<section id="minimal-website-structure" class="slide level2">
+<h2>Minimal website structure</h2>
+<ul>
+<li><code>index.qmd</code> → home page</li>
+<li>one <code>.qmd</code> per page/chapter</li>
+<li><code>_quarto.yml</code> → glue holding them together</li>
+<li>Render whole site: <code>quarto render</code> (not just one file)</li>
+</ul>
+</section>
+<section id="exercise-4" class="slide level2">
+<h2>Exercise</h2>
+<ul>
+<li>In your local clone of <code>stats-reminders</code>, open <code>_quarto.yml</code></li>
+<li>Find where <code>Penguins_chapter.qmd</code> is listed in the navbar menu</li>
+<li>Add a dummy entry pointing to a new page, create that empty <code>.qmd</code>, render the site locally</li>
+<li>(Preview) <code>quarto preview</code> — live reload while editing</li>
+</ul>
+</section>
+<section id="publishing-teaser" class="slide level2">
+<h2>Publishing (teaser)</h2>
+<ul>
+<li><code>quarto publish gh-pages</code> → what happens next session with <code>git2</code> (push, PR, collective site grows)</li>
+</ul>
+</section></section>
+<section id="quarto-basics-complete" class="title-slide slide level1 center">
+<h1>✅ Quarto basics complete</h1>
+<p><span class="care">You can now write a reproducible <code>.qmd</code> combining text, code, figures, equations and citations — and turn a set of <code>.qmd</code> files into a website, ready for the final assignment.</span></p>
+
+
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -442,6 +647,44 @@ Alston, Jesse M, and Jessica A Rick. 2021. <span>“A Beginner’s Guide to Cond
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
