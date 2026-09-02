@@ -333,63 +333,98 @@
     "href": "git1.html#cloning-an-existing-reprository",
     "title": "Basics in git, working alone",
     "section": "Cloning an existing reprository",
-    "text": "Cloning an existing reprository\nThis means copy locally on your computer the content of a repository which means\n\ncopy the actual code and text contents\ncopy the history of all changes\n\nBefore using Git, we need basic bash commands"
-  },
-  {
-    "objectID": "git1.html#first-element---navigating-using-bash-command",
-    "href": "git1.html#first-element---navigating-using-bash-command",
-    "title": "Basics in git, working alone",
-    "section": "First element - navigating using bash command",
-    "text": "First element - navigating using bash command\nNavigating Directories in the Terminal / Git Bash\n\nChecking where you are\n\n\n$ pwd\n/home/marie/projects\n\n\nListing files\n\n\nls -l #→ long listing\nls -a #→ include hidden files\n\n\nMoving between directories\n\n\n\n\nAction\nLinux/macOS/Git Bash\nWindows Command Prompt\n\n\n\n\nGo to a directory\ncd folder_name\ncd folder_name\n\n\nGo up one level\ncd ..\ncd ..\n\n\nGo to home\ncd ~\ncd %USERPROFILE%\n\n\nAbsolute path\ncd /path/to/folder\ncd C:\\path\\to\\folder"
-  },
-  {
-    "objectID": "git1.html#first-element---navigating-using-bash-command-1",
-    "href": "git1.html#first-element---navigating-using-bash-command-1",
-    "title": "Basics in git, working alone",
-    "section": "First element - navigating using bash command",
-    "text": "First element - navigating using bash command\n\nCreate a directory\n\n\nmkdir my_git_dir\n\n\nRemoving files or directory\n\n\nrm my_file\nrmdir my_dir #remove an empty dir\nrm -rf my_dir #remove a directeory and everything inside ! Careful\n\n\nQuick tips\n\nUse Tab for autocomplete paths and filenames.\nPaths on Git Bash use /, even on Windows (/c/Users/...)."
-  },
-  {
-    "objectID": "git1.html#exercise",
-    "href": "git1.html#exercise",
-    "title": "Basics in git, working alone",
-    "section": "Exercise",
-    "text": "Exercise\n\nGo to your home directory (/home/loginin Linux, probably somethin like C:/Users/yourusername in Windows)\nCreate a directory named git, where you will store all your git projects\nJump within this directory\nlist the files contained in this directory\nCreate a test_dir directory\nJump outside the git directory\nRemove the git directory and everything it contains\nCreate a directory named git, where you will store all your git projects"
+    "text": "Cloning an existing reprository\nThis means copy locally on your computer the content of a repository which means\n\ncopy the actual code and text contents\ncopy the history of all changes\n\nWe will be using Git in CLI. The relevant command in CLI are given in the survival kit. The most useful git command will be discovered during the course"
   },
   {
     "objectID": "git1.html#cloning-an-existing-reprository-1",
     "href": "git1.html#cloning-an-existing-reprository-1",
     "title": "Basics in git, working alone",
     "section": "Cloning an existing reprository",
-    "text": "Cloning an existing reprository\nGo to your git Directory and write\n\ngit clone git@github.com:MarieEtienne/stats-reminders.git\n\nWhat is happening ?\n\nls\ncd stats-reminders\nls\n\nWhere to find this magical address to clone\nNavigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address."
+    "text": "Cloning an existing reprository\nGo to your git Directory and write\n#| echo: true\n#| eval: false\ngit clone git@github.com:MarieEtienne/OCR_TP.git\nWhat is happening ?\n#| echo: true\n#| eval: false\nls\ncd OCR_TP\nls\nWhere to find this magical address to clone\nNavigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address."
   },
   {
     "objectID": "git1.html#reviewing-the-code-development",
     "href": "git1.html#reviewing-the-code-development",
     "title": "Basics in git, working alone",
     "section": "Reviewing the code development",
-    "text": "Reviewing the code development\n\ngit log\ngit log --oneline\ngitk"
+    "text": "Reviewing the code development\ngit log\n\nShows the full history: commit hash, author, date, message\nMost recent commit first\n\n\ngit log --oneline\n\nSame history, condensed to one line per commit (short hash + message)\nMuch easier to scan when the history grows\n\n\n\ngitk\n\nGraphical viewer for the same history"
+  },
+  {
+    "objectID": "git1.html#visualizing-the-commit-tree",
+    "href": "git1.html#visualizing-the-commit-tree",
+    "title": "Basics in git, working alone",
+    "section": "Visualizing the commit tree",
+    "text": "Visualizing the commit tree\nEach commit points to its parent — this is what git log is walking through, one line at a time:\n\n\n\n\n\n%%{init: { 'theme': 'neutral' } }%%\ngitGraph\n   commit id: \"Initial commit\"\n   commit id: \"Add README\"\n   commit id: \"Fix typo\"\n   commit id: \"Add Penguins_chapter.qmd\"\n\n\n\n\n\n\n\ngit log --oneline shows this same sequence, most recent on top\nWe’ll come back to this graph once branches enter the picture"
   },
   {
     "objectID": "git1.html#forking-an-existing-repository",
     "href": "git1.html#forking-an-existing-repository",
     "title": "Basics in git, working alone",
     "section": "Forking an existing repository",
-    "text": "Forking an existing repository\nWhat is forking?\nForking creates your own copy of someone else’s repository in your GitHub account. This lets you experiment with changes without affecting the original project. How to fork a repo:\nHow\nNavigate to the repository you want to fork on GitHub Click the “Fork” button in the top-right corner of the repository page Choose where to fork it - usually to your personal account Wait a moment - GitHub will create the copy in your account\nWhat happens next:\nYou’ll have a complete copy of the repo in your GitHub account You can clone this forked version to your local machine using git clone Make changes, commit them, and push back to your fork If you want to contribute back to the original project, you can create a pull request\nKey points\nYour fork is independent of the original repo You have full control over your forked version The original repo remains unchanged unless you submit a pull request that gets accepted You can sync your fork with the original repo later if it gets updated\nThis workflow is essential for contributing to open-source projects or collaborating on code when you don’t have direct write access to the original repository."
+    "text": "Forking an existing repository\nWhat is forking?\nForking creates your own copy of someone else’s repository in your GitHub account. This lets you experiment with changes without affecting the original project. How to fork a repo:\nHow\nNavigate to the repository you want to fork on GitHub Click the “Fork” button in the top-right corner of the repository page Choose where to fork it - usually to your personal account Wait a moment - GitHub will create the copy in your account\nWhat happens next:\nYou’ll have a complete copy of the repo in your GitHub account You can clone this forked version to your local machine using git clone Make changes, commit them, and push back to your fork If you want to contribute back to the original project, you can create a pull request\nKey points\nYour fork is independent of the original repo. You have full control over your forked version The original repo remains unchanged unless you submit a pull request that gets accepted You can sync your fork with the original repo later if it gets updated\nThis workflow is essential for contributing to open-source projects or collaborating on code when you don’t have direct write access to the original repository."
   },
   {
-    "objectID": "git1.html#exercise-1",
-    "href": "git1.html#exercise-1",
+    "objectID": "git1.html#exercise",
+    "href": "git1.html#exercise",
     "title": "Basics in git, working alone",
     "section": "Exercise",
-    "text": "Exercise\n\nRemove the stats-reminder directory and its content\nFork https://github.com/MarieEtienne/stats-reminders on your personnal GitHub account\nclone your version of stats-reminder\nShow the history of this file"
+    "text": "Exercise\n\nRemove the OCR_TP and its content\nFork https://github.com/MarieEtienne/OCR_TP on your personnal GitHub account\nclone your version of OCR_TP\nShow the history of this file"
   },
   {
     "objectID": "git1.html#your-first-commit",
     "href": "git1.html#your-first-commit",
     "title": "Basics in git, working alone",
     "section": "Your first commit",
-    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\n\ngit status # project status\ngit diff\n\n\n\n\nType the command git add penguins.Rmd, then repeat the previous commands.\nType the command git commit -m \"Added an author\", and once again check the project status.\nCheck the project on Github\nType the command git push\", and once again check the project on Github"
+    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\ngit status # project status\ngit diff\n\n\n\nType the command git add penguins.Rmd, then repeat the previous commands.\nType the command git commit -m \"Added an author\", and once again check the project status.\nCheck the project on Github\nType the command git push\", and once again check the project on Github"
+  },
+  {
+    "objectID": "git1.html#what-is-a-branch",
+    "href": "git1.html#what-is-a-branch",
+    "title": "Basics in git, working alone",
+    "section": "What is a branch?",
+    "text": "What is a branch?\n\nA branch is just a movable pointer to a commit\nmain (or master) is the default branch — the one you’ve been committing to so far\nA new branch lets you work on something (an experiment, a fix, a chapter) without touching main until you’re ready\n\n\n\n\n\n\n\n%%{init: { 'theme': 'neutral' } }%%\ngitGraph\n   commit id: \"Initial commit\"\n   commit id: \"Add Penguins_chapter.qmd\"\n   branch feature\n   checkout feature\n   commit id: \"Try something new\"\n   checkout main\n   commit id: \"Fix typo\"\n\n\n\n\n\n\n\nmain keeps moving forward on its own\nfeature diverges from the commit it was created on"
+  },
+  {
+    "objectID": "git1.html#creating-and-listing-branches",
+    "href": "git1.html#creating-and-listing-branches",
+    "title": "Basics in git, working alone",
+    "section": "Creating and listing branches",
+    "text": "Creating and listing branches\ngit branch          # list all local branches (* marks the current one)\ngit branch new_branch   # create a new branch (does NOT switch to it)"
+  },
+  {
+    "objectID": "git1.html#switching-branches",
+    "href": "git1.html#switching-branches",
+    "title": "Basics in git, working alone",
+    "section": "Switching branches",
+    "text": "Switching branches\ngit switch new_branch   # move to an existing branch\ngit switch main          # move back\n\ngit switch changes which branch you’re working on — your files in the working directory are updated to match that branch\nShortcut: create and switch in one command\n\ngit switch -c new_branch\n\n\n\n\n\n\nNote\n\n\nYou may see git checkout new_branch used for the same purpose in older tutorials — git switch is the newer, clearer command introduced specifically to replace this use of checkout."
+  },
+  {
+    "objectID": "git1.html#walking-through-past-commits",
+    "href": "git1.html#walking-through-past-commits",
+    "title": "Basics in git, working alone",
+    "section": "Walking through past commits",
+    "text": "Walking through past commits\nEvery commit in git log --oneline has a short hash/name (e.g. a1b2c3d) — you can jump straight to it, not just to a branch:\ngit log --oneline        # find the hash you want\ngit switch --detach a1b2c3d   # move to that exact commit\n\nYour files now look exactly as they did at that commit\nThis is called detached HEAD: you’re not on any branch anymore, just visiting a point in history\n\n\n\n\n\n\n%%{init: { 'theme': 'neutral' } }%%\ngitGraph\n   commit id: \"Initial commit\"\n   commit id: \"Add README\"\n   commit id: \"Fix typo\"\n   commit id: \"Add Penguins_chapter.qmd\"\n\n\n\n\n\n\n\ne.g. git switch --detach to the “Fix typo” commit lets you look around as if you were back at that moment"
+  },
+  {
+    "objectID": "git1.html#coming-back",
+    "href": "git1.html#coming-back",
+    "title": "Basics in git, working alone",
+    "section": "Coming back",
+    "text": "Coming back\ngit switch main\n\nLeaves the detached HEAD and returns to the tip of main\n\n\n\n\n\n\n\nImportant\n\n\nIf you commit while in detached HEAD and then git switch away without creating a branch first, that commit becomes hard to find again. If you want to keep working from a past commit, create a branch from there:\ngit switch --detach a1b2c3d\ngit switch -c new_branch_from_past   # now it's safe to commit"
+  },
+  {
+    "objectID": "git1.html#peeking-without-moving",
+    "href": "git1.html#peeking-without-moving",
+    "title": "Basics in git, working alone",
+    "section": "Peeking without moving",
+    "text": "Peeking without moving\nIf you just want to see what a file looked like at a given commit, without leaving your current branch:\ngit show a1b2c3d:Penguins_chapter.qmd   # print the file as it was then\ngit diff a1b2c3d main                   # compare that commit to now"
+  },
+  {
+    "objectID": "git1.html#exercise-1",
+    "href": "git1.html#exercise-1",
+    "title": "Basics in git, working alone",
+    "section": "Exercise",
+    "text": "Exercise\n\ngit branch — check which branch you’re currently on\ngit switch -c try_something — create and move to a new branch\nEdit Penguins_chapter.qmd (any small change), then git add and git commit your change\ngit log --oneline — see your new commit\ngit switch main — go back to main\ngit log --oneline — notice your last commit is not here: it only exists on try_something\ngit switch try_something — go back and check it’s still there\ngit log --oneline — pick the hash of an earlier commit\ngit switch --detach &lt;hash&gt; — visit it, open Penguins_chapter.qmd, check its content\ngit switch try_something — come back to the present"
   },
   {
     "objectID": "setup.html#create-a-github-account",
