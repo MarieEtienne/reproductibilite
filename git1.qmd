@@ -7,8 +7,10 @@ execute:
   freeze: false
 editor: 
   markdown: 
+    canonical: true
     wrap: 72
 css: mpe_pres_revealjs.css
+bibliography: OCR.bib
 format:
   revealjs: 
     theme: [default, custom.scss]
@@ -20,25 +22,13 @@ format:
       useTextContentForMissingTitles: false
 ---
 
-
-
-```{r setup, include = FALSE,  eval = TRUE}
-library(RefManageR)
-BibOptions(check.entries = FALSE,
-           bib.style = "authoryear",
-           cite.style = "alphabetic",
-           style = "markdown",
-           hyperlink = FALSE,
-           dashed = FALSE)
-myBib <- ReadBib('OCR.bib', check = FALSE)
-```
-
-
-# Introduction to git 
+# Introduction to git
 
 ## What is it?
 
-- Developed by Linus Torvalds: *“I'm an egotistical bastard, and I name all my projects after myself. First Linux, now [git](https://www.wordreference.com/enfr/git).”*
+- Developed by Linus Torvalds: *“I'm an egotistical bastard, and I name
+  all my projects after myself. First Linux, now
+  [git](https://www.wordreference.com/enfr/git).”*
 
 . . .
 
@@ -46,105 +36,28 @@ myBib <- ReadBib('OCR.bib', check = FALSE)
 - It allows tracking all changes made to code since its creation.
 - Git is incredibly efficient.
 
-
 # Starting from an existing directory
 
-## Cloning an existing reprository 
+## Cloning an existing reprository
 
-This means copy locally on your computer the content of a repository which means
+This means copy locally on your computer the content of a repository
+which means
 
-* copy the actual code and text contents
-* copy the history of all changes
+- copy the actual code and text contents
+- copy the history of all changes
 
-Before using Git, we need basic bash commands
+We will be using Git in CLI. The relevant command in CLI are given in
+the survival kit. The most useful git command will be discovered during
+the course
 
-## First element - navigating using bash command 
-
-Navigating Directories in the Terminal / Git Bash
-
-1. Checking where you are
-
-```{bash}
-#| echo: true
-#| eval: false
-$ pwd
-/home/marie/projects
-```
-
-
-2. Listing files
-
-```{bash}
-#| echo: true
-#| eval: false
-ls -l #→ long listing
-ls -a #→ include hidden files
-```
-
-
-3. Moving between directories
-
-| Action            | Linux/macOS/Git Bash | Windows Command Prompt |
-| ----------------- | -------------------- | ---------------------- |
-| Go to a directory | `cd folder_name`     | `cd folder_name`       |
-| Go up one level   | `cd ..`              | `cd ..`                |
-| Go to home        | `cd ~`               | `cd %USERPROFILE%`     |
-| Absolute path     | `cd /path/to/folder` | `cd C:\path\to\folder` |
-
-## First element - navigating using bash command 
-
-
-4. Create a directory 
-
-```{bash}
-#| echo: true
-#| eval: false
-mkdir my_git_dir
-```
-
-5. Removing files or directory
-
-```{bash}
-#| echo: true
-#| eval: false
-rm my_file
-rmdir my_dir #remove an empty dir
-rm -rf my_dir #remove a directeory and everything inside ! Careful
-```
-
-
-6. Quick tips
-
-Use `Tab` for autocomplete paths and filenames.
-
-Paths on Git Bash use `/`, even on Windows (`/c/Users/...`).
-
-## Exercise
-
-* Go to your home directory (`/home/login`in Linux, probably somethin like `C:/Users/yourusername` in Windows)
-
-* Create a directory named `git`, where you will store all your git projects
-
-* Jump within this directory
-
-* list the files contained in this directory
-
-* Create a `test_dir` directory 
-
-* Jump  outside the `git` directory
-
-* Remove the `git` directory and everything it contains
-
-* Create a directory named `git`, where you will store all your git projects
-
-## Cloning an existing reprository 
+## Cloning an existing reprository
 
 Go to your git Directory and write
 
 ```{bash}
 #| echo: true
 #| eval: false
-git clone git@github.com:MarieEtienne/stats-reminders.git
+git clone git@github.com:MarieEtienne/OCR_TP.git
 ```
 
 ### What is happening ?
@@ -153,92 +66,258 @@ git clone git@github.com:MarieEtienne/stats-reminders.git
 #| echo: true
 #| eval: false
 ls
-cd stats-reminders
+cd OCR_TP
 ls
 ```
 
 ### Where to find this magical address to clone
 
-Navigate to the repository you want to clone
-On the main page, click on the "Code" green button, be sure to select SSH and copy paste the address.
-
+Navigate to the repository you want to clone On the main page, click on
+the "Code" green button, be sure to select SSH and copy paste the
+address.
 
 ## Reviewing the code development
 
+```{bash}
+git log
+```
+
+- Shows the full history: commit hash, author, date, message
+- Most recent commit first
+
+. . .
 
 ```{bash}
-#| echo: true
-#| eval: false
-git log
 git log --oneline
+```
+
+- Same history, condensed to one line per commit (short hash + message)
+- Much easier to scan when the history grows
+
+. . .
+
+```{bash}
 gitk
 ```
+
+- Graphical viewer for the same history
+
+## Visualizing the commit tree
+
+Each commit points to its parent — this is what `git log` is walking
+through, one line at a time:
+
+```{mermaid}
+%%{init: { 'theme': 'neutral' } }%%
+gitGraph
+   commit id: "Initial commit"
+   commit id: "Add README"
+   commit id: "Fix typo"
+   commit id: "Add Penguins_chapter.qmd"
+```
+
+- `git log --oneline` shows this same sequence, most recent on top
+- We'll come back to this graph once branches enter the picture
 
 ## Forking an existing repository
 
 ### What is forking?
-Forking creates your own copy of someone else's repository in your GitHub account. This lets you experiment with changes without affecting the original project.
-How to fork a repo:
 
-### How 
-Navigate to the repository you want to fork on GitHub
-Click the "Fork" button in the top-right corner of the repository page
-Choose where to fork it - usually to your personal account
-Wait a moment - GitHub will create the copy in your account
+Forking creates your own copy of someone else's repository in your
+GitHub account. This lets you experiment with changes without affecting
+the original project. How to fork a repo:
+
+### How
+
+Navigate to the repository you want to fork on GitHub Click the "Fork"
+button in the top-right corner of the repository page Choose where to
+fork it - usually to your personal account Wait a moment - GitHub will
+create the copy in your account
 
 ### What happens next:
-You'll have a complete copy of the repo in your GitHub account
-You can clone this forked version to your local machine using git clone
-Make changes, commit them, and push back to your fork
-If you want to contribute back to the original project, you can create a pull request
+
+You'll have a complete copy of the repo in your GitHub account You can
+clone this forked version to your local machine using git clone Make
+changes, commit them, and push back to your fork If you want to
+contribute back to the original project, you can create a pull request
 
 ### Key points
-Your fork is independent of the original repo
-You have full control over your forked version
-The original repo remains unchanged unless you submit a pull request that gets accepted
-You can sync your fork with the original repo later if it gets updated
 
-This workflow is essential for contributing to open-source projects or collaborating on code when you don't have direct write access to the original repository.
+Your fork is independent of the original repo. You have full control
+over your forked version The original repo remains unchanged unless you
+submit a pull request that gets accepted You can sync your fork with the
+original repo later if it gets updated
 
+This workflow is essential for contributing to open-source projects or
+collaborating on code when you don't have direct write access to the
+original repository.
 
 ## Exercise
 
-* Remove the stats-reminder directory and its content
+- Remove the OCR_TP and its content
 
-* Fork [https://github.com/MarieEtienne/stats-reminders](https://github.com/MarieEtienne/stats-reminders) on your personnal GitHub account
+- Fork <https://github.com/MarieEtienne/OCR_TP> on your personnal GitHub
+  account
 
-* clone your version of stats-reminder
+- clone your version of OCR_TP
 
-* Show the history of this file
+- Show the history of this file
 
-# Creating new content 
+# Creating new content
 
 ## Your first commit
 
-* Open the file `Penguins_chapter.qmd` and add your name and the list of authors, then save your file.
+- Open the file `Penguins_chapter.qmd` and add your name and the list of
+  authors, then save your file.
 
 . . .
 
-* Type the command git log in the console.
+- Type the command git log in the console.
 
 . . .
 
-* Enter the following commands:
+- Enter the following commands:
 
 ```{bash}
-#| echo: true
-#| eval: false
 git status # project status
 git diff
 ```
 
 . . .
 
-* Type the command `git add penguins.Rmd`, then repeat the previous commands.
+- Type the command `git add penguins.Rmd`, then repeat the previous
+  commands.
 
-* Type the command `git commit -m "Added an author"`, and once again check the project status.
+- Type the command `git commit -m "Added an author"`, and once again
+  check the project status.
 
-* Check the project on Github 
+- Check the project on Github
 
-* Type the command `git push"`, and once again check the project on Github
+- Type the command `git push"`, and once again check the project on
+  Github
 
+# Branches
+
+## What is a branch?
+
+- A branch is just a movable pointer to a commit
+- `main` (or `master`) is the default branch — the one you've been
+  committing to so far
+- A new branch lets you work on something (an experiment, a fix, a
+  chapter) without touching `main` until you're ready
+
+. . .
+
+```{mermaid}
+%%{init: { 'theme': 'neutral' } }%%
+gitGraph
+   commit id: "Initial commit"
+   commit id: "Add Penguins_chapter.qmd"
+   branch feature
+   checkout feature
+   commit id: "Try something new"
+   checkout main
+   commit id: "Fix typo"
+```
+
+- `main` keeps moving forward on its own
+- `feature` diverges from the commit it was created on
+
+## Creating and listing branches
+
+```{bash}
+git branch          # list all local branches (* marks the current one)
+git branch new_branch   # create a new branch (does NOT switch to it)
+```
+
+## Switching branches
+
+```{bash}
+git switch new_branch   # move to an existing branch
+git switch main          # move back
+```
+
+- `git switch` changes which branch you're working on — your files in
+  the working directory are updated to match that branch
+- Shortcut: create **and** switch in one command
+
+```{bash}
+git switch -c new_branch
+```
+
+::: callout-note
+You may see `git checkout new_branch` used for the same purpose in older
+tutorials — `git switch` is the newer, clearer command introduced
+specifically to replace this use of `checkout`.
+:::
+
+## Walking through past commits
+
+Every commit in `git log --oneline` has a short hash/name (e.g.
+`a1b2c3d`) — you can jump straight to it, not just to a branch:
+
+```{bash}
+git log --oneline        # find the hash you want
+git switch --detach a1b2c3d   # move to that exact commit
+```
+
+- Your files now look exactly as they did at that commit
+- This is called **detached HEAD**: you're not on any branch anymore,
+  just visiting a point in history
+
+```{mermaid}
+%%{init: { 'theme': 'neutral' } }%%
+gitGraph
+   commit id: "Initial commit"
+   commit id: "Add README"
+   commit id: "Fix typo"
+   commit id: "Add Penguins_chapter.qmd"
+```
+
+- e.g. `git switch --detach` to the "Fix typo" commit lets you look
+  around as if you were back at that moment
+
+## Coming back
+
+```{bash}
+git switch main
+```
+
+- Leaves the detached HEAD and returns to the tip of `main`
+
+::: callout-important
+If you commit while in detached HEAD and then `git switch` away without
+creating a branch first, that commit becomes hard to find again. If you
+want to keep working from a past commit, create a branch **from there**:
+
+```{bash}
+git switch --detach a1b2c3d
+git switch -c new_branch_from_past   # now it's safe to commit
+```
+:::
+
+## Peeking without moving
+
+If you just want to see what a file looked like at a given commit,
+without leaving your current branch:
+
+```{bash}
+git show a1b2c3d:Penguins_chapter.qmd   # print the file as it was then
+git diff a1b2c3d main                   # compare that commit to now
+```
+
+## Exercise
+
+- `git branch` — check which branch you're currently on
+- `git switch -c try_something` — create and move to a new branch
+- Edit `Penguins_chapter.qmd` (any small change), then `git add` and
+  `git commit` your change
+- `git log --oneline` — see your new commit
+- `git switch main` — go back to `main`
+- `git log --oneline` — notice your last commit is *not* here: it only
+  exists on `try_something`
+- `git switch try_something` — go back and check it's still there
+- `git log --oneline` — pick the hash of an earlier commit
+- `git switch --detach <hash>` — visit it, open `Penguins_chapter.qmd`,
+  check its content
+- `git switch try_something` — come back to the present
