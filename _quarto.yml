@@ -3,22 +3,26 @@ project:
 
 website:
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: introduction.qmd
-        text: Introduction
-      - href: quarto.qmd
-        text: Quarto
-      - href: setup.qmd
-        text: Set up your framework
-      - href: git1.qmd
-        text: Basics in git, working alone
-      - href: git2.qmd
-        text: Working collaboratively
+    left:        
+    - href: index.qmd
+      text: Home
+    - text: Courses
+      menu:
+        - href: introduction.qmd
+          text: Introduction
+        - href: quarto.qmd
+          text: Quarto
+        - href: linux_survival_kit.qmd
+          text: CLI survival kit      
+        - href: setup.qmd
+          text: Set up your framework
+        - href: git1.qmd
+          text: Basics in git, working alone
+        - href: git2.qmd
+          text: Working collaboratively
     right:
-      - href: https://github.com/MarieEtienne/stats-reminders
-        text: Stats Reminders
+      - href: https://github.com/MarieEtienne/OCR_TP
+        text: OCR Assignment
        
 format:
   html:

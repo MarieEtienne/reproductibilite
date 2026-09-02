@@ -1,0 +1,188 @@
+---
+title: "Linux survival kit"
+author: Marie-Pierre Etienne
+date: '2026/09/01 (updated: `r Sys.Date()`)'
+institute: https://github.com/MarieEtienne/reproductibilite
+execute:
+  freeze: false
+editor:
+  markdown:
+    wrap: 72
+css: mpe_pres_revealjs.css
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    width: 1050
+    margin: 0.05
+    slide-number: true
+    show-slide-number: print
+    menu:
+      useTextContentForMissingTitles: false
+---
+
+# Linux survival kit
+
+---
+
+## Why a terminal?
+
+- git, quarto, gh — all live in the command line first
+- GUI tools (RStudio, GitHub Desktop) are wrappers around the same commands
+- Same syntax everywhere: Git Bash (Windows), Terminal (Mac), Terminal (Linux)
+- You only need a handful of commands to be comfortable
+
+---
+
+## Which terminal to open
+
+- **Windows** → Git Bash (installed with Git for Windows)
+- **Mac** → Terminal.app (or iTerm2)
+- **Linux** → your usual Terminal
+- All three understand the exact same commands shown here
+
+# Where am I?
+
+---
+
+## `pwd` — print working directory
+
+```bash
+pwd
+```
+
+- Shows the full path of the folder you're currently "in"
+- First reflex when you're lost
+
+---
+
+## `ls` — list contents
+
+```bash
+ls
+```
+
+- Lists files and folders in the current directory
+
+```bash
+ls -alh
+```
+
+- `-a` → show hidden files too (names starting with `.`, e.g. `.git`)
+- `-l` → long format: permissions, size, date
+- `-h` → human-readable sizes (K, M, G instead of raw bytes)
+
+# Moving around
+
+---
+
+## `cd` — change directory
+
+```bash
+cd stats-reminders
+```
+
+- Move **into** a subfolder (relative path)
+
+```bash
+cd ..
+```
+
+- Move **up** one level (to the parent folder)
+
+```bash
+cd ~
+```
+
+- Jump straight to your home folder, from anywhere
+
+```bash
+cd /
+```
+
+- Jump to the root of the filesystem
+
+---
+
+## Relative vs absolute paths
+
+- Relative: `cd stats-reminders` → depends on where you currently are
+- Absolute: `cd /home/metienne/git/stats-reminders` → always the same place, no matter where you start
+- On Windows Git Bash: `C:\Users\...` becomes `/c/Users/...`
+
+---
+
+## Tab completion — your best friend
+
+- Start typing a folder/file name, hit **Tab**
+- Autocompletes if unambiguous, or shows options on double-Tab
+- Avoids typos, saves time — use it constantly
+
+# Creating and removing
+
+---
+
+## `mkdir` — make directory
+
+```bash
+mkdir new_folder
+```
+
+- Creates a new empty folder in the current location
+
+---
+
+## `rm` — remove
+
+```bash
+rm file.txt
+```
+
+- Deletes a file — **no trash, no undo**
+
+```bash
+rm -r folder_name
+```
+
+- `-r` (recursive) → needed to delete a folder and its contents
+
+```bash
+rm -ri folder_name
+```
+
+- `-i` → asks for confirmation before each deletion (safer while learning)
+
+::: {.care}
+There is no "Recycle Bin" in the terminal. Double-check the path before hitting Enter, especially with `rm -r`.
+:::
+
+# Cheat sheet
+
+---
+
+## Summary
+
+| Command | What it does |
+|---|---|
+| `pwd` | where am I? |
+| `ls` | what's here? |
+| `ls -alh` | what's here, in detail, including hidden files |
+| `cd folder` | go into `folder` |
+| `cd ..` | go up one level |
+| `cd ~` | go home |
+| `mkdir folder` | create `folder` |
+| `rm file` | delete `file` |
+| `rm -r folder` | delete `folder` and its contents |
+
+---
+
+## Exercise
+
+1. Open your terminal (Git Bash / Terminal)
+2. `pwd` — where are you?
+3. `cd` to your `git` folder (create it with `mkdir` if it doesn't exist yet)
+4. `ls -alh` — do you see a hidden `.git` folder in any of your cloned repos?
+5. Practice going up and down with `cd ..` and `cd repo_name`
+
+# ✅ Terminal basics complete
+
+[You now know enough of the command line to navigate anywhere, and to follow every git and quarto command in this course.]{.care}
