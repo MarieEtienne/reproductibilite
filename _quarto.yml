@@ -12,10 +12,10 @@ website:
           text: Introduction
         - href: quarto.qmd
           text: Quarto
-        - href: linux_survival_kit.qmd
-          text: CLI survival kit      
         - href: setup.qmd
           text: Set up your framework
+        - href: linux_survival_kit.qmd
+          text: CLI survival kit      
         - href: git1.qmd
           text: Basics in git, working alone
         - href: git2.qmd
