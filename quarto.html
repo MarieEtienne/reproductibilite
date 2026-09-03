@@ -316,20 +316,24 @@ Figure&nbsp;1: Caption
 </p></section>
 <section id="figures-external" class="slide level2">
 <h2>Figures — external</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="al">![Caption2](https://github.com/MarieEtienne/OCR_TP/blob/main/images/6123849122_b66af201ea_c.jpg)</span>{#fig-external}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="al">![Caption2](resources/0_UG26YZBOOrH0jQk3.webp)</span>{#fig-external}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<img data-src="resources/0_UG26YZBOOrH0jQk3.webp" class="r-stretch quarto-figure-center" id="fig-external"><p class="caption">
+Figure&nbsp;2: Caption2
+</p></section>
 <section id="equations" class="slide level2">
 <h2>Equations</h2>
 <ul>
-<li>Inline: <code>$\bar{x}$</code></li>
-<li>Display:</li>
+<li><p>Inline: <code>$\bar{x}$\</code> : <span class="math inline">\(\bar{x}\)</span></p></li>
+<li><p>Display:</p></li>
 </ul>
+<p><code>$$\hat\mu = \frac{1}{n}\sum x_i$$ {#eq-mean}</code></p>
 <p><span id="eq-mean"><span class="math display">\[\hat\mu = \frac{1}{n}\sum x_i \qquad(1)\]</span></span></p>
 </section>
 <section id="exercise-1" class="slide level2">
 <h2>Exercise</h2>
 <ul>
-<li>In <code>Penguins_chapter.qmd</code>: add one generated figure and one equation, each with a label and refers to these same figure and equation in the text.</li>
+<li>In <code>Penguins_chapter.qmd</code>: add one generated figure and one equation, each with a label.</li>
 </ul>
 </section></section>
 <section>
@@ -340,7 +344,7 @@ Figure&nbsp;1: Caption
 <section id="referencing-figures-and-equations" class="slide level2">
 <h2>Referencing figures and equations</h2>
 <ul>
-<li><code>@fig-example</code>, <code>@eq-mean</code> → auto-numbered, clickable</li>
+<li><code>@fig-example</code> : <a href="#/fig-example" class="quarto-xref">Figure&nbsp;1</a>, <code>@eq-mean</code>: <a href="#/eq-mean" class="quarto-xref">Equation&nbsp;1</a> → auto-numbered, clickable</li>
 <li>Why this matters more than manual “see Figure 2” (renumbering-proof)</li>
 </ul>
 </section>
@@ -359,7 +363,7 @@ Figure&nbsp;1: Caption
 <h2>Bibliography file</h2>
 <ul>
 <li><code>.bib</code> file, referenced in YAML: <code>bibliography: references.bib</code></li>
-<li>Citing: <code>[@alston2021beginner]</code> (already used in <code>introduction.qmd</code> — nice callback)</li>
+<li>Citing: <code>[@alston2021beginner]</code> : <span class="citation" data-cites="alston2021beginner">@alston2021beginner</span> (already used in <code>introduction.qmd</code>)</li>
 <li><code>csl:</code> for citation style</li>
 </ul>
 </section>

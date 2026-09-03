@@ -557,28 +557,28 @@
     "href": "quarto.html#figures-external",
     "title": "Quarto",
     "section": "Figures — external",
-    "text": "Figures — external\n![Caption2](https://github.com/MarieEtienne/OCR_TP/blob/main/images/6123849122_b66af201ea_c.jpg){#fig-external}"
+    "text": "Figures — external\n![Caption2](resources/0_UG26YZBOOrH0jQk3.webp){#fig-external}\n\n\nFigure 2: Caption2"
   },
   {
     "objectID": "quarto.html#equations",
     "href": "quarto.html#equations",
     "title": "Quarto",
     "section": "Equations",
-    "text": "Equations\n\nInline: $\\bar{x}$\nDisplay:\n\n\\[\\hat\\mu = \\frac{1}{n}\\sum x_i \\qquad(1)\\]"
+    "text": "Equations\n\nInline: $\\bar{x}$\\ : \\(\\bar{x}\\)\nDisplay:\n\n$$\\hat\\mu = \\frac{1}{n}\\sum x_i$$ {#eq-mean}\n\\[\\hat\\mu = \\frac{1}{n}\\sum x_i \\qquad(1)\\]"
   },
   {
     "objectID": "quarto.html#exercise-1",
     "href": "quarto.html#exercise-1",
     "title": "Quarto",
     "section": "Exercise",
-    "text": "Exercise\n\nIn Penguins_chapter.qmd: add one generated figure and one equation, each with a label and refers to these same figure and equation in the text."
+    "text": "Exercise\n\nIn Penguins_chapter.qmd: add one generated figure and one equation, each with a label."
   },
   {
     "objectID": "quarto.html#referencing-figures-and-equations",
     "href": "quarto.html#referencing-figures-and-equations",
     "title": "Quarto",
     "section": "Referencing figures and equations",
-    "text": "Referencing figures and equations\n\n@fig-example, @eq-mean → auto-numbered, clickable\nWhy this matters more than manual “see Figure 2” (renumbering-proof)"
+    "text": "Referencing figures and equations\n\n@fig-example : Figure 1, @eq-mean: Equation 1 → auto-numbered, clickable\nWhy this matters more than manual “see Figure 2” (renumbering-proof)"
   },
   {
     "objectID": "quarto.html#exercise-2",
@@ -592,7 +592,7 @@
     "href": "quarto.html#bibliography-file",
     "title": "Quarto",
     "section": "Bibliography file",
-    "text": "Bibliography file\n\n.bib file, referenced in YAML: bibliography: references.bib\nCiting: [@alston2021beginner] (already used in introduction.qmd — nice callback)\ncsl: for citation style"
+    "text": "Bibliography file\n\n.bib file, referenced in YAML: bibliography: references.bib\nCiting: [@alston2021beginner] : @alston2021beginner (already used in introduction.qmd)\ncsl: for citation style"
   },
   {
     "objectID": "quarto.html#where-do-references-come-from",
