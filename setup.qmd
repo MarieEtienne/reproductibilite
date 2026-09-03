@@ -30,7 +30,6 @@ format:
 2. Click **Sign up**  
 3. Choose a username, email, and password  
 4. Verify your account by email  
-5. (Optional) Install **GitHub Desktop** if you prefer a GUI  
 
 ---
 
