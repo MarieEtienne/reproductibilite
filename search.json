@@ -431,7 +431,7 @@
     "href": "setup.html#create-a-github-account",
     "title": "Set up your framework",
     "section": "1. Create a GitHub Account",
-    "text": "1. Create a GitHub Account\n\nGo to https://github.com\n\nClick Sign up\n\nChoose a username, email, and password\n\nVerify your account by email\n\n(Optional) Install GitHub Desktop if you prefer a GUI"
+    "text": "1. Create a GitHub Account\n\nGo to https://github.com\n\nClick Sign up\n\nChoose a username, email, and password\n\nVerify your account by email"
   },
   {
     "objectID": "setup.html#install-git-linux",
