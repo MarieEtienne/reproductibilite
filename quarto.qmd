@@ -140,15 +140,20 @@ penguins_dta |> ggplot() +
 ## Figures — external
 
 ``` markdown
-![Caption2](https://github.com/MarieEtienne/OCR_TP/blob/main/images/6123849122_b66af201ea_c.jpg){#fig-external}
+![Caption2](resources/0_UG26YZBOOrH0jQk3.webp){#fig-external}
 ```
+
+![Caption2](resources/0_UG26YZBOOrH0jQk3.webp){#fig-external}
 
 ------------------------------------------------------------------------
 
 ## Equations
 
-- Inline: `$\bar{x}$`
+- Inline: `$\bar{x}$\` : $\bar{x}$
+
 - Display:
+
+`$$\hat\mu = \frac{1}{n}\sum x_i$$ {#eq-mean}`
 
 $$\hat\mu = \frac{1}{n}\sum x_i$$ {#eq-mean}
 
@@ -157,8 +162,7 @@ $$\hat\mu = \frac{1}{n}\sum x_i$$ {#eq-mean}
 ## Exercise
 
 - In `Penguins_chapter.qmd`: add one generated figure and one equation,
-  each with a label and refers to these same figure and equation in the
-  text.
+  each with a label.
 
 # Cross-references
 
@@ -166,7 +170,8 @@ $$\hat\mu = \frac{1}{n}\sum x_i$$ {#eq-mean}
 
 ## Referencing figures and equations
 
-- `@fig-example`, `@eq-mean` → auto-numbered, clickable
+- `@fig-example` : @fig-example, `@eq-mean`: @eq-mean → auto-numbered,
+  clickable
 - Why this matters more than manual "see Figure 2" (renumbering-proof)
 
 ------------------------------------------------------------------------
@@ -182,8 +187,8 @@ $$\hat\mu = \frac{1}{n}\sum x_i$$ {#eq-mean}
 ## Bibliography file
 
 - `.bib` file, referenced in YAML: `bibliography: references.bib`
-- Citing: `[@alston2021beginner]` (already used in `introduction.qmd` —
-  nice callback)
+- Citing: `[@alston2021beginner]` : @alston2021beginner (already used in
+  `introduction.qmd`)
 - `csl:` for citation style
 
 ------------------------------------------------------------------------
