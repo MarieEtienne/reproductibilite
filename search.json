@@ -340,7 +340,7 @@
     "href": "git1.html#cloning-an-existing-reprository-1",
     "title": "Basics in git, working alone",
     "section": "Cloning an existing reprository",
-    "text": "Cloning an existing reprository\nGo to your git Directory and write\n#| echo: true\n#| eval: false\ngit clone git@github.com:MarieEtienne/OCR_TP.git\nWhat is happening ?\n#| echo: true\n#| eval: false\nls\ncd OCR_TP\nls\nWhere to find this magical address to clone\nNavigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address."
+    "text": "Cloning an existing reprository\nGo to your git Directory and write\ngit clone git@github.com:MarieEtienne/OCR_TP.git\nWhat is happening ?\nls\ncd OCR_TP\nls\nWhere to find this magical address to clone\nNavigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address."
   },
   {
     "objectID": "git1.html#reviewing-the-code-development",
@@ -348,6 +348,13 @@
     "title": "Basics in git, working alone",
     "section": "Reviewing the code development",
     "text": "Reviewing the code development\ngit log\n\nShows the full history: commit hash, author, date, message\nMost recent commit first\n\n\ngit log --oneline\n\nSame history, condensed to one line per commit (short hash + message)\nMuch easier to scan when the history grows\n\n\n\ngitk\n\nGraphical viewer for the same history"
+  },
+  {
+    "objectID": "git1.html#possible-problems-with-gitk",
+    "href": "git1.html#possible-problems-with-gitk",
+    "title": "Basics in git, working alone",
+    "section": "Possible problems with gitk",
+    "text": "Possible problems with gitk\nmacOS\nbrew install git\nbrew install git-gui\n\nVerifying : which gitk\nXcode CLT only does not include gitk\nIf error with Tk :\n\nbrew install tcl-tk\nVérification\ngitk --all"
   },
   {
     "objectID": "git1.html#visualizing-the-commit-tree",
@@ -375,7 +382,14 @@
     "href": "git1.html#your-first-commit",
     "title": "Basics in git, working alone",
     "section": "Your first commit",
-    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\ngit status # project status\ngit diff\n\n\n\nType the command git add penguins.Rmd, then repeat the previous commands.\nType the command git commit -m \"Added an author\", and once again check the project status.\nCheck the project on Github\nType the command git push\", and once again check the project on Github"
+    "text": "Your first commit\n\nOpen the file Penguins_chapter.qmd and add your name and the list of authors, then save your file.\n\n\n\nType the command git log in the console.\n\n\n\n\nEnter the following commands:\n\ngit status # project status\ngit diff\n\n\n\nType the command git add Penguins_chapter.qmd, then repeat the previous commands.\nType the command git commit -m \"Added an author\", and once again check the project status.\nCheck the project on Github\nType the command git push\", and once again check the project on Github"
+  },
+  {
+    "objectID": "git1.html#identifying-files-to-be-committed",
+    "href": "git1.html#identifying-files-to-be-committed",
+    "title": "Basics in git, working alone",
+    "section": "Identifying files to be committed",
+    "text": "Identifying files to be committed\n\nMake a small change in Penguins_chapter.qmd\nRender the website locally with quarto renderand examine the contents of your directory.\nUse git statusto identify the status of each file\nWhich files should be commited\nThe role of the .gitignore file\nAdd _site/ to the list of ignore files, then add .gitignore and commit.\n\n. . . Generated files should not be versionned"
   },
   {
     "objectID": "git1.html#what-is-a-branch",

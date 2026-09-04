@@ -248,15 +248,11 @@ Marie-Pierre Etienne
 <section id="cloning-an-existing-reprository-1" class="slide level2">
 <h2>Cloning an existing reprository</h2>
 <p>Go to your git Directory and write</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>#| echo: true</span>
-<span id="cb1-2"><a></a>#| eval: false</span>
-<span id="cb1-3"><a></a>git clone git@github.com:MarieEtienne/OCR_TP.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>git clone git@github.com:MarieEtienne/OCR_TP.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="what-is-happening">What is happening ?</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>#| echo: true</span>
-<span id="cb2-2"><a></a>#| eval: false</span>
-<span id="cb2-3"><a></a>ls</span>
-<span id="cb2-4"><a></a>cd OCR_TP</span>
-<span id="cb2-5"><a></a>ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>ls</span>
+<span id="cb2-2"><a></a>cd OCR_TP</span>
+<span id="cb2-3"><a></a>ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="where-to-find-this-magical-address-to-clone">Where to find this magical address to clone</h3>
 <p>Navigate to the repository you want to clone On the main page, click on the “Code” green button, be sure to select SSH and copy paste the address.</p>
 </section>
@@ -280,6 +276,20 @@ Marie-Pierre Etienne
 <li>Graphical viewer for the same history</li>
 </ul>
 </div>
+</section>
+<section id="possible-problems-with-gitk" class="slide level2">
+<h2>Possible problems with <code>gitk</code></h2>
+<h3 id="macos">macOS</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="ex">brew</span> install git</span>
+<span id="cb6-2"><a></a><span class="ex">brew</span> install git-gui</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Verifying : <code>which gitk</code></li>
+<li>Xcode CLT only does not include <code>gitk</code></li>
+<li>If error with Tk :</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">brew</span> install tcl-tk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="vérification">Vérification</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">gitk</span> <span class="at">--all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="visualizing-the-commit-tree" class="slide level2">
 <h2>Visualizing the commit tree</h2>
@@ -346,17 +356,29 @@ gitGraph
 <ul>
 <li>Enter the following commands:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>git status # project status</span>
-<span id="cb6-2"><a></a>git diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>git status # project status</span>
+<span id="cb9-2"><a></a>git diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <ul>
-<li><p>Type the command <code>git add penguins.Rmd</code>, then repeat the previous commands.</p></li>
+<li><p>Type the command <code>git add Penguins_chapter.qmd</code>, then repeat the previous commands.</p></li>
 <li><p>Type the command <code>git commit -m "Added an author"</code>, and once again check the project status.</p></li>
 <li><p>Check the project on Github</p></li>
 <li><p>Type the command <code>git push"</code>, and once again check the project on Github</p></li>
 </ul>
 </div>
+</section>
+<section id="identifying-files-to-be-committed" class="slide level2">
+<h2>Identifying files to be committed</h2>
+<ul>
+<li><p>Make a small change in <code>Penguins_chapter.qmd</code></p></li>
+<li><p>Render the website locally with <code>quarto render</code>and examine the contents of your directory.</p></li>
+<li><p>Use <code>git status</code>to identify the status of each file</p></li>
+<li><p>Which files should be commited</p></li>
+<li><p>The role of the <code>.gitignore</code> file</p></li>
+<li><p>Add <code>_site/</code> to the list of ignore files, then add .gitignore and commit.</p></li>
+</ul>
+<p>. . . <span class="care">Generated files should not be versionned</span></p>
 </section></section>
 <section>
 <section id="branches" class="title-slide slide level1 center">
@@ -399,18 +421,18 @@ gitGraph
 </section>
 <section id="creating-and-listing-branches" class="slide level2">
 <h2>Creating and listing branches</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>git branch          # list all local branches (* marks the current one)</span>
-<span id="cb7-2"><a></a>git branch new_branch   # create a new branch (does NOT switch to it)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>git branch          # list all local branches (* marks the current one)</span>
+<span id="cb10-2"><a></a>git branch new_branch   # create a new branch (does NOT switch to it)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="switching-branches" class="slide level2">
 <h2>Switching branches</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a></a>git switch new_branch   # move to an existing branch</span>
-<span id="cb8-2"><a></a>git switch main          # move back</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>git switch new_branch   # move to an existing branch</span>
+<span id="cb11-2"><a></a>git switch main          # move back</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>git switch</code> changes which branch you’re working on — your files in the working directory are updated to match that branch</li>
 <li>Shortcut: create <strong>and</strong> switch in one command</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>git switch -c new_branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>git switch -c new_branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -428,8 +450,8 @@ gitGraph
 <section id="walking-through-past-commits" class="slide level2">
 <h2>Walking through past commits</h2>
 <p>Every commit in <code>git log --oneline</code> has a short hash/name (e.g. <code>a1b2c3d</code>) — you can jump straight to it, not just to a branch:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>git log --oneline        # find the hash you want</span>
-<span id="cb10-2"><a></a>git switch --detach a1b2c3d   # move to that exact commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a></a>git log --oneline        # find the hash you want</span>
+<span id="cb13-2"><a></a>git switch --detach a1b2c3d   # move to that exact commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Your files now look exactly as they did at that commit</li>
 <li>This is called <strong>detached HEAD</strong>: you’re not on any branch anymore, just visiting a point in history</li>
@@ -457,7 +479,7 @@ gitGraph
 </section>
 <section id="coming-back" class="slide level2">
 <h2>Coming back</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a></a>git switch main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a></a>git switch main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Leaves the detached HEAD and returns to the tip of <code>main</code></li>
 </ul>
@@ -471,8 +493,8 @@ gitGraph
 </div>
 <div class="callout-content">
 <p>If you commit while in detached HEAD and then <code>git switch</code> away without creating a branch first, that commit becomes hard to find again. If you want to keep working from a past commit, create a branch <strong>from there</strong>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>git switch --detach a1b2c3d</span>
-<span id="cb12-2"><a></a>git switch -c new_branch_from_past   # now it's safe to commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a></a>git switch --detach a1b2c3d</span>
+<span id="cb15-2"><a></a>git switch -c new_branch_from_past   # now it's safe to commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -480,8 +502,8 @@ gitGraph
 <section id="peeking-without-moving" class="slide level2">
 <h2>Peeking without moving</h2>
 <p>If you just want to see what a file looked like at a given commit, without leaving your current branch:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a></a>git show a1b2c3d:Penguins_chapter.qmd   # print the file as it was then</span>
-<span id="cb13-2"><a></a>git diff a1b2c3d main                   # compare that commit to now</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource {bash} number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a></a>git show a1b2c3d:Penguins_chapter.qmd   # print the file as it was then</span>
+<span id="cb16-2"><a></a>git diff a1b2c3d main                   # compare that commit to now</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exercise-1" class="slide level2">
 <h2>Exercise</h2>
