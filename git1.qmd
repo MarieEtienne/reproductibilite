@@ -55,16 +55,12 @@ the course
 Go to your git Directory and write
 
 ```{bash}
-#| echo: true
-#| eval: false
 git clone git@github.com:MarieEtienne/OCR_TP.git
 ```
 
 ### What is happening ?
 
 ```{bash}
-#| echo: true
-#| eval: false
 ls
 cd OCR_TP
 ls
@@ -101,6 +97,29 @@ gitk
 ```
 
 - Graphical viewer for the same history
+
+## Possible problems with `gitk`
+
+### macOS
+
+``` bash
+brew install git
+brew install git-gui
+```
+
+- Verifying : `which gitk`
+- Xcode CLT only does not include `gitk`
+- If error with Tk :
+
+``` bash
+brew install tcl-tk
+```
+
+### Vérification
+
+``` bash
+gitk --all
+```
 
 ## Visualizing the commit tree
 
@@ -185,8 +204,8 @@ git diff
 
 . . .
 
-- Type the command `git add penguins.Rmd`, then repeat the previous
-  commands.
+- Type the command `git add Penguins_chapter.qmd`, then repeat the
+  previous commands.
 
 - Type the command `git commit -m "Added an author"`, and once again
   check the project status.
@@ -195,6 +214,24 @@ git diff
 
 - Type the command `git push"`, and once again check the project on
   Github
+
+## Identifying files to be committed
+
+- Make a small change in `Penguins_chapter.qmd`
+
+- Render the website locally with `quarto render`and examine the
+  contents of your directory.
+
+- Use `git status`to identify the status of each file
+
+- Which files should be commited
+
+- The role of the `.gitignore` file
+
+- Add `_site/` to the list of ignore files, then add .gitignore and
+  commit.
+
+. . . [Generated files should not be versionned]{.care}
 
 # Branches
 
